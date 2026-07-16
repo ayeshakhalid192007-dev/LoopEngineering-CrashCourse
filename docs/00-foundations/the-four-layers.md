@@ -23,10 +23,10 @@ the map that stops that.
 
 ```mermaid
 flowchart TD
-    L4[4 · LOOP — what, when, done?] --> L3[3 · HARNESS — tools, permissions, hooks]
-    L3 --> L2[2 · CONTEXT — what the model sees]
-    L2 --> L1[1 · PROMPT — the words]
-    L1 -.->|result flows back up| L4
+    LOOP[4 · LOOP — what, when, done?] --> HARNESS[3 · HARNESS — tools, permissions, hooks]
+    HARNESS --> CONTEXT[2 · CONTEXT — what the model sees]
+    CONTEXT --> PROMPT[1 · PROMPT — the words]
+    PROMPT -.->|result flows back up| LOOP
 ```
 
 **Debug top-down in blame, bottom-up in fixes:** when a loop misbehaves, ask *which
