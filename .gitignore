@@ -2,9 +2,6 @@
 .claude/projects/
 .claude/scheduled_tasks.lock
 
-# Day 1 build loops — local working machinery, not course content
-loops-day1/
-
 # OS / editor noise
 .DS_Store
 *.swp

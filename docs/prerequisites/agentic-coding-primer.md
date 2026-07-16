@@ -24,19 +24,30 @@ craft of configuring them *deliberately*.
 | **MCP / connectors** | Bridges to external tools & data | A loop's senses beyond the repo |
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':40,'rankSpacing':55,'padding':12}}}%%
 flowchart TD
-    subgraph "Standing configuration (set once)"
-      R[Rules file] --- P[Permissions] --- H[Hooks]
+    subgraph STAND ["🧭  Standing configuration — set once"]
+      direction LR
+      R("Rules file"):::cfg --- P("Permissions"):::cfg --- H("Hooks"):::cfg
     end
-    subgraph "Per-task machinery"
-      PM[Plan mode] --- C[Context] --- S[Skills]
+    subgraph TASK ["⚙️  Per-task machinery"]
+      direction LR
+      PM("Plan mode"):::task --- C("Context"):::task --- S("Skills"):::task
     end
-    subgraph "Reach"
-      SA[Subagents] --- M[MCP / connectors]
+    subgraph REACH ["🌐  Reach"]
+      direction LR
+      SA("Subagents"):::reach --- M("MCP / connectors"):::reach
     end
-    R --> A((The agent's behavior))
+    R --> A(("<b>The agent's<br/>behavior</b>")):::agent
     PM --> A
     SA --> A
+    classDef cfg fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
+    classDef task fill:#eef6ff,stroke:#3b82f6,stroke-width:1.5px,color:#1e40af;
+    classDef reach fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
+    classDef agent fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
+    style STAND fill:#fbfaff,stroke:#ddd6fe,stroke-width:1.5px,color:#6d28d9;
+    style TASK fill:#f7fbff,stroke:#bfdbfe,stroke-width:1.5px,color:#1d4ed8;
+    style REACH fill:#f2fdfb,stroke:#99f6e4,stroke-width:1.5px,color:#0f766e;
 ```
 
 ## See them in your tool

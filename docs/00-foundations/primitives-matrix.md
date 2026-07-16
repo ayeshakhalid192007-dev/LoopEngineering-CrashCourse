@@ -28,11 +28,14 @@ the tool's live docs (linked in the header). **Memorize rows, look up cells.**
 | **Headless / loop driver** | `claude -p`, `/loop`, Cron tools | `opencode run` + cron/Actions | `codex exec` + cron | `grok --prompt` + cron |
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':40,'rankSpacing':70,'padding':10}}}%%
 flowchart LR
-    CONCEPT[One concept<br/>e.g. maker/checker] --> CC[Claude Code:<br/>subagent .md]
-    CONCEPT --> OC[OpenCode:<br/>agent config]
-    CONCEPT --> CX[Codex:<br/>sub-task]
-    CONCEPT --> GK[Grok:<br/>subagent]
+    CONCEPT("<b>One concept</b><br/>e.g. maker/checker"):::concept --> CC("<b>Claude Code</b><br/>subagent .md"):::tool
+    CONCEPT --> OC("<b>OpenCode</b><br/>agent config"):::tool
+    CONCEPT --> CX("<b>Codex</b><br/>sub-task"):::tool
+    CONCEPT --> GK("<b>Grok</b><br/>subagent"):::tool
+    classDef concept fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
+    classDef tool fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
 ```
 
 > [!WARNING]

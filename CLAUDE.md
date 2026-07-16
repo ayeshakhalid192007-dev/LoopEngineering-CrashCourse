@@ -13,8 +13,8 @@ every session and for every loop.
 | `days-plans/` | Per-day build plans (day1–day4). |
 | `LOOP.md` | **Main loop rulebook** — rules shared by ALL loops. No single loop owns it. |
 | `loop-constraints.md` | Binding constraints, read by the `loop-constraints` skill at the start of every run. |
-| `loops-day1/<loop>/loop.md` | One loop's own definition (prompt, stop, limit, ownership). |
-| `loops-day1/<loop>/state.md` | That loop's private spine. **Only that loop writes it.** |
+| `loops/day1/<loop>/loop.md` | One loop's own definition (prompt, stop, limit, ownership). |
+| `loops/day1/<loop>/state.md` | That loop's private spine. **Only that loop writes it.** |
 | `shared/goal.md` | The goal and definition of done the loops work toward. |
 | `shared/AGENTS.md` | Rules for any AI agent in this repo. |
 | `shared/loop-budget.md` | Token/run budget for the whole fleet. |
@@ -55,5 +55,5 @@ every session and for every loop.
 
 1. Read this file (automatic).
 2. Read `loop-constraints.md` (binding).
-3. If running a loop: read `LOOP.md`, then your own `loops-day1/<loop>/loop.md` and
+3. If running a loop: read `LOOP.md`, then your own `loops/day1/<loop>/loop.md` and
    `state.md`, then `shared/goal.md`.

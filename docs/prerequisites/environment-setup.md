@@ -24,12 +24,15 @@ Three things, in order:
 > each section. If a command here disagrees with the official docs, the docs win.
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':38,'rankSpacing':55,'padding':10}}}%%
 flowchart LR
-    A[Terminal ready] --> B[Install one agent]
-    B --> C[Verify: --version]
-    C --> D[Log in / authenticate]
-    D --> E[Make a throwaway repo]
-    E --> F[You're ready for the course]
+    A("Terminal<br/>ready"):::step --> B("Install<br/>one agent"):::step
+    B --> C("Verify:<br/>--version"):::step
+    C --> D("Log in /<br/>authenticate"):::step
+    D --> E("Make a<br/>throwaway repo"):::step
+    E --> F(["✓ Ready for<br/>the course"]):::done
+    classDef step fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
+    classDef done fill:#ecfdf5,stroke:#10b981,stroke-width:2px,color:#065f46;
 ```
 
 ## Install and verify

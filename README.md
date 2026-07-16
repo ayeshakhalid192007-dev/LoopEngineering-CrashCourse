@@ -83,6 +83,7 @@ certification capstone.
 | Folder | What it holds |
 | -------- | --------------- |
 | `docs/` | the course — single source of truth for GitHub *and* the website |
+| `loops/` | [the loops that build this course](loops/README.md) — real prompts, real spines |
 | `patterns/` | the seven core loop patterns *(Day 2+)* |
 | `starters/` | clone-and-run starter kits *(Day 3)* |
 | `skills/`, `templates/`, `examples/`, `stories/` | reusable parts and case studies *(Day 2+)* |

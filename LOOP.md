@@ -2,16 +2,16 @@
 
 > This file defines the rules **every** loop in this repo must follow. It is owned by
 > the human, not by any loop — **no loop may edit this file.** Each loop's own
-> definition lives in `loops-day1/<loop>/loop.md`; each loop's private spine lives in
-> `loops-day1/<loop>/state.md`.
+> definition lives in `loops/day1/<loop>/loop.md`; each loop's private spine lives in
+> `loops/day1/<loop>/state.md`.
 
 ## Registered loops (Day 1)
 
 | Loop | Folder | Heartbeat | Cadence | Level | Role |
 | ------ | -------- | ----------- | --------- | ------- | ------ |
-| page-writer | `loops-day1/page-writer/` | conditional (run-until-done) | self-paced | L2 (writes docs) | Writes the Day 1 entry-layer pages |
-| checker | `loops-day1/checker/` | schedule | 10m | L1 (report-only) | Verifies written pages against plan + template |
-| link-check | `loops-day1/link-check/` | schedule | 30m | L1 (report-only) | Keeps relative links honest all day |
+| page-writer | `loops/day1/page-writer/` | conditional (run-until-done) | self-paced | L2 (writes docs) | Writes the Day 1 entry-layer pages |
+| checker | `loops/day1/checker/` | schedule | 10m | L1 (report-only) | Verifies written pages against plan + template |
+| link-check | `loops/day1/link-check/` | schedule | 30m | L1 (report-only) | Keeps relative links honest all day |
 
 ## Shared rules (binding for every loop)
 
@@ -28,9 +28,9 @@
 | Path | Owner (only writer) | Everyone else |
 | ------ | -------------------- | --------------- |
 | `docs/` and course content files | **page-writer** | read-only |
-| `loops-day1/page-writer/state.md` | **page-writer** | read-only |
-| `loops-day1/checker/state.md` | **checker** | read-only |
-| `loops-day1/link-check/state.md` | **link-check** | read-only |
+| `loops/day1/page-writer/state.md` | **page-writer** | read-only |
+| `loops/day1/checker/state.md` | **checker** | read-only |
+| `loops/day1/link-check/state.md` | **link-check** | read-only |
 | `shared/loop-run-log.md` | all loops, **append-only** | — |
 | `LOOP.md`, `CLAUDE.md`, `loop-plan.md`, `shared/goal.md`, `shared/loop-budget.md`, `STATE.md` | **human** | read-only |
 

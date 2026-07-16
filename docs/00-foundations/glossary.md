@@ -102,13 +102,20 @@ tools and data ("connectors").
 ## How the vocabulary fits together
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':60,'padding':10}}}%%
 flowchart LR
-    HB[Heartbeat] -->|starts a| BT[Beat]
-    BT -->|uses the| BD[Body: skills · connectors · worktree]
-    BT -->|updates the| SPN[Spine]
-    BT -->|is graded by the| CHK[Checker]
-    CHK -->|reports through the| HG[Human gate]
-    BT -->|repeats until a| STP[Stopping condition:<br/>success · limit · no-progress]
+    HB("Heartbeat"):::time -->|starts a| BT("Beat"):::time
+    BT -->|uses the| BD("<b>Body</b><br/>skills · connectors · worktree"):::body
+    BT -->|updates the| SPN("Spine"):::spine
+    BT -->|is graded by the| CHK("Checker"):::check
+    CHK -->|reports through the| HG("Human gate"):::human
+    BT -->|repeats until a| STP("<b>Stopping condition</b><br/>success · limit · no-progress"):::stop
+    classDef time fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
+    classDef body fill:#f1f5f9,stroke:#94a3b8,stroke-width:1.5px,color:#334155;
+    classDef spine fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
+    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
+    classDef human fill:#ecfdf5,stroke:#10b981,stroke-width:1.5px,color:#065f46;
+    classDef stop fill:#fff1f2,stroke:#f43f5e,stroke-width:1.5px,color:#9f1239;
 ```
 
 Read any page in the course and every bold term on it sits somewhere on this picture.

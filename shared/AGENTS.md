@@ -14,7 +14,7 @@ Day plans: `days-plans/`. Current phase: **Day 1** (see `shared/goal.md`).
 
 - Rules shared by all loops: root `LOOP.md` (binding; no loop may edit it).
 - Binding constraints: root `loop-constraints.md` (read at the start of every run).
-- Each loop lives in `loops-day1/<loop>/` with its own `loop.md` + `state.md`.
+- Each loop lives in `loops/day1/<loop>/` with its own `loop.md` + `state.md`.
 - Write ONLY your own state file; other loops' folders are read-only.
 - Report-only first (L1) before enabling any auto-fix (L2).
 - One line appended to `shared/loop-run-log.md` per beat — no silent runs.

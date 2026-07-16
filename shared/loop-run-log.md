@@ -45,3 +45,5 @@ Prune entries older than 30 days.
 {"run_id": "2026-07-16T10:31:10Z", "pattern": "checker", "duration_s": 120, "items_found": 3, "actions_taken": 0, "escalations": 0, "tokens_estimate": 15000, "outcome": "report-only"}
 {"run_id": "2026-07-16T11:14:11Z", "pattern": "page-writer", "duration_s": 90, "items_found": 2, "actions_taken": 2, "escalations": 0, "tokens_estimate": 12000, "outcome": "fix-proposed"}
 {"run_id": "2026-07-16T11:15:12Z", "pattern": "link-check", "duration_s": 30, "items_found": 0, "actions_taken": 0, "escalations": 0, "tokens_estimate": 5000, "outcome": "report-only"}
+{"run_id": "2026-07-16T17:40:38Z", "pattern": "checker", "duration_s": 300, "items_found": 0, "actions_taken": 0, "escalations": 0, "tokens_estimate": 20000, "outcome": "report-only"}
+{"run_id": "2026-07-16T17:41:10Z", "pattern": "link-check", "duration_s": 20, "items_found": 0, "actions_taken": 0, "escalations": 0, "tokens_estimate": 3000, "outcome": "report-only"}

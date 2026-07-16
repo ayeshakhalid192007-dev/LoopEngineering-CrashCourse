@@ -27,13 +27,22 @@ spec has three layers:
    at will).
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':50,'rankSpacing':50,'padding':10}}}%%
 flowchart TD
-    A[Constitution<br/><i>never changes per task</i>] --> D{Agent works}
-    B[Spec<br/><i>what done means, checkable</i>] --> D
-    C[Plan<br/><i>disposable steps</i>] --> D
-    D --> E{Spec true?}
+    A("<b>Constitution</b><br/><i>never changes per task</i>"):::fixed --> D{"Agent<br/>works"}:::work
+    B("<b>Spec</b><br/><i>what done means, checkable</i>"):::spec --> D
+    C("<b>Plan</b><br/><i>disposable steps</i>"):::plan --> D
+    D --> E{"Spec<br/>true?"}:::gate
     E -->|no| D
-    E -->|yes| F[STOP — provably done]
+    E -->|yes| F(["✓ STOP —<br/>provably done"]):::stop
+    classDef fixed fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
+    classDef spec fill:#eef6ff,stroke:#3b82f6,stroke-width:1.5px,color:#1e40af;
+    classDef plan fill:#f1f5f9,stroke:#94a3b8,stroke-width:1.5px,color:#334155;
+    classDef work fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
+    classDef gate fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
+    classDef stop fill:#ecfdf5,stroke:#10b981,stroke-width:1.5px,color:#065f46;
+    linkStyle 4 stroke:#f59e0b,stroke-width:1.5px;
+    linkStyle 5 stroke:#10b981,stroke-width:1.5px;
 ```
 
 ## The 4-phase method

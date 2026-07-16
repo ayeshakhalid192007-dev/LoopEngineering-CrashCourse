@@ -32,5 +32,5 @@
 <!-- Loops append self-throttle events below this line -->
 - 2026-07-16: page-writer at ≈79% of its 400k daily token cap after 17/20 runs;
   self-throttled to report-only and stopped. 6 checklist items remain (5 foundations
-  pages + Day 2 scaffold). Human: raise caps here and in loops-day1/page-writer/loop.md,
+  pages + Day 2 scaffold). Human: raise caps here and in loops/day1/page-writer/loop.md,
   then restart /loop to finish Day 1.
