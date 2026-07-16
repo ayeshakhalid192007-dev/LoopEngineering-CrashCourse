@@ -1,0 +1,11 @@
+# Claude Code harness internals — session-specific, never project content
+.claude/projects/
+.claude/scheduled_tasks.lock
+
+# OS / editor noise
+.DS_Store
+*.swp
+
+# Website (Day 4) build artifacts
+web/node_modules/
+web/.next/

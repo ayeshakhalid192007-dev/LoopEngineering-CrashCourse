@@ -1,0 +1,16 @@
+# Default: the maintainer reviews everything.
+* @ayesha-khalid
+
+# Course content — single source of truth; review with extra care.
+/docs/ @ayesha-khalid
+/resources/ @ayesha-khalid
+
+# The repo's own loop discipline files — human-owned, loops never edit these.
+/LOOP.md @ayesha-khalid
+/STATE.md @ayesha-khalid
+/loop-plan.md @ayesha-khalid
+/loop-constraints.md @ayesha-khalid
+/shared/ @ayesha-khalid
+
+# CI and repo plumbing.
+/.github/ @ayesha-khalid

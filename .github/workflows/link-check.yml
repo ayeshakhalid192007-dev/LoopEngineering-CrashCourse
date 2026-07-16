@@ -1,0 +1,31 @@
+name: link-check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 6 * * *" # daily sweep — links rot even when the repo doesn't change
+
+permissions:
+  contents: read
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Relative links are the Day 1 contract ("no broken relative links"),
+      # so they fail the build; external links are checked but only reported.
+      - name: Check relative links (blocking)
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --offline --include-fragments --no-progress './**/*.md'
+          fail: true
+
+      - name: Check external links (report-only)
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress --max-retries 1 --accept 200,203,206,429 './**/*.md'
+          fail: false

@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use or reference this course, please cite it as below."
+title: "Loop Engineering Crash Course"
+type: software
+authors:
+  - family-names: "Khalid"
+    given-names: "Ayesha"
+license: MIT
+date-released: "2026-07-16"
+abstract: >-
+  A complete crash course on Loop Engineering: designing the systems that prompt
+  AI agents. Concepts, mechanics, a library of ready-to-run loops, practice labs,
+  and safety guidance, published as a GitHub-browsable markdown course and a
+  companion website rendered from the same content.
+keywords:
+  - loop engineering
+  - ai agents
+  - agentic coding
+  - claude code
+  - opencode
