@@ -21,3 +21,11 @@ jobs:
             **/*.md
             !node_modules
             !web
+            # vendored skills.sh toolchain — third-party files, not ours to lint
+            !skills
+            !.agents
+            !.claude
+            # internal planning docs (not course content); heading structure is
+            # the human's editorial choice, outside the course-quality gate
+            !loop-plan.md
+            !days-plans

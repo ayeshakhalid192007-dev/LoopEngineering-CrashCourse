@@ -13,7 +13,7 @@ craft of configuring them *deliberately*.
 ## The eight primitives (plain English)
 
 | Primitive | What it is | Loop-engineering job |
-|---|---|---|
+| --- | --- | --- |
 | **Plan mode** | Agent proposes before it acts | Rehearse a loop's behavior safely |
 | **Permissions** | What the agent may do without asking | The L1→L3 ladder lives here |
 | **Context** | What the agent can see (files, history) | Keep beats cheap; avoid drowning |
@@ -96,7 +96,7 @@ In your sandbox repo:
 ## When it goes wrong
 
 | Symptom | Cause | Fix |
-|---|---|---|
+| --- | --- | --- |
 | Agent ignores your standing instruction | Rule buried in a huge rules file | Rules files are context too — keep them short and binding |
 | Agent asks permission for everything | Permission mode too strict for the task | Loosen for the session, not globally; keep write-paths narrow |
 | Agent confidently edits the wrong module | Context too broad or too stale | Point it at specific files; start a fresh session for new work |

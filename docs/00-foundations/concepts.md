@@ -82,7 +82,7 @@ statement until the list gets boring.
 ## When it goes wrong
 
 | Symptom | Cause | Fix |
-|---|---|---|
+| --- | --- | --- |
 | Loop does the goal, result feels wrong | Intent debt — spec ≠ intent | Tighten the spec; add the missing constraint to the constitution |
 | "Works, but nobody can review it" | Comprehension debt from giant beats | Shrink the unit of work; gate on human review |
 | Loop "can't tell it's finished" | Done-ness expected from the harness | Stopping conditions are loop-layer; write one that exits 0 |

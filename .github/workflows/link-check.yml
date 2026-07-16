@@ -21,11 +21,13 @@ jobs:
       - name: Check relative links (blocking)
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --offline --include-fragments --no-progress './**/*.md'
+          # skills/ and .agents/ are the vendored skills.sh toolchain — third-party
+          # files with their own internal links, outside the Day 1 contract
+          args: --offline --include-fragments --no-progress --exclude-path skills --exclude-path .agents --exclude-path .claude './**/*.md'
           fail: true
 
       - name: Check external links (report-only)
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --no-progress --max-retries 1 --accept 200,203,206,429 './**/*.md'
+          args: --no-progress --max-retries 1 --accept 200,203,206,429 --exclude-path skills --exclude-path .agents --exclude-path .claude './**/*.md'
           fail: false

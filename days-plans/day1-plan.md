@@ -7,6 +7,7 @@
 ## What to build today (in order)
 
 ### 1. Set up the repo (morning)
+
 - [ ] Create the repo folder `LoopEngineering-CrashCourse/` and run `git init`
 - [ ] Add `LICENSE` (MIT)
 - [ ] Write `README.md` — hero section, badges, navigation links, quickstart
@@ -17,6 +18,7 @@
   - `PULL_REQUEST_TEMPLATE.md`
 
 ### 2. Add the "dogfooding" files (we use loops to build a course about loops!)
+
 - [ ] `AGENTS.md` — rules for any AI agent working in this repo
 - [ ] `CLAUDE.md` — rules for Claude Code
 - [ ] `LOOP.md` — describes the loops that maintain this repo
@@ -24,6 +26,7 @@
 - [ ] `loop-budget.md`, `loop-constraints.md`, `loop-run-log.md`
 
 ### 3. Start the course content (afternoon)
+
 - [ ] `docs/start-here.md` — 60-second router: "which track am I?"
 - [ ] `docs/learning-tracks.md` — the T1 → T4 map
 - [ ] `docs/prerequisites/` — 3 pages:
@@ -35,11 +38,13 @@
   - `the-four-layers.md`, `primitives.md`, `primitives-matrix.md`
 
 ### 4. Pull helper skills
+
 - [ ] `npx skills add` for `vercel-labs/agent-skills` and `anthropics/skills`
 
 ---
 
 ## ✅ Day 1 checkpoint (done when…)
+
 The repo is browsable on GitHub. The tracks map, prerequisites, and foundations pages are live and readable.
 
 ---
@@ -49,6 +54,7 @@ The repo is browsable on GitHub. The tracks map, prerequisites, and foundations 
 The trick: don't write every file by hand, one prompt at a time. Set up small loops that do the repetitive work while you review.
 
 ### Loop 1 — The page-writer loop (conditional / run-until-done)
+
 Make a simple checklist file first (that's your **spine**):
 
 ```markdown
@@ -72,6 +78,7 @@ one line in loop-run-log.md. Stop when every box is checked.
 - **Limit:** set a max of ~20 runs so it can never run forever.
 
 ### Loop 2 — The checker loop (maker ≠ checker)
+
 Never let the writer grade its own work. Run a second, read-only loop:
 
 ```
@@ -81,6 +88,7 @@ problems to review-notes.md. Do NOT edit the pages yourself.
 ```
 
 ### Loop 3 — The link-check heartbeat (scheduled)
+
 A tiny loop on a timer that keeps the repo honest all day:
 
 ```
@@ -89,6 +97,7 @@ append it to review-notes.md.
 ```
 
 ### Running multiple loops safely
+
 - Give each loop its **own state file** (`STATE.md` for the writer, `review-notes.md` for the checker) so they never fight over one file.
 - **One owner per file:** only the writer loop edits `docs/`; the checker only reads.
 - You stay the engineer: read `review-notes.md` every hour or two, fix intent problems yourself, and stand behind what ships.

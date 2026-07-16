@@ -8,7 +8,7 @@ every session and for every loop.
 ## Where things live
 
 | File / folder | Role |
-|---|---|
+| --- | --- |
 | `loop-plan.md` | Master plan — the single source of truth. Never contradict it. |
 | `days-plans/` | Per-day build plans (day1–day4). |
 | `LOOP.md` | **Main loop rulebook** — rules shared by ALL loops. No single loop owns it. |

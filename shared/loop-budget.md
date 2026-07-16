@@ -6,7 +6,7 @@
 ## Daily limits
 
 | Loop | Max runs/day | Max tokens/day | Max sub-agent spawns/run |
-|------|--------------|----------------|--------------------------|
+| ------ | -------------- | ---------------- | -------------------------- |
 | page-writer | 25 | 550k | 0 |
 | checker | 30 | 100k | 0 |
 | link-check | 20 | 50k | 0 |

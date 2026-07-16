@@ -30,7 +30,7 @@ flowchart LR
 ### T1 · Foundations — *Beginner*
 
 | | |
-|---|---|
+| --- | --- |
 | **Entry check** | You can use an AI coding agent by hand (or are willing to install one now) |
 | **You study** | [Prerequisites](prerequisites/environment-setup.md) → [Foundations](00-foundations/glossary.md) → Part 1 *(Day 2)* |
 | **Labs** | Project 1 — the watch loop |
@@ -39,7 +39,7 @@ flowchart LR
 ### T2 · Practitioner — *Intermediate*
 
 | | |
-|---|---|
+| --- | --- |
 | **Entry check** | You can name the six parts of a loop without looking |
 | **You study** | Parts 2–4 (heartbeat, body, spine) + the make-your-own-loop method *(Day 2)* |
 | **Labs** | Projects 2–4 |
@@ -48,7 +48,7 @@ flowchart LR
 ### T3 · Engineer — *Advanced*
 
 | | |
-|---|---|
+| --- | --- |
 | **Entry check** | You've assembled a working loop of your own |
 | **You study** | Parts 5–6, the prebuilt loop library, operating & safety *(Days 2–3)* |
 | **Labs** | Projects 5–8 |
@@ -57,7 +57,7 @@ flowchart LR
 ### T4 · Ultra-Pro — *Expert*
 
 | | |
-|---|---|
+| --- | --- |
 | **Entry check** | You've shipped at least one loop others rely on |
 | **You study** | `advanced/`: hill-climbing, loopcraft, multi-loop coordination, enterprise governance *(Day 3)* |
 | **Labs** | Fleet drills + the certification capstone |
@@ -104,7 +104,7 @@ doesn't graduate a track. Building does.)
 ## When it goes wrong
 
 | Symptom | Cause | Fix |
-|---|---|---|
+| --- | --- | --- |
 | Stuck mid-track, pages feel abstract | Skipped the labs | Do the track's first lab before reading further |
 | Passed the exit but production loops still scare you | Exit done in a toy repo only | Re-run the assessment on a real (low-stakes) repo |
 | Team members all claim different tracks | Self-assessment drift | Use entry checks as a shared bar — they're verifiable in minutes |

@@ -17,7 +17,7 @@ these as features you use by hand. Here's the shift: each one maps to a part of 
 loop's anatomy.
 
 | Primitive | Hand-driven use | **Loop use (the upgrade)** |
-|---|---|---|
+| --- | --- | --- |
 | Plan mode | preview a risky change | rehearse a whole loop at L1 before granting L2 |
 | Permissions | avoid annoying prompts | the L1→L3 ladder; the loop's hard boundary |
 | Context | paste in the right files | keep each beat cheap; the spine is read first |
@@ -97,7 +97,7 @@ guarantee end up in prose?
 ## When it goes wrong
 
 | Symptom | Cause | Fix |
-|---|---|---|
+| --- | --- | --- |
 | Loop reinvents scheduling/state in custom scripts | Assembly treated as invention | Use the tool's heartbeat + a plain state file first |
 | Checker agrees with the maker suspiciously often | Same session graded its own work | Move the checker to a separate subagent (or separate loop) |
 | Guardrail held for weeks, failed once at 3 a.m. | It was a rule, not a hook | Promote guarantees to permissions/hooks |
