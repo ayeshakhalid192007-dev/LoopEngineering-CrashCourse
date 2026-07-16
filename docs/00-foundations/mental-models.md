@@ -25,20 +25,31 @@ loop's job.
 ## Model 2 — two loops share the name
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':12}}}%%
 flowchart TD
-    subgraph OUTER ["The BIG loop (you design this — the course)"]
+    subgraph OUTER ["🔧  The BIG loop — you design this"]
       direction LR
-      T[Pick the task] --> R[Run the agent]
-      R --> G[Grade the output]
-      G --> M[Record to memory]
-      M --> D{Done, provably?}
+      T("Pick the task"):::step --> R("Run the agent"):::step
+      R --> G("Grade the output"):::step
+      G --> M("Record to memory"):::step
+      M --> D{"Done,<br/>provably?"}:::gate
       D -->|no| T
-      D -->|yes| S[STOP]
+      D -->|yes| S(["✓ STOP"]):::stop
     end
-    subgraph INNER ["The small loop (built into your agent)"]
-      C[context] --> TC[tool calls] --> RES[results] --> C
+    subgraph INNER ["⚙️  The small loop — built into your agent"]
+      direction LR
+      C("context"):::inner --> TC("tool calls"):::inner --> RES("results"):::inner --> C
     end
-    R -.->|one inner run =<br/>one BEAT of the outer| INNER
+    R -.->|"one inner run =<br/>one BEAT of the outer"| INNER
+    classDef step fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
+    classDef gate fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
+    classDef stop fill:#ecfdf5,stroke:#10b981,stroke-width:1.5px,color:#065f46;
+    classDef inner fill:#f1f5f9,stroke:#94a3b8,stroke-width:1.5px,color:#334155;
+    style OUTER fill:#fbfbff,stroke:#c7d2fe,stroke-width:1.5px,color:#4338ca;
+    style INNER fill:#f8fafc,stroke:#cbd5e1,stroke-width:1.5px,color:#475569;
+    linkStyle 4 stroke:#f59e0b,stroke-width:1.5px;
+    linkStyle 5 stroke:#10b981,stroke-width:1.5px;
+    linkStyle 9 stroke:#6366f1,stroke-width:1.5px;
 ```
 
 The **small/inner loop** is the agent's own `context → tool calls → results → repeat`

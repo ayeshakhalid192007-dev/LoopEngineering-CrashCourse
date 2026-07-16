@@ -18,11 +18,17 @@ assessment** (something you build that a rubric can grade). Finish the exit asse
 and the next track's entry check is already satisfied.
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':40,'rankSpacing':70,'padding':10}}}%%
 flowchart LR
-    T1[T1 · Foundations] -->|exit: run your first<br/>in-session loop| T2[T2 · Practitioner]
-    T2 -->|exit: a loop with a provable<br/>stop and a separate checker| T3[T3 · Engineer]
-    T3 -->|exit: the same six-part loop<br/>shipped in two tools| T4[T4 · Ultra-Pro]
-    T4 -->|capstone| C[Loop Ready certification]
+    T1("<b>T1</b><br/>Foundations"):::t1 -->|"exit: run your first<br/>in-session loop"| T2("<b>T2</b><br/>Practitioner"):::t2
+    T2 -->|"exit: a loop with a provable<br/>stop and a separate checker"| T3("<b>T3</b><br/>Engineer"):::t3
+    T3 -->|"exit: the same six-part loop<br/>shipped in two tools"| T4("<b>T4</b><br/>Ultra-Pro"):::t4
+    T4 -->|capstone| C(["🎖 Loop Ready<br/>certification"]):::cert
+    classDef t1 fill:#eef6ff,stroke:#3b82f6,stroke-width:1.5px,color:#1e40af;
+    classDef t2 fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
+    classDef t3 fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
+    classDef t4 fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
+    classDef cert fill:#ecfdf5,stroke:#10b981,stroke-width:2px,color:#065f46;
 ```
 
 ## The four tracks

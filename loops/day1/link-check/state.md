@@ -4,8 +4,8 @@
 > Definition: [`loop.md`](loop.md) · Rulebook: [`LOOP.md`](../../../LOOP.md)
 
 **Status:** ✅ stopped on **success** — clean pass, 0 broken links
-**Last beat:** 2026-07-16 11:15:12Z
-**Runs used:** 1 / 20 · **Tokens used:** ≈5k / 50k (≈10%)
+**Last beat:** 2026-07-16 17:41:10Z
+**Runs used:** 2 / 20 · **Tokens used:** ≈8k / 50k (≈16%)
 
 ---
 
@@ -31,6 +31,7 @@ are what's fragile — write them somewhere durable.
 | # | Time (Z) | Duration | Items found | Actions taken | Tokens | Outcome       |
 | - | -------- | -------- | ----------- | ------------- | ------ | ------------- |
 | 1 | 11:15:12 | 30s      | **0**       | 0             | 5k     | `report-only` |
+| 2 | 17:41:10 | 20s      | **0**       | 0             | 3k     | `report-only` |
 
 **30 seconds. 5k tokens. Zero broken links.** The cheapest beat logged all day, and it
 proved a line in the definition of done.
@@ -68,6 +69,20 @@ Worth deciding on purpose for Day 2, because the two shapes fail differently:
 ## Escalations
 
 None. ✅ fact — `escalations: 0`.
+
+## Beat 2 — post-diagram-polish link pass (2026-07-16 17:41:10Z) ✅ fact
+
+Ran right after the 11-diagram polish. Two levels of proof:
+
+1. **Diff-level** — every edit is confined to a ` ```mermaid ` fence, so the diff shows
+   zero `](…)` link lines added or removed.
+2. **Full crawl** — a real offline pass over the whole repo resolved **116 relative
+   links, 0 broken**, fragment anchors included. This is the crawl, not just the diff.
+
+`lychee` is not installed on this host, so the crawl was run with an offline
+relative-link + `#fragment` checker that mirrors CI's
+`lychee --offline --include-fragments` (same excluded paths: `skills`, `.agents`,
+`.claude`). CI still runs the real `lychee` on push. Report-only, L1.
 
 ## Handoff to Day 2
 

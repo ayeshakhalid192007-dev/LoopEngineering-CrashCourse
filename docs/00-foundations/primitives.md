@@ -28,16 +28,26 @@ loop's anatomy.
 | MCP / connectors | query a database | the loop's hands: act on issues, PRs, messages |
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
-    subgraph LOOP ["A running loop"]
-      HB[Heartbeat] --> B[Beat]
-      B --> SP[Spine update] --> LOG[Log line] --> HB
+    subgraph LOOP ["🔄  A running loop"]
+      direction LR
+      HB("Heartbeat"):::time --> B("Beat"):::beat
+      B --> SP("Spine update"):::beat --> LOG("Log line"):::beat --> HB
     end
-    RF[Rules file] -->|constitution| B
-    SK[Skills] -->|trained moves| B
-    PERM[Permissions + Hooks] -->|hard limits| B
-    SUB[Subagent checker] -->|grades| B
-    M[MCP] -->|acts on the world| B
+    RF("Rules file"):::cfg -->|constitution| B
+    SK("Skills"):::skill -->|trained moves| B
+    PERM("Permissions + Hooks"):::limit -->|hard limits| B
+    SUB("Subagent checker"):::check -->|grades| B
+    M("MCP"):::reach -->|acts on the world| B
+    classDef time fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
+    classDef beat fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
+    classDef cfg fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
+    classDef skill fill:#eef6ff,stroke:#3b82f6,stroke-width:1.5px,color:#1e40af;
+    classDef limit fill:#fff1f2,stroke:#f43f5e,stroke-width:1.5px,color:#9f1239;
+    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
+    classDef reach fill:#f1f5f9,stroke:#94a3b8,stroke-width:1.5px,color:#334155;
+    style LOOP fill:#fbfbff,stroke:#c7d2fe,stroke-width:1.5px,color:#4338ca;
 ```
 
 ## Assembly example — the same tiny loop, twice

@@ -22,11 +22,18 @@ the map that stops that.
    it's done. Fails by *management*: wrong task, wrong time, no real stop.
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':50,'rankSpacing':50,'padding':10}}}%%
 flowchart TD
-    LOOP[4 · LOOP — what, when, done?] --> HARNESS[3 · HARNESS — tools, permissions, hooks]
-    HARNESS --> CONTEXT[2 · CONTEXT — what the model sees]
-    CONTEXT --> PROMPT[1 · PROMPT — the words]
+    LOOP("<b>4 · Loop</b><br/>what · when · done?"):::l4 --> HARNESS("<b>3 · Harness</b><br/>tools · permissions · hooks"):::l3
+    HARNESS --> CONTEXT("<b>2 · Context</b><br/>what the model sees"):::l2
+    CONTEXT --> PROMPT("<b>1 · Prompt</b><br/>the words you send"):::l1
     PROMPT -.->|result flows back up| LOOP
+    classDef l1 fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
+    classDef l2 fill:#eef6ff,stroke:#3b82f6,stroke-width:1.5px,color:#1e40af;
+    classDef l3 fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
+    classDef l4 fill:#ecfdf5,stroke:#10b981,stroke-width:1.5px,color:#065f46;
+    linkStyle 0,1,2 stroke:#cbd5e1,stroke-width:2px;
+    linkStyle 3 stroke:#10b981,stroke-width:1.5px;
 ```
 
 **Debug top-down in blame, bottom-up in fixes:** when a loop misbehaves, ask *which

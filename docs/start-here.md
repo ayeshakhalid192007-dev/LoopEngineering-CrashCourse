@@ -18,15 +18,21 @@ exit assessment. You graduate a track by *building* something, not by reading.
 ## Find your track
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
 flowchart TD
-    A[Do you use an AI coding agent<br/>— Claude Code, OpenCode, Codex, Grok?] -->|"No / only chat"| T1
-    A -->|Yes, by hand| B[Can you name the six parts<br/>of a loop?]
-    B -->|No| T1[T1 · Foundations]
-    B -->|Yes| C[Have you built and run<br/>a loop of your own?]
-    C -->|No| T2[T2 · Practitioner]
-    C -->|Yes| D[Do you run several loops,<br/>or set policy for a team?]
-    D -->|No| T3[T3 · Engineer]
-    D -->|Yes| T4[T4 · Ultra-Pro]
+    A("Do you use an AI coding agent?<br/>Claude Code · OpenCode · Codex · Grok"):::q -->|"no / only chat"| T1
+    A -->|"yes, by hand"| B("Can you name the six parts<br/>of a loop?"):::q
+    B -->|no| T1(["<b>T1</b> · Foundations"]):::t1
+    B -->|yes| C("Have you built and run<br/>a loop of your own?"):::q
+    C -->|no| T2(["<b>T2</b> · Practitioner"]):::t2
+    C -->|yes| D("Do you run several loops,<br/>or set policy for a team?"):::q
+    D -->|no| T3(["<b>T3</b> · Engineer"]):::t3
+    D -->|yes| T4(["<b>T4</b> · Ultra-Pro"]):::t4
+    classDef q fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
+    classDef t1 fill:#eef6ff,stroke:#3b82f6,stroke-width:1.5px,color:#1e40af;
+    classDef t2 fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
+    classDef t3 fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
+    classDef t4 fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
 ```
 
 | Your answer | Go to | First stop |
