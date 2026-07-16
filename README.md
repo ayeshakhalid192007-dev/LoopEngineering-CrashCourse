@@ -33,7 +33,7 @@ the course website (single source of truth — the two never diverge).
 It places you on one of four tracks:
 
 | Track | You are… | You'll learn to… |
-|-------|----------|------------------|
+| ------- | ---------- | ------------------ |
 | **T1 · Foundations** | using an AI agent by hand (or not yet) | explain the shift and run your first in-session loop |
 | **T2 · Practitioner** | fluent in the six parts of a loop | choose a heartbeat, write a provable stop, split maker/checker |
 | **T3 · Engineer** | able to assemble a loop | build the full six-part loop in two tools and operate it safely |
@@ -66,7 +66,7 @@ Full map with entry checks and exit assessments:
 **The 14-step roadmap** *(content lands over the next days — links activate as parts ship)*:
 
 | Part | Steps | What you learn |
-|------|-------|----------------|
+| ------ | ------- | ---------------- |
 | 1 · The Shift | 01–03 | prompting → looping, the four layers, anatomy of a loop |
 | 2 · The Heartbeat | 04–07 | in-session, run-until-done, schedules, event-driven |
 | 3 · The Body | 08–11 | worktrees, skills, connectors/MCP, maker ≠ checker |
@@ -81,7 +81,7 @@ certification capstone.
 ## What's in the repo
 
 | Folder | What it holds |
-|--------|---------------|
+| -------- | --------------- |
 | `docs/` | the course — single source of truth for GitHub *and* the website |
 | `patterns/` | the seven core loop patterns *(Day 2+)* |
 | `starters/` | clone-and-run starter kits *(Day 3)* |

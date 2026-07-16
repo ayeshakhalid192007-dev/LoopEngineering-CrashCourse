@@ -7,6 +7,7 @@
 ## What to build today (in order)
 
 ### 1. The 14 step pages (the heart of the course)
+
 Every step page follows the SAME template, so this is perfect loop work:
 > hook → plain explanation → mermaid diagram → dual-tool code tabs (Claude Code ↔ OpenCode) → check-yourself quiz → try-with-AI exercise → when-it-goes-wrong box
 
@@ -18,17 +19,20 @@ Every step page follows the SAME template, so this is perfect loop work:
 - [ ] **Part 6 — Human Control:** step 14 (+ cost-management, verification, three-nested-loops pages)
 
 ### 2. Per-part assessments
+
 - [ ] One `quiz.md` per part (6 total)
 - [ ] One `flashcards.md` per part (5 total — part 5 has no flashcards)
 - [ ] A `README.md` index page per part
 
 ### 3. The methods pages
+
 - [ ] `methods/make-your-own-loop.md` — the A–F method
 - [ ] `methods/loop-design-checklist.md`
 - [ ] `methods/pattern-picker.md`
 - [ ] `methods/decision-framework.md`
 
 ### 4. The operating pages
+
 - [ ] `operating/anti-patterns.md`
 - [ ] `operating/failure-modes.md`
 - [ ] `operating/recovery-playbook.md` (the 5-step playbook)
@@ -39,6 +43,7 @@ Every step page follows the SAME template, so this is perfect loop work:
 ---
 
 ## ✅ Day 2 checkpoint (done when…)
+
 The whole T1–T3 course body reads well on GitHub — every step page has a diagram, dual-tool code, a self-check, an exercise, and a troubleshooting box.
 
 ---
@@ -48,6 +53,7 @@ The whole T1–T3 course body reads well on GitHub — every step page has a dia
 Today is ~35 pages that all share one template. This is the best loop day of the project — the work is repetitive and the "done" test is clear.
 
 ### Loop 1 — The step-writer loop (run-until-done)
+
 Update `STATE.md` with today's page list, then:
 
 ```
@@ -61,6 +67,7 @@ Stop when all step pages are checked.
 - **Limit:** max ~25 runs.
 
 ### Loop 2 — The template-checker loop (the grader)
+
 A separate read-only checker with a clear rubric:
 
 ```
@@ -73,6 +80,7 @@ review-notes.md with one line saying what is missing. Read-only — never fix.
 Failed pages go back on the writer loop's list. This is the **maker–checker** split: the writer never grades itself.
 
 ### Loop 3 — The quiz-and-flashcards loop (parallel, isolated)
+
 Quizzes don't touch the step pages, so a second maker can run in parallel — in its **own worktree** so the two writers never collide:
 
 ```
@@ -82,9 +90,11 @@ Track progress in quiz-state.md. Stop when all 6 parts are covered.
 ```
 
 ### Loop 4 — The link-check heartbeat (keep it from Day 1)
+
 Same 30-minute scheduled loop as yesterday — it just keeps running.
 
 ### Running multiple loops safely today
+
 - **Isolation:** two makers (steps writer, quiz writer) = two worktrees.
 - **Separate spines:** `STATE.md`, `quiz-state.md`, `review-notes.md` — one owner each.
 - **Order matters:** the quiz loop only picks up parts the checker marked PASS.

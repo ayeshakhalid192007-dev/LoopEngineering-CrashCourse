@@ -139,10 +139,10 @@ boundary [concepts.md](concepts.md) teaches.
 ## When it goes wrong
 
 | Symptom | Cause | Fix |
-|---|---|---|
+| --- | --- | --- |
 | Team uses "loop" for both cycles | Inner/outer distinction not shared | Point them at **beat**: one inner run = one outer beat |
 | "It has a stopping condition" (it's "when it looks done") | Vibe wearing a spec's name | A stop must be one of the three: success, limit, no-progress |
-| Glossary drift — pages redefine terms locally | Definitions duplicated instead of linked | Define once here; pages link, never restate
+| Glossary drift — pages redefine terms locally | Definitions duplicated instead of linked | Define once here; pages link, never restate |
 
 *Adapted terminology is credited in [../../resources/sources.md](../../resources/sources.md)
 (notably sources 1, 5, 6, 7).*

@@ -98,7 +98,7 @@ course starts in.
 ## When it goes wrong
 
 | Symptom | Cause | Fix |
-|---|---|---|
+| --- | --- | --- |
 | `command not found` after install | Shell PATH not reloaded | Open a new terminal, or re-source your shell profile |
 | Agent installs but won't authenticate | Corporate proxy / expired session | Re-run the tool's auth command; check its live docs' networking page |
 | `npm install -g` permission errors | Global installs need elevated rights | Use a version manager (nvm/fnm) instead of system node |

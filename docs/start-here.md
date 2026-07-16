@@ -30,7 +30,7 @@ flowchart TD
 ```
 
 | Your answer | Go to | First stop |
-|---|---|---|
+| --- | --- | --- |
 | "I prompt an AI by hand (or not at all)" | **T1 · Foundations** | [prerequisites/environment-setup.md](prerequisites/environment-setup.md) |
 | "I know the six parts, never shipped a loop" | **T2 · Practitioner** | Part 2 · The Heartbeat *(opens Day 2)* |
 | "I've shipped one loop" | **T3 · Engineer** | Part 5 · A Complete Loop *(opens Day 2)* |
@@ -87,7 +87,7 @@ has a real stopping condition. That judgment is the course's core skill.
 ## When it goes wrong
 
 | Symptom | Cause | Fix |
-|---|---|---|
+| --- | --- | --- |
 | "Every track feels partly right" | Skills are lopsided (deep on tools, new to loops) | Take the *lowest* track that has anything new; entry checks are fast |
 | "T1 feels too slow" | You skipped the entry check | Each track lists what you may skip — skip pages, not labs |
 | "I picked T3 and I'm lost" | Missing the Part 2–4 vocabulary | Drop back one track; the exit assessment will confirm when you're ready |

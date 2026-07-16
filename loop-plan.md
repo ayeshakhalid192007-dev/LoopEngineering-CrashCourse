@@ -3,7 +3,7 @@
 **A complete, production-ready learning system for Loop Engineering, shipped as a GitHub-browsable markdown repository and a custom Next.js website, built from nine primary sources in a four-day delivery window.**
 
 | | |
-|---|---|
+| --- | --- |
 | **Document type** | Master plan / build specification (single source of truth) |
 | **Version** | 2.0 |
 | **Last updated** | 2026-07-15 |
@@ -17,6 +17,7 @@
 ## Table of Contents
 
 **Part I — Vision & Scope**
+
 1. [Executive summary](#1-executive-summary)
 2. [Goals and non-goals](#2-goals-and-non-goals)
 3. [The two deliverables](#3-the-two-deliverables)
@@ -75,6 +76,7 @@ The content is written **once** in `docs/` and rendered by both surfaces, so the
 ## 2. Goals and non-goals
 
 **Goals**
+
 - Teach Loop Engineering from zero to advanced, faithfully to the nine sources.
 - Ship a repo whose *material completeness* matches the reference repo (docs, per-tool examples, tools, patterns, starters, templates, stories, resources).
 - Provide a **large library of prebuilt custom loops** across categories and tools, each production-shaped (success condition, limit, isolation, checker, spine, human gate, logging).
@@ -82,6 +84,7 @@ The content is written **once** in `docs/` and rendered by both surfaces, so the
 - Be honest about mechanics that change weekly; frame commands as pointers to live docs.
 
 **Non-goals**
+
 - We do not fork or republish the reference repo wholesale; we author our own course and adapt only MIT files with attribution.
 - We do not maintain the `loop-*` CLIs as new software; we document them and show usage.
 - We do not target every tool for every loop in v1 (see the tool-coverage policy in §16).
@@ -101,6 +104,7 @@ A Next.js (App Router) site that renders `docs/` as an interactive course: sideb
 **Primary audience.** Developers already comfortable with an AI coding agent (Claude Code, OpenCode, Codex, Grok, Cursor, Windsurf) who want to graduate from operating an agent to engineering autonomous loops. **Secondary audience.** Technical leads evaluating loops for a team; non-coding professionals who will use the concepts with document-based tools.
 
 **On completion, a learner can:**
+
 1. Explain the prompting → looping shift and where human value moves (intent, accountability).
 2. Name and apply the six parts of a loop.
 3. Select the correct heartbeat for a task and write a provable stopping condition.
@@ -116,7 +120,7 @@ A Next.js (App Router) site that renders `docs/` as an interactive course: sideb
 ## 5. The nine primary sources
 
 | # | Source | Provenance | Role |
-|---|--------|-----------|------|
+| --- | -------- | ----------- | ------ |
 | 1 | **Panaversity — Loop Engineering: A Crash Course** | agentfactory.panaversity.org | Backbone: 15 concepts / 6 parts / 8 projects / Routines appendix |
 | 2 | **Panaversity — Agentic Coding Crash Course** | companion chapter | The primitives loops are built from (plan mode, permissions, context, rules file, skills, hooks, subagents, MCP) |
 | 3 | **Panaversity — Spec-Driven Development** | companion chapter | Why stopping conditions work: vibe-vs-spec, the constitution, the 4-phase method |
@@ -140,12 +144,14 @@ Full attribution lives in `resources/sources.md` and the website Sources page. A
 For roughly two years, using a coding agent meant holding the tool one turn at a time: write a prompt, read the result, type the next thing. Loop Engineering replaces *the operator* with a small system that finds the work, hands it out, checks it, records what happened, and decides what is next — prompting the agent on your behalf. You design it once; it runs on its own.
 
 The human's value does not vanish; it concentrates at the two ends a loop cannot own:
+
 - **Intent** — stating what you want precisely enough that the result can be *checked*.
 - **Accountability** — standing behind what ships.
 
 ## 7. The four layers and the two loops
 
 **Four engineering layers**, each wrapping the previous and preventing a distinct failure:
+
 1. **Prompt** — the words you send.
 2. **Context** — everything the model sees in one turn.
 3. **Harness** — the code around the model (tool execution, error handling). *The inner loop lives here.*
@@ -156,7 +162,7 @@ The human's value does not vanish; it concentrates at the two ends a loop cannot
 ## 8. The six parts of a loop
 
 | Part | Metaphor | Job in the loop |
-|------|----------|-----------------|
+| ------ | ---------- | ----------------- |
 | Heartbeat | starts the beat | schedule or event that fires each run |
 | Worktree | — | isolation so parallel agents do not collide |
 | Skill | — | project knowledge written once, read each run |
@@ -195,7 +201,7 @@ Every concept page follows one repeatable structure so ideas land and transfer:
 The system is a **graded curriculum**, not a flat set of pages. Four tracks take a learner from never-having-built-a-loop to designing and governing loop *fleets*. Each track has an entry check, a body of study, hands-on labs, and an exit assessment; you graduate a track by *building*, not by reading.
 
 | Track | Level | You start knowing… | You finish able to… | Covers |
-|-------|-------|--------------------|--------------------|--------|
+| ------- | ------- | -------------------- | -------------------- | -------- |
 | **T1 · Foundations** | Beginner | how to use an AI coding agent by hand | explain the shift and the six parts; run your first in-session loop | Prerequisites, Foundations, Part 1, Projects 1 |
 | **T2 · Practitioner** | Intermediate | the six parts | choose a heartbeat, write a provable stop, split maker/checker, keep a spine | Parts 2–4, Projects 2–4, the method |
 | **T3 · Engineer** | Advanced | how to assemble a loop | build the full six-part loop in two tools, pick from the prebuilt library, operate it safely | Parts 5–6, the loop library, Projects 5–8, operating/safety |
@@ -208,29 +214,35 @@ The system is a **graded curriculum**, not a flat set of pages. Four tracks take
 Each step is one `docs/` page with *what it teaches*, *key mechanics*, and *sources*.
 
 ### Part 1 — The Shift
+
 - **Step 1 · From Prompting to Looping** — the shift; intent & accountability; the prompting-vs-looping table. *(S1, S5, S8)*
 - **Step 2 · The Four Layers** — prompt→context→harness→loop; small vs big loop with the `while True` inner-loop code. *(S1, S6)*
 - **Step 3 · Anatomy of a Loop** — the six parts, metaphors, and the finish-line pseudo-code; "it's not only for code." *(S1, S2, S5)*
 
 ### Part 2 — The Heartbeat
+
 - **Step 4 · In-session loops** — `/loop`; interval syntax; `CronCreate/List/Delete`; 50-task cap, 3-day expiry, jitter, no catch-up; `CLAUDE_CODE_DISABLE_CRON`; OpenCode shell timer + `serve --attach`. *(S1, S4)*
 - **Step 5 · Conditional / run-until-done** — `/goal`; transcript-reading checker; three stops (success, limit, no-progress); the Ralph loop; doom loop; `MAX_RETRIES`/`RETRY_WATCHDOG`; OpenCode capped `for` + `steps`. Stopping condition = spec. *(S1, S3, S4)*
 - **Step 6 · Unattended schedules** — Routines (four parts: prompt, repos, connectors, trigger); daily caps; `claude/` guardrail; `claude -p` cron; Desktop tasks; OpenCode via cron/GitHub Actions. *(S1, S4, S7)*
 - **Step 7 · Event-driven** — GitHub triggers (PR/release; `synchronize`), Channels (running session + security caution), API `/fire`; dropped-not-queued caps → reconciliation sweep; `opencode github install`. *(S1, S4)*
 
 ### Part 3 — The Body
+
 - **Step 8 · Worktrees** — isolation; `--worktree`, `isolation: worktree`; `git worktree add`. *(S1, S2)*
 - **Step 9 · Skills** — cold-start problem; `SKILL.md`; tiny loop prompts; skill vs plugin. *(S1, S2)*
 - **Step 10 · Connectors (MCP)** — act vs talk; three connector rules (few focused tools, idempotent writes, actionable errors). *(S1, S2)*
 - **Step 11 · Maker–Checker** — writer ≠ grader; LLM-as-judge; cheaper read-only checker; the dynamic-workflows interlude (a workflow is the body of one beat). *(S1, S2, S6)*
 
 ### Part 4 — The Spine
+
 - **Step 12 · State between runs** — model forgets; rules file + progress file; the intern's-diary metaphor; the spine as record; the hill-climbing "loop that improves the loop"; self-learning vs self-improving. *(S1, S2, S6)*
 
 ### Part 5 — A Complete Loop, Twice
+
 - **Step 13 · Build the morning-triage loop** — all six parts joined; the shared `daily-triage/SKILL.md`, the `reviewer` agent (both tools), the Routine prompt, and the GitHub Actions workflow; the 7-item minimum-safe checklist; "one real morning." *(S1)*
 
 ### Part 6 — Human Control
+
 - **Step 14 · Staying the Engineer** — token cost, verification, comprehension debt; the three nested loops; org-scale concerns; observability ("green ≠ done"); prove-before-overnight; AI gravity. *(S1, S5, S9)*
 
 ## 12. The "build your own loop" method
@@ -272,8 +284,9 @@ A first-class page plus inline "When it goes wrong" boxes, drawn from `anti-patt
 Loops are grouped by job. Each entry ships with a `LOOP.md`, a `README.md`, a state (spine) example, one or more `SKILL.md` files, a `loop-verifier` agent, and per-tool config. Every loop declares: **heartbeat type · cadence · week-1 level (L1 report / L2 assisted / L3 unattended) · token cost · human-gate placement.**
 
 **A. Repository maintenance**
+
 | Loop | Heartbeat | Cadence | L | Cost |
-|------|-----------|---------|---|------|
+| ------ | ----------- | --------- | --- | ------ |
 | daily-triage | schedule | 1d–2h | L1 | Low |
 | ci-sweeper | schedule/event | 5–15m | L2 | Very high |
 | dependency-sweeper | schedule | 6h–1d | L2 | Medium |
@@ -283,54 +296,62 @@ Loops are grouped by job. Each entry ships with a `LOOP.md`, a `README.md`, a st
 | dead-code-sweeper | schedule | weekly | L1 | Low |
 
 **B. Pull-request & review**
+
 | Loop | Heartbeat | Cadence | L | Cost |
-|------|-----------|---------|---|------|
+| ------ | ----------- | --------- | --- | ------ |
 | pr-babysitter | schedule | 5–15m | L1 | High |
 | pr-reviewer | event (PR) | per PR | L1 | Medium |
 | auto-changelog-on-merge | event (merge) | per merge | L1 | Low |
 
 **C. Release**
+
 | Loop | Heartbeat | Cadence | L | Cost |
-|------|-----------|---------|---|------|
+| ------ | ----------- | --------- | --- | ------ |
 | changelog-drafter | schedule/tag | 1d or tag | L1 | Low |
 | release-notes-drafter | event (release) | per release | L1 | Low |
 | version-bump | conditional | on-demand | L2 | Low |
 
 **D. Issue & intake**
+
 | Loop | Heartbeat | Cadence | L | Cost |
-|------|-----------|---------|---|------|
+| ------ | ----------- | --------- | --- | ------ |
 | issue-triage | schedule | 2h–1d | L1 | Low |
 | stale-issue-closer | schedule | weekly | L1 | Low |
 | bug-reproducer | conditional | on-demand | L2 | High |
 
 **E. Documentation**
+
 | Loop | Heartbeat | Cadence | L | Cost |
-|------|-----------|---------|---|------|
+| ------ | ----------- | --------- | --- | ------ |
 | docs-freshness-check | schedule | daily | L1 | Low |
 | broken-link-sweep | schedule | daily | L1 | Low |
 | readme-sync | event (push) | per push | L1 | Low |
 | api-docs-drafter | conditional | on-demand | L2 | Medium |
 
 **F. Security**
+
 | Loop | Heartbeat | Cadence | L | Cost |
 |------|-----------|---------|---|------|
 | secret-scan | event/schedule | per push / daily | L1 | Low |
 | security-advisory-triage | schedule | daily | L2 | Medium |
 
 **G. Reporting & knowledge**
+
 | Loop | Heartbeat | Cadence | L | Cost |
-|------|-----------|---------|---|------|
+| ------ | ----------- | --------- | --- | ------ |
 | whats-changed-weekly | schedule | weekly | L1 | Low |
 | stakeholder-brief | schedule | weekly | L1 | Low |
 | competitor-changelog-watcher | schedule | daily | L1 | Low |
 | standup-summary | schedule | weekday | L1 | Low |
 
 **H. Support (human-gated)**
+
 | Loop | Heartbeat | Cadence | L | Cost |
 |------|-----------|---------|---|------|
 | support-reply-drafter | event (message) | per ticket | L1 | Medium |
 
 **I. Self-improvement (hill-climbing)**
+
 | Loop | Heartbeat | Cadence | L | Cost |
 |------|-----------|---------|---|------|
 | rules-file-improver | schedule | weekly | L1 | Low |
@@ -340,8 +361,9 @@ Loops are grouped by job. Each entry ships with a `LOOP.md`, a `README.md`, a st
 
 **J. Testing & quality assurance**
 *Applies: LangChain's verification loop — a grader checks output against a rubric and sends failures back as feedback (S6); Anthropic's early-victory rule — a checker must run the complete test suite before marking work as passed (When to use multi-agent systems).*
+
 | Loop | Heartbeat | Cadence | L | Cost |
-|------|-----------|---------|---|------|
+| ------ | ----------- | --------- | --- | ------ |
 | test-coverage-improver | conditional | on-demand | L2 | High |
 | e2e-smoke-runner | event (deploy) / schedule | per deploy / daily | L1 | Medium |
 | snapshot-updater | conditional | on-demand | L2 | Low |
@@ -349,8 +371,9 @@ Loops are grouped by job. Each entry ships with a `LOOP.md`, a `README.md`, a st
 
 **K. Infrastructure & DevOps**
 *Applies: LangChain's event-driven loop — a schedule or webhook connects the agent to your ecosystem (S6); S7's drift-detection concept (`loop-sync`), extended from loop state to infrastructure state.*
+
 | Loop | Heartbeat | Cadence | L | Cost |
-|------|-----------|---------|---|------|
+| ------ | ----------- | --------- | --- | ------ |
 | iac-drift-detector | schedule | 6h–1d | L1 | Medium |
 | container-image-updater | schedule | weekly | L2 | Medium |
 | env-config-drift-check | schedule | daily | L1 | Low |
@@ -358,8 +381,9 @@ Loops are grouped by job. Each entry ships with a `LOOP.md`, a `README.md`, a st
 
 **L. Monitoring & incident response**
 *Applies: the event-driven loop — "an event fires … and the agent runs" (S6); Google SRE incident practice — mitigate first, capture the evidence timeline — for alert-triage and incident-timeline-drafter (SRE Book, Incident Management).*
+
 | Loop | Heartbeat | Cadence | L | Cost |
-|------|-----------|---------|---|------|
+| ------ | ----------- | --------- | --- | ------ |
 | error-log-clusterer | schedule | 1–6h | L1 | Medium |
 | alert-triage | event (alert) | per alert | L1 | Medium |
 | incident-timeline-drafter | conditional | on-demand | L1 | Low |
@@ -367,40 +391,45 @@ Loops are grouped by job. Each entry ships with a `LOOP.md`, a `README.md`, a st
 
 **M. Data & database**
 *Applies: the spine — durable state that runs compound on (S1, S5) — and S7's drift detection, pointed at schemas and data instead of loop state.*
+
 | Loop | Heartbeat | Cadence | L | Cost |
-|------|-----------|---------|---|------|
+| ------ | ----------- | --------- | --- | ------ |
 | migration-drift-checker | schedule | daily | L1 | Low |
 | data-quality-sentinel | schedule | 6h–1d | L1 | Medium |
 | schema-docs-sync | event (merge) | per migration merge | L1 | Low |
 
 **N. Performance**
 *Applies: the verification loop with a measurable rubric — budget/threshold checks on PR and deploy events (S6); maker–checker with a read-only grader (S1, S2).*
+
 | Loop | Heartbeat | Cadence | L | Cost |
-|------|-----------|---------|---|------|
+| ------ | ----------- | --------- | --- | ------ |
 | bundle-size-watcher | event (PR) | per PR | L1 | Low |
 | perf-regression-detector | event (deploy) / schedule | per deploy / daily | L2 | Medium |
 | slow-query-hunter | schedule | weekly | L2 | Medium |
 
 **O. Localization & content**
 *Applies: "it's not only for code" (S1, S5) — the six-part loop shape on documents and strings; event-driven sync on push (S6).*
+
 | Loop | Heartbeat | Cadence | L | Cost |
-|------|-----------|---------|---|------|
+| ------ | ----------- | --------- | --- | ------ |
 | i18n-string-sync | event (push) | per push | L1 | Low |
 | translation-drafter | conditional | on-demand | L1 | Medium |
 | content-freshness-sweep | schedule | weekly | L1 | Low |
 
 **P. Compliance & governance**
 *Applies: S7's week-1 rule — scheduled audits stay L1 report-only; human-gated review before anything ships (S6 human-in-the-loop touchpoints).*
+
 | Loop | Heartbeat | Cadence | L | Cost |
-|------|-----------|---------|---|------|
+| ------ | ----------- | --------- | --- | ------ |
 | license-audit | schedule | weekly | L1 | Low |
 | accessibility-audit | schedule | weekly | L1 | Medium |
 | audit-log-reviewer | schedule | daily | L1 | Low |
 
 **Q. Personal & team productivity (non-coding)**
 *Applies: the non-coding loop (S1); S6's event-driven example — "a new document lands … and the agent runs"; a human gate on all outbound communication (S6).*
+
 | Loop | Heartbeat | Cadence | L | Cost |
-|------|-----------|---------|---|------|
+| ------ | ----------- | --------- | --- | ------ |
 | inbox-triage | schedule | 1–2h | L1 | Low |
 | calendar-brief | schedule | weekday | L1 | Low |
 | meeting-notes-distiller | event (recording) | per meeting | L1 | Low |
@@ -410,7 +439,7 @@ Loops are grouped by job. Each entry ships with a `LOOP.md`, a `README.md`, a st
 > **Source-verified.** Unlike J–Q (original categories grounded in source *concepts* — see the grounding note above), every entry here traces to a named *mechanism* in an official source: the reference repo's `docs/multi-loop.md` (S7, MIT), Anthropic's *Building Effective Agents* / *How we built our multi-agent research system* / *When to use multi-agent systems*, and LangChain's *The Art of Loop Engineering* (S6). Citation per loop below.
 
 | Loop | Heartbeat | Cadence | L | Cost | Verified by |
-|------|-----------|---------|---|------|-------------|
+| ------ | ----------- | --------- | --- | ------ | ------------- |
 | fleet-orchestrator | schedule | 1–6h | L1 | High | Anthropic orchestrator-workers pattern (*Building Effective Agents*; lead-agent + subagents in the multi-agent research system) |
 | loop-collision-sentinel | schedule | 5–15m | L1 | Low | S7 `multi-loop.md`: `acting_on:` collision detection + "one owner per branch" rule |
 | fleet-budget-governor | schedule | 1h–1d | L2 | Low | S7 `multi-loop.md` aggregate token budget; Anthropic's finding that multi-agent systems burn ~15× the tokens of chat |
@@ -419,6 +448,7 @@ Loops are grouped by job. Each entry ships with a `LOOP.md`, a `README.md`, a st
 | human-inbox-escalator | schedule | 1–2h | L1 | Low | S7 `multi-loop.md` "Human Inbox (ambiguous / cross-loop)" escalation section; LangChain human-in-the-loop touchpoints per loop layer |
 
 **The coordination contract (from S7 `docs/multi-loop.md`, enforced by every R loop):**
+
 1. **One owner per branch** — at most one loop may mutate a branch per hour; each loop writes `acting_on:` to its state file and skips (logging the skip) if another loop holds the target.
 2. **Separate state files by function** — `STATE.md` for triage priorities, one `<loop>-state.md` per action loop, a shared `loop-run-log.md` for observability.
 3. **Triage never competes with action** — report loops (L1) and action loops (L2+) run on independent schedules; priority order when they conflict: ci-sweeper > pr-babysitter > dependency-sweeper > post-merge-cleanup > daily-triage ("red main blocks everything").
@@ -432,6 +462,7 @@ Each loop page cross-links to the concepts it exercises and the anti-patterns it
 ## 16. Starter-kit anatomy and tool matrix
 
 **Every kit's shape** (what `loop-init` scaffolds):
+
 ```
 <loop-name>/
 ├── LOOP.md                         # what this loop does, its stops, its gate
@@ -445,6 +476,7 @@ Each loop page cross-links to the concepts it exercises and the anti-patterns it
 ```
 
 **Tool coverage policy (honest scoping for the 4-day window).** Tools mirror the reference repo's `examples/`: **Claude Code, OpenCode, Codex, Grok, Cursor, Windsurf, GitHub Actions, Hermes, OpenClaw, MCP**.
+
 - **Core loops (34 — the original 7 plus all of categories J–Q):** full kits for Claude Code, OpenCode, Codex, Grok + GitHub Actions.
 - **Extended loops (the remaining A–I entries and category R):** Claude Code + OpenCode kits, plus a per-tool `examples/` snippet and a documented porting path for the rest. R kits additionally ship the shared coordination contract (denylist block, `acting_on:` state convention, fleet budget file).
 - Every loop, whatever its coverage, is validated against the Loop Ready checklist.
@@ -454,7 +486,7 @@ Each loop page cross-links to the concepts it exercises and the anti-patterns it
 Documented (not re-implemented), with real usage and links:
 
 | Tool | Purpose |
-|------|---------|
+| ------ | --------- |
 | `loop-init` | scaffold skills/state/budget/constraints; print the Loop Ready score |
 | `loop-audit` | the Loop Readiness Score CLI (`--suggest`, `--badge`) |
 | `loop-cost` | token-spend estimator |
@@ -473,6 +505,7 @@ Documented (not re-implemented), with real usage and links:
 ## 18. Practice projects and drills
 
 Eight projects (easy → capstone) plus three routine drills, each a `docs/projects/*.md` page rendered as a card (difficulty, time, concepts, "done when"). Banner on every project: **throwaway repo** and **set a limit first**.
+
 1. A watch loop · 2. Make the tests pass, then stop · 3. The morning brief with a memory · 4. A fix loop with a real checker · 5. Codify the body · 6. The doorbell loop · 7. Break it on purpose · 8. Your own daily loop (capstone). **Drills 9–11:** rehearse a routine for free · the secrets drill · the two-routine gate.
 
 ## 19. The Routines appendix
@@ -765,7 +798,7 @@ web/
 ├── public/ · tailwind.config.ts · next.config.mjs · package.json
 ```
 
-**Content-to-component mapping.** ```claude / ```opencode fences → `CodeTabs`; `> [!NOTE]/[!WARNING]` → `Callout`; `<!-- check -->` → `CheckYourself`; mermaid fences → rendered diagrams. Markdown stays clean and GitHub-readable; interactivity is layered at render time.
+**Content-to-component mapping.** ```claude /```opencode fences → `CodeTabs`; `> [!NOTE]/[!WARNING]` → `Callout`; `<!-- check -->` → `CheckYourself`; mermaid fences → rendered diagrams. Markdown stays clean and GitHub-readable; interactivity is layered at render time.
 
 ## 23. Component inventory
 
@@ -818,16 +851,19 @@ Omit the interval — Day 1 is task-shaped, not schedule-shaped, so let the mode
 If you prefer to watch the first beats, run the same prompt as a plain (non-loop) session for outcome 1, confirm the shape is right, then hand outcomes 2–4 to `/loop` — this is the "prove it, then let go" graduation from §12, applied to the build itself.
 
 ### Day 2 — Write the full 14-step course + assessments per part
+
 - Author all 14 step pages (hook → explanation → mermaid → dual-tool code → check → exercise → troubleshooting), each part's `quiz.md` and `flashcards.md`, plus `methods/` (make-your-own-loop, checklist, pattern-picker, decision-framework) and `operating/` (anti-patterns, failure-modes, recovery-playbook, safety, observability, multi-loop).
 - **Checkpoint:** the entire conceptual course (T1–T3 body) is complete and readable on GitHub, with quizzes and flashcards.
 
 ### Day 3 — Loop library + labs + advanced tier + certification
+
 - Build the Prebuilt Loop Library (Part V): the 34 core loops (original 7 + categories J–Q) with full multi-tool kits; extended A–I loops and the six category-R fleet loops for Claude Code + OpenCode; `patterns/registry.yaml`; `examples/` per-tool; `skills/`, `templates/`; adapted `stories/`.
 - Author `projects/` (8 labs + 3 drills + reference `solutions/`), the Routines appendix, `appendix/cheatsheets/`, the **ultra-pro `advanced/` tier** (hill-climbing, loopcraft, evals/traces, multi-loop coordination, enterprise scale, governance, authoring-your-own-loop), and `assessments/` (final exam, capstone rubric, certification).
 - Run link-check + registry-validate + loop-ready-audit.
 - **Checkpoint:** Deliverable 1 (the full GitHub learning system, T1→T4) is **feature-complete and production-ready**.
 
 ### Day 4 — Build the website + polish + ship
+
 - Scaffold `web/`; `lib/content.ts` renders `../docs`; content-to-component mapping; landing hero; `TrackSelector` + `ProgressTracker`; interactive `LoopBrowser` + `StarterViewer` + `LoopReadyChecklist`; graded `Quiz` + `Flashcards`; `CertificateGenerator`; diagrams.
 - Responsive + accessibility + light/dark pass; OG images; deploy; verify GitHub and site stay in sync from `docs/`.
 - **Checkpoint:** both deliverables live, all nine sources attributed, production-ready.
@@ -839,6 +875,7 @@ If you prefer to watch the first beats, run the same prompt as a plain (non-loop
 ## 26. Quality gates and CI
 
 `.github/workflows/` enforce, on every push/PR:
+
 - **link-check** — no broken relative or external links in `docs/`.
 - **registry-validate** — `patterns/registry.yaml` matches the loop kits and schema.
 - **loop-ready-audit** — every kit satisfies the 7-item checklist (dogfooding the Loop Ready score).
@@ -848,13 +885,16 @@ If you prefer to watch the first beats, run the same prompt as a plain (non-loop
 ## 27. Production-readiness definition of done
 
 **Deliverable 1 (GitHub markdown course)**
+
 - README + `docs/` roadmap complete: all 14 steps, method, anti-patterns/failure-modes/recovery-playbook/safety/operating/multi-loop, glossary, concepts, primitives (+matrix), projects (+drills), Routines appendix.
 - `patterns/`, `starters/`, `skills/`, `templates/`, `examples/`, `stories/`, `resources/` populated with real, copy-and-run, attributed files; the prebuilt loop library (Part V) present; mermaid diagrams render; all links pass CI.
 
 **Deliverable 2 (website)**
+
 - `web/` renders every `docs/` file; nav/progress/theme work; content-to-component mapping produces code tabs, callouts, checks, diagrams; the loop browser, starter viewer, and Loop Ready checklist work; responsive; passes a basic accessibility check; deployed.
 
 **Both**
+
 - Content lives once in `docs/` and stays in sync across GitHub and the site.
 - All nine sources attributed; MIT files carry attribution.
 - Every step page has a diagram, dual-tool code, a self-check, an exercise, and a troubleshooting box.

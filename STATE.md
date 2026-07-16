@@ -19,7 +19,7 @@ Last updated: 2026-07-16 (Day 1 checkpoint declared)
 ## Per-loop spines (Day 1)
 
 | Loop | State file |
-|------|-----------|
+| ------ | ----------- |
 | page-writer | `loops-day1/page-writer/state.md` |
 | checker | `loops-day1/checker/state.md` |
 | link-check | `loops-day1/link-check/state.md` |

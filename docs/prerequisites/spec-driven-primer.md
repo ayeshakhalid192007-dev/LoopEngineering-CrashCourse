@@ -39,7 +39,7 @@ flowchart TD
 ## The 4-phase method
 
 | Phase | You produce | Test of quality |
-|---|---|---|
+| --- | --- | --- |
 | 1 · Specify | What & why, in checkable statements | Could a machine grade it? |
 | 2 · Plan | How — architecture, constraints | Does it honor the constitution? |
 | 3 · Tasks | Small, independently verifiable chunks | Can each be checked alone? |
@@ -94,7 +94,7 @@ design in this course.
 ## When it goes wrong
 
 | Symptom | Cause | Fix |
-|---|---|---|
+| --- | --- | --- |
 | Agent declares victory, work isn't done | Spec wasn't checkable ("feels done") | Restate done as a command with an exit code |
 | Agent satisfies the letter, breaks the spirit | Spec without a constitution | Add standing rules: what must never change |
 | Perfect spec, chaotic execution | Skipped the plan/tasks phases | Break the work into independently verifiable chunks |

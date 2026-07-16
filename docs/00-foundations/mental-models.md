@@ -50,7 +50,7 @@ run is **one beat** of the outer loop.
 ## Model 3 — the loop as a body
 
 | Body part | Loop part | Job |
-|---|---|---|
+| --- | --- | --- |
 | Heart | **Heartbeat** | starts each beat (schedule, event, condition) |
 | Spine | **State file** | durable memory so runs compound, not restart |
 | Hands | **Connectors (MCP)** | act on the world, not just suggest |
@@ -90,7 +90,7 @@ decides it's finished — is exactly the gap the outer loop exists to close.
 ## When it goes wrong
 
 | Symptom | Cause | Fix |
-|---|---|---|
+| --- | --- | --- |
 | "The agent said done but it isn't" | Trusted the inner loop's self-stop | Add an outer-loop checker with a machine-checkable stop |
 | Same mistake every morning | No spine — each run starts amnesiac | Add a state file; read it first, update it every beat |
 | You babysit every run anyway | Intent was never made checkable | Rewrite the goal as a spec (see the [spec-driven primer](../prerequisites/spec-driven-primer.md)) |

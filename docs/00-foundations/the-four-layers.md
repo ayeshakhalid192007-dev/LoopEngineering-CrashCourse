@@ -82,7 +82,7 @@ Grade its self-diagnosis against the failure signatures above.
 ## When it goes wrong
 
 | Symptom | Layer | Fix |
-|---|---|---|
+| --- | --- | --- |
 | Two readings of the task, agent picked the wrong one | Prompt | Restate with one checkable meaning |
 | Agent "forgot" a critical constraint mid-run | Context | Move it to the rules file; shrink the noise |
 | Agent edited a file it never should have touched | Harness | Narrow write permissions; add a hook |

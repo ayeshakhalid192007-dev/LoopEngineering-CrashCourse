@@ -17,7 +17,7 @@ the tool's live docs (linked in the header). **Memorize rows, look up cells.**
 ## The matrix
 
 | Primitive | Claude Code ([docs](https://docs.claude.com/en/docs/claude-code)) | OpenCode ([docs](https://opencode.ai/docs)) | Codex (OpenAI docs) | Grok (xAI docs) |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **Rules file** | `CLAUDE.md` | `AGENTS.md` | `AGENTS.md` | `.grok/GROK.md` |
 | **Permissions** | permission modes, `/permissions` | `opencode.json` → `permission` | approval modes / sandbox | permission prompts |
 | **Plan mode** | plan mode (shift+tab) | `plan` agent | plan/suggest mode | read-only mode |
@@ -71,7 +71,7 @@ attribution-grade contribution to this repo.
 ## When it goes wrong
 
 | Symptom | Cause | Fix |
-|---|---|---|
+| --- | --- | --- |
 | Command from a cell fails | Cell rot — mechanics moved on | Tool's live docs win; file a `content-fix` issue |
 | A tool "has no" primitive you need | Different name, same shape | Read the whole column; check the tool's changelog |
 | Team split across tools can't share loops | Loops written in one dialect | Write loops as six-part declarations; port per-column |
