@@ -59,8 +59,8 @@ flowchart LR
 
 | Path | Owner (only writer) | Everyone else |
 | ------ | -------------------- | --------------- |
-| `docs/part-*` step pages + `README.md`, `docs/methods/`, `docs/operating/` | **step-writer** (Day 2) | read-only |
-| `docs/part-*/quiz.md`, `docs/part-*/flashcards.md` | **quiz-writer** (Day 2) | read-only |
+| `docs/*-part-*` step pages + `README.md`, `docs/09-methods/`, `docs/10-operating/` | **step-writer** (Day 2) | read-only |
+| `docs/*-part-*/quiz.md`, `docs/*-part-*/flashcards.md` | **quiz-writer** (Day 2) | read-only |
 | `docs/` Day 1 entry layer (foundations, prerequisites, routers) | **page-writer** (retired) | read-only |
 | `loops/day2/step-writer/state.md` | **step-writer** | read-only |
 | `loops/day2/template-checker/state.md` | **template-checker** | read-only |

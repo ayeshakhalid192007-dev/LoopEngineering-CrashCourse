@@ -1,0 +1,38 @@
+# Course Contents — read in folder order
+
+> New here? Open **[start-here.md](start-here.md)** — the 60-second router that
+> places you on a track. The folders below are numbered in reading order, so the
+> listing above *is* the syllabus.
+
+```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+flowchart LR
+    R("start-here<br/>60-second router"):::route --> P("01 prerequisites<br/>02 foundations"):::prep
+    P --> S("03–08<br/>Parts 1–6 · the 14 steps"):::core
+    S --> M("09 methods<br/>10 operating"):::adv
+    classDef route fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
+    classDef prep fill:#eef6ff,stroke:#3b82f6,stroke-width:1.5px,color:#1e40af;
+    classDef core fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
+    classDef adv fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
+```
+
+## The sequence
+
+| # | Folder | What it teaches |
+| - | ------ | --------------- |
+| — | [start-here.md](start-here.md) | The 60-second router: find your track |
+| — | [learning-tracks.md](learning-tracks.md) | The four tracks (T1–T4) with entry checks |
+| 01 | [01-prerequisites/](01-prerequisites/environment-setup.md) | Tool setup + agentic-coding and spec-driven primers |
+| 02 | [02-foundations/](02-foundations/mental-models.md) | Vocabulary: the six loop parts, four layers, glossary |
+| 03 | [03-part-1-the-shift/](03-part-1-the-shift/README.md) | Steps 1–3 · from prompting to looping |
+| 04 | [04-part-2-heartbeat/](04-part-2-heartbeat/README.md) | Steps 4–7 · what makes a loop run again |
+| 05 | [05-part-3-the-body/](05-part-3-the-body/README.md) | Steps 8–11 · worktrees, skills, MCP, maker–checker |
+| 06 | [06-part-4-the-spine/](06-part-4-the-spine/README.md) | Step 12 · state that survives between runs |
+| 07 | [07-part-5-complete-loop/](07-part-5-complete-loop/README.md) | Step 13 · build the same loop twice (both tools) |
+| 08 | [08-part-6-human-control/](08-part-6-human-control/README.md) | Step 14 · cost, verification, staying the engineer |
+| 09 | [09-methods/](09-methods/make-your-own-loop.md) | The A–F method: design a loop of your own |
+| 10 | [10-operating/](10-operating/operating-loops.md) | Running loops for real: safety, failure modes, fleets |
+
+Each part folder ends with a `quiz.md` (bar: 4 of 5) and, except Part 5, a
+`flashcards.md` deck. Sources are credited in
+[../resources/sources.md](../resources/sources.md).

@@ -6,14 +6,14 @@
 
 ## The six parts
 
-| Part                   | This loop                                                                                                     |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------- |
-| **Heartbeat**          | Conditional — run-until-done over the six parts, gated on checker PASS per part.                              |
-| **Body**               | May write **only** `docs/part-*/quiz.md` and `docs/part-*/flashcards.md`. Own `state.md`. Run-log appends.    |
-| **Spine**              | [`state.md`](state.md) — which parts are covered.                                                             |
-| **Stopping condition** | All 6 quizzes + all 5 flashcard sets exist (part 5 has no flashcards). Machine-checkable.                     |
-| **Checker**            | The [`template-checker`](../template-checker/loop.md) grades quiz/flashcard format too.                       |
-| **Human gate**         | The human merges/approves at the Day 2 checkpoint.                                                            |
+| Part                   | This loop                                                                                                      |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------- |
+| **Heartbeat**          | Conditional — run-until-done over the six parts, gated on checker PASS per part.                               |
+| **Body**               | May write **only** `docs/*-part-*/quiz.md` and `docs/*-part-*/flashcards.md`. Own `state.md`. Run-log appends. |
+| **Spine**              | [`state.md`](state.md) — which parts are covered.                                                              |
+| **Stopping condition** | All 6 quizzes + all 5 flashcard sets exist (part 5 has no flashcards). Machine-checkable.                      |
+| **Checker**            | The [`template-checker`](../template-checker/loop.md) grades quiz/flashcard format too.                        |
+| **Human gate**         | The human merges/approves at the Day 2 checkpoint.                                                             |
 
 **Level: L2 (assisted)** — same basis as `step-writer`.
 
@@ -61,12 +61,12 @@ Source: [`shared/loop-budget.md`](../../../shared/loop-budget.md).
 
 ## Ownership
 
-| Path                                               | This loop's access     |
-| -------------------------------------------------- | ---------------------- |
-| `docs/part-*/quiz.md`, `docs/part-*/flashcards.md` | **write** (sole owner) |
-| `loops/day2/quiz-writer/state.md`                  | **write** (sole owner) |
-| `shared/loop-run-log.md`                           | **append-only**        |
-| everything else                                    | read-only              |
+| Path                                                   | This loop's access     |
+| ------------------------------------------------------ | ---------------------- |
+| `docs/*-part-*/quiz.md`, `docs/*-part-*/flashcards.md` | **write** (sole owner) |
+| `loops/day2/quiz-writer/state.md`                      | **write** (sole owner) |
+| `shared/loop-run-log.md`                               | **append-only**        |
+| everything else                                        | read-only              |
 
 ## The three valid stops
 

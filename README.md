@@ -1,3 +1,4 @@
+
 <!-- HERO-START -->
 
 # Loop Engineering Crash Course
@@ -42,44 +43,26 @@ It places you on one of four tracks:
 Full map with entry checks and exit assessments:
 [`docs/learning-tracks.md`](docs/learning-tracks.md)
 
-## Your journey through the course
-
-```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
-flowchart LR
-    R("60-second router<br/>start-here"):::route --> P("Prerequisites<br/>setup + 2 primers"):::prep
-    P --> F("Foundations<br/>6 pages"):::prep
-    F --> S("The 14 steps<br/>Parts 1–6"):::core
-    S --> M("Methods +<br/>operating handbook"):::core
-    M --> L("Loop library<br/>+ graded labs"):::adv
-    L --> C(["🏅 Loop Ready<br/>certification"]):::cert
-    classDef route fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
-    classDef prep fill:#eef6ff,stroke:#3b82f6,stroke-width:1.5px,color:#1e40af;
-    classDef core fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef adv fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
-    classDef cert fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
-```
-
 ## Quickstart
 
-1. **Set up your agent** — [`docs/prerequisites/environment-setup.md`](docs/prerequisites/environment-setup.md)
+1. **Set up your agent** — [`docs/01-prerequisites/environment-setup.md`](docs/01-prerequisites/environment-setup.md)
    (Claude Code, OpenCode, Codex, or Grok; every lesson shows at least Claude Code ↔ OpenCode).
-2. **Speed-run the primers** — [`agentic-coding-primer.md`](docs/prerequisites/agentic-coding-primer.md)
-   and [`spec-driven-primer.md`](docs/prerequisites/spec-driven-primer.md).
+2. **Speed-run the primers** — [`agentic-coding-primer.md`](docs/01-prerequisites/agentic-coding-primer.md)
+   and [`spec-driven-primer.md`](docs/01-prerequisites/spec-driven-primer.md).
 3. **Ground yourself in the foundations** — start with
-   [`mental-models.md`](docs/00-foundations/mental-models.md), keep the
-   [`glossary.md`](docs/00-foundations/glossary.md) open in a tab.
+   [`mental-models.md`](docs/02-foundations/mental-models.md), keep the
+   [`glossary.md`](docs/02-foundations/glossary.md) open in a tab.
 4. **Begin the 14 steps** (Part 1 opens Day 2 — see the roadmap below).
 
 ## The course at a glance
 
 **Foundations (read first):**
-[glossary](docs/00-foundations/glossary.md) ·
-[mental models](docs/00-foundations/mental-models.md) ·
-[concepts](docs/00-foundations/concepts.md) ·
-[the four layers](docs/00-foundations/the-four-layers.md) ·
-[primitives](docs/00-foundations/primitives.md) ·
-[primitives matrix](docs/00-foundations/primitives-matrix.md)
+[glossary](docs/02-foundations/glossary.md) ·
+[mental models](docs/02-foundations/mental-models.md) ·
+[concepts](docs/02-foundations/concepts.md) ·
+[the four layers](docs/02-foundations/the-four-layers.md) ·
+[primitives](docs/02-foundations/primitives.md) ·
+[primitives matrix](docs/02-foundations/primitives-matrix.md)
 
 **The 14-step roadmap** *(content lands over the next days — links activate as parts ship)*:
 

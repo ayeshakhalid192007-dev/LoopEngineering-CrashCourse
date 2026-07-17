@@ -29,11 +29,11 @@
 
 - [ ] `docs/start-here.md` — 60-second router: "which track am I?"
 - [ ] `docs/learning-tracks.md` — the T1 → T4 map
-- [ ] `docs/prerequisites/` — 3 pages:
+- [ ] `docs/01-prerequisites/` — 3 pages:
   - `environment-setup.md`
   - `agentic-coding-primer.md`
   - `spec-driven-primer.md`
-- [ ] `docs/00-foundations/` — 6 pages:
+- [ ] `docs/02-foundations/` — 6 pages:
   - `glossary.md`, `mental-models.md`, `concepts.md`,
   - `the-four-layers.md`, `primitives.md`, `primitives-matrix.md`
 
@@ -77,7 +77,7 @@ Make a simple checklist file first (that's your **spine**):
 ## Day 1 pages to write
 - [ ] docs/start-here.md
 - [ ] docs/learning-tracks.md
-- [ ] docs/prerequisites/environment-setup.md
+- [ ] docs/01-prerequisites/environment-setup.md
 - ... (all pages above)
 ```
 

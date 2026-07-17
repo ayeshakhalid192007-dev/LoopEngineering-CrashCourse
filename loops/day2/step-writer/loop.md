@@ -7,14 +7,14 @@
 
 ## The six parts
 
-| Part                   | This loop                                                                                                                          |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| **Heartbeat**          | Conditional — *run-until-done*. Self-paced: the next beat starts as soon as the last one finishes.                                 |
-| **Body**               | May write `docs/part-*` (except `quiz.md`/`flashcards.md`), `docs/methods/`, `docs/operating/`. Own `state.md`. Run-log appends.   |
-| **Spine**              | [`state.md`](state.md) — the Day 2 page checklist plus what was finished. Updated every beat.                                      |
-| **Stopping condition** | Every box in the Day 2 step-writer checklist is checked AND each page carries all §10 sections. Machine-checkable.                 |
-| **Checker**            | The [`template-checker`](../template-checker/loop.md) loop. **This loop never grades its own pages.**                              |
-| **Human gate**         | The human spot-reads one page per part and declares the Day 2 checkpoint. This loop never declares day-level done.                 |
+| Part                   | This loop                                                                                                                                |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **Heartbeat**          | Conditional — *run-until-done*. Self-paced: the next beat starts as soon as the last one finishes.                                       |
+| **Body**               | May write `docs/*-part-*` (except `quiz.md`/`flashcards.md`), `docs/09-methods/`, `docs/10-operating/`. Own `state.md`. Run-log appends. |
+| **Spine**              | [`state.md`](state.md) — the Day 2 page checklist plus what was finished. Updated every beat.                                            |
+| **Stopping condition** | Every box in the Day 2 step-writer checklist is checked AND each page carries all §10 sections. Machine-checkable.                       |
+| **Checker**            | The [`template-checker`](../template-checker/loop.md) loop. **This loop never grades its own pages.**                                    |
+| **Human gate**         | The human spot-reads one page per part and declares the Day 2 checkpoint. This loop never declares day-level done.                       |
 
 **Level: L2 (assisted)** — inherited from Day 1: the pattern earned L2 by running a full
 Day 1 at L1→L2 with a human watching (rule 4 of `CLAUDE.md`); the human explicitly
@@ -69,11 +69,11 @@ flowchart TD
 
 | Path                                                                 | This loop's access     |
 | -------------------------------------------------------------------- | ---------------------- |
-| `docs/part-*` step pages + `README.md` (NOT quiz/flashcards)         | **write** (sole owner) |
-| `docs/methods/`, `docs/operating/`                                   | **write** (sole owner) |
+| `docs/*-part-*` step pages + `README.md` (NOT quiz/flashcards)       | **write** (sole owner) |
+| `docs/09-methods/`, `docs/10-operating/`                             | **write** (sole owner) |
 | `loops/day2/step-writer/state.md`                                    | **write** (sole owner) |
 | `shared/loop-run-log.md`                                             | **append-only**        |
-| `docs/part-*/quiz.md` + `flashcards.md` (`quiz-writer` owns)         | read-only              |
+| `docs/*-part-*/quiz.md` + `flashcards.md` (`quiz-writer` owns)       | read-only              |
 | every other `state.md`                                               | read-only              |
 | `LOOP.md`, `CLAUDE.md`, `loop-plan.md`, `shared/goal.md`, `STATE.md` | read-only              |
 

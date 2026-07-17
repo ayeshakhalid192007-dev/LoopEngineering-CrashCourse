@@ -19,13 +19,13 @@ adapted MIT material retains its original attribution below.
 - **Provenance:** companion chapter, agentfactory.panaversity.org
 - **Role:** the primitives loops are built from — plan mode, permissions, context,
   rules files, skills, hooks, subagents, MCP. Basis for
-  `docs/prerequisites/agentic-coding-primer.md` and `docs/00-foundations/primitives.md`.
+  `docs/01-prerequisites/agentic-coding-primer.md` and `docs/02-foundations/primitives.md`.
 
 ### 3. Panaversity — *Spec-Driven Development*
 
 - **Provenance:** companion chapter, agentfactory.panaversity.org
 - **Role:** why stopping conditions work — vibe-vs-spec, the constitution, the
-  4-phase method. Basis for `docs/prerequisites/spec-driven-primer.md`.
+  4-phase method. Basis for `docs/01-prerequisites/spec-driven-primer.md`.
 
 ### 4. Panaversity — *Scheduled Tasks: The Loop Skill & Cron Tools*
 
@@ -62,7 +62,7 @@ adapted MIT material retains its original attribution below.
 
 - **Provenance:** X
 - **Role:** Ng's three nested loops (the human's context advantage) and Karpathy on
-  success criteria — feed Part 6 and `docs/part-6-human-control/the-three-nested-loops.md`.
+  success criteria — feed Part 6 and `docs/08-part-6-human-control/the-three-nested-loops.md`.
 
 ## Attribution policy
 

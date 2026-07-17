@@ -66,9 +66,9 @@ flowchart LR
 ## High Priority (waiting on human)
 
 - **Declare the Day 2 checkpoint** (rule 9): spot-read one page per part — suggested
-  `docs/part-2-heartbeat/05-conditional-run-until-done.md`,
-  `docs/part-3-the-body/11-maker-checker.md`,
-  `docs/part-6-human-control/the-three-nested-loops.md` — then approve pushing
+  `docs/04-part-2-heartbeat/05-conditional-run-until-done.md`,
+  `docs/05-part-3-the-body/11-maker-checker.md`,
+  `docs/08-part-6-human-control/the-three-nested-loops.md` — then approve pushing
   `day2/course-body` and opening a draft PR. Nothing has been pushed.
 
 ## Watch List

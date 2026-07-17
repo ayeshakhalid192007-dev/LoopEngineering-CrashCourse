@@ -12,7 +12,7 @@ assignees: ""
 
 ## Loop declaration
 
-<!-- Every loop in the library declares these five (see docs/00-foundations/primitives.md): -->
+<!-- Every loop in the library declares these five (see docs/02-foundations/primitives.md): -->
 
 - **Heartbeat type:** schedule / event / conditional / in-session
 - **Cadence:**

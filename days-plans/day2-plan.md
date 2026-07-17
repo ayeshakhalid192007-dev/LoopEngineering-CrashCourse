@@ -26,19 +26,19 @@ Every step page follows the SAME template, so this is perfect loop work:
 
 ### 3. The methods pages
 
-- [ ] `methods/make-your-own-loop.md` — the A–F method
-- [ ] `methods/loop-design-checklist.md`
-- [ ] `methods/pattern-picker.md`
-- [ ] `methods/decision-framework.md`
+- [ ] `09-methods/make-your-own-loop.md` — the A–F method
+- [ ] `09-methods/loop-design-checklist.md`
+- [ ] `09-methods/pattern-picker.md`
+- [ ] `09-methods/decision-framework.md`
 
 ### 4. The operating pages
 
-- [ ] `operating/anti-patterns.md`
-- [ ] `operating/failure-modes.md`
-- [ ] `operating/recovery-playbook.md` (the 5-step playbook)
-- [ ] `operating/safety.md`
-- [ ] `operating/observability.md`
-- [ ] `operating/multi-loop.md`
+- [ ] `10-operating/anti-patterns.md`
+- [ ] `10-operating/failure-modes.md`
+- [ ] `10-operating/recovery-playbook.md` (the 5-step playbook)
+- [ ] `10-operating/safety.md`
+- [ ] `10-operating/observability.md`
+- [ ] `10-operating/multi-loop.md`
 
 ---
 

@@ -40,7 +40,7 @@ Two Day 1 lessons applied:
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
-    SW("step-writer<br/>the maker"):::maker -->|writes| DOCS[("docs/part-*<br/>methods · operating")]:::file
+    SW("step-writer<br/>the maker"):::maker -->|writes| DOCS[("docs/*-part-*<br/>methods · operating")]:::file
     TC("template-checker<br/>the grader"):::check -.->|reads only| DOCS
     TC -->|"PASS / FAIL<br/>+ what's missing"| ST[("own state.md<br/>(committed!)")]:::file
     ST -.-> H(["🧑 Human — FAILs go<br/>back on the maker's list"]):::human
@@ -65,7 +65,7 @@ flowchart LR
 | 8 | When it goes wrong            | symptom → cause → fix table                |
 | 9 | Glossary popovers             | the glossary-terms footer line             |
 
-Index pages (`README.md`), `methods/`, and `operating/` pages are **structural pages**,
+Index pages (`README.md`), `09-methods/`, and `10-operating/` pages are **structural pages**,
 not concept pages — they are graded on: purpose stated, working links, at least one
 diagram or table, no broken template imports. (Same reading Day 1's checker applied to
 `glossary.md`.)
