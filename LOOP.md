@@ -5,7 +5,16 @@
 > definition lives in `loops/day1/<loop>/loop.md`; each loop's private spine lives in
 > `loops/day1/<loop>/state.md`.
 
-## Registered loops (Day 1)
+## Registered loops (Day 2 — current fleet)
+
+| Loop | Folder | Heartbeat | Cadence | Level | Role |
+| ------ | -------- | ----------- | --------- | ------- | ------ |
+| step-writer | `loops/day2/step-writer/` | conditional (run-until-done) | self-paced | L2 (writes docs) | Writes the 14 steps, part indexes, methods, operating handbook |
+| template-checker | `loops/day2/template-checker/` | schedule | 20m (ceiling) | L1 (report-only) | PASS/FAIL per page against the §10 rubric |
+| quiz-writer | `loops/day2/quiz-writer/` | conditional, gated on checker PASS | per part | L2 (writes quiz/flashcards only) | One part's `quiz.md` + `flashcards.md` per beat |
+| link-check | `loops/day1/link-check/` *(continues unchanged)* | schedule | 30m | L1 (report-only) | Keeps relative links honest all day |
+
+## Registered loops (Day 1 — retired 2026-07-16)
 
 | Loop | Folder | Heartbeat | Cadence | Level | Role |
 | ------ | -------- | ----------- | --------- | ------- | ------ |
@@ -50,10 +59,13 @@ flowchart LR
 
 | Path | Owner (only writer) | Everyone else |
 | ------ | -------------------- | --------------- |
-| `docs/` and course content files | **page-writer** | read-only |
-| `loops/day1/page-writer/state.md` | **page-writer** | read-only |
-| `loops/day1/checker/state.md` | **checker** | read-only |
-| `loops/day1/link-check/state.md` | **link-check** | read-only |
+| `docs/part-*` step pages + `README.md`, `docs/methods/`, `docs/operating/` | **step-writer** (Day 2) | read-only |
+| `docs/part-*/quiz.md`, `docs/part-*/flashcards.md` | **quiz-writer** (Day 2) | read-only |
+| `docs/` Day 1 entry layer (foundations, prerequisites, routers) | **page-writer** (retired) | read-only |
+| `loops/day2/step-writer/state.md` | **step-writer** | read-only |
+| `loops/day2/template-checker/state.md` | **template-checker** | read-only |
+| `loops/day2/quiz-writer/state.md` | **quiz-writer** | read-only |
+| `loops/day1/<loop>/state.md` | that Day 1 loop (retired) | read-only |
 | `shared/loop-run-log.md` | all loops, **append-only** | — |
 | `LOOP.md`, `CLAUDE.md`, `loop-plan.md`, `shared/goal.md`, `shared/loop-budget.md`, `STATE.md` | **human** | read-only |
 

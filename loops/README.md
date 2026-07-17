@@ -11,11 +11,15 @@ actual machinery that produced the pages in `docs/`.
 
 ```text
 loops/
-├── README.md          ← you are here
-└── day1/              one folder per build day
-    ├── page-writer/   the maker  (L2 — writes docs/)
-    ├── checker/       the grader (L1 — report-only)
-    └── link-check/    the heartbeat (L1 — report-only)
+├── README.md              ← you are here
+├── day1/                  one folder per build day
+│   ├── page-writer/       the maker  (L2 — writes docs/)
+│   ├── checker/           the grader (L1 — report-only)
+│   └── link-check/        the heartbeat (L1 — still running in Day 2)
+└── day2/
+    ├── step-writer/       the maker  (L2 — steps, methods, operating)
+    ├── template-checker/  the grader (L1 — PASS/FAIL per §10 rubric)
+    └── quiz-writer/       the second maker (L2 — quiz.md + flashcards.md only)
 ```
 
 Each loop folder holds exactly two files:

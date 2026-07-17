@@ -3,9 +3,9 @@
 > Owned by the human. Tracks overall progress across the 4-day plan. Per-loop state
 > lives in each loop's own file — loops write there, never here.
 
-Current phase: **Day 1 complete → Day 2 next** (Day 2 plan: `days-plans/day2-plan.md`)
-Last updated: 2026-07-17 (PR #2 merged — diagram polish + `loops/day1/` move now on
-`main`; repo-wide structure/diagram pass applied — see below)
+Current phase: **Day 2 in progress** (plan: `days-plans/day2-plan.md`; fleet:
+`loops/day2/` — step-writer · template-checker · quiz-writer, + Day 1's link-check)
+Last updated: 2026-07-17 (Day 2 fleet created and started; goal rewritten for Day 2)
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
@@ -24,7 +24,9 @@ flowchart LR
       2026-07-16** after human review of README + foundations pages against
       `shared/goal.md`. Built by the loops in `loops/day1/` (page-writer success stop
       20/20 runs; checker: all findings resolved; link-check: clean final pass).
-- [ ] Day 2 — Full 14-step course + assessments
+- [ ] Day 2 — Full 14-step course + assessments — **in progress 2026-07-17.**
+      Fleet: `loops/day2/` (step-writer L2, template-checker L1, quiz-writer L2)
+      + Day 1's link-check continuing. Per-loop progress lives in each spine.
 - [ ] Day 3 — Loop library + labs + advanced tier + certification
 - [ ] Day 4 — Website + polish + ship
 
@@ -49,6 +51,14 @@ flowchart LR
 | page-writer | `loops/day1/page-writer/state.md` |
 | checker | `loops/day1/checker/state.md` |
 | link-check | `loops/day1/link-check/state.md` |
+
+## Per-loop spines (Day 2)
+
+| Loop | State file |
+| ------ | ----------- |
+| step-writer | `loops/day2/step-writer/state.md` |
+| template-checker | `loops/day2/template-checker/state.md` |
+| quiz-writer | `loops/day2/quiz-writer/state.md` |
 
 ## High Priority (waiting on human)
 
