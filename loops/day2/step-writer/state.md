@@ -3,9 +3,9 @@
 > **Owned by `step-writer`. No other loop may write this file.**
 > Definition: [`loop.md`](loop.md) · Rulebook: [`LOOP.md`](../../../LOOP.md)
 
-**Status:** 🟢 running — Parts 1–2 complete (9/36 items)
-**Last beat:** 2026-07-17 (beat 9 — Part 2 README)
-**Runs used:** 9 / 40 · **Tokens used:** ≈105k / 700k
+**Status:** 🟢 running — Parts 1–4 complete (16/36 items)
+**Last beat:** 2026-07-17 (beat 16 — Part 4 README)
+**Runs used:** 16 / 40 · **Tokens used:** ≈195k / 700k
 
 > Committed from beat zero — Day 1's lesson applied: *a spine that isn't committed
 > isn't a spine* (see [`loops/day1/page-writer/state.md`](../../day1/page-writer/state.md)).
@@ -29,16 +29,16 @@
 
 ### Part 3 — The Body
 
-- [ ] `docs/part-3-the-body/08-worktrees.md`
-- [ ] `docs/part-3-the-body/09-skills.md`
-- [ ] `docs/part-3-the-body/10-connectors-mcp.md`
-- [ ] `docs/part-3-the-body/11-maker-checker.md`
-- [ ] `docs/part-3-the-body/README.md`
+- [x] `docs/part-3-the-body/08-worktrees.md`
+- [x] `docs/part-3-the-body/09-skills.md`
+- [x] `docs/part-3-the-body/10-connectors-mcp.md`
+- [x] `docs/part-3-the-body/11-maker-checker.md`
+- [x] `docs/part-3-the-body/README.md`
 
 ### Part 4 — The Spine
 
-- [ ] `docs/part-4-the-spine/12-state-between-runs.md`
-- [ ] `docs/part-4-the-spine/README.md`
+- [x] `docs/part-4-the-spine/12-state-between-runs.md`
+- [x] `docs/part-4-the-spine/README.md`
 
 ### Part 5 — A Complete Loop, Twice
 

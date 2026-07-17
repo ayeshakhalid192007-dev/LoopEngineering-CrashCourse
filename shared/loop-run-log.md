@@ -56,3 +56,10 @@ Prune entries older than 30 days.
 {"run_id": "2026-07-17T14:30:13Z", "pattern": "step-writer", "duration_s": 220, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 13000, "outcome": "page-written: part-2/06"}
 {"run_id": "2026-07-17T14:30:13Z", "pattern": "step-writer", "duration_s": 220, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 13000, "outcome": "page-written: part-2/07"}
 {"run_id": "2026-07-17T14:30:13Z", "pattern": "step-writer", "duration_s": 90, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 8000, "outcome": "page-written: part-2/README"}
+{"run_id": "2026-07-17T15:26:05Z", "pattern": "step-writer", "duration_s": 230, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 13000, "outcome": "page-written: part-3/08"}
+{"run_id": "2026-07-17T15:26:05Z", "pattern": "step-writer", "duration_s": 230, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 13000, "outcome": "page-written: part-3/09"}
+{"run_id": "2026-07-17T15:26:05Z", "pattern": "step-writer", "duration_s": 230, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 13000, "outcome": "page-written: part-3/10"}
+{"run_id": "2026-07-17T15:26:05Z", "pattern": "step-writer", "duration_s": 240, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 14000, "outcome": "page-written: part-3/11"}
+{"run_id": "2026-07-17T15:26:05Z", "pattern": "step-writer", "duration_s": 90, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 8000, "outcome": "page-written: part-3/README"}
+{"run_id": "2026-07-17T15:26:05Z", "pattern": "step-writer", "duration_s": 240, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 14000, "outcome": "page-written: part-4/12"}
+{"run_id": "2026-07-17T15:26:05Z", "pattern": "step-writer", "duration_s": 80, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 7000, "outcome": "page-written: part-4/README"}
