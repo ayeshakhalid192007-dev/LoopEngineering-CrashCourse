@@ -3,9 +3,9 @@
 > **Owned by `step-writer`. No other loop may write this file.**
 > Definition: [`loop.md`](loop.md) · Rulebook: [`LOOP.md`](../../../LOOP.md)
 
-**Status:** 🟢 running — Parts 1–5 complete (20/36 items)
-**Last beat:** 2026-07-17 (beat 20 — Part 5 README)
-**Runs used:** 20 / 40 · **Tokens used:** ≈250k / 700k
+**Status:** 🟢 running — Parts 1–6 complete (25/36 items); methods + operating remain
+**Last beat:** 2026-07-17 (beat 25 — Part 6 README)
+**Runs used:** 25 / 40 · **Tokens used:** ≈320k / 700k
 
 > Committed from beat zero — Day 1's lesson applied: *a spine that isn't committed
 > isn't a spine* (see [`loops/day1/page-writer/state.md`](../../day1/page-writer/state.md)).
@@ -49,11 +49,11 @@
 
 ### Part 6 — Human Control
 
-- [ ] `docs/part-6-human-control/14-staying-the-engineer.md`
-- [ ] `docs/part-6-human-control/cost-management.md`
-- [ ] `docs/part-6-human-control/verification.md`
-- [ ] `docs/part-6-human-control/the-three-nested-loops.md`
-- [ ] `docs/part-6-human-control/README.md`
+- [x] `docs/part-6-human-control/14-staying-the-engineer.md`
+- [x] `docs/part-6-human-control/cost-management.md`
+- [x] `docs/part-6-human-control/verification.md`
+- [x] `docs/part-6-human-control/the-three-nested-loops.md`
+- [x] `docs/part-6-human-control/README.md`
 
 ### Methods
 

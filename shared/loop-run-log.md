@@ -67,3 +67,8 @@ Prune entries older than 30 days.
 {"run_id": "2026-07-17T15:34:31Z", "pattern": "step-writer", "duration_s": 250, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 15000, "outcome": "page-written: part-5/13a"}
 {"run_id": "2026-07-17T15:34:31Z", "pattern": "step-writer", "duration_s": 250, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 15000, "outcome": "page-written: part-5/13b"}
 {"run_id": "2026-07-17T15:34:31Z", "pattern": "step-writer", "duration_s": 90, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 8000, "outcome": "page-written: part-5/README"}
+{"run_id": "2026-07-17T15:44:17Z", "pattern": "step-writer", "duration_s": 260, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 15000, "outcome": "page-written: part-6/14"}
+{"run_id": "2026-07-17T15:44:17Z", "pattern": "step-writer", "duration_s": 240, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 14000, "outcome": "page-written: part-6/cost-management"}
+{"run_id": "2026-07-17T15:44:17Z", "pattern": "step-writer", "duration_s": 240, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 14000, "outcome": "page-written: part-6/verification"}
+{"run_id": "2026-07-17T15:44:17Z", "pattern": "step-writer", "duration_s": 250, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 14000, "outcome": "page-written: part-6/the-three-nested-loops"}
+{"run_id": "2026-07-17T15:44:17Z", "pattern": "step-writer", "duration_s": 90, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 8000, "outcome": "page-written: part-6/README"}
