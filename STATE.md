@@ -3,15 +3,15 @@
 > Owned by the human. Tracks overall progress across the 4-day plan. Per-loop state
 > lives in each loop's own file — loops write there, never here.
 
-Current phase: **Day 2 in progress** (plan: `days-plans/day2-plan.md`; fleet:
-`loops/day2/` — step-writer · template-checker · quiz-writer, + Day 1's link-check)
-Last updated: 2026-07-17 (Day 2 fleet created and started; goal rewritten for Day 2)
+Current phase: **Day 2 complete — Day 3 not started** (next plan:
+`days-plans/day3-plan.md`)
+Last updated: 2026-07-18 (Day 2 checkpoint declared: human merged PR #3 to `main`)
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
-    D1(["Day 1<br/>foundation + tracks<br/>+ prerequisites"]):::done --> D2(["Day 2<br/>14 steps<br/>+ assessments"]):::next
-    D2 --> D3(["Day 3<br/>loop library + labs<br/>+ certification"]):::todo
+    D1(["Day 1<br/>foundation + tracks<br/>+ prerequisites"]):::done --> D2(["Day 2<br/>14 steps<br/>+ assessments"]):::done
+    D2 --> D3(["Day 3<br/>loop library + labs<br/>+ certification"]):::next
     D3 --> D4(["Day 4<br/>website + polish<br/>+ ship"]):::todo
     classDef done fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
     classDef next fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
@@ -24,12 +24,14 @@ flowchart LR
       2026-07-16** after human review of README + foundations pages against
       `shared/goal.md`. Built by the loops in `loops/day1/` (page-writer success stop
       20/20 runs; checker: all findings resolved; link-check: clean final pass).
-- [ ] Day 2 — Full 14-step course + assessments — **fleet complete 2026-07-17,
-      awaiting human gate.** All three loops hit success stops: step-writer 36/36
-      pages (14 steps + 13a/13b + companions + 6 READMEs + 4 methods + 7 operating),
-      template-checker 36/36 PASS (lint 0, 40/40 diagrams compile, links clean),
-      quiz-writer 6 quizzes + 5 flashcard sets. **Checkpoint pending: human
-      spot-read of one page per part** (rule 9 — only the human declares it).
+- [x] Day 2 — Full 14-step course + assessments — **checkpoint declared 2026-07-18**
+      (human merged PR #3, merge `afec879`; both CI gates green on `main`). All three
+      loops hit success stops: step-writer 36/36 pages (14 steps + 13a/13b +
+      companions + 6 READMEs + 4 methods + 7 operating), template-checker 36/36 PASS
+      (lint 0, diagrams compile, links clean), quiz-writer 6 quizzes + 5 flashcard
+      sets. Post-fleet polish in the same PR: docs folders numbered in reading order
+      (`00-start-here/` … `10-operating/`), `docs/README.md` contents page, and
+      per-page *Sources:* footers (S1–S9) on all 40 course pages.
 - [ ] Day 3 — Loop library + labs + advanced tier + certification
 - [ ] Day 4 — Website + polish + ship
 
@@ -65,11 +67,8 @@ flowchart LR
 
 ## High Priority (waiting on human)
 
-- **Declare the Day 2 checkpoint** (rule 9): spot-read one page per part — suggested
-  `docs/04-part-2-heartbeat/05-conditional-run-until-done.md`,
-  `docs/05-part-3-the-body/11-maker-checker.md`,
-  `docs/08-part-6-human-control/the-three-nested-loops.md` — then approve pushing
-  `day2/course-body` and opening a draft PR. Nothing has been pushed.
+- Kick off Day 3 (loop library + labs + advanced tier + certification): review
+  `days-plans/day3-plan.md` and set up/start the Day 3 loops.
 
 ## Watch List
 
