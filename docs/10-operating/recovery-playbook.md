@@ -81,3 +81,9 @@ improvises — badly, at 3 am, with the loop still beating.
 *Prevention lives one page over: [failure-modes](failure-modes.md) ·
 [anti-patterns](anti-patterns.md) ·
 [safety](safety.md).*
+
+*Sources:* the five steps mirror Google SRE incident-response practice (*Incident
+Management* & *Postmortem Culture*), with loop-specific rules from Sydney Runkle's *The
+Art of Loop Engineering* (LangChain, S6) and the `cobusgreyling/loop-engineering`
+reference repo (MIT, S7). Full attribution:
+[resources/sources.md](../../resources/sources.md).

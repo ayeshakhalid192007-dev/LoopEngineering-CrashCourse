@@ -111,3 +111,7 @@ course starts in.
 
 *Glossary terms used on this page:* **agent**, **L1 report-only**, **sandbox** — see
 [../02-foundations/glossary.md](../02-foundations/glossary.md).
+
+*Sources:* this setup guide follows Panaversity's *Agentic Coding Crash Course* (S2);
+commands are pointers to each tool's live documentation (attribution policy rule 3).
+Full attribution: [resources/sources.md](../../resources/sources.md).

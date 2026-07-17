@@ -79,3 +79,8 @@ flowchart TD
 *The rule under the whole page: incidents repeat until the organ is fixed. Patch
 the output and you've scheduled the failure again — that's
 [recovery playbook](recovery-playbook.md) step 4's entire argument.*
+
+*Sources:* the failure catalog is drawn from the `cobusgreyling/loop-engineering`
+reference repo (MIT, S7) and the essays of Addy Osmani's *Loop Engineering* (S5) and
+Sydney Runkle's *The Art of Loop Engineering* (LangChain, S6). Full attribution:
+[resources/sources.md](../../resources/sources.md).

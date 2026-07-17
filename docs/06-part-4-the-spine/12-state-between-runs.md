@@ -111,3 +111,8 @@ in git log: that's a loop's memory, made auditable.
 
 *Glossary terms used on this page:* **spine**, **rules file**, **progress file**,
 **hill-climbing** — see the [glossary](../02-foundations/glossary.md).
+
+*Sources:* state-between-runs and the intern's-diary metaphor come from Panaversity's
+*Loop Engineering: A Crash Course* (S1) and Panaversity's *Agentic Coding Crash Course*
+(S2); the hill-climbing loop from Sydney Runkle's *The Art of Loop Engineering*
+(LangChain, S6). Full attribution: [resources/sources.md](../../resources/sources.md).

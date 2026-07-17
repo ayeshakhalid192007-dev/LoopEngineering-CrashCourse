@@ -125,3 +125,7 @@ you can annotate line-by-line is a loop you actually understand.
 
 *Glossary terms used on this page:* **wrapper**, **kill switch**, **daily cap**,
 **lasting vs. mechanical layer** — see the [glossary](../02-foundations/glossary.md).
+
+*Sources:* the walkthrough follows Panaversity's *Loop Engineering: A Crash Course*
+(S1); commands are pointers to OpenCode's live documentation (attribution policy rule
+3). Full attribution: [resources/sources.md](../../resources/sources.md).

@@ -63,3 +63,8 @@ flowchart LR
 *Use at the whiteboard: walk any new `loop.md` down the design table — every row
 you can't rule out with a sentence is homework before the
 [design checklist](../09-methods/loop-design-checklist.md) gets its checkmarks.*
+
+*Sources:* the anti-pattern catalog is drawn from the `cobusgreyling/loop-engineering`
+reference repo (MIT, S7) and the essays of Addy Osmani's *Loop Engineering* (S5) and
+Sydney Runkle's *The Art of Loop Engineering* (LangChain, S6). Full attribution:
+[resources/sources.md](../../resources/sources.md).

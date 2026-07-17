@@ -66,3 +66,8 @@ Questions 3 and 4 don't change the heartbeat — they set the **level** and the
 *Next:* shape chosen → fill the [design checklist](loop-design-checklist.md).
 Unsure the task deserves a loop at all → the
 [decision framework](decision-framework.md).
+
+*Sources:* the pattern set follows the seven patterns of the `cobusgreyling/loop-
+engineering` reference repo (MIT, S7) and the loop shapes of Panaversity's *Loop
+Engineering: A Crash Course* (S1). Full attribution:
+[resources/sources.md](../../resources/sources.md).

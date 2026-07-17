@@ -70,3 +70,7 @@ flowchart LR
 
 *Live examples of filled-in designs: every `loop.md` under
 [`loops/`](../../loops/README.md) is this checklist, answered for real.*
+
+*Sources:* the checklist condenses the minimum-safe practice of Panaversity's *Loop
+Engineering: A Crash Course* (S1) and the `cobusgreyling/loop-engineering` reference
+repo (MIT, S7). Full attribution: [resources/sources.md](../../resources/sources.md).

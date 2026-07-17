@@ -116,3 +116,7 @@ knowledge into infrastructure.
 
 *Glossary terms used on this page:* **skill**, **cold-start problem**, **plugin**,
 **rules file** — see the [glossary](../02-foundations/glossary.md).
+
+*Sources:* skills and the cold-start problem come from Panaversity's *Loop Engineering:
+A Crash Course* (S1) and Panaversity's *Agentic Coding Crash Course* (S2). Full
+attribution: [resources/sources.md](../../resources/sources.md).

@@ -111,3 +111,8 @@ need in production.
 *Glossary terms used on this page:* **event-driven**, **synchronize**,
 **reconciliation sweep**, **idempotent** — see the
 [glossary](../02-foundations/glossary.md).
+
+*Sources:* event triggers, channels, and the dropped-not-queued rule come from
+Panaversity's *Loop Engineering: A Crash Course* (S1) and Panaversity's *Scheduled
+Tasks: The Loop Skill & Cron Tools* (S4). Full attribution:
+[resources/sources.md](../../resources/sources.md).

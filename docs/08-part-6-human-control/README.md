@@ -37,3 +37,7 @@ surprises). Both belong to this part's track.
 [Take the Part 6 quiz](quiz.md) · [drill the flashcards](flashcards.md)
 
 *This part belongs to track [T3 · Engineer](../learning-tracks.md).*
+
+*Sources:* Part 6 draws on Panaversity's *Loop Engineering: A Crash Course* (S1), Addy
+Osmani's *Loop Engineering* (S5), and Andrew Ng & Andrej Karpathy's public statements
+(S9). Full attribution: [resources/sources.md](../../resources/sources.md).

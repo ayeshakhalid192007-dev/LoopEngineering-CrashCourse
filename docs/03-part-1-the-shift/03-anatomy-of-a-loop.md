@@ -129,3 +129,8 @@ gate) and run one more beat.
 *Glossary terms used on this page:* **heartbeat**, **body**, **spine**, **stopping
 condition**, **checker**, **human gate** — see the
 [glossary](../02-foundations/glossary.md).
+
+*Sources:* the six parts and their body metaphors come from Panaversity's *Loop
+Engineering: A Crash Course* (S1) and Panaversity's *Agentic Coding Crash Course* (S2);
+the naming of the practice from Addy Osmani's *Loop Engineering* (S5). Full attribution:
+[resources/sources.md](../../resources/sources.md).

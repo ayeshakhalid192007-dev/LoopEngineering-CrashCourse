@@ -101,3 +101,8 @@ flowchart LR
 *The live example is one directory up: [`loops/`](../../loops/README.md) — two
 days of real fleets, contracts, spines, and one shared log, exactly as this page
 prescribes.*
+
+*Sources:* multi-loop coordination draws on the reference repo's own `multi-loop.md`
+(the `cobusgreyling/loop-engineering` reference repo (MIT, S7)), Sydney Runkle's *The
+Art of Loop Engineering* (LangChain, S6), and Anthropic's multi-agent essays. Full
+attribution: [resources/sources.md](../../resources/sources.md).

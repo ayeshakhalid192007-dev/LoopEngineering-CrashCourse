@@ -125,3 +125,8 @@ layer 3.
 
 *Glossary terms used on this page:* **harness**, **loop**, **beat**, **spine**,
 **rules file** — see the [glossary](../02-foundations/glossary.md).
+
+*Sources:* the prompt → context → harness → loop ladder comes from Panaversity's *Loop
+Engineering: A Crash Course* (S1); the small-vs-big-loop framing from Sydney Runkle's
+*The Art of Loop Engineering* (LangChain, S6). Full attribution:
+[resources/sources.md](../../resources/sources.md).

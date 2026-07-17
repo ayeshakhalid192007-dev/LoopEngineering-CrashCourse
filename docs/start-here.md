@@ -102,3 +102,7 @@ has a real stopping condition. That judgment is the course's core skill.
 
 *Glossary terms used on this page:* **loop**, **heartbeat**, **stopping condition** —
 all defined in [02-foundations/glossary.md](02-foundations/glossary.md).
+
+*Sources:* the graded-track structure follows the curriculum backbone of Panaversity's
+*Loop Engineering: A Crash Course* (S1). Full attribution:
+[resources/sources.md](../resources/sources.md).

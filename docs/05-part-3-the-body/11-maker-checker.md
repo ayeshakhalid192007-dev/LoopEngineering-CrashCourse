@@ -113,3 +113,8 @@ one experiment, on your own repo.
 
 *Glossary terms used on this page:* **maker–checker**, **LLM-as-judge**,
 **workflow**, **human gate** — see the [glossary](../02-foundations/glossary.md).
+
+*Sources:* maker–checker and LLM-as-judge come from Panaversity's *Loop Engineering: A
+Crash Course* (S1) and Panaversity's *Agentic Coding Crash Course* (S2); the
+verification-loop framing from Sydney Runkle's *The Art of Loop Engineering* (LangChain,
+S6). Full attribution: [resources/sources.md](../../resources/sources.md).

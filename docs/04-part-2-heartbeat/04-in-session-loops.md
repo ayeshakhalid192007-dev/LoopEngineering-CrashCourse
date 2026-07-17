@@ -104,3 +104,8 @@ run your first L1 loop, and the log *is* its spine.
 
 *Glossary terms used on this page:* **heartbeat**, **beat**, **L1 (report-only)**,
 **idempotent** — see the [glossary](../02-foundations/glossary.md).
+
+*Sources:* in-session heartbeats — `/loop`, the cron tools, caps, and jitter — come from
+Panaversity's *Loop Engineering: A Crash Course* (S1) and Panaversity's *Scheduled
+Tasks: The Loop Skill & Cron Tools* (S4). Full attribution:
+[resources/sources.md](../../resources/sources.md).

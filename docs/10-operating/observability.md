@@ -89,3 +89,7 @@ to be rebuilt, and some of that history is permanently gone.
 
 *Next in the handbook: what the instruments catch —
 [failure-modes.md](failure-modes.md).*
+
+*Sources:* observability and “green ≠ done” draw on Panaversity's *Loop Engineering: A
+Crash Course* (S1) and Addy Osmani's *Loop Engineering* (S5). Full attribution:
+[resources/sources.md](../../resources/sources.md).

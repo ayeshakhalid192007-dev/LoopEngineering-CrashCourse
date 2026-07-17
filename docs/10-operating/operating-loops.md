@@ -71,3 +71,7 @@ being skipped — excitement is unhandled risk with better marketing.
 [`LOOP.md`](../../LOOP.md), [`shared/loop-budget.md`](../../shared/loop-budget.md),
 [`shared/loop-run-log.md`](../../shared/loop-run-log.md), and a spine per loop
 under [`loops/`](../../loops/README.md).*
+
+*Sources:* day-to-day operating practice draws on Panaversity's *Loop Engineering: A
+Crash Course* (S1) and the `cobusgreyling/loop-engineering` reference repo (MIT, S7).
+Full attribution: [resources/sources.md](../../resources/sources.md).

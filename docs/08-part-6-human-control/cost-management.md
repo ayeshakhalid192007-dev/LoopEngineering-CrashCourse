@@ -106,3 +106,7 @@ real numbers?
 
 *Glossary terms used on this page:* **token budget**, **tripwire**, **report-only**,
 **kill switch** — see the [glossary](../02-foundations/glossary.md).
+
+*Sources:* cost discipline draws on Panaversity's *Loop Engineering: A Crash Course*
+(S1) and Addy Osmani's *Loop Engineering* (S5). Full attribution:
+[resources/sources.md](../../resources/sources.md).

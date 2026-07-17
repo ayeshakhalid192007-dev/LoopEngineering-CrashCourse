@@ -110,3 +110,8 @@ worse than "send a useless report," tighten it before it ever runs for real.
 
 *Glossary terms used on this page:* **routine**, **trigger**, **L1/L2/L3**, **human
 gate**, **green ≠ done** — see the [glossary](../02-foundations/glossary.md).
+
+*Sources:* Routines and unattended scheduling come from Panaversity's *Loop Engineering:
+A Crash Course* (S1), Panaversity's *Scheduled Tasks: The Loop Skill & Cron Tools* (S4),
+and the `cobusgreyling/loop-engineering` reference repo (MIT, S7). Full attribution:
+[resources/sources.md](../../resources/sources.md).

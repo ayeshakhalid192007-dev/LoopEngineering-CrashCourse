@@ -72,7 +72,10 @@ adapted MIT material retains its original attribution below.
    here when added.
 3. **Mechanics change weekly.** Tool commands are framed as pointers to each tool's
    live documentation rather than authoritative references.
-4. Corrections and attribution requests: open an issue with the `content-fix` template.
+4. **Per-page provenance.** Every course page ends with a *Sources:* footer naming
+   the sources (S1–S9) its ideas are drawn from and linking back to this file.
+   Quizzes and flashcards inherit the sources of the step pages they test.
+5. Corrections and attribution requests: open an issue with the `content-fix` template.
 
 ## Adapted-file register
 

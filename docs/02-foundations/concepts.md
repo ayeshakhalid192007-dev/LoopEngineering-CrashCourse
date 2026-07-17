@@ -97,3 +97,7 @@ statement until the list gets boring.
 
 *Glossary terms used on this page:* **intent debt**, **comprehension debt**,
 **harness**, **human gate** — see [glossary.md](glossary.md).
+
+*Sources:* this concept set condenses the fifteen concepts of Panaversity's *Loop
+Engineering: A Crash Course* (S1). Full attribution:
+[resources/sources.md](../../resources/sources.md).

@@ -112,3 +112,8 @@ condition + limit + progress rule now encode.
 
 *Glossary terms used on this page:* **conditional loop**, **doom loop**, **stopping
 condition**, **run limit** — see the [glossary](../02-foundations/glossary.md).
+
+*Sources:* run-until-done mechanics come from Panaversity's *Loop Engineering: A Crash
+Course* (S1) and Panaversity's *Scheduled Tasks: The Loop Skill & Cron Tools* (S4);
+stopping-condition-as-spec from Panaversity's *Spec-Driven Development* (S3). Full
+attribution: [resources/sources.md](../../resources/sources.md).

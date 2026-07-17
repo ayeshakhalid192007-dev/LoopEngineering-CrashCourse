@@ -78,3 +78,7 @@ those has a named failure mode waiting in the
 
 *Course context:* this framework is Question Zero of the capstone — before the
 rubric grades your loop, it asks whether you should have built one.
+
+*Sources:* the decision framework distills Panaversity's *Loop Engineering: A Crash
+Course* (S1) and Addy Osmani's *Loop Engineering* (S5). Full attribution:
+[resources/sources.md](../../resources/sources.md).

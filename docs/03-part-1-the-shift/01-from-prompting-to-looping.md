@@ -124,3 +124,8 @@ what the loop now owns.
 
 *Glossary terms used on this page:* **loop**, **heartbeat**, **spine**, **intent
 debt**, **human gate** — see the [glossary](../02-foundations/glossary.md).
+
+*Sources:* the shift and the prompting-vs-looping contrast come from Panaversity's *Loop
+Engineering: A Crash Course* (S1) and Addy Osmani's *Loop Engineering* (S5); the origin
+quotes from Peter Steinberger & Boris Cherny's public statements (S8). Full attribution:
+[resources/sources.md](../../resources/sources.md).

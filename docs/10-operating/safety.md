@@ -78,3 +78,8 @@ never commands.
 
 *The failure catalog for everything this page prevents:
 [failure-modes.md](failure-modes.md) · [anti-patterns.md](anti-patterns.md).*
+
+*Sources:* guardrails, caps, and the kill switch draw on Panaversity's *Loop
+Engineering: A Crash Course* (S1), Panaversity's *Scheduled Tasks: The Loop Skill & Cron
+Tools* (S4), and the `cobusgreyling/loop-engineering` reference repo (MIT, S7). Full
+attribution: [resources/sources.md](../../resources/sources.md).

@@ -116,3 +116,8 @@ tries — finding yours now, on purpose, is the whole exercise.
 
 *Glossary terms used on this page:* **green ≠ done**, **outcome check**,
 **spot-read**, **checkpoint** — see the [glossary](../02-foundations/glossary.md).
+
+*Sources:* the verification ladder draws on Panaversity's *Loop Engineering: A Crash
+Course* (S1), Addy Osmani's *Loop Engineering* (S5), and the verification-loop layer of
+Sydney Runkle's *The Art of Loop Engineering* (LangChain, S6). Full attribution:
+[resources/sources.md](../../resources/sources.md).

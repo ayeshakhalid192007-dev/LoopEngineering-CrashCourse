@@ -135,3 +135,9 @@ answer in this fleet — find it.)
 *Glossary terms used on this page:* **green ≠ done**, **AI gravity**,
 **comprehension debt**, **promotion/demotion** — see the
 [glossary](../02-foundations/glossary.md).
+
+*Sources:* the stay-the-engineer principle comes from Addy Osmani's *Loop Engineering*
+(S5); the cost/verification/comprehension framing from Panaversity's *Loop Engineering:
+A Crash Course* (S1); the nested-loops and success-criteria ideas from Andrew Ng &
+Andrej Karpathy's public statements (S9). Full attribution:
+[resources/sources.md](../../resources/sources.md).

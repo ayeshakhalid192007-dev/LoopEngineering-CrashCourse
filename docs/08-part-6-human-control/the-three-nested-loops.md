@@ -121,3 +121,8 @@ nowhere," you've found your actual first task.
 *Glossary terms used on this page:* **nested loops**, **promotion/demotion**,
 **governance**, **hill-climbing** — see the
 [glossary](../02-foundations/glossary.md).
+
+*Sources:* Ng's three nested loops and Karpathy on success criteria — Andrew Ng & Andrej
+Karpathy's public statements (S9) — anchor this page, with the stay-the-engineer
+principle from Addy Osmani's *Loop Engineering* (S5). Full attribution:
+[resources/sources.md](../../resources/sources.md).

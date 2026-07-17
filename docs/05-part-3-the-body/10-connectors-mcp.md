@@ -111,3 +111,7 @@ ever earned writes — that list *is* your connector design.
 
 *Glossary terms used on this page:* **MCP**, **connector**, **idempotent**,
 **blast radius** — see the [glossary](../02-foundations/glossary.md).
+
+*Sources:* connectors and the three connector rules come from Panaversity's *Loop
+Engineering: A Crash Course* (S1) and Panaversity's *Agentic Coding Crash Course* (S2).
+Full attribution: [resources/sources.md](../../resources/sources.md).

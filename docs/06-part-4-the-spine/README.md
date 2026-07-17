@@ -34,3 +34,8 @@ With heartbeat, body, and spine in hand, you're ready to build the whole animal 
 [Take the Part 4 quiz](quiz.md) · [drill the flashcards](flashcards.md)
 
 *This part belongs to track [T2 · Practitioner](../learning-tracks.md).*
+
+*Sources:* Part 4 draws on Panaversity's *Loop Engineering: A Crash Course* (S1),
+Panaversity's *Agentic Coding Crash Course* (S2), and Sydney Runkle's *The Art of Loop
+Engineering* (LangChain, S6). Full attribution:
+[resources/sources.md](../../resources/sources.md).

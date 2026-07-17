@@ -88,3 +88,9 @@ entries came out too terse → fix the skill's template, not Tuesday's entry.
 *Course context:* this method is the bridge from
 [Part 5's build](../07-part-5-complete-loop/13-build-the-loop-twice.md) to loops of
 your own design — and the capstone assessment asks you to walk A–F cold.
+
+*Sources:* the A–F method is original to this course, synthesizing Panaversity's *Loop
+Engineering: A Crash Course* (S1), stopping-condition-as-spec from Panaversity's *Spec-
+Driven Development* (S3), and the L1-report-only-first rule of the `cobusgreyling/loop-
+engineering` reference repo (MIT, S7). Full attribution:
+[resources/sources.md](../../resources/sources.md).

@@ -39,3 +39,6 @@ the two builds).*
 Then on to the last part: [Part 6 · Human Control](../08-part-6-human-control/README.md).
 
 *This part belongs to track [T3 · Engineer](../learning-tracks.md).*
+
+*Sources:* Part 5 draws on Panaversity's *Loop Engineering: A Crash Course* (S1). Full
+attribution: [resources/sources.md](../../resources/sources.md).

@@ -137,3 +137,7 @@ later.
 
 *Glossary terms used on this page:* **minimum-safe checklist**, **L1 (report-only)**,
 **routine**, **human gate** — see the [glossary](../02-foundations/glossary.md).
+
+*Sources:* the morning-triage build and the minimum-safe checklist come from
+Panaversity's *Loop Engineering: A Crash Course* (S1). Full attribution:
+[resources/sources.md](../../resources/sources.md).

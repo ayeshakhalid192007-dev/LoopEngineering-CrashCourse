@@ -42,3 +42,8 @@ Two rules repeat on every page, because they hold for every heartbeat:
 [Take the Part 2 quiz](quiz.md) · [drill the flashcards](flashcards.md)
 
 *This part belongs to track [T2 · Practitioner](../learning-tracks.md).*
+
+*Sources:* Part 2 draws on Panaversity's *Loop Engineering: A Crash Course* (S1),
+Panaversity's *Spec-Driven Development* (S3), Panaversity's *Scheduled Tasks: The Loop
+Skill & Cron Tools* (S4), and the `cobusgreyling/loop-engineering` reference repo (MIT,
+S7). Full attribution: [resources/sources.md](../../resources/sources.md).

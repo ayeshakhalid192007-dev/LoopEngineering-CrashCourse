@@ -123,3 +123,7 @@ loop — the smallest real one there is.
 
 *Glossary terms used on this page:* **routine**, **headless mode**, **subagent**,
 **L1 (report-only)** — see the [glossary](../02-foundations/glossary.md).
+
+*Sources:* the walkthrough follows Panaversity's *Loop Engineering: A Crash Course*
+(S1); commands are pointers to Claude Code's live documentation (attribution policy rule
+3). Full attribution: [resources/sources.md](../../resources/sources.md).

@@ -119,3 +119,7 @@ doesn't graduate a track. Building does.)
 
 *Glossary terms used on this page:* **six parts**, **heartbeat**, **spine**,
 **maker/checker**, **Loop Ready** — see [02-foundations/glossary.md](02-foundations/glossary.md).
+
+*Sources:* the four-track design and entry/exit checks follow the curriculum backbone of
+Panaversity's *Loop Engineering: A Crash Course* (S1). Full attribution:
+[resources/sources.md](../resources/sources.md).
