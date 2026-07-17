@@ -3,9 +3,9 @@
 > **Owned by `step-writer`. No other loop may write this file.**
 > Definition: [`loop.md`](loop.md) · Rulebook: [`LOOP.md`](../../../LOOP.md)
 
-**Status:** 🟢 running — Part 1 complete (4/36 items)
-**Last beat:** 2026-07-17 (beat 4 — Part 1 README)
-**Runs used:** 4 / 40 · **Tokens used:** ≈45k / 700k
+**Status:** 🟢 running — Parts 1–2 complete (9/36 items)
+**Last beat:** 2026-07-17 (beat 9 — Part 2 README)
+**Runs used:** 9 / 40 · **Tokens used:** ≈105k / 700k
 
 > Committed from beat zero — Day 1's lesson applied: *a spine that isn't committed
 > isn't a spine* (see [`loops/day1/page-writer/state.md`](../../day1/page-writer/state.md)).
@@ -21,11 +21,11 @@
 
 ### Part 2 — The Heartbeat
 
-- [ ] `docs/part-2-heartbeat/04-in-session-loops.md`
-- [ ] `docs/part-2-heartbeat/05-conditional-run-until-done.md`
-- [ ] `docs/part-2-heartbeat/06-unattended-schedules.md`
-- [ ] `docs/part-2-heartbeat/07-event-driven.md`
-- [ ] `docs/part-2-heartbeat/README.md`
+- [x] `docs/part-2-heartbeat/04-in-session-loops.md`
+- [x] `docs/part-2-heartbeat/05-conditional-run-until-done.md`
+- [x] `docs/part-2-heartbeat/06-unattended-schedules.md`
+- [x] `docs/part-2-heartbeat/07-event-driven.md`
+- [x] `docs/part-2-heartbeat/README.md`
 
 ### Part 3 — The Body
 
