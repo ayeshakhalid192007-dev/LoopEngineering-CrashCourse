@@ -27,8 +27,8 @@
 
 ### 3. Start the course content (afternoon)
 
-- [ ] `docs/start-here.md` — 60-second router: "which track am I?"
-- [ ] `docs/learning-tracks.md` — the T1 → T4 map
+- [ ] `docs/00-start-here/README.md` — 60-second router: "which track am I?"
+- [ ] `docs/00-start-here/learning-tracks.md` — the T1 → T4 map
 - [ ] `docs/01-prerequisites/` — 3 pages:
   - `environment-setup.md`
   - `agentic-coding-primer.md`
@@ -75,8 +75,8 @@ Make a simple checklist file first (that's your **spine**):
 ```markdown
 # STATE.md
 ## Day 1 pages to write
-- [ ] docs/start-here.md
-- [ ] docs/learning-tracks.md
+- [ ] docs/00-start-here/README.md
+- [ ] docs/00-start-here/learning-tracks.md
 - [ ] docs/01-prerequisites/environment-setup.md
 - ... (all pages above)
 ```

@@ -28,8 +28,8 @@ commit their spines as they run.
 
 ## Day 1 page checklist ✅ fact — all pages verified present in `docs/`
 
-- [x] `docs/start-here.md`
-- [x] `docs/learning-tracks.md`
+- [x] `docs/00-start-here/README.md`
+- [x] `docs/00-start-here/learning-tracks.md`
 - [x] `docs/01-prerequisites/environment-setup.md`
 - [x] `docs/01-prerequisites/agentic-coding-primer.md`
 - [x] `docs/01-prerequisites/spec-driven-primer.md`

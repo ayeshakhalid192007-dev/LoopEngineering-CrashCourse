@@ -32,7 +32,7 @@ Comfortable driving an AI coding agent by hand? If not, detour through the
 When the three steps are done: [take the Part 1 quiz](quiz.md) ·
 [drill the flashcards](flashcards.md).
 
-*This part belongs to track [T1 · Foundations](../learning-tracks.md).*
+*This part belongs to track [T1 · Foundations](../00-start-here/learning-tracks.md).*
 
 *Sources:* Part 1 draws on Panaversity's *Loop Engineering: A Crash Course* (S1), Addy
 Osmani's *Loop Engineering* (S5), Sydney Runkle's *The Art of Loop Engineering*

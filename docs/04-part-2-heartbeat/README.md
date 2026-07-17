@@ -41,7 +41,7 @@ Two rules repeat on every page, because they hold for every heartbeat:
 
 [Take the Part 2 quiz](quiz.md) · [drill the flashcards](flashcards.md)
 
-*This part belongs to track [T2 · Practitioner](../learning-tracks.md).*
+*This part belongs to track [T2 · Practitioner](../00-start-here/learning-tracks.md).*
 
 *Sources:* Part 2 draws on Panaversity's *Loop Engineering: A Crash Course* (S1),
 Panaversity's *Spec-Driven Development* (S3), Panaversity's *Scheduled Tasks: The Loop

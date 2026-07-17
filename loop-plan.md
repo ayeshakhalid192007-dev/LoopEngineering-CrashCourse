@@ -227,7 +227,7 @@ The system is a **graded curriculum**, not a flat set of pages. Four tracks take
 | **T3 · Engineer** | Advanced | how to assemble a loop | build the full six-part loop in two tools, pick from the prebuilt library, operate it safely | Parts 5–6, the loop library, Projects 5–8, 10-operating/safety |
 | **T4 · Ultra-Pro** | Expert | how to ship one loop | design hill-climbing loops, coordinate multi-loop fleets, govern permissions at team scale, author and contribute new loops | `advanced/`, multi-loop, enterprise, governance, certification capstone |
 
-**Progression aids baked into the repo:** a `start-here.md` router, a `learning-tracks.md` map, per-part quizzes, per-part flashcards, graded labs with reference solutions, cheatsheets per tool, and a final **Loop Ready certification** capstone with a rubric. The website surfaces the active track, a progress bar, and "you are here" on the roadmap.
+**Progression aids baked into the repo:** a `00-start-here/` router (`README.md` + `learning-tracks.md`), per-part quizzes, per-part flashcards, graded labs with reference solutions, cheatsheets per tool, and a final **Loop Ready certification** capstone with a rubric. The website surfaces the active track, a progress bar, and "you are here" on the roadmap.
 
 ## 11. The 14-step roadmap (detailed)
 
@@ -581,8 +581,7 @@ LoopEngineering-CrashCourse/
 │
 ├── docs/                             # ── THE COURSE (single source of truth) ──
 │   ├── README.md                     # course index: the 4 tracks + 14-step roadmap
-│   ├── start-here.md                 # 60-second router: which track am I?
-│   ├── learning-tracks.md            # T1→T4 map, entry checks, exit assessments
+│   ├── 00-start-here/                # 60-second router + track map (README.md, learning-tracks.md)
 │   │
 │   ├── prerequisites/
 │   │   ├── README.md
@@ -844,10 +843,10 @@ Content-first: `docs/` is valuable the moment it exists, so we write the course 
 
 1. **The repo stands up as a project.** Repo initialized with MIT `LICENSE`, a complete `README.md` (hero, badges, navigation, quickstart, "start here" router), `resources/sources.md` with full attribution for all nine sources, `CONTRIBUTING.md`, `SECURITY.md`, `CODEOWNERS`, `CITATION.cff`, and `.github/` populated (the six workflows from §26 plus issue/PR templates, `dependabot.yml`).
 2. **The repo dogfoods its own discipline.** The root carries the files the course teaches: `AGENTS.md`, `CLAUDE.md`, `LOOP.md` (the loops that maintain this repo), `STATE.md` (the spine), `loop-budget.md`, `loop-constraints.md`, `loop-run-log.md` — all with real content, not placeholders.
-3. **The entry layer of the course is written.** `docs/start-here.md` (60-second router), `docs/learning-tracks.md` (T1–T4 map with entry checks and exit assessments), all three `01-prerequisites/` pages (environment setup, agentic-coding primer, spec-driven primer), and all six `02-foundations/` pages (glossary, mental-models, concepts, the-four-layers, primitives, primitives-matrix) — each following the §10 page template.
+3. **The entry layer of the course is written.** `docs/00-start-here/README.md` (60-second router), `docs/00-start-here/learning-tracks.md` (T1–T4 map with entry checks and exit assessments), all three `01-prerequisites/` pages (environment setup, agentic-coding primer, spec-driven primer), and all six `02-foundations/` pages (glossary, mental-models, concepts, the-four-layers, primitives, primitives-matrix) — each following the §10 page template.
 4. **The toolchain is ready for Day 2.** skills.sh skills pulled and verified (`vercel-labs/agent-skills`, `anthropics/skills`); the empty directory scaffold for `docs/part-1` … `part-6`, `patterns/`, `starters/_template/`, `skills/`, `templates/`, `examples/`, `stories/`, `assets/`, `scripts/` exists so Day 2 writing starts with zero setup.
 
-**Definition of done (Day 1 checkpoint):** the repo is browsable on GitHub with no broken relative links; the tracks map, prerequisites, and foundations pages are complete and readable; the dogfooding files are real; a stranger landing on `README.md` can navigate to `start-here.md` and begin.
+**Definition of done (Day 1 checkpoint):** the repo is browsable on GitHub with no broken relative links; the tracks map, prerequisites, and foundations pages are complete and readable; the dogfooding files are real; a stranger landing on `README.md` can navigate to `00-start-here/` and begin.
 
 **How to initiate the Day 1 loop.** Day 1 is a *conditional / run-until-done* loop (Step 5 shape): the work has a provable finish line, so the stopping condition is the checkpoint above. From the repo root, start the loop in Claude Code with:
 

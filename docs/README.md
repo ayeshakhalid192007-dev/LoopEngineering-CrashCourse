@@ -1,7 +1,7 @@
 # Course Contents — read in folder order
 
-> New here? Open **[start-here.md](start-here.md)** — the 60-second router that
-> places you on a track. The folders below are numbered in reading order, so the
+> New here? Open **[00-start-here/](00-start-here/README.md)** — the 60-second router
+> that places you on a track. The folders below are numbered in reading order, so the
 > listing above *is* the syllabus.
 
 ```mermaid
@@ -20,8 +20,8 @@ flowchart LR
 
 | # | Folder | What it teaches |
 | - | ------ | --------------- |
-| — | [start-here.md](start-here.md) | The 60-second router: find your track |
-| — | [learning-tracks.md](learning-tracks.md) | The four tracks (T1–T4) with entry checks |
+| 00 | [00-start-here/](00-start-here/README.md) | The 60-second router: find your track — begin here |
+| — | [00-start-here/learning-tracks.md](00-start-here/learning-tracks.md) | The four tracks (T1–T4) with entry checks |
 | 01 | [01-prerequisites/](01-prerequisites/environment-setup.md) | Tool setup + agentic-coding and spec-driven primers |
 | 02 | [02-foundations/](02-foundations/mental-models.md) | Vocabulary: the six loop parts, four layers, glossary |
 | 03 | [03-part-1-the-shift/](03-part-1-the-shift/README.md) | Steps 1–3 · from prompting to looping |

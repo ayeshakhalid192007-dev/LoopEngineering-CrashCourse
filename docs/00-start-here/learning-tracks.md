@@ -38,7 +38,7 @@ flowchart LR
 | | |
 | --- | --- |
 | **Entry check** | You can use an AI coding agent by hand (or are willing to install one now) |
-| **You study** | [Prerequisites](01-prerequisites/environment-setup.md) → [Foundations](02-foundations/glossary.md) → Part 1 *(Day 2)* |
+| **You study** | [Prerequisites](../01-prerequisites/environment-setup.md) → [Foundations](../02-foundations/glossary.md) → Part 1 *(Day 2)* |
 | **Labs** | Project 1 — the watch loop |
 | **Exit assessment** | Explain the prompting→looping shift and the six parts; run your first in-session loop |
 
@@ -86,7 +86,7 @@ opencode --version
 > **Going deeper:** the tracks map onto the "lasting vs mechanical" split — tracks
 > certify the *lasting* layer (shapes, judgment). The mechanical layer (today's flags
 > and commands) is looked up, never memorized. See
-> [02-foundations/mental-models.md](02-foundations/mental-models.md).
+> [02-foundations/mental-models.md](../02-foundations/mental-models.md).
 
 ## Check yourself
 
@@ -118,8 +118,8 @@ doesn't graduate a track. Building does.)
 ---
 
 *Glossary terms used on this page:* **six parts**, **heartbeat**, **spine**,
-**maker/checker**, **Loop Ready** — see [02-foundations/glossary.md](02-foundations/glossary.md).
+**maker/checker**, **Loop Ready** — see [02-foundations/glossary.md](../02-foundations/glossary.md).
 
 *Sources:* the four-track design and entry/exit checks follow the curriculum backbone of
 Panaversity's *Loop Engineering: A Crash Course* (S1). Full attribution:
-[resources/sources.md](../resources/sources.md).
+[resources/sources.md](../../resources/sources.md).

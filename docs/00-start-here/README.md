@@ -37,7 +37,7 @@ flowchart TD
 
 | Your answer | Go to | First stop |
 | --- | --- | --- |
-| "I prompt an AI by hand (or not at all)" | **T1 · Foundations** | [01-prerequisites/environment-setup.md](01-prerequisites/environment-setup.md) |
+| "I prompt an AI by hand (or not at all)" | **T1 · Foundations** | [01-prerequisites/environment-setup.md](../01-prerequisites/environment-setup.md) |
 | "I know the six parts, never shipped a loop" | **T2 · Practitioner** | Part 2 · The Heartbeat *(opens Day 2)* |
 | "I've shipped one loop" | **T3 · Engineer** | Part 5 · A Complete Loop *(opens Day 2)* |
 | "I run fleets / set team policy" | **T4 · Ultra-Pro** | `advanced/` *(opens Day 3)* |
@@ -59,12 +59,12 @@ claude --version
 opencode --version
 ```
 
-Neither installed? → [01-prerequisites/environment-setup.md](01-prerequisites/environment-setup.md)
+Neither installed? → [01-prerequisites/environment-setup.md](../01-prerequisites/environment-setup.md)
 
 > [!NOTE]
 > **Going deeper:** unsure what "the six parts of a loop" even means? That's a T1
 > signal — and a fine one. The whole vocabulary is built up gently in
-> [02-foundations/mental-models.md](02-foundations/mental-models.md).
+> [02-foundations/mental-models.md](../02-foundations/mental-models.md).
 
 ## Check yourself
 
@@ -101,8 +101,8 @@ has a real stopping condition. That judgment is the course's core skill.
 ---
 
 *Glossary terms used on this page:* **loop**, **heartbeat**, **stopping condition** —
-all defined in [02-foundations/glossary.md](02-foundations/glossary.md).
+all defined in [02-foundations/glossary.md](../02-foundations/glossary.md).
 
 *Sources:* the graded-track structure follows the curriculum backbone of Panaversity's
 *Loop Engineering: A Crash Course* (S1). Full attribution:
-[resources/sources.md](../resources/sources.md).
+[resources/sources.md](../../resources/sources.md).

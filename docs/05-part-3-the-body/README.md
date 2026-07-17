@@ -38,7 +38,7 @@ problem.
 
 [Take the Part 3 quiz](quiz.md) · [drill the flashcards](flashcards.md)
 
-*This part belongs to track [T2 · Practitioner](../learning-tracks.md).*
+*This part belongs to track [T2 · Practitioner](../00-start-here/learning-tracks.md).*
 
 *Sources:* Part 3 draws on Panaversity's *Loop Engineering: A Crash Course* (S1),
 Panaversity's *Agentic Coding Crash Course* (S2), and Sydney Runkle's *The Art of Loop

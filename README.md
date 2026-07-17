@@ -13,7 +13,7 @@ certified multi-loop fleet. Free, open source, readable entirely on GitHub.
 <!-- HERO-END -->
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Course](https://img.shields.io/badge/course-14%20steps%20%C2%B7%204%20tracks-blue.svg)](docs/start-here.md)
+[![Course](https://img.shields.io/badge/course-14%20steps%20%C2%B7%204%20tracks-blue.svg)](docs/00-start-here/README.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Built with loops](https://img.shields.io/badge/built%20with-its%20own%20loops-8A2BE2.svg)](LOOP.md)
 
@@ -29,7 +29,7 @@ the course website (single source of truth — the two never diverge).
 
 ## Start here
 
-**New? Take the 60-second router:** → [`docs/start-here.md`](docs/start-here.md)
+**New? Take the 60-second router:** → [`docs/00-start-here/README.md`](docs/00-start-here/README.md)
 
 It places you on one of four tracks:
 
@@ -41,7 +41,7 @@ It places you on one of four tracks:
 | **T4 · Ultra-Pro** | shipping loops already | hill-climbing loops, fleets, governance at team scale |
 
 Full map with entry checks and exit assessments:
-[`docs/learning-tracks.md`](docs/learning-tracks.md)
+[`docs/00-start-here/learning-tracks.md`](docs/00-start-here/learning-tracks.md)
 
 ## Quickstart
 
