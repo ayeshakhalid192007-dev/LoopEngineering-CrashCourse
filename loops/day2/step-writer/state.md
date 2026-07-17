@@ -3,9 +3,9 @@
 > **Owned by `step-writer`. No other loop may write this file.**
 > Definition: [`loop.md`](loop.md) · Rulebook: [`LOOP.md`](../../../LOOP.md)
 
-**Status:** 🟢 running
-**Last beat:** —
-**Runs used:** 0 / 40 · **Tokens used:** ≈0k / 700k
+**Status:** 🟢 running — Part 1 complete (4/36 items)
+**Last beat:** 2026-07-17 (beat 4 — Part 1 README)
+**Runs used:** 4 / 40 · **Tokens used:** ≈45k / 700k
 
 > Committed from beat zero — Day 1's lesson applied: *a spine that isn't committed
 > isn't a spine* (see [`loops/day1/page-writer/state.md`](../../day1/page-writer/state.md)).
@@ -14,10 +14,10 @@
 
 ### Part 1 — The Shift
 
-- [ ] `docs/part-1-the-shift/01-from-prompting-to-looping.md`
-- [ ] `docs/part-1-the-shift/02-the-four-layers.md`
-- [ ] `docs/part-1-the-shift/03-anatomy-of-a-loop.md`
-- [ ] `docs/part-1-the-shift/README.md`
+- [x] `docs/part-1-the-shift/01-from-prompting-to-looping.md`
+- [x] `docs/part-1-the-shift/02-the-four-layers.md`
+- [x] `docs/part-1-the-shift/03-anatomy-of-a-loop.md`
+- [x] `docs/part-1-the-shift/README.md`
 
 ### Part 2 — The Heartbeat
 
@@ -78,4 +78,6 @@ _None._
 
 ## Notes to the checker
 
-_Filled in as parts complete._
+- **Part 1 ready for review** (01, 02, 03, README). README links `quiz.md` /
+  `flashcards.md` ahead of the quiz-writer — expect those two links to resolve only
+  after the quiz-writer's Part 1 beat.

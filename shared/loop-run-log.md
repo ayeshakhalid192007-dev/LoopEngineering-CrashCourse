@@ -47,3 +47,7 @@ Prune entries older than 30 days.
 {"run_id": "2026-07-16T11:15:12Z", "pattern": "link-check", "duration_s": 30, "items_found": 0, "actions_taken": 0, "escalations": 0, "tokens_estimate": 5000, "outcome": "report-only"}
 {"run_id": "2026-07-16T17:40:38Z", "pattern": "checker", "duration_s": 300, "items_found": 0, "actions_taken": 0, "escalations": 0, "tokens_estimate": 20000, "outcome": "report-only"}
 {"run_id": "2026-07-16T17:41:10Z", "pattern": "link-check", "duration_s": 20, "items_found": 0, "actions_taken": 0, "escalations": 0, "tokens_estimate": 3000, "outcome": "report-only"}
+{"run_id": "2026-07-17T14:24:17Z", "pattern": "step-writer", "duration_s": 200, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 12000, "outcome": "page-written: part-1/01"}
+{"run_id": "2026-07-17T14:24:17Z", "pattern": "step-writer", "duration_s": 200, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 12000, "outcome": "page-written: part-1/02"}
+{"run_id": "2026-07-17T14:24:17Z", "pattern": "step-writer", "duration_s": 210, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 13000, "outcome": "page-written: part-1/03"}
+{"run_id": "2026-07-17T14:24:17Z", "pattern": "step-writer", "duration_s": 90, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 8000, "outcome": "page-written: part-1/README"}

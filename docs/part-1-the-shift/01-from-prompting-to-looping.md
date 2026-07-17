@@ -1,0 +1,126 @@
+# Step 1 · From Prompting to Looping
+
+> The single shift the whole course hangs on: stop sending instructions one at a time,
+> start engineering the system that sends them for you.
+
+## The hook
+
+It's 9:14 am. You've typed "now fix the failing test" for the eleventh time today,
+pasted the same error twice, and re-explained the project layout the agent forgot
+overnight. You are not doing engineering right now — you are doing *dispatch*. And
+dispatch, it turns out, is a job a loop can hold.
+
+## The shift (plain English)
+
+**Prompting** is driving the agent by hand: you decide the next unit of work, you
+send it, you read the result, you decide again. The intelligence sits in the model,
+but the *management* sits in you — every cycle burns your attention.
+
+**Looping** moves that management into a system you design once: something decides
+*when* to run (a heartbeat), *what* to work on (a spine of durable state), and *when
+to stop* (a provable condition) — without you in the chair. You stop being the
+dispatcher and become the engineer of the dispatcher.
+
+The critical part of the shift is what you keep: **intent and accountability**. The
+loop inherits your typing, never your judgment. You still decide what "good" means,
+you still review what ships, and you still answer for the result. A loop with your
+keystrokes but without your intent is just intent debt executing at scale.
+
+## Prompting vs. looping
+
+| | Prompting (by hand) | Looping (engineered) |
+| --- | --- | --- |
+| Who picks the next task | you, every time | the spine (state file) |
+| When work happens | when you're at the keyboard | on a heartbeat you chose |
+| When it stops | when you stop | when a provable condition is met |
+| Who checks the work | you, informally | a separate checker, every beat |
+| What survives a crash | your memory | the spine + run log |
+| Your role | dispatcher | engineer, reviewer, owner |
+
+```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+flowchart LR
+    subgraph HAND ["Prompting — you are the loop"]
+      U("🧑 you"):::human -->|prompt| A1("agent"):::agent -->|result| U
+    end
+    subgraph ENG ["Looping — you engineer the loop"]
+      HB("heartbeat"):::time --> A2("agent"):::agent
+      SP[("spine")]:::file --> A2
+      A2 --> CK("checker"):::check --> SP
+      U2("🧑 you"):::human -.->|"design · review · own"| ENG2(" "):::ghost
+    end
+    classDef human fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
+    classDef agent fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
+    classDef time fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
+    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
+    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
+    classDef ghost fill:#ffffff00,stroke:#ffffff00;
+    style HAND fill:#fffbf5,stroke:#fcd34d,stroke-width:1.5px,color:#92400e;
+    style ENG fill:#fbfbff,stroke:#c7d2fe,stroke-width:1.5px,color:#4338ca;
+```
+
+## The same task, both ways
+
+```claude
+# Claude Code — live docs: https://docs.claude.com/en/docs/claude-code
+# Prompting: you type this, wait, read, type the next one…
+> fix the first failing test in tests/
+
+# Looping: you type this ONCE; the loop manages the cycle
+> /loop Run the test suite. Fix the FIRST failing test only. Log one
+  line to loop-run-log.md. Stop when the suite passes.
+```
+
+```opencode
+# OpenCode — live docs: https://opencode.ai/docs
+# Prompting: one instruction per session, by hand
+opencode run "fix the first failing test in tests/"
+
+# Looping: a capped shell loop carries the cycle instead of you
+for i in $(seq 1 10); do
+  opencode run "Run the tests. Fix the FIRST failure only. Exit if green."
+done
+```
+
+> [!NOTE]
+> **Going deeper:** the loop above already contains four of the six parts you'll meet
+> in [Step 3](03-anatomy-of-a-loop.md) — a heartbeat, a body, a stop, and a limit. The
+> shift is also covered from the spec side in the
+> [spec-driven primer](../prerequisites/spec-driven-primer.md).
+
+## Check yourself
+
+**Q: "I prompt the agent 40 times a day, so I'm basically already looping." What's
+missing from that picture?**
+
+<details><summary>Answer</summary>
+
+The *system* is missing — those 40 prompts have no heartbeat (they happen when you're
+free), no spine (each one starts from your memory), no provable stop, and no checker
+but your tired eyes. Prompting a lot is not looping; looping is when the deciding,
+remembering, and stopping are engineered so they happen **without you in the chair**.
+
+</details>
+
+## Try With AI
+
+In a throwaway repo, pick a task you'd normally do in 5–10 manual prompts (e.g., "add
+docstrings to every function in `src/`"). First do three of them by hand and notice
+what *you* are deciding between prompts. Then write those decisions down as one loop
+prompt with a stop ("stop when every function has a docstring") and a limit ("max 10
+runs") — and run it. Compare the two transcripts: everything you stopped typing is
+what the loop now owns.
+
+## When it goes wrong
+
+| Symptom | Cause | Fix |
+| --- | --- | --- |
+| Loop runs but results miss the point | You automated the typing, not the intent | Write the goal + constraints into the prompt/spec before looping it |
+| "It never knows when it's finished" | Stop condition lives in your head | Make the stop provable: a file state, a green suite, an empty checklist |
+| You check every beat anyway | No trusted checker | Add a separate checker (Step 11) and a human gate where judgment matters |
+| Fires when you're away, work is wrong by morning | Looping before proving | Start report-only (L1); earn autonomy one level at a time |
+
+---
+
+*Glossary terms used on this page:* **loop**, **heartbeat**, **spine**, **intent
+debt**, **human gate** — see the [glossary](../00-foundations/glossary.md).
