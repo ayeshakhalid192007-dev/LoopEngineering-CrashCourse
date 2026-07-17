@@ -3,9 +3,9 @@
 > **Owned by `step-writer`. No other loop may write this file.**
 > Definition: [`loop.md`](loop.md) · Rulebook: [`LOOP.md`](../../../LOOP.md)
 
-**Status:** 🟢 running — Parts 1–4 complete (16/36 items)
-**Last beat:** 2026-07-17 (beat 16 — Part 4 README)
-**Runs used:** 16 / 40 · **Tokens used:** ≈195k / 700k
+**Status:** 🟢 running — Parts 1–5 complete (20/36 items)
+**Last beat:** 2026-07-17 (beat 20 — Part 5 README)
+**Runs used:** 20 / 40 · **Tokens used:** ≈250k / 700k
 
 > Committed from beat zero — Day 1's lesson applied: *a spine that isn't committed
 > isn't a spine* (see [`loops/day1/page-writer/state.md`](../../day1/page-writer/state.md)).
@@ -42,10 +42,10 @@
 
 ### Part 5 — A Complete Loop, Twice
 
-- [ ] `docs/part-5-complete-loop/13-build-the-loop-twice.md`
-- [ ] `docs/part-5-complete-loop/13a-claude-code-walkthrough.md`
-- [ ] `docs/part-5-complete-loop/13b-opencode-walkthrough.md`
-- [ ] `docs/part-5-complete-loop/README.md`
+- [x] `docs/part-5-complete-loop/13-build-the-loop-twice.md`
+- [x] `docs/part-5-complete-loop/13a-claude-code-walkthrough.md`
+- [x] `docs/part-5-complete-loop/13b-opencode-walkthrough.md`
+- [x] `docs/part-5-complete-loop/README.md`
 
 ### Part 6 — Human Control
 
