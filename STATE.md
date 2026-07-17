@@ -65,9 +65,11 @@ flowchart LR
 
 ## High Priority (waiting on human)
 
-- Kick off Day 2 (full 14-step course + assessments): review `days-plans/day2-plan.md`
-  and set up/start the Day 2 loops. The remote exists and both CI gates (link-check,
-  markdown-lint) have validated green on `main`.
+- **Declare the Day 2 checkpoint** (rule 9): spot-read one page per part — suggested
+  `docs/part-2-heartbeat/05-conditional-run-until-done.md`,
+  `docs/part-3-the-body/11-maker-checker.md`,
+  `docs/part-6-human-control/the-three-nested-loops.md` — then approve pushing
+  `day2/course-body` and opening a draft PR. Nothing has been pushed.
 
 ## Watch List
 
