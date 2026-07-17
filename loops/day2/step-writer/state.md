@@ -74,7 +74,7 @@
 
 ## Escalations
 
-_None._
+*None.*
 
 ## Notes to the checker
 

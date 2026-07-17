@@ -57,8 +57,8 @@ flowchart LR
 | - | ----------------------------- | ------------------------------------------ |
 | 1 | Hook                          | a concrete-scenario opening section        |
 | 2 | Plain-English explanation     | body prose between hook and diagram        |
-| 3 | Mermaid diagram               | at least one ` ```mermaid ` fence          |
-| 4 | Dual-tool code tabs           | a ` ```claude ` **and** a ` ```opencode ` fence |
+| 3 | Mermaid diagram               | at least one mermaid fence                 |
+| 4 | Dual-tool code tabs           | a claude fence **and** an opencode fence   |
 | 5 | Going-deeper callout          | a `> [!NOTE]` **Going deeper** block       |
 | 6 | Check yourself                | question + `<details>` reveal              |
 | 7 | Try With AI                   | a hands-on exercise section                |

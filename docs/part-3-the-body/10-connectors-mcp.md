@@ -6,8 +6,8 @@
 
 ## The hook
 
-Your triage loop writes a beautiful nightly report: "issue #482 is a duplicate of
-#291 — recommend closing." It has written that same line for four nights, because
+Your triage loop writes a beautiful nightly report: "issue #482 duplicates issue
+number 291 — recommend closing." It has written that same line for four nights, because
 recommending is all it can do. Wire it to the issue tracker and the beat becomes:
 *linked, labeled, closed, one line logged.* Same intelligence — the difference is
 hands.

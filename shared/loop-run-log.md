@@ -83,3 +83,4 @@ Prune entries older than 30 days.
 {"run_id": "2026-07-17T16:03:41Z", "pattern": "step-writer", "duration_s": 230, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 14000, "outcome": "page-written: operating/anti-patterns"}
 {"run_id": "2026-07-17T16:03:41Z", "pattern": "step-writer", "duration_s": 220, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 13000, "outcome": "page-written: operating/recovery-playbook"}
 {"run_id": "2026-07-17T16:03:41Z", "pattern": "step-writer", "duration_s": 230, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 14000, "outcome": "success-stop: checklist emptied 36/36"}
+{"run_id": "2026-07-17T16:16:21Z", "pattern": "template-checker", "duration_s": 300, "items_found": 5, "actions_taken": 0, "escalations": 0, "tokens_estimate": 25000, "outcome": "report-only: 36/36 PASS, 5 lint findings relayed+fixed, 11 links PENDING-QUIZ"}

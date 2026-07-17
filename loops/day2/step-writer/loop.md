@@ -73,7 +73,7 @@ flowchart TD
 | `docs/methods/`, `docs/operating/`                                   | **write** (sole owner) |
 | `loops/day2/step-writer/state.md`                                    | **write** (sole owner) |
 | `shared/loop-run-log.md`                                             | **append-only**        |
-| `docs/part-*/quiz.md`, `docs/part-*/flashcards.md`                   | read-only — `quiz-writer` owns them |
+| `docs/part-*/quiz.md` + `flashcards.md` (`quiz-writer` owns)         | read-only              |
 | every other `state.md`                                               | read-only              |
 | `LOOP.md`, `CLAUDE.md`, `loop-plan.md`, `shared/goal.md`, `STATE.md` | read-only              |
 
