@@ -24,9 +24,12 @@ flowchart LR
       2026-07-16** after human review of README + foundations pages against
       `shared/goal.md`. Built by the loops in `loops/day1/` (page-writer success stop
       20/20 runs; checker: all findings resolved; link-check: clean final pass).
-- [ ] Day 2 — Full 14-step course + assessments — **in progress 2026-07-17.**
-      Fleet: `loops/day2/` (step-writer L2, template-checker L1, quiz-writer L2)
-      + Day 1's link-check continuing. Per-loop progress lives in each spine.
+- [ ] Day 2 — Full 14-step course + assessments — **fleet complete 2026-07-17,
+      awaiting human gate.** All three loops hit success stops: step-writer 36/36
+      pages (14 steps + 13a/13b + companions + 6 READMEs + 4 methods + 7 operating),
+      template-checker 36/36 PASS (lint 0, 40/40 diagrams compile, links clean),
+      quiz-writer 6 quizzes + 5 flashcard sets. **Checkpoint pending: human
+      spot-read of one page per part** (rule 9 — only the human declares it).
 - [ ] Day 3 — Loop library + labs + advanced tier + certification
 - [ ] Day 4 — Website + polish + ship
 

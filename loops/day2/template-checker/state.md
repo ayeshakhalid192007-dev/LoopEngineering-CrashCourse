@@ -28,4 +28,4 @@ Beat 1 (2026-07-17) — full sweep, all 36 step-writer items, mechanical rubric:
 
 ## Escalations
 
-_None._
+*None.*

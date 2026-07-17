@@ -1,0 +1,81 @@
+# Part 6 Quiz · Human Control
+
+> Five questions on the job that can't be automated. Bar: 4 of 5 — and this is the
+> part worth 5 of 5.
+
+## Question 1
+
+"Our loops have been green for a quarter — let's auto-merge and stop reviewing."
+Name the two rules this violates and the failure it invites
+([Step 14](14-staying-the-engineer.md)).
+
+<details><summary>Show answer</summary>
+
+It's **AI gravity** (capability expansion justified by streak, not decision) and it
+removes the **human gate** that keeps comprehension debt payable. Invited failure:
+the first confidently-wrong change merges at machine speed into a codebase whose
+owners stopped reading a quarter ago.
+
+</details>
+
+## Question 2
+
+A loop's cap allows it to keep running; its report has changed nobody's behavior
+in three weeks. Keep it? ([cost-management](cost-management.md))
+
+<details><summary>Show answer</summary>
+
+No. Caps answer "may it spend?" — only the engineer answers "is it worth it?" A
+report no one acts on has zero value and compounding cost (tokens *and* your
+attention). Retire it, or change it until it changes decisions.
+
+</details>
+
+## Question 3
+
+CI green, checker PASSing, users report the feature doesn't work. Which
+verification layer was missing and why couldn't the others catch it
+([verification](verification.md))?
+
+<details><summary>Show answer</summary>
+
+Layer 3, the **outcome check** — driving the actual flow end-to-end. Scripts
+verify artifacts; checkers verify shape; "finished but doesn't work" lives only in
+the running system, which neither ever visits. Green ≠ done.
+
+</details>
+
+## Question 4
+
+The Day 1 budget incident (tripwire → stop → human raised caps → finish): walk it
+through the three nested loops ([the-three-nested-loops](the-three-nested-loops.md)).
+
+<details><summary>Show answer</summary>
+
+Inner (agent): detected 79%, self-throttled, alerted, stopped — reported upward,
+changed nothing above itself. Middle (engineer): read the alert in context,
+deliberately raised the caps. Outer (governance): had pre-written the rule
+"budget is human-owned, 80% → report-only" that made the whole exchange boring.
+Every arrow pointed inward.
+
+</details>
+
+## Question 5
+
+Define AI gravity, name its tell in a fleet, and the antidote.
+
+<details><summary>Show answer</summary>
+
+The pull to hand the system the next decision because it handled the last one.
+Tell: capabilities that grew with no written decision behind them (audit body vs.
+`loop.md`). Antidote: every expansion is an explicit, recorded human decision —
+promotion is never a default.
+
+</details>
+
+---
+
+*Course body complete. Next layers:
+[methods](../methods/make-your-own-loop.md) ·
+[operating handbook](../operating/operating-loops.md) ·
+[flashcards](flashcards.md)*
