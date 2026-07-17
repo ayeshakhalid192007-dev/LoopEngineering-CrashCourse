@@ -3,9 +3,9 @@
 > **Owned by `step-writer`. No other loop may write this file.**
 > Definition: [`loop.md`](loop.md) · Rulebook: [`LOOP.md`](../../../LOOP.md)
 
-**Status:** 🟢 running — Parts 1–6 complete (25/36 items); methods + operating remain
-**Last beat:** 2026-07-17 (beat 25 — Part 6 README)
-**Runs used:** 25 / 40 · **Tokens used:** ≈320k / 700k
+**Status:** 🟢 running — Parts 1–6 + methods complete (29/36 items); operating remains
+**Last beat:** 2026-07-17 (beat 29 — decision-framework)
+**Runs used:** 29 / 40 · **Tokens used:** ≈370k / 700k
 
 > Committed from beat zero — Day 1's lesson applied: *a spine that isn't committed
 > isn't a spine* (see [`loops/day1/page-writer/state.md`](../../day1/page-writer/state.md)).
@@ -57,10 +57,10 @@
 
 ### Methods
 
-- [ ] `docs/methods/make-your-own-loop.md`
-- [ ] `docs/methods/loop-design-checklist.md`
-- [ ] `docs/methods/pattern-picker.md`
-- [ ] `docs/methods/decision-framework.md`
+- [x] `docs/methods/make-your-own-loop.md`
+- [x] `docs/methods/loop-design-checklist.md`
+- [x] `docs/methods/pattern-picker.md`
+- [x] `docs/methods/decision-framework.md`
 
 ### Operating handbook
 

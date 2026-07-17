@@ -72,3 +72,7 @@ Prune entries older than 30 days.
 {"run_id": "2026-07-17T15:44:17Z", "pattern": "step-writer", "duration_s": 240, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 14000, "outcome": "page-written: part-6/verification"}
 {"run_id": "2026-07-17T15:44:17Z", "pattern": "step-writer", "duration_s": 250, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 14000, "outcome": "page-written: part-6/the-three-nested-loops"}
 {"run_id": "2026-07-17T15:44:17Z", "pattern": "step-writer", "duration_s": 90, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 8000, "outcome": "page-written: part-6/README"}
+{"run_id": "2026-07-17T15:51:32Z", "pattern": "step-writer", "duration_s": 220, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 13000, "outcome": "page-written: methods/make-your-own-loop"}
+{"run_id": "2026-07-17T15:51:32Z", "pattern": "step-writer", "duration_s": 180, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 11000, "outcome": "page-written: methods/loop-design-checklist"}
+{"run_id": "2026-07-17T15:51:32Z", "pattern": "step-writer", "duration_s": 200, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 12000, "outcome": "page-written: methods/pattern-picker"}
+{"run_id": "2026-07-17T15:51:32Z", "pattern": "step-writer", "duration_s": 200, "items_found": 1, "actions_taken": 1, "escalations": 0, "tokens_estimate": 12000, "outcome": "page-written: methods/decision-framework"}
