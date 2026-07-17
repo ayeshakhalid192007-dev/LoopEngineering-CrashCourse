@@ -27,13 +27,13 @@
 
 ### 3. Start the course content (afternoon)
 
-- [ ] `docs/start-here.md` — 60-second router: "which track am I?"
-- [ ] `docs/learning-tracks.md` — the T1 → T4 map
-- [ ] `docs/prerequisites/` — 3 pages:
+- [ ] `docs/00-start-here/README.md` — 60-second router: "which track am I?"
+- [ ] `docs/00-start-here/learning-tracks.md` — the T1 → T4 map
+- [ ] `docs/01-prerequisites/` — 3 pages:
   - `environment-setup.md`
   - `agentic-coding-primer.md`
   - `spec-driven-primer.md`
-- [ ] `docs/00-foundations/` — 6 pages:
+- [ ] `docs/02-foundations/` — 6 pages:
   - `glossary.md`, `mental-models.md`, `concepts.md`,
   - `the-four-layers.md`, `primitives.md`, `primitives-matrix.md`
 
@@ -53,6 +53,21 @@ The repo is browsable on GitHub. The tracks map, prerequisites, and foundations 
 
 The trick: don't write every file by hand, one prompt at a time. Set up small loops that do the repetitive work while you review.
 
+```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+flowchart LR
+    L1("Loop 1 · page-writer<br/>run-until-done"):::maker -->|writes pages| DOCS[("docs/")]:::file
+    L2("Loop 2 · checker<br/>every 10m"):::check -.->|reads| DOCS
+    L3("Loop 3 · link-check<br/>every 30m"):::check -.->|reads| DOCS
+    L2 & L3 -->|findings| RN[("review-notes")]:::file
+    RN -.-> H(["🧑 You — review notes<br/>every hour or two,<br/>commit at checkpoint"]):::human
+    H -.->|fixes flow back| L1
+    classDef maker fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
+    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
+    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
+    classDef human fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
+```
+
 ### Loop 1 — The page-writer loop (conditional / run-until-done)
 
 Make a simple checklist file first (that's your **spine**):
@@ -60,9 +75,9 @@ Make a simple checklist file first (that's your **spine**):
 ```markdown
 # STATE.md
 ## Day 1 pages to write
-- [ ] docs/start-here.md
-- [ ] docs/learning-tracks.md
-- [ ] docs/prerequisites/environment-setup.md
+- [ ] docs/00-start-here/README.md
+- [ ] docs/00-start-here/learning-tracks.md
+- [ ] docs/01-prerequisites/environment-setup.md
 - ... (all pages above)
 ```
 

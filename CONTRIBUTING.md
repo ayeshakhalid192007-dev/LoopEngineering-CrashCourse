@@ -28,6 +28,22 @@ improvements**.
 4. Open a PR — the template's checklist mirrors the rules above.
 5. A human maintainer reviews everything, including (especially) loop-generated PRs.
 
+```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
+flowchart LR
+    I("Open an issue<br/>right template"):::step --> W("Fork + branch<br/>make the change"):::step
+    W --> LC("Check links +<br/>lint locally"):::verify
+    LC --> PR("Open a PR<br/>checklist filled"):::step
+    PR --> CI{"CI green?<br/>link-check +<br/>markdown-lint"}:::verify
+    CI -->|no| W
+    CI -->|yes| REV(["🧑 Human review<br/>especially loop-made PRs"]):::human
+    REV --> M(["Merge"]):::win
+    classDef step fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
+    classDef verify fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
+    classDef human fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
+    classDef win fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
+```
+
 ## If your contribution was produced by a loop
 
 We dogfood: parts of this repo are maintained by loops (see [`LOOP.md`](LOOP.md)).

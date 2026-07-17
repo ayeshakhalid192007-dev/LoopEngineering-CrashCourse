@@ -8,7 +8,7 @@ assignees: ""
 
 ## Where
 
-<!-- Path to the page/starter/component, e.g. docs/part-2-heartbeat/05-conditional-run-until-done.md -->
+<!-- Path to the page/starter/component, e.g. docs/04-part-2-heartbeat/05-conditional-run-until-done.md -->
 
 ## What's wrong
 

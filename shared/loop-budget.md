@@ -3,7 +3,17 @@
 > One budget for the whole fleet, not per loop. Every loop checks this file at the
 > start of every beat (see the `loop-budget` skill and root `LOOP.md`).
 
-## Daily limits
+## Daily limits — Day 2 fleet (current)
+
+| Loop | Max runs/day | Max tokens/day | Max sub-agent spawns/run |
+| ------ | -------------- | ---------------- | -------------------------- |
+| step-writer | 40 | 700k | 0 |
+| template-checker | 12 | 150k | 0 |
+| quiz-writer | 10 | 150k | 0 |
+| link-check *(continues from Day 1)* | 20 | 50k | 0 |
+| **Fleet total** | — | **1,050k** | — |
+
+## Daily limits — Day 1 fleet (retired 2026-07-16)
 
 | Loop | Max runs/day | Max tokens/day | Max sub-agent spawns/run |
 | ------ | -------------- | ---------------- | -------------------------- |
@@ -15,6 +25,8 @@
 ## On budget exceed
 
 1. At 80% of a cap: that loop switches to report-only for the rest of the day.
+   **Measure against the cap as it reads *right now*, not the cap at start of day** —
+   Day 1's page-writer ran to ≈90% because the 80% line was checked against a stale cap.
 2. At 100% of the fleet total: ALL loops pause.
 3. Append the event to `shared/loop-run-log.md`.
 4. Notify the human (note in the loop's own `state.md` under Escalations).

@@ -11,11 +11,15 @@ actual machinery that produced the pages in `docs/`.
 
 ```text
 loops/
-├── README.md          ← you are here
-└── day1/              one folder per build day
-    ├── page-writer/   the maker  (L2 — writes docs/)
-    ├── checker/       the grader (L1 — report-only)
-    └── link-check/    the heartbeat (L1 — report-only)
+├── README.md              ← you are here
+├── day1/                  one folder per build day
+│   ├── page-writer/       the maker  (L2 — writes docs/)
+│   ├── checker/           the grader (L1 — report-only)
+│   └── link-check/        the heartbeat (L1 — still running in Day 2)
+└── day2/
+    ├── step-writer/       the maker  (L2 — steps, methods, operating)
+    ├── template-checker/  the grader (L1 — PASS/FAIL per §10 rubric)
+    └── quiz-writer/       the second maker (L2 — quiz.md + flashcards.md only)
 ```
 
 Each loop folder holds exactly two files:
@@ -47,7 +51,35 @@ loop may edit it**. The two rules that shape this folder:
 
 Every beat of every run is logged in [`shared/loop-run-log.md`](../shared/loop-run-log.md).
 Note that these three loops were **not chained** — no loop called another. Each woke on
-its own heartbeat and coordinated purely through files.
+its own heartbeat and coordinated purely through files:
+
+```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+flowchart TB
+    subgraph HEARTBEATS ["Three independent heartbeats"]
+      direction LR
+      PW("page-writer<br/>run-until-done"):::maker
+      CK("checker<br/>every 10m"):::check
+      LC("link-check<br/>every 30m"):::check
+    end
+    subgraph FILES ["The only meeting point: files"]
+      direction LR
+      DOCS[("docs/")]:::file
+      SPINES[("three separate<br/>state.md spines")]:::file
+      LOG[("shared/<br/>loop-run-log.md")]:::log
+    end
+    PW -->|writes| DOCS
+    CK -.->|reads| DOCS
+    LC -.->|reads| DOCS
+    PW & CK & LC -->|own spine only| SPINES
+    PW & CK & LC -->|append one line<br/>per beat| LOG
+    classDef maker fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
+    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
+    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
+    classDef log fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
+    style HEARTBEATS fill:#fbfbff,stroke:#c7d2fe,stroke-width:1.5px,color:#4338ca;
+    style FILES fill:#fbfdfc,stroke:#99f6e4,stroke-width:1.5px,color:#115e59;
+```
 
 ## ⚠️ On the honesty of these files
 

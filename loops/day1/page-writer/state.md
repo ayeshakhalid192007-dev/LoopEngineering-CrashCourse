@@ -28,17 +28,17 @@ commit their spines as they run.
 
 ## Day 1 page checklist ✅ fact — all pages verified present in `docs/`
 
-- [x] `docs/start-here.md`
-- [x] `docs/learning-tracks.md`
-- [x] `docs/prerequisites/environment-setup.md`
-- [x] `docs/prerequisites/agentic-coding-primer.md`
-- [x] `docs/prerequisites/spec-driven-primer.md`
-- [x] `docs/00-foundations/glossary.md`
-- [x] `docs/00-foundations/mental-models.md`
-- [x] `docs/00-foundations/concepts.md`
-- [x] `docs/00-foundations/the-four-layers.md`
-- [x] `docs/00-foundations/primitives.md`
-- [x] `docs/00-foundations/primitives-matrix.md`
+- [x] `docs/00-start-here/README.md`
+- [x] `docs/00-start-here/learning-tracks.md`
+- [x] `docs/01-prerequisites/environment-setup.md`
+- [x] `docs/01-prerequisites/agentic-coding-primer.md`
+- [x] `docs/01-prerequisites/spec-driven-primer.md`
+- [x] `docs/02-foundations/glossary.md`
+- [x] `docs/02-foundations/mental-models.md`
+- [x] `docs/02-foundations/concepts.md`
+- [x] `docs/02-foundations/the-four-layers.md`
+- [x] `docs/02-foundations/primitives.md`
+- [x] `docs/02-foundations/primitives-matrix.md`
 - [x] Repo skeleton — `LICENSE`, `resources/sources.md`, `CONTRIBUTING.md`,
       `SECURITY.md`, `CODEOWNERS`, `CITATION.cff`, `.github/`
 - [x] Dogfooding files — `AGENTS.md`, `LOOP.md`, `loop-budget.md`,

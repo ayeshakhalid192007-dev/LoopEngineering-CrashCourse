@@ -12,6 +12,26 @@
 | **Delivery target** | 4 days to production-ready (3-day compressed option noted) |
 | **License** | MIT (matches and attributes reference material) |
 
+**The plan at a glance** — one content source, two surfaces, four days:
+
+```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+flowchart LR
+    SRC("Nine primary<br/>sources<br/>§5"):::cfg --> DOCS[("docs/<br/>single source<br/>of truth")]:::file
+    LOOPS("Build loops<br/>maker + checker fleets<br/>§25"):::maker -->|write, one page<br/>per beat| DOCS
+    DOCS --> GH(["Deliverable 1<br/>GitHub course"]):::surface
+    DOCS --> WEB(["Deliverable 2<br/>Next.js site · web/"]):::surface
+    GATES("Quality gates<br/>link-check · lint · audit<br/>§26"):::check -.->|grade| DOCS
+    H(["🧑 Human gates<br/>review · checkpoint · deploy"]):::human -.-> GH
+    H -.-> WEB
+    classDef cfg fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
+    classDef maker fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
+    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
+    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
+    classDef surface fill:#eef6ff,stroke:#3b82f6,stroke-width:1.5px,color:#1e40af;
+    classDef human fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
+```
+
 ---
 
 ## Table of Contents
@@ -204,10 +224,10 @@ The system is a **graded curriculum**, not a flat set of pages. Four tracks take
 | ------- | ------- | -------------------- | -------------------- | -------- |
 | **T1 · Foundations** | Beginner | how to use an AI coding agent by hand | explain the shift and the six parts; run your first in-session loop | Prerequisites, Foundations, Part 1, Projects 1 |
 | **T2 · Practitioner** | Intermediate | the six parts | choose a heartbeat, write a provable stop, split maker/checker, keep a spine | Parts 2–4, Projects 2–4, the method |
-| **T3 · Engineer** | Advanced | how to assemble a loop | build the full six-part loop in two tools, pick from the prebuilt library, operate it safely | Parts 5–6, the loop library, Projects 5–8, operating/safety |
+| **T3 · Engineer** | Advanced | how to assemble a loop | build the full six-part loop in two tools, pick from the prebuilt library, operate it safely | Parts 5–6, the loop library, Projects 5–8, 10-operating/safety |
 | **T4 · Ultra-Pro** | Expert | how to ship one loop | design hill-climbing loops, coordinate multi-loop fleets, govern permissions at team scale, author and contribute new loops | `advanced/`, multi-loop, enterprise, governance, certification capstone |
 
-**Progression aids baked into the repo:** a `start-here.md` router, a `learning-tracks.md` map, per-part quizzes, per-part flashcards, graded labs with reference solutions, cheatsheets per tool, and a final **Loop Ready certification** capstone with a rubric. The website surfaces the active track, a progress bar, and "you are here" on the roadmap.
+**Progression aids baked into the repo:** a `00-start-here/` router (`README.md` + `learning-tracks.md`), per-part quizzes, per-part flashcards, graded labs with reference solutions, cheatsheets per tool, and a final **Loop Ready certification** capstone with a rubric. The website surfaces the active track, a progress bar, and "you are here" on the roadmap.
 
 ## 11. The 14-step roadmap (detailed)
 
@@ -455,7 +475,7 @@ Loops are grouped by job. Each entry ships with a `LOOP.md`, a `README.md`, a st
 4. **Shared denylist** — the same path denylist is copied into every `LOOP.md` in the fleet.
 5. **Aggregate token budget** — spend is tracked across the fleet, not per loop; the budget governor pauses lowest-priority loops first.
 
-R loops are **meta-loops**: their "work" is reading other loops' spines and run logs, never the codebase itself — which keeps them cheap, read-mostly, and safe at L1. They ship as extended kits (Claude Code + OpenCode) tied to the T4 pages `operating/multi-loop.md` and `advanced/multi-loop-coordination.md`.
+R loops are **meta-loops**: their "work" is reading other loops' spines and run logs, never the codebase itself — which keeps them cheap, read-mostly, and safe at L1. They ship as extended kits (Claude Code + OpenCode) tied to the T4 pages `10-operating/multi-loop.md` and `advanced/multi-loop-coordination.md`.
 
 Each loop page cross-links to the concepts it exercises and the anti-patterns it must avoid. The **core set** carries the deepest treatment and full multi-tool kits: the original seven (daily-triage, pr-babysitter, ci-sweeper, dependency-sweeper, changelog-drafter, post-merge-cleanup, issue-triage) **plus all 27 loops in categories J–Q** — 34 core loops in total. The remaining loops in categories A–I, and the six category-R fleet loops, ship for the primary tools with a documented porting path.
 
@@ -561,8 +581,7 @@ LoopEngineering-CrashCourse/
 │
 ├── docs/                             # ── THE COURSE (single source of truth) ──
 │   ├── README.md                     # course index: the 4 tracks + 14-step roadmap
-│   ├── start-here.md                 # 60-second router: which track am I?
-│   ├── learning-tracks.md            # T1→T4 map, entry checks, exit assessments
+│   ├── 00-start-here/                # 60-second router + track map (README.md, learning-tracks.md)
 │   │
 │   ├── prerequisites/
 │   │   ├── README.md
@@ -570,7 +589,7 @@ LoopEngineering-CrashCourse/
 │   │   ├── agentic-coding-primer.md  # plan mode, permissions, context, rules file, subagents, MCP
 │   │   └── spec-driven-primer.md     # vibe-vs-spec, the constitution, the 4-phase method
 │   │
-│   ├── 00-foundations/
+│   ├── 02-foundations/
 │   │   ├── glossary.md
 │   │   ├── mental-models.md
 │   │   ├── concepts.md               # intent debt, comprehension debt, harness vs loop
@@ -578,14 +597,14 @@ LoopEngineering-CrashCourse/
 │   │   ├── primitives.md
 │   │   └── primitives-matrix.md      # cross-tool mapping
 │   │
-│   ├── part-1-the-shift/
+│   ├── 03-part-1-the-shift/
 │   │   ├── README.md
 │   │   ├── 01-from-prompting-to-looping.md
 │   │   ├── 02-the-four-layers.md
 │   │   ├── 03-anatomy-of-a-loop.md
 │   │   ├── quiz.md
 │   │   └── flashcards.md
-│   ├── part-2-heartbeat/
+│   ├── 04-part-2-heartbeat/
 │   │   ├── README.md
 │   │   ├── 04-in-session-loops.md
 │   │   ├── 05-conditional-run-until-done.md
@@ -593,7 +612,7 @@ LoopEngineering-CrashCourse/
 │   │   ├── 07-event-driven.md
 │   │   ├── quiz.md
 │   │   └── flashcards.md
-│   ├── part-3-the-body/
+│   ├── 05-part-3-the-body/
 │   │   ├── README.md
 │   │   ├── 08-worktrees.md
 │   │   ├── 09-skills.md
@@ -601,18 +620,18 @@ LoopEngineering-CrashCourse/
 │   │   ├── 11-maker-checker.md
 │   │   ├── quiz.md
 │   │   └── flashcards.md
-│   ├── part-4-the-spine/
+│   ├── 06-part-4-the-spine/
 │   │   ├── README.md
 │   │   ├── 12-state-between-runs.md
 │   │   ├── quiz.md
 │   │   └── flashcards.md
-│   ├── part-5-complete-loop/
+│   ├── 07-part-5-complete-loop/
 │   │   ├── README.md
 │   │   ├── 13-build-the-loop-twice.md
 │   │   ├── 13a-claude-code-walkthrough.md
 │   │   ├── 13b-opencode-walkthrough.md
 │   │   └── quiz.md
-│   ├── part-6-human-control/
+│   ├── 08-part-6-human-control/
 │   │   ├── README.md
 │   │   ├── 14-staying-the-engineer.md
 │   │   ├── cost-management.md
@@ -824,10 +843,10 @@ Content-first: `docs/` is valuable the moment it exists, so we write the course 
 
 1. **The repo stands up as a project.** Repo initialized with MIT `LICENSE`, a complete `README.md` (hero, badges, navigation, quickstart, "start here" router), `resources/sources.md` with full attribution for all nine sources, `CONTRIBUTING.md`, `SECURITY.md`, `CODEOWNERS`, `CITATION.cff`, and `.github/` populated (the six workflows from §26 plus issue/PR templates, `dependabot.yml`).
 2. **The repo dogfoods its own discipline.** The root carries the files the course teaches: `AGENTS.md`, `CLAUDE.md`, `LOOP.md` (the loops that maintain this repo), `STATE.md` (the spine), `loop-budget.md`, `loop-constraints.md`, `loop-run-log.md` — all with real content, not placeholders.
-3. **The entry layer of the course is written.** `docs/start-here.md` (60-second router), `docs/learning-tracks.md` (T1–T4 map with entry checks and exit assessments), all three `prerequisites/` pages (environment setup, agentic-coding primer, spec-driven primer), and all six `00-foundations/` pages (glossary, mental-models, concepts, the-four-layers, primitives, primitives-matrix) — each following the §10 page template.
+3. **The entry layer of the course is written.** `docs/00-start-here/README.md` (60-second router), `docs/00-start-here/learning-tracks.md` (T1–T4 map with entry checks and exit assessments), all three `01-prerequisites/` pages (environment setup, agentic-coding primer, spec-driven primer), and all six `02-foundations/` pages (glossary, mental-models, concepts, the-four-layers, primitives, primitives-matrix) — each following the §10 page template.
 4. **The toolchain is ready for Day 2.** skills.sh skills pulled and verified (`vercel-labs/agent-skills`, `anthropics/skills`); the empty directory scaffold for `docs/part-1` … `part-6`, `patterns/`, `starters/_template/`, `skills/`, `templates/`, `examples/`, `stories/`, `assets/`, `scripts/` exists so Day 2 writing starts with zero setup.
 
-**Definition of done (Day 1 checkpoint):** the repo is browsable on GitHub with no broken relative links; the tracks map, prerequisites, and foundations pages are complete and readable; the dogfooding files are real; a stranger landing on `README.md` can navigate to `start-here.md` and begin.
+**Definition of done (Day 1 checkpoint):** the repo is browsable on GitHub with no broken relative links; the tracks map, prerequisites, and foundations pages are complete and readable; the dogfooding files are real; a stranger landing on `README.md` can navigate to `00-start-here/` and begin.
 
 **How to initiate the Day 1 loop.** Day 1 is a *conditional / run-until-done* loop (Step 5 shape): the work has a provable finish line, so the stopping condition is the checkpoint above. From the repo root, start the loop in Claude Code with:
 
@@ -852,7 +871,7 @@ If you prefer to watch the first beats, run the same prompt as a plain (non-loop
 
 ### Day 2 — Write the full 14-step course + assessments per part
 
-- Author all 14 step pages (hook → explanation → mermaid → dual-tool code → check → exercise → troubleshooting), each part's `quiz.md` and `flashcards.md`, plus `methods/` (make-your-own-loop, checklist, pattern-picker, decision-framework) and `operating/` (anti-patterns, failure-modes, recovery-playbook, safety, observability, multi-loop).
+- Author all 14 step pages (hook → explanation → mermaid → dual-tool code → check → exercise → troubleshooting), each part's `quiz.md` and `flashcards.md`, plus `09-methods/` (make-your-own-loop, checklist, pattern-picker, decision-framework) and `10-operating/` (anti-patterns, failure-modes, recovery-playbook, safety, observability, multi-loop).
 - **Checkpoint:** the entire conceptual course (T1–T3 body) is complete and readable on GitHub, with quizzes and flashcards.
 
 ### Day 3 — Loop library + labs + advanced tier + certification

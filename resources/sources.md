@@ -19,13 +19,13 @@ adapted MIT material retains its original attribution below.
 - **Provenance:** companion chapter, agentfactory.panaversity.org
 - **Role:** the primitives loops are built from — plan mode, permissions, context,
   rules files, skills, hooks, subagents, MCP. Basis for
-  `docs/prerequisites/agentic-coding-primer.md` and `docs/00-foundations/primitives.md`.
+  `docs/01-prerequisites/agentic-coding-primer.md` and `docs/02-foundations/primitives.md`.
 
 ### 3. Panaversity — *Spec-Driven Development*
 
 - **Provenance:** companion chapter, agentfactory.panaversity.org
 - **Role:** why stopping conditions work — vibe-vs-spec, the constitution, the
-  4-phase method. Basis for `docs/prerequisites/spec-driven-primer.md`.
+  4-phase method. Basis for `docs/01-prerequisites/spec-driven-primer.md`.
 
 ### 4. Panaversity — *Scheduled Tasks: The Loop Skill & Cron Tools*
 
@@ -62,7 +62,7 @@ adapted MIT material retains its original attribution below.
 
 - **Provenance:** X
 - **Role:** Ng's three nested loops (the human's context advantage) and Karpathy on
-  success criteria — feed Part 6 and `docs/part-6-human-control/the-three-nested-loops.md`.
+  success criteria — feed Part 6 and `docs/08-part-6-human-control/the-three-nested-loops.md`.
 
 ## Attribution policy
 
@@ -72,10 +72,13 @@ adapted MIT material retains its original attribution below.
    here when added.
 3. **Mechanics change weekly.** Tool commands are framed as pointers to each tool's
    live documentation rather than authoritative references.
-4. Corrections and attribution requests: open an issue with the `content-fix` template.
+4. **Per-page provenance.** Every course page ends with a *Sources:* footer naming
+   the sources (S1–S9) its ideas are drawn from and linking back to this file.
+   Quizzes and flashcards inherit the sources of the step pages they test.
+5. Corrections and attribution requests: open an issue with the `content-fix` template.
 
 ## Adapted-file register
 
 | File in this repo | Adapted from | License |
-|-------------------|--------------|---------|
-| *none yet* | | |
+| ----------------- | ------------ | ------- |
+| *none yet*        |              |         |

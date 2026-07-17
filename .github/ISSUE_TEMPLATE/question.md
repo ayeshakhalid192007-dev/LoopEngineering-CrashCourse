@@ -8,8 +8,8 @@ assignees: ""
 
 ## Before asking
 
-- [ ] I checked the [glossary](../../docs/00-foundations/glossary.md)
-- [ ] I took the [start-here router](../../docs/start-here.md) and know my track
+- [ ] I checked the [glossary](../../docs/02-foundations/glossary.md)
+- [ ] I took the [start-here router](../../docs/00-start-here/README.md) and know my track
 
 ## Your question
 

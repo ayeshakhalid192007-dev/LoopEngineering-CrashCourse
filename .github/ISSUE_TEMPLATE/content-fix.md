@@ -8,7 +8,7 @@ assignees: ""
 
 ## Page
 
-<!-- Path, e.g. docs/00-foundations/primitives-matrix.md -->
+<!-- Path, e.g. docs/02-foundations/primitives-matrix.md -->
 
 ## The problem
 

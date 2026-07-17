@@ -1,3 +1,4 @@
+
 <!-- HERO-START -->
 
 # Loop Engineering Crash Course
@@ -12,7 +13,7 @@ certified multi-loop fleet. Free, open source, readable entirely on GitHub.
 <!-- HERO-END -->
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Course](https://img.shields.io/badge/course-14%20steps%20%C2%B7%204%20tracks-blue.svg)](docs/start-here.md)
+[![Course](https://img.shields.io/badge/course-14%20steps%20%C2%B7%204%20tracks-blue.svg)](docs/00-start-here/README.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Built with loops](https://img.shields.io/badge/built%20with-its%20own%20loops-8A2BE2.svg)](LOOP.md)
 
@@ -28,7 +29,7 @@ the course website (single source of truth — the two never diverge).
 
 ## Start here
 
-**New? Take the 60-second router:** → [`docs/start-here.md`](docs/start-here.md)
+**New? Take the 60-second router:** → [`docs/00-start-here/README.md`](docs/00-start-here/README.md)
 
 It places you on one of four tracks:
 
@@ -40,28 +41,28 @@ It places you on one of four tracks:
 | **T4 · Ultra-Pro** | shipping loops already | hill-climbing loops, fleets, governance at team scale |
 
 Full map with entry checks and exit assessments:
-[`docs/learning-tracks.md`](docs/learning-tracks.md)
+[`docs/00-start-here/learning-tracks.md`](docs/00-start-here/learning-tracks.md)
 
 ## Quickstart
 
-1. **Set up your agent** — [`docs/prerequisites/environment-setup.md`](docs/prerequisites/environment-setup.md)
+1. **Set up your agent** — [`docs/01-prerequisites/environment-setup.md`](docs/01-prerequisites/environment-setup.md)
    (Claude Code, OpenCode, Codex, or Grok; every lesson shows at least Claude Code ↔ OpenCode).
-2. **Speed-run the primers** — [`agentic-coding-primer.md`](docs/prerequisites/agentic-coding-primer.md)
-   and [`spec-driven-primer.md`](docs/prerequisites/spec-driven-primer.md).
+2. **Speed-run the primers** — [`agentic-coding-primer.md`](docs/01-prerequisites/agentic-coding-primer.md)
+   and [`spec-driven-primer.md`](docs/01-prerequisites/spec-driven-primer.md).
 3. **Ground yourself in the foundations** — start with
-   [`mental-models.md`](docs/00-foundations/mental-models.md), keep the
-   [`glossary.md`](docs/00-foundations/glossary.md) open in a tab.
+   [`mental-models.md`](docs/02-foundations/mental-models.md), keep the
+   [`glossary.md`](docs/02-foundations/glossary.md) open in a tab.
 4. **Begin the 14 steps** (Part 1 opens Day 2 — see the roadmap below).
 
 ## The course at a glance
 
 **Foundations (read first):**
-[glossary](docs/00-foundations/glossary.md) ·
-[mental models](docs/00-foundations/mental-models.md) ·
-[concepts](docs/00-foundations/concepts.md) ·
-[the four layers](docs/00-foundations/the-four-layers.md) ·
-[primitives](docs/00-foundations/primitives.md) ·
-[primitives matrix](docs/00-foundations/primitives-matrix.md)
+[glossary](docs/02-foundations/glossary.md) ·
+[mental models](docs/02-foundations/mental-models.md) ·
+[concepts](docs/02-foundations/concepts.md) ·
+[the four layers](docs/02-foundations/the-four-layers.md) ·
+[primitives](docs/02-foundations/primitives.md) ·
+[primitives matrix](docs/02-foundations/primitives-matrix.md)
 
 **The 14-step roadmap** *(content lands over the next days — links activate as parts ship)*:
 
