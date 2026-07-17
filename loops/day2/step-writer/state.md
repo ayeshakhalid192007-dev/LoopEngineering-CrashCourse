@@ -3,9 +3,9 @@
 > **Owned by `step-writer`. No other loop may write this file.**
 > Definition: [`loop.md`](loop.md) · Rulebook: [`LOOP.md`](../../../LOOP.md)
 
-**Status:** 🟢 running — Parts 1–6 + methods complete (29/36 items); operating remains
-**Last beat:** 2026-07-17 (beat 29 — decision-framework)
-**Runs used:** 29 / 40 · **Tokens used:** ≈370k / 700k
+**Status:** ✅ stopped on **success** — checklist emptied (36/36)
+**Last beat:** 2026-07-17 (beat 36 — operating/multi-loop)
+**Runs used:** 36 / 40 · **Tokens used:** ≈465k / 700k (≈66% — tripwire never fired)
 
 > Committed from beat zero — Day 1's lesson applied: *a spine that isn't committed
 > isn't a spine* (see [`loops/day1/page-writer/state.md`](../../day1/page-writer/state.md)).
@@ -64,13 +64,13 @@
 
 ### Operating handbook
 
-- [ ] `docs/operating/operating-loops.md`
-- [ ] `docs/operating/safety.md`
-- [ ] `docs/operating/observability.md`
-- [ ] `docs/operating/failure-modes.md`
-- [ ] `docs/operating/anti-patterns.md`
-- [ ] `docs/operating/recovery-playbook.md`
-- [ ] `docs/operating/multi-loop.md`
+- [x] `docs/operating/operating-loops.md`
+- [x] `docs/operating/safety.md`
+- [x] `docs/operating/observability.md`
+- [x] `docs/operating/failure-modes.md`
+- [x] `docs/operating/anti-patterns.md`
+- [x] `docs/operating/recovery-playbook.md`
+- [x] `docs/operating/multi-loop.md`
 
 ## Escalations
 
@@ -78,6 +78,10 @@ _None._
 
 ## Notes to the checker
 
-- **Part 1 ready for review** (01, 02, 03, README). README links `quiz.md` /
-  `flashcards.md` ahead of the quiz-writer — expect those two links to resolve only
-  after the quiz-writer's Part 1 beat.
+- **All 36 items ready for review** (Parts 1–6, methods, operating).
+  Stopping condition met: every box checked. Success stop declared at beat 36.
+- Part READMEs link `quiz.md`/`flashcards.md` ahead of the quiz-writer — those
+  links resolve only after the quiz-writer's beats. Grade them as PENDING-QUIZ,
+  not FAIL, until then.
+- `methods/` and `operating/` pages are structural pages per the rubric's own
+  definition — purpose, links, diagram/table — not §10 concept pages.
