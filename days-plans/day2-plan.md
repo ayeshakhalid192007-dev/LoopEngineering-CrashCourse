@@ -52,6 +52,30 @@ The whole T1–T3 course body reads well on GitHub — every step page has a dia
 
 Today is ~35 pages that all share one template. This is the best loop day of the project — the work is repetitive and the "done" test is clear.
 
+```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+flowchart LR
+    subgraph WT1 ["worktree 1"]
+      L1("Loop 1 · step-writer<br/>run-until-done"):::maker
+    end
+    subgraph WT2 ["worktree 2"]
+      L3("Loop 3 · quiz + flashcards<br/>parallel maker"):::maker
+    end
+    L1 -->|step pages| DOCS[("docs/part-1…6")]:::file
+    L2("Loop 2 · template-checker<br/>every 20m"):::check -.->|reads| DOCS
+    L2 -->|PASS / FAIL| RN[("review-notes")]:::file
+    RN -.->|FAIL goes back<br/>on the list| L1
+    L2 -.->|only PASSed parts| L3
+    L4("Loop 4 · link-check<br/>kept from Day 1"):::check -.-> DOCS
+    H(["🧑 You — spot-read one page<br/>per part, merge the quiz<br/>worktree at day's end"]):::human -.-> DOCS
+    classDef maker fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
+    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
+    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
+    classDef human fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
+    style WT1 fill:#fbfbff,stroke:#c7d2fe,stroke-width:1.5px,color:#4338ca;
+    style WT2 fill:#fbfbff,stroke:#c7d2fe,stroke-width:1.5px,color:#4338ca;
+```
+
 ### Loop 1 — The step-writer loop (run-until-done)
 
 Update `STATE.md` with today's page list, then:

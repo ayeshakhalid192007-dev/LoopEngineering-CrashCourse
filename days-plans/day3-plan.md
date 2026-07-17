@@ -51,6 +51,24 @@ Every folder in the repo tree is populated with real, copy-and-run files, and al
 
 Today you graduate from single loops to a small **fleet**. 34+ kits with identical shape = pure loop work.
 
+```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+flowchart LR
+    T[("starters/_template/<br/>designed by you")]:::human2 --> L1("Loop 1 · kit-stamper<br/>the workhorse"):::maker
+    L1 -->|stamps kits| K[("starters/<br/>34 kits")]:::file
+    L2("Loop 2 · audit loop<br/>a SCRIPT is the checker"):::script -.->|every 15m| K
+    L2 -->|failures| RN[("review-notes")]:::file
+    RN -.->|red kits back<br/>on the list| L1
+    L3("Loop 3 · patterns pages<br/>own worktree"):::maker -->|specs + registry| P[("patterns/")]:::file
+    L4("Loop 4 · labs + advanced<br/>Day 2's writer, new list"):::maker --> D[("docs/")]:::file
+    H(["🧑 You — design the template,<br/>deep-check 3 random kits,<br/>commit at checkpoint"]):::human -.-> K
+    classDef maker fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
+    classDef script fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
+    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
+    classDef human fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
+    classDef human2 fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
+```
+
 ### Loop 1 — The kit-stamper loop (the workhorse)
 
 First, make a list of all loops with their details (name, category, heartbeat, cadence, level, cost) in `kit-state.md`. Then:

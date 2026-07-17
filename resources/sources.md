@@ -77,5 +77,5 @@ adapted MIT material retains its original attribution below.
 ## Adapted-file register
 
 | File in this repo | Adapted from | License |
-|-------------------|--------------|---------|
-| *none yet* | | |
+| ----------------- | ------------ | ------- |
+| *none yet*        |              |         |

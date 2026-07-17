@@ -13,6 +13,29 @@
 | checker | `loops/day1/checker/` | schedule | 10m | L1 (report-only) | Verifies written pages against plan + template |
 | link-check | `loops/day1/link-check/` | schedule | 30m | L1 (report-only) | Keeps relative links honest all day |
 
+How the fleet coordinates — no loop calls another; they meet only through files:
+
+```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+flowchart LR
+    PW("page-writer<br/>L2 · maker"):::maker -->|writes| DOCS[("docs/")]:::file
+    PW -->|writes own spine| PWS[("page-writer<br/>state.md")]:::file
+    CK("checker<br/>L1 · grader"):::check -.->|reads only| DOCS
+    CK -->|findings| CKS[("checker<br/>state.md")]:::file
+    LC("link-check<br/>L1 · heartbeat"):::check -.->|reads only| DOCS
+    LC -->|broken links| LCS[("link-check<br/>state.md")]:::file
+    PW & CK & LC -->|one line per beat| LOG[("shared/<br/>loop-run-log.md")]:::log
+    H(["🧑 Human<br/>reads findings · relays fixes<br/>declares checkpoints"]):::human
+    CKS -.-> H
+    LCS -.-> H
+    H -.->|approves| PW
+    classDef maker fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
+    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
+    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
+    classDef log fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
+    classDef human fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
+```
+
 ## Shared rules (binding for every loop)
 
 ### 1. State isolation — never override another loop's work
