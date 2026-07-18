@@ -67,6 +67,10 @@ flowchart LR
     classDef win fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
 ```
 
+*Rather fill blanks than start from an empty page? This checklist comes pre-poured as a
+copyable kit — see [scaffold-from-template](scaffold-from-template.md) and
+[`starters/_template/`](../../starters/_template/README.md).*
+
 *Live examples of filled-in designs: every `loop.md` under
 [`loops/`](../../loops/README.md) is this checklist, answered for real.*
 
