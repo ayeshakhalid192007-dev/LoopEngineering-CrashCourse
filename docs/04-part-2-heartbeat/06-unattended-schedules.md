@@ -22,10 +22,13 @@ any tool, decomposes into the same four parts:
 3. **The connectors** — what external systems it may reach (issues, mail, chat).
 4. **The trigger** — the schedule itself: cron expression, timezone, cadence.
 
-Unattended means *ungated in the moment* — so the gates move into the design: daily
-run caps, a dedicated guardrail branch namespace (e.g. schedules that may only push
-to `claude/`-prefixed branches — never `main`), and L1 report-only until the loop
-has earned writes with a human watching its output for real mornings.
+Unattended means *ungated in the moment*. So the gates move into the design:
+
+- **Daily run caps**, so a stuck trigger can't run all night.
+- **A guardrail branch namespace** — schedules that may only push to
+  `claude/`-prefixed branches, never `main`.
+- **L1 report-only** until the loop has earned writes, with a human watching its
+  output for real mornings.
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
@@ -46,6 +49,9 @@ flowchart LR
 ```
 
 ## The mechanics in each tool
+
+Each tool schedules the same four parts — prompt, repos, connectors, trigger — with a
+cloud option and a local-cron fallback:
 
 ```claude
 # Claude Code — live docs: https://docs.claude.com/en/docs/claude-code
@@ -84,7 +90,7 @@ The prefix rule lives in the **harness/platform layer** — it's enforced by mac
 that cannot be persuaded, so the worst overnight outcome is a weird branch you delete
 over coffee. "Careful with `main`" lives in the **prompt layer** — it's a request to
 a worker under no supervision. Guarantees in the harness, judgment in the loop
-([Step 2](../03-part-1-the-shift/02-the-four-layers.md)); at 3 am, only the first kind
+([Step 2](../03-part-1-the-shift/02-the-four-layers.md)). At 3 am, only the first kind
 holds.
 
 </details>

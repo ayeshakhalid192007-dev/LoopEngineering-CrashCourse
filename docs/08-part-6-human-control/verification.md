@@ -29,11 +29,12 @@ see:
    per part, one PR per day, chosen *by you*, not by the loop. *Catches: drift you
    didn't know to write a rule for.*
 
-The discipline that binds them: **verify before declaring, at every level.** A loop
-verifies before ticking its spine; a checker verifies before PASSing; the human
-verifies before the checkpoint. This repo's rulebook says it in four words — *the
-maker never grades its own work* — and its checkpoints exist because rule 12 of
-[`CLAUDE.md`](../../CLAUDE.md) demands verification before "done" is ever declared.
+The discipline that binds them: **verify before declaring, at every level.** A
+loop verifies before ticking its spine. A checker verifies before PASSing. The
+human verifies before the checkpoint. This repo's rulebook says it in four words
+— *the maker never grades its own work* — and its checkpoints exist because rule
+12 of [`CLAUDE.md`](../../CLAUDE.md) demands verification before "done" is ever
+declared.
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
@@ -52,6 +53,9 @@ flowchart TD
 ```
 
 ## The habit in each tool
+
+Bake layer 1 into the beat itself, and give layer 3 its own small loop. In each
+tool:
 
 ```claude
 # Claude Code — live docs: https://docs.claude.com/en/docs/claude-code
@@ -88,10 +92,11 @@ layer was missing, and why did layers 1–2 not catch it?**
 <details><summary>Answer</summary>
 
 Layer 3 — the **outcome check**. Scripts verified artifacts (files exist, lint
-passes) and the checker verified *shape* (pages match template); neither ever
-exercised the actual behavior — running a search and looking at results. Layers 1–2
-can only catch failures that live in the artifacts they inspect; "finished but
-doesn't work" lives in the running system, which only an end-to-end check visits.
+passes) and the checker verified *shape* (pages match template). Neither ever
+exercised the actual behavior — running a search and looking at results. Layers
+1–2 can only catch failures that live in the artifacts they inspect. "Finished
+but doesn't work" lives in the running system, which only an end-to-end check
+visits.
 
 </details>
 

@@ -1,33 +1,32 @@
 # Step 8 · Worktrees
 
-> Two makers, one repo, zero collisions — because each one is working in its own
-> full copy of the tree, cheap enough to create per beat and throw away after.
+> Two makers, one repo, zero collisions. Each one works in its own full copy of
+> the tree — cheap enough to create per beat and throw away after.
 
 ## The hook
 
-Your step-writer is halfway through rewriting a page when your quiz loop wakes up,
+Your step-writer is halfway through rewriting a page. Your quiz loop wakes up,
 sees "modified files," and helpfully commits the half-sentence. Neither loop is
-wrong; they're just standing in the same room. Day 2 of *this course* was built by
-two makers running at once — and the reason nothing collided is the subject of this
-page.
+wrong. They are just standing in the same room. Day 2 of *this course* was built
+by two makers running at once, and this page is the reason nothing collided.
 
 ## Isolation (plain English)
 
-A **worktree** is a second (third, tenth) working directory attached to the same git
-repository: same history, same remotes, its own checked-out files on its own branch.
-For loops, that buys the one property multi-loop work can't live without —
-**isolation**: a loop in its own worktree can't see, stomp, or half-read another
-loop's uncommitted mess.
+A **worktree** is a second (or tenth) working directory attached to the same git
+repository. Same history, same remotes, its own checked-out files on its own
+branch. For loops, that buys **isolation** — the one property multi-loop work
+can't live without. A loop in its own worktree cannot see, stomp, or half-read
+another loop's uncommitted mess.
 
 The decision rule is about *files*, not vibes:
 
-- **Disjoint file ownership** (one loop owns `docs/`, another owns `patterns/`) —
-  path ownership in the rulebook is enough; a shared tree is fine. That's how this
-  repo's `step-writer` and `quiz-writer` share `docs/*-part-*` safely: they own
-  different *files*.
-- **Overlapping files, or a maker whose failure must not poison `main`'s working
-  tree** — worktree, no debate. Half-built work stays quarantined until it's green,
-  then merges as a unit.
+- **Disjoint file ownership** (one loop owns `docs/`, another owns `patterns/`):
+  path ownership in the rulebook is enough. A shared tree is fine. That is how
+  this repo's `step-writer` and `quiz-writer` share `docs/*-part-*` safely. They
+  own different *files*.
+- **Overlapping files**, or a maker whose failure must not poison `main`'s
+  working tree: worktree, no debate. Half-built work stays quarantined until it
+  is green, then merges as a unit.
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
@@ -50,6 +49,9 @@ flowchart LR
 ```
 
 ## The mechanics in each tool
+
+Both tools sit on the same git primitive. One asks for isolation at dispatch
+time; the other uses plain `git worktree` by hand:
 
 ```claude
 # Claude Code — live docs: https://docs.claude.com/en/docs/claude-code
@@ -83,21 +85,22 @@ and what single change to the plan would have forced a real worktree?**
 
 <details><summary>Answer</summary>
 
-Safe because their file sets are **disjoint by rule** — `step-writer` may not touch
-`quiz.md`/`flashcards.md`, `quiz-writer` may touch nothing else, and the rulebook's
-ownership map enforces it. The moment both makers need the *same file* — say the
-quiz-writer also updated each part's `README.md` — path ownership can't split a
-file, and a worktree (merge-when-green) becomes mandatory.
+Safe because their file sets are **disjoint by rule**. `step-writer` may not
+touch `quiz.md` or `flashcards.md`, `quiz-writer` may touch nothing else, and
+the rulebook's ownership map enforces it. The moment both makers need the *same
+file* — say the quiz-writer also updated each part's `README.md` — the rule
+breaks. Path ownership cannot split a file. A worktree, merged only when green,
+becomes mandatory.
 
 </details>
 
 ## Try With AI
 
-In a throwaway repo, create a worktree (`git worktree add ../scratch-wt test-branch`)
-and run one agent beat in it — any small task. While it works, run `git status` in
-your main tree and confirm: nothing moved. Merge the branch back, remove the
-worktree, and note what the merge commit gives you that a shared tree never could —
-a single reviewable boundary around the loop's whole output.
+Create a worktree in a throwaway repo (`git worktree add ../scratch-wt
+test-branch`) and run one agent beat in it — any small task. While it works, run
+`git status` in your main tree and confirm nothing moved. Merge the branch back
+and remove the worktree. Note what the merge commit gives you that a shared tree
+never could: a single reviewable boundary around the loop's whole output.
 
 ## When it goes wrong
 

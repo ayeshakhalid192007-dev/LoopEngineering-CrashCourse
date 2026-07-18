@@ -13,26 +13,30 @@ fixed them the next beat. That boring pair of numbers is the whole pattern worki
 ## Writer ≠ grader (plain English)
 
 A loop that grades its own work will always, eventually, find its own work
-acceptable — not from vanity but from shared blind spots: the misreading that
-produced the bug also passes the self-review. The **maker–checker** split breaks the
-blind spot with structure:
+acceptable. Not from vanity — from shared blind spots. The misreading that
+produced the bug also passes the self-review. The **maker–checker** split breaks
+the blind spot with structure:
 
 - The **maker** does the work. It may write its files, tick its spine — and it
   *cannot* declare the work good.
 - The **checker** grades the work against a rubric. It is **read-only on the work**
   — it *cannot* fix anything, which is exactly what makes its findings trustworthy.
 
-The checker can be three things, in rising cost: a **script** (link checker, linter
-— cheapest, never has an opinion), a **read-only LLM session** with a rubric
-(LLM-as-judge — catches judgment-shaped problems scripts can't), or a **human** (the
-gate — final, expensive, reserved for what matters). Use the cheapest checker that
-can actually catch the failure you fear; a read-only LLM beat costs a fraction of a
-maker beat (this repo's Day 1 checker used ~3% of its token budget in one run).
+The checker can be three things, in rising cost:
+
+- **A script** — link checker, linter. Cheapest, and it never has an opinion.
+- **A read-only LLM session with a rubric** — LLM-as-judge. It catches
+  judgment-shaped problems scripts can't.
+- **A human** — the gate. Final, expensive, reserved for what matters.
+
+Use the cheapest checker that can actually catch the failure you fear. A
+read-only LLM beat costs a fraction of a maker beat — this repo's Day 1 checker
+used about 3% of its token budget in one run.
 
 **The dynamic-workflows interlude:** a *workflow* (fixed steps, deterministic
 order) isn't a rival to loops — a workflow is the **body of one beat**. The loop
-decides *when* and *whether*; the workflow inside the beat does *how*; the checker
-grades what came out.
+decides *when* and *whether*. The workflow inside the beat does *how*. The
+checker grades what came out.
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
@@ -50,6 +54,9 @@ flowchart LR
 ```
 
 ## The mechanics in each tool
+
+The split is enforced by permissions, not politeness: two loops, two permission
+sets, and the checker cannot write the work no matter what it decides:
 
 ```claude
 # Claude Code — live docs: https://docs.claude.com/en/docs/claude-code

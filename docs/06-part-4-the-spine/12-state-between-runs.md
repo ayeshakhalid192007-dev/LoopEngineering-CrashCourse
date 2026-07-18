@@ -5,19 +5,20 @@
 
 ## The hook
 
-This repo has a scar to show you. Day 1's loops kept their state in files that were
-gitignored — and then lost. The pages survived; the checker's three findings, the
-record of *what was decided and why*, did not. The reconstruction notice in
+This repo has a scar to show you. Day 1's loops kept their state in files that
+were gitignored — and then lost. The pages survived. The checker's three
+findings, the record of *what was decided and why*, did not. The reconstruction
+notice in
 [`loops/day1/page-writer/state.md`](../../loops/day1/page-writer/state.md) says it
 plainly: **a spine that isn't committed isn't a spine.** Day 2's loops commit theirs
 every beat. That's why this page exists — written by a loop whose spine you can read.
 
 ## The intern's diary (plain English)
 
-Imagine a brilliant intern with total amnesia: every morning they arrive knowing
-nothing about yesterday. You wouldn't fix the amnesia — you'd hand them a **diary**:
-*here's what's done, here's what's next, here's what we learned.* They read it first
-thing, work, and write the next entry before leaving.
+Imagine a brilliant intern with total amnesia. Every morning they arrive knowing
+nothing about yesterday. You wouldn't fix the amnesia — you'd hand them a
+**diary**: *here's what's done, here's what's next, here's what we learned.*
+They read it first thing, work, and write the next entry before leaving.
 
 That diary is the **spine**, and it comes in two files with two jobs:
 
@@ -29,9 +30,10 @@ That diary is the **spine**, and it comes in two files with two jobs:
   Written by the loop, **one owner per file**, updated before the beat ends.
 
 The order of operations inside a beat is load-bearing: **do the work, update the
-spine, then log** — so an interruption costs you a log line, not the work. And the
-spine is a *record*, not a scratchpad: escalations, discrepancies, and lessons go in
-it, because the spine is what the next beat — and the human — will actually read.
+spine, then log**. That way an interruption costs you a log line, not the work.
+And the spine is a *record*, not a scratchpad. Escalations, discrepancies, and
+lessons go in it, because the spine is what the next beat — and the human — will
+actually read.
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
@@ -47,6 +49,9 @@ flowchart LR
 ```
 
 ## The mechanics in each tool
+
+Both tools pair a constitution file the harness auto-loads with a diary file your
+prompt reads first and updates last. The commit is the durability:
 
 ```claude
 # Claude Code — live docs: https://docs.claude.com/en/docs/claude-code

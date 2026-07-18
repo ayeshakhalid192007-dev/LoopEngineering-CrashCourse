@@ -21,9 +21,14 @@ They can answer two. That's not an automation problem — that's four missing or
 | **Checker** | second pair of eyes | *who* grades the work? (never the maker itself) |
 | **Human gate** | signature | *where* does a person decide? (review, approve, ship) |
 
-A loop missing any one of these has a name: no heartbeat is just a script you run; no
-body limits is a hazard; no spine restarts from zero; no stop runs forever; no checker
-grades itself; no human gate ships without an owner.
+Drop any one part and the loop gets a familiar failure name:
+
+- **No heartbeat:** it's just a script you run by hand.
+- **No body limits:** it's a hazard.
+- **No spine:** it restarts from zero.
+- **No stop:** it runs forever.
+- **No checker:** it grades itself.
+- **No human gate:** it ships with no owner.
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
@@ -66,6 +71,8 @@ progress for 3 beats. "Feels done" is never one of them.
 
 ## A six-part loop in each tool
 
+Here is one loop per tool, with each of the six parts labeled inline:
+
 ```claude
 # Claude Code — live docs: https://docs.claude.com/en/docs/claude-code
 > /loop Read state.md (SPINE). Take the FIRST unchecked item (BODY: one
@@ -100,10 +107,10 @@ why does that matter even though it "works"?**
 
 <details><summary>Answer</summary>
 
-The **checker** and the **human gate**. Nothing grades the work (the todo tick is the
-maker grading itself), and nothing requires a person before results ship. It
-"works" until the first beat that's confidently wrong — then there's no organ in the
-system positioned to catch it. Weeks of green is luck wearing the costume of design.
+The **checker** and the **human gate**. Nothing grades the work — the todo tick is the
+maker grading itself — and nothing requires a person before results ship. It "works"
+until the first beat that's confidently wrong. Then no organ in the system is
+positioned to catch it. The weeks of green were luck, not design.
 
 </details>
 

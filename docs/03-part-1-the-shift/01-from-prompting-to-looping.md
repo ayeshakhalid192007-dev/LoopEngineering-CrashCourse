@@ -7,24 +7,23 @@
 
 It's 9:14 am. You've typed "now fix the failing test" for the eleventh time today,
 pasted the same error twice, and re-explained the project layout the agent forgot
-overnight. You are not doing engineering right now — you are doing *dispatch*. And
-dispatch, it turns out, is a job a loop can hold.
+overnight. That is not engineering. That is dispatch — and dispatch is a job a loop
+can hold.
 
 ## The shift (plain English)
 
-**Prompting** is driving the agent by hand: you decide the next unit of work, you
-send it, you read the result, you decide again. The intelligence sits in the model,
-but the *management* sits in you — every cycle burns your attention.
+**Prompting** is driving the agent by hand. You decide the next unit of work. You
+send it, read the result, and decide again. The intelligence sits in the model. The
+management sits in you, and every cycle burns your attention.
 
-**Looping** moves that management into a system you design once: something decides
-*when* to run (a heartbeat), *what* to work on (a spine of durable state), and *when
-to stop* (a provable condition) — without you in the chair. You stop being the
-dispatcher and become the engineer of the dispatcher.
+**Looping** moves that management into a system you design once. A heartbeat decides
+when the agent runs. A spine decides what it works on. A provable stop decides when
+it is finished. None of it needs you in the chair. You stop dispatching work and
+start engineering the dispatcher.
 
-The critical part of the shift is what you keep: **intent and accountability**. The
-loop inherits your typing, never your judgment. You still decide what "good" means,
-you still review what ships, and you still answer for the result. A loop with your
-keystrokes but without your intent is just intent debt executing at scale.
+The shift keeps two things with you: **intent and accountability**. The loop inherits
+your typing, never your judgment. You still decide what "good" means. You still review
+what ships. You still answer for the result.
 
 ## Prompting vs. looping
 
@@ -61,6 +60,9 @@ flowchart LR
 
 ## The same task, both ways
 
+Here is one task — fix the first failing test — written both ways in each tool. You
+type the prompting version every cycle. You type the looping version once.
+
 ```claude
 # Claude Code — live docs: https://docs.claude.com/en/docs/claude-code
 # Prompting: you type this, wait, read, type the next one…
@@ -95,21 +97,22 @@ missing from that picture?**
 
 <details><summary>Answer</summary>
 
-The *system* is missing — those 40 prompts have no heartbeat (they happen when you're
-free), no spine (each one starts from your memory), no provable stop, and no checker
-but your tired eyes. Prompting a lot is not looping; looping is when the deciding,
-remembering, and stopping are engineered so they happen **without you in the chair**.
+The *system* is missing. Those 40 prompts have no heartbeat, so they only happen when
+you're free. They have no spine, so each one starts from your memory. They have no
+provable stop and no checker but your tired eyes. Prompting a lot is not looping.
+Looping is when the deciding, remembering, and stopping are engineered to happen
+**without you in the chair**.
 
 </details>
 
 ## Try With AI
 
-In a throwaway repo, pick a task you'd normally do in 5–10 manual prompts (e.g., "add
-docstrings to every function in `src/`"). First do three of them by hand and notice
-what *you* are deciding between prompts. Then write those decisions down as one loop
-prompt with a stop ("stop when every function has a docstring") and a limit ("max 10
-runs") — and run it. Compare the two transcripts: everything you stopped typing is
-what the loop now owns.
+Pick a task in a throwaway repo that you'd normally do in 5–10 manual prompts — say,
+"add docstrings to every function in `src/`". Do three of them by hand first. Notice
+what *you* decide between prompts. Then write those decisions as one loop prompt with
+a stop ("stop when every function has a docstring") and a limit ("max 10 runs"), and
+run it. Compare the two transcripts. Everything you stopped typing is what the loop
+now owns.
 
 ## When it goes wrong
 

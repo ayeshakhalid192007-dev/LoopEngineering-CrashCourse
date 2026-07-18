@@ -5,8 +5,8 @@
 
 ## The hook
 
-Four files and one schedule. That's the entire build. By the end of this page the
-loop exists; by tomorrow 7:05 am it has run for real; and nothing in between
+Four files and one schedule. That's the entire build. By the end of this page
+the loop exists. By tomorrow 7:05 am it has run for real. Nothing in between
 requires you to trust it — only to read what it wrote.
 
 ## Build order (spine first — always)
@@ -27,7 +27,7 @@ triage. Read-only.") is what lets any session — scheduled or manual — pick i
 
 **3. The reviewer agent** — `.claude/agents/reviewer.md`: a read-only subagent
 whose whole prompt is the grading rubric from Step 13. It may read
-`triage-report.md`; it may write nothing but its verdict.
+`triage-report.md`. It may write nothing but its verdict.
 
 **4. The heartbeat** — two interchangeable options:
 
@@ -42,7 +42,7 @@ whose whole prompt is the grading rubric from Step 13. It may read
 #     Report only." >> triage-cron.log 2>&1
 ```
 
-**5. Permissions** (minimum-safe item 4) — deny-by-default; the beat gets read
+**5. Permissions** (minimum-safe item 4) — deny-by-default. The beat gets read
 tools, plus writes to exactly `triage-report.md`, `triage-state.md`, and the run
 log. `/permissions` is the harness layer: the "report-only" promise becomes a
 guarantee.
@@ -96,10 +96,11 @@ of just letting the 7 am schedule be the first run?**
 
 <details><summary>Answer</summary>
 
-Because the first run of anything is the most likely to fail, and a 7 am failure is
-unwatched by definition. Rehearsing the identical beat in-session costs one manual
-run and converts every "would have broken at 7 am" bug into a watched, fixable one —
-*prove it before it runs unattended* is the whole L1 discipline in miniature.
+Because the first run of anything is the most likely to fail, and a 7 am failure
+is unwatched by definition. Rehearsing the identical beat in-session costs one
+manual run. It converts every "would have broken at 7 am" bug into a watched,
+fixable one. *Prove it before it runs unattended* — that is the whole L1
+discipline in miniature.
 
 </details>
 

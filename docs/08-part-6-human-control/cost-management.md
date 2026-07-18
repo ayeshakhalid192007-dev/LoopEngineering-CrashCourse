@@ -48,6 +48,9 @@ flowchart LR
 
 ## The meters in each tool
 
+Each tool gives you a per-session meter. Fleet-level accounting is the run log,
+summed per loop:
+
 ```claude
 # Claude Code — live docs: https://docs.claude.com/en/docs/claude-code
 /cost                     # current session spend

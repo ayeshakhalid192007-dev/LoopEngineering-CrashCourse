@@ -70,6 +70,28 @@ not concept pages — they are graded on: purpose stated, working links, at leas
 diagram or table, no broken template imports. (Same reading Day 1's checker applied to
 `glossary.md`.)
 
+### The tone rubric (added for the step-writer's pass 2, 2026-07-18)
+
+Pages rewritten in the step-writer's pass 2 are additionally graded against the
+**tone checklist** at the bottom of
+[`shared/style-guide.md`](../../../shared/style-guide.md): sentence and paragraph
+caps, em-dash density, hook length, framed code blocks, credited quotes, imperative
+exercises, mechanism-mapped analogies. One FAIL line names the rule broken and the
+section it was broken in. The style guide's "what does NOT change" list is part of
+this rubric — a rewrite that drops a §10 section FAILs regardless of tone. Tone
+rules apply to the prose of structural pages too; the §10 section rubric does not.
+
+Three diff-based checks (provable with `git diff` against the pass-1 version):
+
+1. Every **pre-existing mermaid fence** is byte-identical. A redrawn or restyled
+   diagram is a FAIL.
+2. The ***Sources:* footer and glossary line** are byte-identical on every page.
+   A dropped or reworded reference is a FAIL.
+3. **At most one NEW mermaid diagram** was added, and only where it explains a
+   flow, contrast, or timeline the prose walks through; it must use the house
+   init header and have a framing sentence above it. A second added diagram, or
+   a decorative one, is a FAIL.
+
 ## Limits
 
 | Guard            | Value                                        |

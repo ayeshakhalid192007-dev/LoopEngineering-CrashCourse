@@ -26,10 +26,10 @@ flowchart LR
 ## Why twice?
 
 Because after the second build you can answer the only portability question that
-matters: *which parts would survive a tool change?* (All six organs, the checklist,
-the L1 discipline.) *Which parts wouldn't?* (Every command you typed.) Memorize the
-first list; look up the second — that's the lasting-vs-mechanical rule this course
-repeats on purpose.
+matters: *which parts would survive a tool change?* (All six organs, the
+checklist, the L1 discipline.) *Which parts wouldn't?* (Every command you
+typed.) Memorize the first list. Look up the second. That's the
+lasting-vs-mechanical rule this course repeats on purpose.
 
 ## Check your understanding
 

@@ -6,7 +6,7 @@
 
 ## How to use this page
 
-Something feels off → find the symptom in the tables → the failure's *organ* tells
+Something feels off? Find the symptom in the tables. The failure's *organ* tells
 you where the fix belongs. (Design-time mistakes have their own catalog in
 [anti-patterns.md](anti-patterns.md); a failure already in progress goes straight
 to the [recovery playbook](recovery-playbook.md).)

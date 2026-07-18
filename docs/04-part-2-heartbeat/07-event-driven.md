@@ -7,7 +7,7 @@
 
 A contributor opens a PR at 2:47 pm. At 2:48 the loop has read the diff, run the
 lint, and left one comment on the exact line that breaks the style guide. The
-contributor pushes a fix; the `synchronize` event fires; the loop re-checks and
+contributor pushes a fix. The `synchronize` event fires. The loop re-checks and
 resolves its own comment. No clock did this — the *PR* did.
 
 ## Event-driven (plain English)
@@ -17,9 +17,9 @@ three trigger families you'll actually use:
 
 - **SCM events** — PR opened, PR updated (the `synchronize` event — every new push
   to an open PR), release published, issue labeled. The workhorse family.
-- **Channel messages** — a chat message or mention wakes a running session. Powerful
-  and *the* one to be cautious with: anyone who can post in the channel is now
-  holding your loop's trigger, so treat inbound text as untrusted input.
+- **Channel messages** — a chat message or mention wakes a running session. Powerful,
+  and *the* one to be cautious with. Anyone who can post in the channel is now holding
+  your loop's trigger, so treat inbound text as untrusted input.
 - **Direct API fire** — an HTTP endpoint (a "/fire"-style call) that starts a beat.
   Your own systems become heartbeats.
 
@@ -46,6 +46,9 @@ flowchart LR
 ```
 
 ## The mechanics in each tool
+
+Each tool binds a beat to SCM events, channels, or an API fire. Note where the
+"untrusted input" and reconciliation reminders land:
 
 ```claude
 # Claude Code — live docs: https://docs.claude.com/en/docs/claude-code
@@ -83,7 +86,7 @@ missing from the design?**
 <details><summary>Answer</summary>
 
 The burst blew past the event cap and the overflow events were **dropped, not
-queued** — no error, because nothing failed; the beats just never existed. Missing
+queued** — no error, because nothing failed. The beats just never existed. Missing
 was the **reconciliation sweep**: a slow scheduled loop asking "any open PRs without
 a review from me?" It exists precisely to turn silent gaps into caught gaps.
 
@@ -91,7 +94,7 @@ a review from me?" It exists precisely to turn silent gaps into caught gaps.
 
 ## Try With AI
 
-In a throwaway repo, wire the simplest event loop you can: a GitHub Action on
+Wire the simplest event loop you can in a throwaway repo: a GitHub Action on
 `pull_request` that runs your agent in report-only mode ("comment a one-line summary
 of the diff — take no other action"). Open a PR, push twice, and watch `synchronize`
 fire the beat again. Then write, on paper, the reconciliation sweep this loop would

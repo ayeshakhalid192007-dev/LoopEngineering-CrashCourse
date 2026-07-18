@@ -6,19 +6,21 @@
 
 ## The hook
 
-Tomorrow at 7:00 am, a loop will read every issue, PR, and CI failure that landed
-overnight, sort the urgent from the ignorable, and leave a five-line report where
-you'll see it — taking **no other action**. Building that is not a demo. It's the
-smallest loop with all six organs, and both walkthroughs in this part ship it for
-real.
+Tomorrow at 7:00 am, a loop will read every issue, PR, and CI failure that
+landed overnight. It will sort the urgent from the ignorable and leave a
+five-line report where you'll see it. It takes **no other action**. Building
+that is not a demo. It's the smallest loop with all six organs, and both
+walkthroughs in this part ship it for real.
 
 ## The design (plain English)
 
-**The job:** each morning, triage the repo. **The shape** (via the pattern-picker
-logic from the methods layer): the work
-*repeats* on a calendar → a **scheduled** heartbeat; the beat is a read → **L1
-report-only**; the output is judgment → a **human gate** reads the report.
-(The picker page itself: [09-methods/pattern-picker.md](../09-methods/pattern-picker.md).)
+**The job:** each morning, triage the repo. **The shape** follows from the
+pattern-picker logic in the methods layer
+([09-methods/pattern-picker.md](../09-methods/pattern-picker.md)):
+
+- The work *repeats* on a calendar, so the heartbeat is a **schedule**.
+- The beat is a read, so it runs **L1 report-only**.
+- The output is judgment, so a **human gate** reads the report.
 
 The six parts, filled in:
 
@@ -31,11 +33,11 @@ The six parts, filled in:
 | Checker | the report *format* is script-checkable; content graded by you |
 | Human gate | you read the report; nothing acts until you do |
 
-Both tools share two artifacts, written once: a **`daily-triage/SKILL.md`** (the
-procedure: what to read, how to rank, the report template) and a **`reviewer`
-agent** definition (a read-only grader both tools can run over the report). The
-walkthroughs differ only in heartbeat plumbing: a cloud Routine or `claude -p` cron
-([13a](13a-claude-code-walkthrough.md)) vs. cron/GitHub Actions
+Both tools share two artifacts, written once. A **`daily-triage/SKILL.md`**
+carries the procedure: what to read, how to rank, the report template. A
+**`reviewer` agent** definition is the read-only grader both tools run over the
+report. The walkthroughs differ only in heartbeat plumbing — a cloud Routine or
+`claude -p` cron ([13a](13a-claude-code-walkthrough.md)) vs. cron/GitHub Actions
 ([13b](13b-opencode-walkthrough.md)).
 
 ```mermaid
@@ -59,7 +61,7 @@ flowchart LR
 
 ## The minimum-safe checklist (before EITHER version runs)
 
-Seven items. This repo's own loops clear this list before every first run; yours
+Seven items. This repo's own loops clear this list before every first run. Yours
 does too, or it doesn't run:
 
 1. Provable success condition (report file exists, matches template)
@@ -71,6 +73,9 @@ does too, or it doesn't run:
 7. Kill switch you've actually tested (schedule off / pause flag)
 
 ## The skill both versions share
+
+One skill file carries the whole procedure, and one reviewer definition grades
+its output. Both walkthroughs use these verbatim:
 
 ```claude
 # daily-triage/SKILL.md — used verbatim by BOTH walkthroughs
@@ -107,22 +112,21 @@ on the table on day one?**
 
 <details><summary>Answer</summary>
 
-Trust hasn't been earned yet — and **labels are writes on a shared system** other
-people see. L1 first means the loop's judgment gets audited (via reports) for real
-mornings before its hands are granted; if the ranking logic is subtly wrong, you
-find out from a wrong *report*, not from a hundred wrong labels. The clicks are the
-tuition. Promotion to labeling-at-L2 comes after the reports have been boringly
-right for a while.
+Trust hasn't been earned yet — and **labels are writes on a shared system**
+other people see. L1 first means the loop's judgment gets audited, via reports,
+for real mornings before its hands are granted. If the ranking logic is subtly
+wrong, you find out from a wrong *report*, not from a hundred wrong labels. The
+clicks are the tuition. Promotion to labeling-at-L2 comes after the reports have
+been boringly right for a while.
 
 </details>
 
 ## Try With AI
 
-Before opening either walkthrough, fill in the six-part table above for **your**
-repo instead of the generic one: real ranking rules (what counts as urgent *here*?),
-real report destination, real cap. Ask your agent to red-team the design against
-the 7-item checklist. Every mismatch it finds now is a 7 am surprise it prevents
-later.
+Fill in the six-part table above for **your** repo before opening either
+walkthrough: real ranking rules (what counts as urgent *here*?), real report
+destination, real cap. Ask your agent to red-team the design against the 7-item
+checklist. Every mismatch it finds now is a 7 am surprise it prevents later.
 
 ## When it goes wrong
 

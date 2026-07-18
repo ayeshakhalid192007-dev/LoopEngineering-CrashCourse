@@ -6,42 +6,44 @@
 
 ## Step 1 · Stop the loop first
 
-Pause the schedule, disarm the trigger, set the pause flag — **before** any
-investigation. Never debug a loop that is still beating: every beat during
-diagnosis is another variable moving under your hands, and possibly more damage.
-This is what the kill switch was tested for.
+Pause the schedule. Disarm the trigger. Set the pause flag. Do all of it
+**before** you investigate anything. A loop that is still beating rewrites the
+crime scene while you study it. Every new beat moves state under your hands and
+can add fresh damage. You tested the kill switch for exactly this moment — pull
+it.
 
 ## Step 2 · Save the evidence
 
-Copy the spine and the run log *as they are*, before anything touches them. Set
-aside unverified output — close (don't merge) the suspect PR, hold the unsent
-message. The evidence is the difference between finding the cause and retelling a
-guess; it is also exactly what an interrupted loop tends to overwrite on restart.
+Copy the spine and the run log exactly as they are, before anything else touches
+them. Then quarantine the unverified output: close (don't merge) the suspect PR,
+hold the unsent message. Evidence is what separates a root cause from a guess.
+It is also the first thing a restarted loop overwrites.
 
 ## Step 3 · Find the real cause
 
-Replay the last known-good beat forward through the logs and ask one question at
-each beat: **where did the recorded state stop matching reality?** That divergence
-point names the organ that actually broke — heartbeat fired wrong, spine went
-stale, checker passed what it shouldn't, limit never tripped. Fix the layer that
-broke, not the layer that *noticed* (they're usually different — the
-[failure-modes catalog](failure-modes.md) maps tells to organs).
+Start at the last known-good beat and replay the story forward through the logs.
+At each beat, ask one question: **where did the recorded state stop matching
+reality?** The divergence point names the organ that broke. Maybe the heartbeat
+fired wrong. Maybe the spine went stale, the checker passed what it shouldn't,
+or the limit never tripped. Fix the layer that broke, not the layer that
+*noticed* — they are usually different. The
+[failure-modes catalog](failure-modes.md) maps tells to organs.
 
 ## Step 4 · Fix the loop, not just the output
 
-Hand-patching the bad output feels like recovery and is actually scheduling the
-same incident for next week — the loop that produced it is unchanged. Strengthen
-the organ from step 3: sharpen the stop, add the rubric row, tighten the cap,
-move the gate. Then write the fix into the spine's lessons — the loop's own
-record of why it is shaped the way it is.
+Hand-patching the bad output feels like recovery. It isn't. The loop that
+produced the output is unchanged, so the same incident is already scheduled for
+next week. Strengthen the organ you found in step 3: sharpen the stop, add the
+rubric row, tighten the cap, move the gate. Then record the fix in the spine's
+lessons. The spine is the loop's own memory of why it is shaped the way it is.
 
 ## Step 5 · Earn trust back
 
-Drop the loop **one autonomy level** (L3→L2, L2→L1 — automatic, not negotiable),
-watch **one full real run** succeed at the reduced level, then re-promote. Trust
-is re-earned the same way it was earned. And file the write-up: this repo turns
-recoveries into `stories/` entries, because a documented failure teaches more
-than an undocumented success.
+Drop the loop **one autonomy level** — L3 to L2, L2 to L1. This is automatic,
+not a negotiation. Watch **one full real run** succeed at the reduced level.
+Then re-promote. Trust is re-earned the same way it was earned the first time.
+Finally, file the write-up. This repo turns recoveries into `stories/` entries,
+because a documented failure teaches more than an undocumented success.
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
@@ -60,11 +62,12 @@ flowchart LR
 
 ## Why a fixed sequence
 
-Because incident time is the worst time to improvise. The five steps mirror
-incident-response practice refined over decades: mitigate first, preserve the
-timeline, root-cause over symptom, corrective actions that fix the *class* of
-failure, and a blameless write-up filed where the team learns from it. A playbook
-turns a scary failure into a calm routine — no panic, no guesswork, no repeat.
+Because incident time is the worst time to improvise. The five steps are
+decades of incident-response practice, in loop form. Mitigate first. Preserve
+the timeline. Chase the root cause, not the symptom. Fix the *class* of
+failure, not the instance. File a blameless write-up where the team will find
+it. A playbook turns a scary failure into a calm routine — no panic, no
+guesswork, no repeat.
 
 ## The 60-second drill (run it before you need it)
 
@@ -75,8 +78,8 @@ For your most autonomous loop, answer now, from memory:
 2. Which two files are its evidence? (Spine + run log; know their paths.)
 3. Who gets told, and where does the write-up go?
 
-A team that can answer in 60 seconds recovers in minutes. One that can't,
-improvises — badly, at 3 am, with the loop still beating.
+A team that can answer in 60 seconds recovers in minutes. A team that can't
+will improvise — badly, at 3 am, with the loop still beating.
 
 *Prevention lives one page over: [failure-modes](failure-modes.md) ·
 [anti-patterns](anti-patterns.md) ·

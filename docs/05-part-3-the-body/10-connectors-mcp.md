@@ -1,8 +1,8 @@
 # Step 10 · Connectors (MCP)
 
-> Without connectors a loop can only talk about the world. With them it can act on
-> issues, PRs, and messages — which is exactly why the rules for connectors are
-> stricter than for anything else in the body.
+> Without connectors a loop can only talk about the world. With them it can act
+> on issues, PRs, and messages. That is why connector rules are the strictest
+> rules in the body.
 
 ## The hook
 
@@ -14,21 +14,21 @@ hands.
 
 ## Act vs. talk (plain English)
 
-**MCP (Model Context Protocol)** is the standard plug by which agents reach external
-systems: an MCP server exposes a system (GitHub, a database, a mail box) as a set of
-**tools** the agent can call. Connectors are the loop's **hands** — the part of the
-body that touches the world outside the repo.
+**MCP (Model Context Protocol)** is the standard plug by which agents reach
+external systems. An MCP server exposes a system — GitHub, a database, a mail
+box — as a set of **tools** the agent can call. Connectors are the loop's
+**hands**: the part of the body that touches the world outside the repo.
 
-Hands raise the stakes. A bad file edit is caught by git; a bad *email* is caught by
-nobody. So connector design follows three rules:
+Hands raise the stakes. A bad file edit is caught by git. A bad *email* is
+caught by nobody. So connector design follows three rules:
 
 1. **Few, focused tools.** Expose the five tools the loop's job needs, not the
    fifty the API offers. Every extra tool is surface for a confused beat. A loop
    that only triages issues needs `search`, `label`, `comment`, `link`, `close` —
    it does not need `delete_repository`.
 2. **Idempotent writes.** Beats retry and events double-fire (Step 7). An action
-   applied twice must equal it applied once: "ensure label X is on issue N" beats
-   "add label X" — and dedupe against the spine before acting.
+   applied twice must equal it applied once. "Ensure label X is on issue N"
+   beats "add label X". Dedupe against the spine before acting.
 3. **Actionable errors.** When a call fails, the error must tell the *model* what to
    do next ("rate-limited, retry after 60s" / "issue is locked — skip and log"), not
    just fail. A loop can't ask you what an opaque 400 means at 3 am.
@@ -49,6 +49,9 @@ flowchart LR
 ```
 
 ## The mechanics in each tool
+
+Each tool registers MCP servers in config and gates their write tools like any
+other permission. Watch where the allowlist discipline lands:
 
 ```claude
 # Claude Code — live docs: https://docs.claude.com/en/docs/claude-code
@@ -82,11 +85,12 @@ connector rules were broken?**
 
 <details><summary>Answer</summary>
 
-**Idempotent writes** — a retry must not double-post; the beat should have checked
-"is my comment already there?" (or the tool should be "ensure-comment"). And **few,
-focused tools** — `delete_branch` had no business being exposed to a comment loop;
-every unneeded tool is a loaded option for a confused beat. (The third rule,
-actionable errors, is what keeps failures from becoming silent no-ops.)
+**Idempotent writes** — a retry must not double-post. The beat should have
+checked "is my comment already there?", or the tool should be "ensure-comment".
+And **few, focused tools** — `delete_branch` had no business being exposed to a
+comment loop. Every unneeded tool is a loaded option for a confused beat. (The
+third rule, actionable errors, is what keeps failures from becoming silent
+no-ops.)
 
 </details>
 

@@ -28,11 +28,11 @@ flowchart LR
 
 ## The thread through all four
 
-The body is where **blast radius** is decided. Every page above is one instance of
-the same rule: give a beat exactly the standing room, moves, and reach its job
-needs — nothing more — and put the grading outside the hands that did the work.
-What the body *remembers* between beats is [Part 4](../06-part-4-the-spine/README.md)'s
-problem.
+The body is where **blast radius** is decided. Every page above is one instance
+of the same rule. Give a beat exactly the standing room, moves, and reach its
+job needs — nothing more. Put the grading outside the hands that did the work.
+What the body *remembers* between beats is
+[Part 4](../06-part-4-the-spine/README.md)'s problem.
 
 ## Check your understanding
 

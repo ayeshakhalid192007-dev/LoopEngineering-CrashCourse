@@ -5,11 +5,11 @@
 
 ## The hook
 
-Beat 14, 2:00 am: the loop spends nine minutes rediscovering how this repo deploys —
-reading scripts, guessing at flags, almost running the wrong one. Beat 15, 2:30 am:
-same nine minutes. Beat 16… You could keep paying that toll every beat, or you could
-write the deploy steps down *once*, in a file the harness hands to any beat that
-needs it. That file is a skill.
+Beat 14, 2:00 am: the loop spends nine minutes rediscovering how this repo
+deploys — reading scripts, guessing at flags, almost running the wrong one. Beat
+15, 2:30 am: same nine minutes. Beat 16… You could keep paying that toll every
+beat. Or you could write the deploy steps down *once*, in a file the harness
+hands to any beat that needs it. That file is a skill.
 
 ## The cold-start problem (plain English)
 
@@ -18,10 +18,10 @@ The spine (Step 12) solves cold-start for **facts** (*what's done, what's next*)
 **skill** solves cold-start for **procedure**: *how do we deploy, how do we review,
 what's the checklist for a release note*.
 
-Mechanically, a skill is a markdown file (canonically `SKILL.md` in a named folder)
-with a description that tells the harness *when* it applies. The harness surfaces
-matching skills to the agent; invoking one loads the instructions into the beat.
-Result: the loop prompt stops carrying the how-to and shrinks to intent —
+Mechanically, a skill is a markdown file (canonically `SKILL.md` in a named
+folder) with a description that tells the harness *when* it applies. The harness
+surfaces matching skills to the agent. Invoking one loads the instructions into
+the beat. The loop prompt stops carrying the how-to and shrinks to intent:
 
 ```text
 # without a skill — the prompt smuggles in a manual
@@ -32,9 +32,9 @@ Result: the loop prompt stops carrying the how-to and shrinks to intent —
 /loop Check the queue. Deploy anything approved, per the deploy skill.
 ```
 
-**Skill vs. plugin:** a skill is *instructions* the model follows (markdown, no
-install); a plugin is *software* the harness runs (code, hooks, commands). Teach
-judgment-shaped procedure as a skill; ship mechanical capability as a plugin.
+**Skill vs. plugin:** a skill is *instructions* the model follows — markdown, no
+install. A plugin is *software* the harness runs: code, hooks, commands. Teach
+judgment-shaped procedure as a skill. Ship mechanical capability as a plugin.
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
@@ -51,6 +51,9 @@ flowchart LR
 ```
 
 ## The mechanics in each tool
+
+Both tools use the same shape: a small named file that carries the procedure, and
+a prompt that points at it. Here is the deploy example in each:
 
 ```claude
 # Claude Code — live docs: https://docs.claude.com/en/docs/claude-code

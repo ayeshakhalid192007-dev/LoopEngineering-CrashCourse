@@ -20,17 +20,17 @@ Because nothing external paces it, everything depends on three stops working:
 
 1. **Success** — the condition is provably met. Write it like a spec, because it is
    one: *"suite exits 0"*, *"no unchecked boxes"* — never *"looks good."*
-2. **Limit** — a max-runs cap it can never exceed. This is doom-loop insurance: the
-   ninth identical "fix" above should have been impossible, because a sane limit
-   (with per-item retry caps like `MAX_RETRIES`, and a watchdog on retries) turns
-   an infinite argument with reality into a bounded one that escalates to you.
+2. **Limit** — a max-runs cap it can never exceed. This is doom-loop insurance. The
+   ninth identical "fix" above should have been impossible. A sane limit — plus
+   per-item retry caps like `MAX_RETRIES` and a watchdog on retries — turns an
+   infinite argument with reality into a bounded one that escalates to you.
 3. **No progress** — nothing changed for 3 consecutive beats → log it and stop.
    Progress is measured against the spine, not against effort.
 
 The folk name for the degenerate case is the **Ralph loop** — the same beat repeated
-naively until something gives. The punchline of this step: with a provable stop, a
-limit, and a no-progress rule, even a Ralph loop is safe; without them, no amount of
-model intelligence is.
+naively until something gives. Here's the punchline. With a provable stop, a limit,
+and a no-progress rule, even a Ralph loop is safe. Without them, no amount of model
+intelligence is.
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
@@ -49,6 +49,9 @@ flowchart TD
 ```
 
 ## The mechanics in each tool
+
+Each tool expresses the same three stops. Watch where the success test and the cap
+live:
 
 ```claude
 # Claude Code — live docs: https://docs.claude.com/en/docs/claude-code
@@ -86,18 +89,18 @@ have that the first doesn't — name all three?**
 
 All three stops: a **provable success condition** (lint exits 0 — a fact), a **limit**
 (10 runs — doom-loop insurance), and a **no-progress rule** (unchanged lint count for
-3 beats — stuck-detection measured against real state). "Clean" is a feeling; the
+3 beats — stuck-detection measured against real state). "Clean" is a feeling. The
 loop can neither prove it nor be safely trusted to pursue it unboundedly.
 
 </details>
 
 ## Try With AI
 
-In a throwaway repo with a deliberately broken test suite (break 3 tests yourself),
-run: "Fix the FIRST failing test only, then stop" — by hand, three times. Now wrap it
-in a conditional loop with the three stops and run it once. Diff the experience:
-what you did between manual runs (check, decide, re-prompt) is exactly what the
-condition + limit + progress rule now encode.
+Break 3 tests yourself in a throwaway repo. Run "Fix the FIRST failing test only,
+then stop" by hand, three times. Now wrap it in a conditional loop with the three
+stops and run it once. Diff the experience: what you did between manual runs — check,
+decide, re-prompt — is exactly what the condition, limit, and progress rule now
+encode.
 
 ## When it goes wrong
 

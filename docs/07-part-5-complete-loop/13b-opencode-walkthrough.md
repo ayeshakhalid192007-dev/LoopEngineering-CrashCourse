@@ -6,10 +6,10 @@
 
 ## The hook
 
-If 13a felt like assembling furniture, 13b is building the same piece from lumber.
-Every organ the platform provided there, you'll wire by hand here — which is exactly
-why building the loop *twice* is the exercise: afterwards you'll know which parts
-are the tool and which parts are the **shape**.
+If 13a felt like assembling furniture, 13b is building the same piece from
+lumber. Every organ the platform provided there, you'll wire by hand here. That
+is why building the loop *twice* is the exercise. Afterwards you'll know which
+parts are the tool and which parts are the **shape**.
 
 ## Build order (same order, different lumber)
 
@@ -74,11 +74,11 @@ flowchart LR
 
 ## The first real morning
 
-Same graduation rule as 13a: run `./triage-beat.sh` by hand tonight, watched, and
-grade the output. PASS → arm the crontab line. If your machine sleeps at 7 am,
-that's not a bug in the loop but a fact about cron — move the same wrapper into a
-GitHub Actions `schedule:` job and it runs machine-off (the Step 6 trade, made
-concrete).
+Same graduation rule as 13a: run `./triage-beat.sh` by hand tonight, watched,
+and grade the output. On a PASS, arm the crontab line. If your machine sleeps at
+7 am, that's not a bug in the loop — it's a fact about cron. Move the same
+wrapper into a GitHub Actions `schedule:` job and it runs machine-off. That is
+the Step 6 trade, made concrete.
 
 > [!NOTE]
 > **Going deeper — what building it twice taught:** line the two builds up. The
@@ -97,11 +97,11 @@ they're in bash rather than in the prompt?**
 
 <details><summary>Answer</summary>
 
-The **kill switch** (pause-file check), the **run limit** (daily-cap marker file),
-and the **spine durability** (unconditional `git commit`). In bash they're
-*harness-layer guarantees* — they hold even if the model has its worst beat ever;
-in the prompt they'd be requests to the very process they're meant to bound. Same
-lesson as Step 2: guarantees live below the layer they constrain.
+The **kill switch** (pause-file check), the **run limit** (daily-cap marker
+file), and the **spine durability** (unconditional `git commit`). In bash
+they're *harness-layer guarantees* — they hold even if the model has its worst
+beat ever. In the prompt they'd be requests to the very process they're meant to
+bound. Same lesson as Step 2: guarantees live below the layer they constrain.
 
 </details>
 

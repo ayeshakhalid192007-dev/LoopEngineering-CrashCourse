@@ -27,10 +27,10 @@ flowchart LR
 
 ## Where to next
 
-The 14 steps taught the *shape*; two layers turn it into daily practice: the
-[methods pages](../09-methods/make-your-own-loop.md) (design your own loop, A–F) and
-the [operating handbook](../10-operating/operating-loops.md) (running fleets without
-surprises). Both belong to this part's track.
+The 14 steps taught the *shape*. Two layers turn it into daily practice: the
+[methods pages](../09-methods/make-your-own-loop.md) (design your own loop, A–F)
+and the [operating handbook](../10-operating/operating-loops.md) (running fleets
+without surprises). Both belong to this part's track.
 
 ## Check your understanding
 

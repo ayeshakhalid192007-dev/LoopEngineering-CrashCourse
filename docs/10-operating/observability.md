@@ -8,7 +8,7 @@
 
 ### 1 · The run log — the fleet's heartbeat monitor
 
-One shared, append-only file; **one line per beat, no exceptions**. This repo's
+One shared, append-only file. **One line per beat, no exceptions.** This repo's
 format ([`shared/loop-run-log.md`](../../shared/loop-run-log.md)):
 
 ```text
@@ -17,34 +17,36 @@ format ([`shared/loop-run-log.md`](../../shared/loop-run-log.md)):
  "tokens_estimate": 15000, "outcome": "report-only"}
 ```
 
-Every field earns its place: `items_found` vs `actions_taken` *proves* maker ≠
-checker held (3 found, 0 taken — the compliance record from
-[Step 11](../05-part-3-the-body/11-maker-checker.md)); `tokens_estimate` feeds
-[cost management](../08-part-6-human-control/cost-management.md); `outcome` makes the
-line greppable. **Silence is the loudest signal:** a loop with no line for a period
-it should have beaten is *down*, and nothing else will tell you.
+Every field earns its place. `items_found` next to `actions_taken` proves the
+maker–checker split held — 3 found, 0 taken is the compliance record from
+[Step 11](../05-part-3-the-body/11-maker-checker.md). `tokens_estimate` feeds
+[cost management](../08-part-6-human-control/cost-management.md). `outcome`
+makes the line greppable. And **silence is the loudest signal**. A loop with no
+line for a period it should have beaten is *down*. Nothing else will tell you.
 
 ### 2 · The spines — per-loop narrative
 
-The run log says *that* things happened; the spine says *what and why*. A healthy
-spine reads like a diary: checklist state, lessons, discrepancies honestly
-recorded. (See this repo's Day 1 spines — including the beat-count discrepancy
-they chose to *document* rather than smooth over. That's what trustworthy state
-looks like.)
+The run log records *that* things happened. The spine explains *what and why*.
+A healthy spine reads like a diary. It holds the checklist state, the lessons,
+and the discrepancies, honestly recorded. Read this repo's Day 1 spines for a
+live example: they document a beat-count discrepancy instead of smoothing it
+over. That is what trustworthy state looks like.
 
 ### 3 · Escalations — the fleet asking for help
 
-An escalation is a loop writing "I need a human" into its own spine and stopping —
-the *success* of a guardrail, not a failure. Track the rate: zero forever means
-limits are too loose to ever trip; constant means the loop's job is misdesigned.
+An escalation is a loop writing "I need a human" into its own spine and
+stopping. That is a guardrail *succeeding*, not failing. Track the rate. A rate
+of zero forever means your limits are too loose to ever trip. A constant stream
+means the loop's job is misdesigned.
 
 ## Green ≠ done, operationalized
 
-A status is a claim about the *loop*; verification is a claim about the *work*.
-The [verification ladder](../08-part-6-human-control/verification.md) turns that
-slogan into layers; observability's job is to make each layer's evidence **visible
-in one place** — checker verdicts in a committed spine, script results in CI, the
-run log tying them together by timestamp.
+A status is a claim about the *loop*. Verification is a claim about the *work*.
+The two come apart, and the
+[verification ladder](../08-part-6-human-control/verification.md) exists for
+exactly that gap. Observability's job is simpler: put each layer's evidence
+**in one visible place**. Checker verdicts live in a committed spine. Script
+results live in CI. The run log ties them together by timestamp.
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
@@ -72,17 +74,17 @@ without asking any model?
 4. What escalated, and has a human responded to each?
 5. Is any spine's story inconsistent with the log's numbers?
 
-If any answer requires reconstruction, that's the observability gap to fix *this
-week* — reconstruction after the fact is exactly how this repo's Day 1 spines had
-to be rebuilt, and some of that history is permanently gone.
+If any answer needs reconstruction, you have found the observability gap. Fix
+it *this week*. This repo rebuilt its Day 1 spines by reconstruction, and some
+of that history is gone for good.
 
 ## Practical defaults
 
-- **Retention:** prune run-log entries older than 30 days (this repo's rule);
-  spines keep their narrative — they're the long-term memory.
-- **Timestamps:** UTC everywhere, ISO-8601, or correlating log↔spine↔CI becomes
-  archaeology.
-- **Dashboards:** optional; files are the source of truth. A dashboard that
+- **Retention:** prune run-log entries older than 30 days (this repo's rule).
+  Spines keep their narrative — they are the long-term memory.
+- **Timestamps:** UTC everywhere, ISO-8601. Anything else turns correlating
+  log, spine, and CI into archaeology.
+- **Dashboards:** optional. Files are the source of truth, and a dashboard that
   disagrees with the run log is wrong by definition.
 - **Alerting:** two rules only — page on *silence* (expected beat missing) and on
   *escalation*. Alerting on every beat trains you to ignore alerts.

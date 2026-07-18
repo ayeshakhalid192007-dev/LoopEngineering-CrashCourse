@@ -10,8 +10,8 @@
 
 Has this task actually happened three times? Not "will surely recur" — *has
 recurred*. Building a loop for a predicted repetition is speculative
-infrastructure; the third real occurrence is when prediction becomes data. (One-off
-with many steps? That's a **workflow** — script it, don't loop it.)
+infrastructure. The third real occurrence is when prediction becomes data.
+(One-off with many steps? That's a **workflow** — script it, don't loop it.)
 
 ### 2 · The specification test
 
@@ -23,11 +23,11 @@ driver's seat, with the agent as hands — a session, not a loop.
 ### 3 · The tolerance test
 
 Multiply: (worst realistic bad beat) × (beats per week nobody watches). A weekly
-report loop's worst case is one silly report — loop it freely. An
-auto-merge loop's worst case is machine-speed damage to a shared codebase — the
-tolerance test says: not until the checker and gate structure is *stronger than
-your best reviewer*. If the product of that multiplication scares you, the answer
-isn't "no" — it's "L1, and a smaller body."
+report loop's worst case is one silly report — loop it freely. An auto-merge
+loop's worst case is machine-speed damage to a shared codebase. The tolerance
+test says: not until the checker and gate structure is *stronger than your best
+reviewer*. If the product of that multiplication scares you, the answer isn't
+"no" — it's "L1, and a smaller body."
 
 ### 4 · The economics test
 

@@ -35,12 +35,12 @@
 
 The expensive ones — they arrive last and cost the most:
 
-- **Cognitive surrender.** "The loop probably knows better" as a reflex. The loop
-  is never the authority on itself; instruments are.
+- **Cognitive surrender.** "The loop probably knows better" as a reflex. The
+  loop is never the authority on itself. Instruments are.
 - **Comprehension debt as a lifestyle.** Shipping faster than anyone understands,
   indefinitely — until the first "why?" nobody can answer.
-- **Intent debt as a lifestyle.** Specs that stay vague because tightening them is
-  work; the loop collects on every vague word, at scale.
+- **Intent debt as a lifestyle.** Specs that stay vague because tightening them
+  is work. The loop collects on every vague word, at scale.
 - **AI gravity.** Each success pulls the next decision toward the system — scope
   creep without a decider. Antidote: capability changes are *written* decisions.
 

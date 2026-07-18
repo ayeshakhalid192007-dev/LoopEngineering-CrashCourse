@@ -6,14 +6,15 @@
 
 ## The operator's day (the short version)
 
-- **Morning (2 min):** scan the run log's last 24h. Every loop that should have
-  beaten, did? Any `escalations > 0`? Any loop silent that shouldn't be? Silence
-  is a *page*, not a relief — no log line means the loop didn't run, and you want
-  to know which organ failed.
-- **On every escalation (10 min):** read the loop's spine, not just the alert. The
-  spine has the context the alert lacks. Decide: fix, raise a cap deliberately
-  (like this repo's Day 1 [budget event](../../shared/loop-budget.md)), or pause
-  the loop.
+- **Morning (2 min):** scan the last 24 hours of the run log. Did every loop
+  that should have beaten actually beat? Is any `escalations` count above zero?
+  Is any loop silent that shouldn't be? Treat silence as a *page*, not a
+  relief. No log line means the loop didn't run, and you want to know which
+  organ failed.
+- **On every escalation (10 min):** read the loop's spine, not just the alert.
+  The spine carries the context the alert lacks. Then decide one of three
+  things: fix the cause, raise a cap deliberately (like this repo's Day 1
+  [budget event](../../shared/loop-budget.md)), or pause the loop.
 - **Weekly (15 min):** the engineer's beat from
   [Step 14](../08-part-6-human-control/14-staying-the-engineer.md) — cost per loop,
   drift check (body vs. `loop.md`), promote/hold/demote/retire per loop.
@@ -62,10 +63,10 @@ flowchart LR
 
 ## The mindset
 
-A well-operated fleet is **boring**. Beats land, logs accumulate, escalations are
-rare and informative, and the interesting decisions all happen in your loop, not
-the agent's. If operating your loops is exciting, something in this handbook is
-being skipped — excitement is unhandled risk with better marketing.
+A well-operated fleet is **boring**. Beats land. Logs accumulate. Escalations
+are rare and informative. The interesting decisions all happen in your loop,
+not the agent's. If operating your loops feels exciting, something in this
+handbook is being skipped. Excitement is unhandled risk with better marketing.
 
 *Live example: this repo's own operating artifacts are one directory up —
 [`LOOP.md`](../../LOOP.md), [`shared/loop-budget.md`](../../shared/loop-budget.md),

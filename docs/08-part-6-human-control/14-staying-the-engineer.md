@@ -6,11 +6,12 @@
 
 ## The hook
 
-Six months from now your loops work. That's when the real risk starts — not the doom
-loop (you'd notice), but the quiet slide where reports go unread because they're
-always fine, promotions happen because asking felt slow, and one day a question
-lands — *"why did the system do that?"* — and the honest answer is that nobody
-knows anymore. Nothing failed. You just stopped being the engineer.
+Six months from now your loops work. That's when the real risk starts. Not the
+doom loop — you'd notice that. The quiet slide: reports go unread because
+they're always fine, and promotions happen because asking felt slow. Then one
+day a question lands — *"why did the system do that?"* — and the honest answer
+is that nobody knows anymore. Nothing failed. You just stopped being the
+engineer.
 
 ## The job that remains (plain English)
 
@@ -70,6 +71,8 @@ flowchart LR
 ```
 
 ## The engineer's beat, in each tool
+
+Your loop has beats too. Here is a weekly 15-minute one, in each tool:
 
 ```claude
 # Claude Code — live docs: https://docs.claude.com/en/docs/claude-code

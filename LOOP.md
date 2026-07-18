@@ -9,7 +9,7 @@
 
 | Loop | Folder | Heartbeat | Cadence | Level | Role |
 | ------ | -------- | ----------- | --------- | ------- | ------ |
-| step-writer | `loops/day2/step-writer/` | conditional (run-until-done) | self-paced | L2 (writes docs) | Writes the 14 steps, part indexes, methods, operating handbook |
+| step-writer | `loops/day2/step-writer/` | conditional (run-until-done) | self-paced | L2 (writes docs) | Writes the 14 steps, part indexes, methods, operating handbook. **Current mission: pass-2 tone rewrite per `shared/style-guide.md`** |
 | template-checker | `loops/day2/template-checker/` | schedule | 20m (ceiling) | L1 (report-only) | PASS/FAIL per page against the §10 rubric |
 | quiz-writer | `loops/day2/quiz-writer/` | conditional, gated on checker PASS | per part | L2 (writes quiz/flashcards only) | One part's `quiz.md` + `flashcards.md` per beat |
 | link-check | `loops/day1/link-check/` *(continues unchanged)* | schedule | 30m | L1 (report-only) | Keeps relative links honest all day |
@@ -67,7 +67,7 @@ flowchart LR
 | `loops/day2/quiz-writer/state.md` | **quiz-writer** | read-only |
 | `loops/day1/<loop>/state.md` | that Day 1 loop (retired) | read-only |
 | `shared/loop-run-log.md` | all loops, **append-only** | — |
-| `LOOP.md`, `CLAUDE.md`, `loop-plan.md`, `shared/goal.md`, `shared/loop-budget.md`, `STATE.md` | **human** | read-only |
+| `LOOP.md`, `CLAUDE.md`, `loop-plan.md`, `shared/goal.md`, `shared/loop-budget.md`, `shared/style-guide.md`, `STATE.md` | **human** | read-only |
 
 If a loop needs a change outside its ownership, it writes the request into its own
 `state.md` under "Escalations" and stops touching that path.

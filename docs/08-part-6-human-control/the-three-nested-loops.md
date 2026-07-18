@@ -1,8 +1,8 @@
 # The Three Nested Loops
 
-> The agent's loop is the smallest of three. Yours turns slower around it; the
-> team's turns slower still — and every safety property this course teaches lives
-> in the gap between two of them.
+> The agent's loop is the smallest of three. Yours turns slower around it. The
+> team's turns slower still. Every safety property this course teaches lives in
+> the gap between two of them.
 
 ## The hook
 
@@ -26,12 +26,15 @@ supposed to make that call, and when did it last actually turn?*
    provably lives — a named owner per loop, or the loop doesn't run.
 
 The load-bearing property: **every arrow points inward.** Outer loops configure
-inner ones; inner loops *report* outward but never configure anything above them.
-Each nesting violation is a named anti-pattern: a loop raising its own caps (inner
-writing outer — the reason this repo's budget file is human-owned), a loop
-promoting itself ("the reviews were all passing anyway" — AI gravity as
-architecture), a team letting the fleet's behavior *define* policy because nobody
-wrote any (governance by drift).
+inner ones. Inner loops *report* outward but never configure anything above
+them. Each nesting violation is a named anti-pattern:
+
+- **A loop raising its own caps** — inner writing outer. This is why this repo's
+  budget file is human-owned.
+- **A loop promoting itself** — "the reviews were all passing anyway." AI
+  gravity as architecture.
+- **A team letting the fleet's behavior define policy** because nobody wrote
+  any — governance by drift.
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
@@ -54,6 +57,9 @@ flowchart TB
 ```
 
 ## The outer loops, made concrete
+
+Loop 2 is a runnable weekly beat. Loop 3 is human-owned files the fleet reads
+but never writes:
 
 ```claude
 # Claude Code — live docs: https://docs.claude.com/en/docs/claude-code
@@ -94,8 +100,8 @@ stopped — reporting *upward*, changing nothing above itself. **Loop 2** (the h
 read the alert with context, decided the work justified more budget, and raised the
 caps — the *outer* loop reconfiguring the inner. **Loop 3** had already made that
 interaction inevitable: the rule "budget file is human-owned; 80% → report-only"
-was governance written *before* the incident. Every arrow pointed inward; that's
-why the story is boring — and boring is the goal.
+was governance written *before* the incident. Every arrow pointed inward. That
+is why the story is boring — and boring is the goal.
 
 </details>
 

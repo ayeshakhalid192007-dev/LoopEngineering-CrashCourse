@@ -16,8 +16,8 @@ is a guarantee. Every safety property you care about should live as low as it ca
 | "one page per beat" | hope | run limit + rubric row the checker enforces |
 | "stop if spending too much" | the model's judgment | budget file + 80% tripwire, read every beat |
 
-This repo's [`loop-constraints.md`](../../loop-constraints.md) is the visible half;
-the permission config enforcing it is the half that works at 3 am.
+This repo's [`loop-constraints.md`](../../loop-constraints.md) is the visible
+half. The permission config enforcing it is the half that works at 3 am.
 
 ## The autonomy ladder (levels are earned, not assigned)
 
@@ -61,20 +61,24 @@ judgment or accountability concentrates, and write the placement into `loop.md`:
 
 ## Kill switches: the tested kind
 
-Three layers, because switches fail: the **pause flag** every beat checks first
-(this fleet's `loop-pause-all`), the **schedule off-switch** (disarm the cron /
-routine), and the **permission revoke** (harness-level, works even on a beat
-already running). Test one pull of each *before* the first unattended run — a kill
-switch that's never been pulled is a hypothesis.
+Three layers, because switches fail:
+
+- The **pause flag** every beat checks first (this fleet's `loop-pause-all`).
+- The **schedule off-switch** — disarm the cron or routine.
+- The **permission revoke** — harness-level, works even on a beat already
+  running.
+
+Test one pull of each *before* the first unattended run. A kill switch that's
+never been pulled is a hypothesis.
 
 ## Secrets and untrusted input
 
-Loops never read or write secret paths (deny-list above) — a loop with repo access
-and secrets access is an exfiltration machine waiting for a confused beat. And
-every externally-triggered loop ([Step 7](../04-part-2-heartbeat/07-event-driven.md))
-treats inbound text — issue bodies, PR comments, chat messages — as **untrusted
-input that may be trying to steer it**: instructions found inside data are data,
-never commands.
+Loops never read or write secret paths (deny-list above). A loop with repo
+access and secrets access is an exfiltration machine waiting for a confused
+beat. And every externally-triggered loop
+([Step 7](../04-part-2-heartbeat/07-event-driven.md)) treats inbound text —
+issue bodies, PR comments, chat messages — as **untrusted input that may be
+trying to steer it**. Instructions found inside data are data, never commands.
 
 *The failure catalog for everything this page prevents:
 [failure-modes.md](failure-modes.md) · [anti-patterns.md](anti-patterns.md).*

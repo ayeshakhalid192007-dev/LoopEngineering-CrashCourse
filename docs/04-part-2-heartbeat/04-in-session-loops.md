@@ -6,16 +6,16 @@
 ## The hook
 
 You want the test suite checked every five minutes while you write a design doc. You
-could set a phone alarm and alt-tab all afternoon — or you could type one line, keep
+could set a phone alarm and alt-tab all afternoon. Or you could type one line, keep
 writing, and let the session's own pulse do the checking. Same afternoon, one less
-job: that's an in-session loop.
+job. That's an in-session loop.
 
 ## In-session heartbeats (plain English)
 
 An **in-session loop** runs on a timer *inside* a live agent session. It's the
-training-wheels heartbeat: you see every beat as it happens, you can interrupt at any
-moment, and when the session ends, the loop ends with it. That last property is a
-feature, not a bug — an in-session loop can never outlive your attention.
+training-wheels heartbeat. You see every beat as it happens. You can interrupt at any
+moment. When the session ends, the loop ends with it. That last property is a feature,
+not a bug: an in-session loop can never outlive your attention.
 
 Two flavors matter:
 
@@ -23,11 +23,14 @@ Two flavors matter:
 - **Scheduled tasks** — "at these times, do X," managed by the harness's own
   scheduler (create/list/delete them like little cron entries).
 
-The scheduler is a real system with real rules, and they're worth knowing before you
-trust it: caps on how many tasks may exist (Claude Code's cron tools cap at **50
-tasks**), automatic **expiry** (~3 days) so forgotten timers die on their own,
-**jitter** so many tasks don't stampede at once, and **no catch-up** — a beat missed
-while the machine slept is *dropped*, not replayed. Design for "misses are normal."
+The scheduler is a real system with real rules. Know them before you trust it:
+
+- **Caps** on how many tasks may exist — Claude Code's cron tools cap at **50 tasks**.
+- **Expiry** (~3 days), so forgotten timers die on their own.
+- **Jitter**, so many tasks don't stampede at once.
+- **No catch-up**: a beat missed while the machine slept is *dropped*, not replayed.
+
+Design for "misses are normal."
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
@@ -43,6 +46,9 @@ flowchart LR
 ```
 
 ## The mechanics in each tool
+
+Here is how each tool starts an in-session beat, plus the scheduler limits that ride
+along with it:
 
 ```claude
 # Claude Code — live docs: https://docs.claude.com/en/docs/claude-code
@@ -78,17 +84,17 @@ that the *right* answer?**
 <details><summary>Answer</summary>
 
 **At most one** — the next scheduled beat. The four missed beats are dropped, not
-queued. That's right because catch-up would mean four stale beats stampeding at once
-against a world that has moved on; a loop should always act on *now*, and a beat
-that observes current state makes missed beats cost nothing.
+queued. Catch-up would mean four stale beats stampeding at once against a world that
+has moved on. A loop should always act on *now*. A beat that observes current state
+makes missed beats cost nothing.
 
 </details>
 
 ## Try With AI
 
-In a throwaway repo, start a report-only interval loop: "every 2 minutes, count the
+Start a report-only interval loop in a throwaway repo: "every 2 minutes, count the
 TODO comments in `src/` and append the number with a timestamp to `todo-count.log`."
-Let it run five beats while you do something else. Then read the log: you have just
+Let it run five beats while you do something else. Then read the log. You have just
 run your first L1 loop, and the log *is* its spine.
 
 ## When it goes wrong

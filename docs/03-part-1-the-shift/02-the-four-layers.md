@@ -6,30 +6,29 @@
 ## The hook
 
 Two engineers hit the same bug: the agent keeps "fixing" a file it shouldn't touch.
-One spends the afternoon rewording the prompt — politely, then firmly, then in caps.
-The other adds a single deny rule to the harness permissions and moves on. Same
-problem, different layer — only one of them was standing on the right floor of the
-building.
+One spends the afternoon rewording the prompt, politely, then firmly, then in caps.
+The other adds one deny rule to the harness permissions and moves on. Same bug,
+different layer. Only one of them worked on the layer that could fix it.
 
 ## The four layers (plain English)
 
 1. **Prompt** — the words you send this turn. Cheap to change, weakest guarantees.
 2. **Context** — everything the model can see: rules files, open files, prior turns.
-   You *curate* this layer; it's how the same prompt lands differently.
+   You *curate* this layer. It's how the same prompt lands differently.
 3. **Harness** — the vendor-built software shell around the model: tool execution,
    permissions, hooks. Guarantees live here, because code can't be persuaded.
 4. **Loop** — the outer cycle *you* engineer: what to work on, when to run, when it's
    done, who checks. Judgment lives here.
 
 The foundations page [the-four-layers.md](../02-foundations/the-four-layers.md) maps
-the stack itself; this step adds the part that matters for looping: **the small loop
+the stack itself. This step adds the part that matters for looping: **the small loop
 and the big loop are different layers.**
 
 ## The small loop vs. the big loop
 
-Inside the harness there is already a loop — the model calls a tool, reads the
-result, calls another, until the turn ends. You don't build that. What you build sits
-one layer up:
+Inside the harness there is already a loop. The model calls a tool, reads the result,
+calls another, until the turn ends. You don't build that. What you build sits one
+layer up:
 
 ```text
 # the small loop — the harness runs this for you, inside ONE beat
@@ -64,11 +63,14 @@ flowchart TB
     style SMALL fill:#fbfdfc,stroke:#99f6e4,stroke-width:1.5px,color:#115e59;
 ```
 
-Confusing the two produces the classic errors: expecting the harness to know when the
-*project* is done (it only knows when a *turn* is done), or hand-building tool
+Confusing the two produces the classic errors. You expect the harness to know when
+the *project* is done, but it only knows when a *turn* is done. Or you hand-build tool
 plumbing the harness already does better.
 
 ## The layers in each tool
+
+Each tool exposes all four layers under different names. Here is where to reach for
+each one:
 
 ```claude
 # Claude Code — live docs: https://docs.claude.com/en/docs/claude-code
@@ -100,17 +102,16 @@ branch." Which layer is failing, and which layer is the fix?**
 
 The failure is at the **prompt/context layer** — prose rules are requests, not
 guarantees. The fix belongs one layer down in the **harness**: a permission rule or
-hook that blocks commits to `main` outright. Words ask; the harness enforces.
+hook that blocks commits to `main` outright. Words ask. The harness enforces.
 
 </details>
 
 ## Try With AI
 
-In a throwaway repo, give your agent a rule in prose ("never edit files in
-`legacy/`") and ask it to summarize its constraints — then, in a fresh session, give
-the same rule as a harness permission and ask it to edit `legacy/anything.txt`.
-Watch where each one fails. You've just measured the difference between layer 1 and
-layer 3.
+Give your agent a rule in prose in a throwaway repo ("never edit files in `legacy/`")
+and ask it to summarize its constraints. Then, in a fresh session, give the same rule
+as a harness permission and ask it to edit `legacy/anything.txt`. Watch where each one
+fails. You've just measured the difference between layer 1 and layer 3.
 
 ## When it goes wrong
 

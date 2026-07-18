@@ -58,10 +58,10 @@ Questions 3 and 4 don't change the heartbeat — they set the **level** and the
 
 - **A workflow mistaken for a loop.** Fixed steps, one pass, deterministic order?
   That's the *body of one beat* ([Step 11](../05-part-3-the-body/11-maker-checker.md)),
-  not a loop. Loops decide *whether and when*; workflows decide *how*.
+  not a loop. Loops decide *whether and when*. Workflows decide *how*.
 - **Reaching for the biggest loop.** Unattended-event-driven-with-writes is the
-  most powerful pattern and the wrong first answer to almost everything. Pick the
-  smallest pattern that does the job; promotion exists.
+  most powerful pattern and the wrong first answer to almost everything. Pick
+  the smallest pattern that does the job. Promotion exists.
 
 *Next:* shape chosen → fill the [design checklist](loop-design-checklist.md).
 Unsure the task deserves a loop at all → the

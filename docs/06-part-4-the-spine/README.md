@@ -1,7 +1,8 @@
 # Part 4 · The Spine
 
 > One step, one organ, one rule: the model forgets, so the files must remember.
-> Shortest part of the course; the one whose absence kills the most loops.
+> This is the shortest part of the course — and the one whose absence kills the
+> most loops.
 
 ## The step
 
@@ -23,11 +24,12 @@ flowchart LR
 
 ## Why this part is one page long
 
-Because the discipline is small and absolute. Every loop in this repo carries it,
-and you can audit them: each `loops/*/ state.md` is a live spine, including the Day 1
-ones whose reconstruction notices document what happens when the rule is skipped.
-With heartbeat, body, and spine in hand, you're ready to build the whole animal —
-[Part 5](../07-part-5-complete-loop/README.md) builds one loop twice, in two tools.
+Because the discipline is small and absolute. Every loop in this repo carries
+it, and you can audit them: each `loops/*/state.md` is a live spine. The Day 1
+reconstruction notices document what happens when the rule is skipped. With
+heartbeat, body, and spine in hand, you're ready to build the whole animal —
+[Part 5](../07-part-5-complete-loop/README.md) builds one loop twice, in two
+tools.
 
 ## Check your understanding
 
