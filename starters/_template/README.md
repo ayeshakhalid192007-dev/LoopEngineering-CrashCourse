@@ -37,9 +37,13 @@ The full walkthrough — with a worked example and the cross-tool plumbing — i
 
 ## The seven-item minimum (clear this before beat 1)
 
-1. Provable success condition · 2. Run limit · 3. Spine written first, committed ·
-4. Report-only (L1) start · 5. Human gate placed · 6. One log line per beat ·
-7. Kill switch tested.
+1. Provable success condition
+2. Run limit
+3. Spine written first, committed
+4. Report-only (L1) start
+5. Human gate placed
+6. One log line per beat
+7. Kill switch tested
 
 ---
 

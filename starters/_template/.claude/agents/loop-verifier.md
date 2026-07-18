@@ -20,7 +20,7 @@ You never edit the work itself.
 
 Write your verdict to your OWN state file (never the work):
 
-```
+```text
 PASS/FAIL · <row> · <one line: what's right or what's missing>
 ```
 

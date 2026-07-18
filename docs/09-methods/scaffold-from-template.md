@@ -73,9 +73,13 @@ promoted into CI.
 Walk the copied kit against the seven-item minimum — the same list every loop in this repo
 clears (and the same one in [the design checklist](loop-design-checklist.md)):
 
-1. Provable success condition · 2. Run limit · 3. Spine written first, committed ·
-4. Report-only (L1) start · 5. Human gate placed · 6. One log line per beat ·
-7. Kill switch tested.
+1. Provable success condition
+2. Run limit
+3. Spine written first, committed
+4. Report-only (L1) start
+5. Human gate placed
+6. One log line per beat
+7. Kill switch tested
 
 Any blank you can't fill in a sentence isn't a formatting gap — it's a design decision you
 haven't made yet. Make it before beat 1.
