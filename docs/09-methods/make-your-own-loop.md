@@ -1,34 +1,36 @@
+![Methods · Design a loop of your own — the A–F method](../../assets/banner-09-methods.svg)
+
 # Make Your Own Loop — the A–F Method
 
-> The 14 steps taught you the organs. This page is the surgery manual: six moves,
-> A through F, that turn "I keep doing this by hand" into a loop you can trust.
+> The 14 steps taught you the organs. This page is the surgery manual: six moves, A through F,
+> that turn "I keep doing this by hand" into a loop you can actually trust.
 
 ## When to reach for this page
 
-Any time you catch yourself doing the same agent-assisted task a third time. Third
-time is the tell — once is work, twice is coincidence, three times is a loop you
+The moment you notice you're doing the same agent-assisted task for the third time. Three is
+the magic number — once is just work, twice is coincidence, and three times is a loop you
 haven't built yet.
 
 ## The method
 
 ### A · Pick the task and its shape
 
-Name the task in one sentence, then let its *ending* choose the heartbeat:
+State the task in one sentence, then let the way it *ends* choose the heartbeat for you:
 
-- The work **ends** (a list empties, a suite greens) → **conditional** run-until-done.
+- The work **ends** (a list empties, a suite goes green) → **conditional** run-until-done.
 - The work **repeats** (every morning, every PR) → **schedule** or **event**.
-- The work happens **once** → **no loop.** Just do it. (Most common mistake: looping
-  a one-off because loops are fun.)
+- The work happens **once** → **no loop.** Just do it. (The most common mistake in the book:
+  looping a one-off because loops are fun to build.)
 
 ### B · Write the stopping condition as a spec
 
-Before any prompt: one sentence a machine can verify. *"Every box in `state.md` is
-checked."* *"`npm test` exits 0."* If you can't write it, you don't have a loop task
-yet — you have a wish. Sharpen the task until the stop writes itself.
+Before you touch a prompt: one sentence a machine can verify. *"Every box in `state.md` is
+checked."* *"`npm test` exits 0."* If you can't write that sentence, you don't have a loop task
+yet — you have a wish. Keep sharpening the task until the stop practically writes itself.
 
 ### C · Assemble the six parts
 
-Fill the table — every row, even when the answer is small:
+Fill in the table — every row, even when the honest answer is small:
 
 | Part | Your answer must name… |
 | --- | --- |
@@ -36,26 +38,26 @@ Fill the table — every row, even when the answer is small:
 | Body | the paths + tools it may touch, and *nothing else* |
 | Spine | the state file, created and committed **before** the first beat |
 | Stopping condition | the spec from B, verbatim |
-| Checker | script, read-only LLM, or human — cheapest that catches your feared failure |
+| Checker | script, read-only LLM, or human — the cheapest that catches the failure you fear |
 | Human gate | where a person decides (review, approve, promote) |
 
 ### D · Add the three stops and the guardrails
 
-Success (from B) · **limit** (max runs — pick a number that would embarrass you if
-hit) · **no-progress** (3 unchanged beats → stop and log). Then the guardrails:
-budget caps + the 80% tripwire, kill switch, one log line per beat.
+Success (straight from B) · **limit** (max runs — pick a number that would embarrass you if it
+were ever hit) · **no-progress** (3 unchanged beats → stop and log). Then bolt on the
+guardrails: budget caps plus the 80% tripwire, a kill switch, and one log line per beat.
 
 ### E · Prove it, then let go — one level at a time
 
-**L1 report-only** for real runs, watched → **L2 assisted** (writes, human reads
-every output) → **L3 unattended** (writes, human samples). One promotion per proven
-level, demotion on any incident. Never skip a rung because the streak felt good.
+**L1 report-only** for real, watched runs → **L2 assisted** (writes, human reads every output)
+→ **L3 unattended** (writes, human samples). One promotion per proven level, and automatic
+demotion on any incident. Never skip a rung because the streak was looking good.
 
 ### F · Improve the loop, not just the work
 
-When a beat disappoints: fix the *skill*, the *rubric*, or the *spec* — not the
-output. Output fixes evaporate; loop fixes compound. (This is hill-climbing's seed:
-see [Step 12](../06-part-4-the-spine/12-state-between-runs.md).)
+When a beat lets you down, fix the *skill*, the *rubric*, or the *spec* — never the individual
+output. Output fixes evaporate by morning; loop fixes compound. (This is the seed of
+hill-climbing: see [Step 12](../06-part-4-the-spine/12-state-between-runs.md).)
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
@@ -71,13 +73,13 @@ flowchart LR
 
 ## Worked in 90 seconds
 
-*Task:* "changelog entries pile up unwritten." **A:** repeats per merge → event
-loop. **B:** "every merged PR since the last beat has a changelog line."
-**C:** body = `CHANGELOG.md` only; spine = last-processed PR number; checker =
-script (does every merged PR number appear?); gate = release manager reads before
-tagging. **D:** limit 10/day; no-progress = 3 beats with an unprocessable PR →
-escalate. **E:** one week of L1 drafts-as-comments before it may commit. **F:**
-entries came out too terse → fix the skill's template, not Tuesday's entry.
+*Task:* "changelog entries pile up unwritten." **A:** it repeats per merge → event loop.
+**B:** "every merged PR since the last beat has a changelog line." **C:** body = `CHANGELOG.md`
+only; spine = last-processed PR number; checker = a script (does every merged PR number show
+up?); gate = the release manager reads it before tagging. **D:** limit 10/day; no-progress = 3
+beats stuck on an unprocessable PR → escalate. **E:** one week of L1 drafts-as-comments before
+it's ever allowed to commit. **F:** the entries came out too terse → fix the skill's template,
+not Tuesday's individual entry.
 
 ## Use it against real paper
 
@@ -86,11 +88,14 @@ entries came out too terse → fix the skill's template, not Tuesday's entry.
 - Should this be a loop at all: [decision-framework](decision-framework.md)
 
 *Course context:* this method is the bridge from
-[Part 5's build](../07-part-5-complete-loop/13-build-the-loop-twice.md) to loops of
-your own design — and the capstone assessment asks you to walk A–F cold.
+[Part 5's build](../07-part-5-complete-loop/13-build-the-loop-twice.md) to loops of your own
+design — and the capstone assessment asks you to walk A–F cold.
 
 *Sources:* the A–F method is original to this course, synthesizing Panaversity's *Loop
-Engineering: A Crash Course* (S1), stopping-condition-as-spec from Panaversity's *Spec-
-Driven Development* (S3), and the L1-report-only-first rule of the `cobusgreyling/loop-
-engineering` reference repo (MIT, S7). Full attribution:
+Engineering: A Crash Course*
+([S1](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course)),
+stopping-condition-as-spec from *Spec-Driven Development*
+([S3](https://agentfactory.panaversity.org/docs/spec-driven-development-crash-course)), and the
+L1-report-only-first rule of the `cobusgreyling/loop-engineering` reference repo
+([S7](https://github.com/cobusgreyling/loop-engineering), MIT). Full attribution:
 [resources/sources.md](../../resources/sources.md).

@@ -1,19 +1,26 @@
 # Part 4 Flashcards · The Spine
 
-> Ten cards on the loop's memory.
+> Ten cards on the loop's memory. Cover the right column, answer aloud, flip.
 
 | # | Front | Back |
 | - | ----- | ---- |
-| 1 | The intern's-diary metaphor | brilliant intern, total amnesia each morning: don't fix the amnesia — hand them a diary read first, written last |
-| 2 | The two spine files | rules file (constitution — human writes, rarely changes) + progress file (diary — loop writes, every beat) |
-| 3 | Beat order that protects the spine | work → verify → update spine → log |
-| 4 | An uncommitted spine is… | pre-lost. Commit every beat — durability is the point |
-| 5 | Spine drift | state says done, world disagrees — caused by ticking before verifying |
-| 6 | One owner per spine means | a loop writes only its own state file; everyone else reads |
-| 7 | The spine is a record, not a scratchpad | escalations, discrepancies, lessons go in it — it's what the next beat and the human actually read |
-| 8 | Resume vs. restart | the whole reason spines exist: interruption costs one unit, not the run |
-| 9 | Hill-climbing | a slower loop reads the spine's lessons and improves the rules/skills — the loop that improves the loop |
-| 10 | Self-learning vs. self-improving | accumulating lessons (safe, always) vs. editing own prompt/rules (gate every change behind human review) |
+| 1 | The intern's-diary metaphor | a gifted intern who forgets each night: don't cure the amnesia — give them a diary read first thing, written last |
+| 2 | The two files that make a spine | rules file (constitution — you write it, rarely changes) + progress file (diary — the loop writes it, every beat) |
+| 3 | The beat order that protects the spine | work → verify → update the spine → log |
+| 4 | An uncommitted spine is… | already lost. Commit every beat — durability is the entire point |
+| 5 | What is spine drift? | the spine claims "done" while the world disagrees — caused by ticking the box before verifying |
+| 6 | "One owner per spine" means | each loop writes only its own state file; everyone else is read-only on it |
+| 7 | Record vs. scratchpad | escalations, mismatches, and lessons belong in the spine — it's what the next beat and the human read |
+| 8 | Resume vs. restart | the whole reason spines exist: an interruption costs one unit of work, not the entire run |
+| 9 | What is hill-climbing? | a slower loop reads the spine's lessons and upgrades the rules/skills — the loop that improves the loop |
+| 10 | Self-learning vs. self-improving | piling up lessons (safe, always) vs. editing your own prompt/rules (put every change behind a human gate) |
 
-*Drill, then: [Part 4 quiz](quiz.md) ·
-[Part 5](../07-part-5-complete-loop/README.md)*
+*Drill, then: [Part 4 quiz](quiz.md) · [Part 5](../07-part-5-complete-loop/README.md)*
+
+---
+
+*Sources:* these cards test Part 4, drawn from Panaversity's *Loop Engineering: A Crash
+Course* ([S1](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course)) and
+*Agentic Coding Crash Course*
+([S2](https://agentfactory.panaversity.org/docs/agentic-coding-crash-course)). Full
+attribution: [resources/sources.md](../../resources/sources.md).

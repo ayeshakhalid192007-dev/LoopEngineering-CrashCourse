@@ -1,8 +1,10 @@
+![Loop Engineering — design the system that prompts the agent, not the prompt](../assets/hero-loop-cycle.svg)
+
 # Course Contents — read in folder order
 
-> New here? Open **[00-start-here/](00-start-here/README.md)** — the 60-second router
-> that places you on a track. The folders below are numbered in reading order, so the
-> listing above *is* the syllabus.
+> New here? Open **[00-start-here/](00-start-here/README.md)** first — the 60-second router
+> that drops you onto a track. The folders below are numbered in reading order, so the listing
+> you're looking at *is* the syllabus.
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
@@ -33,6 +35,15 @@ flowchart LR
 | 09 | [09-methods/](09-methods/make-your-own-loop.md) | The A–F method: design a loop of your own |
 | 10 | [10-operating/](10-operating/operating-loops.md) | Running loops for real: safety, failure modes, fleets |
 
-Each part folder ends with a `quiz.md` (bar: 4 of 5) and, except Part 5, a
-`flashcards.md` deck. Sources are credited in
+## How to move through it
+
+Read the folders top to bottom; each one assumes the vocabulary of the one before it. The path is
+deliberate: settle the *foundations* (00–02) before the *fourteen steps* (03–08), and only then
+reach for the *practice* layers (09–10), where you design and operate loops of your own. If you
+already know where you belong, the router will send you to the right entry point and tell you
+what you may safely skip.
+
+Each part folder closes with a `quiz.md` (the bar is 4 of 5) and — every part except Part 5 — a
+`flashcards.md` deck. Every page ends with a *Sources:* footer that links the primary sources it
+draws on directly to their originals; the full register lives in
 [../resources/sources.md](../resources/sources.md).

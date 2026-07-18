@@ -1,68 +1,66 @@
 # Multi-Loop Coordination
 
-> One loop is a tool; several are a fleet — and a fleet needs a contract. Four
-> clauses keep loops from fighting: ownership, separate spines, priority, and one
-> shared budget. Everything else is commentary.
+> One loop is a tool; several are a fleet — and a fleet needs a contract. Four clauses keep loops
+> from fighting: ownership, separate spines, priority, and one shared budget. Everything past that
+> is just commentary.
 
 ## The hook
 
-The fleet that wrote this course ran a maker, a checker, and a link-checker at
-the same time. On Day 2 it ran *two* makers at once. There was no orchestrator,
-no message bus, and no loop ever called another. Nothing collided. The whole
-trick is a four-clause contract, written down before the second loop ever
-started.
+The fleet that wrote this course ran a maker, a checker, and a link-checker all at once. On Day 2
+it ran *two* makers simultaneously. There was no orchestrator, no message bus, and not once did
+any loop call another. Nothing collided. The entire trick is a four-clause contract, written down
+before the second loop ever drew its first breath.
 
 ## The coordination contract
 
 ### 1 · One owner per path
 
-Every file and folder has exactly one loop that may write it. Everyone else is
-read-only. The map lives in the human-owned rulebook (this repo's
-[`LOOP.md`](../../LOOP.md)), and the harness enforces what the map declares. Two
-writers needing the same *file* is not a negotiation. It is a design error.
-Split the file, or give one maker a
+Every file and folder has exactly one loop allowed to write it. Everyone else is read-only. The
+map lives in the human-owned rulebook (this repo's [`LOOP.md`](../../LOOP.md)), and the harness
+enforces whatever the map declares. Two writers both needing the same *file* is not a negotiation
+— it's a design error. Split the file, or hand one maker a
 [worktree](../05-part-3-the-body/08-worktrees.md).
 
 ### 2 · Separate spines, one shared log
 
-Each loop keeps its own `state.md`. No loop ever writes another's. The *only*
-shared write surface is the run log, and it is **append-only** — the one kind of
-file concurrent writers can share safely. Fleet state is the sum of the spines.
-Fleet history is the one log.
+Each loop keeps its own `state.md`, and no loop ever writes another's. The *only* shared write
+surface is the run log, and it's **append-only** — the one kind of file concurrent writers can
+share without stepping on each other. Fleet state is the sum of the spines; fleet history is the
+single log.
 
 ### 3 · A priority order for conflicts
 
-Decide the order before the first conflict, because during one nobody agrees.
-**Red main blocks everything:** a broken build pauses every maker until it is
-green. Checkers outrank makers — finding problems beats making more of them.
-Under pressure, the lowest-value maker pauses first. Write the order in the
-rulebook. A fleet without one resolves conflicts by whoever beat last.
+Settle the order before the first conflict, because in the middle of one nobody agrees on
+anything. **Red main blocks everything:** a broken build pauses every maker until it's green.
+Checkers outrank makers — finding problems beats making more of them. Under pressure, the
+lowest-value maker pauses first. Write the order into the rulebook. A fleet without one resolves
+its conflicts by whoever happened to beat last.
 
 ### 4 · One budget, fleet-wide
 
 Per-loop caps plus a **fleet total** live in one shared file
-([`shared/loop-budget.md`](../../shared/loop-budget.md)). At 80% of any cap,
-that loop goes report-only. At 100% of the fleet total, *everyone* pauses. The
-budget file is also home to the fleet-wide kill switch (`loop-pause-all`) — one
-flag, checked by every loop, first thing every beat.
+([`shared/loop-budget.md`](../../shared/loop-budget.md)). At 80% of any cap, that loop drops to
+report-only. At 100% of the fleet total, *everyone* pauses. That budget file is also where the
+fleet-wide kill switch (`loop-pause-all`) lives — one flag, checked by every loop, first thing
+every beat.
 
 ## Coordination through files, never through calls
 
-The deeper principle under all four clauses: loops meet **only through durable
-files** — spines, the log, the work itself. No loop triggers, calls, or waits
-on another. That costs some latency. Here is what it buys:
+The deeper principle beneath all four clauses: loops meet **only through durable files** —
+spines, the log, the work itself. No loop triggers, calls, or waits on another. Yes, that costs
+you some latency. Here's what it buys back:
 
-- **Independent failure.** The checker crashing costs you checking. The maker
-  never notices. There is no chain to break and no orchestrator to become the
-  single point of failure.
-- **Independent heartbeats.** Each loop's cadence fits its job — a self-paced
-  maker, a 20-minute checker. No scheduling negotiation.
-- **Auditability for free.** Every interaction *is* a file change. The fleet's
-  whole coordination history is `git log`.
+- **Independent failure.** The checker crashing costs you checking — and nothing else. The maker
+  never even notices. There's no chain to snap and no orchestrator to become the single point of
+  failure.
+- **Independent heartbeats.** Each loop's cadence fits its own job — a self-paced maker, a
+  20-minute checker — with no scheduling to negotiate.
+- **Auditability for free.** Every interaction *is* a file change, which means the fleet's entire
+  coordination history is just `git log`.
 
-Sequencing still happens — through state, not signals. This repo's quiz-writer
-starts a part only when the checker's spine shows PASS. That is a *gate on
-durable state*: readable, replayable, and never a call.
+Sequencing still happens — but through state, not signals. This repo's quiz-writer starts a part
+only once the checker's spine reads PASS. That's a *gate on durable state*: readable, replayable,
+and never once a call.
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
@@ -90,23 +88,21 @@ flowchart LR
 ## Growing a fleet without growing chaos
 
 - **Add loops one at a time.** Each new loop clears the full
-  [design checklist](../09-methods/loop-design-checklist.md) and its own L1
-  proving period. A fleet's trust is per-loop, never wholesale.
-- **Update the contract first.** A new loop gets its ownership rows, budget
-  line, and priority slot *before* beat 1 — in the same commit as its
-  `loop.md`.
-- **Watch the seams.** Fleet incidents live where ownerships touch: one loop's
-  output is another's input. The weekly engineer's beat audits seams, not just
-  loops.
-- **Know the scale ceiling.** When the contract file stops fitting on one
-  screen, you have reached governance territory. The T4 track (`advanced/`,
-  Day 3) picks up registries, org policy, and fleets-of-fleets.
+  [design checklist](../09-methods/loop-design-checklist.md) and serves its own L1 proving period.
+  A fleet's trust is earned per-loop, never wholesale.
+- **Update the contract first.** A new loop gets its ownership rows, its budget line, and its
+  priority slot *before* beat 1 — in the very same commit as its `loop.md`.
+- **Watch the seams.** Fleet incidents live where ownerships touch: one loop's output is another
+  loop's input. The weekly engineer's beat audits the seams, not just the loops.
+- **Know the scale ceiling.** The moment the contract file stops fitting on one screen, you've
+  crossed into governance territory. The T4 track (`advanced/`, Day 3) picks up registries, org
+  policy, and fleets-of-fleets.
 
-*The live example is one directory up: [`loops/`](../../loops/README.md) — two
-days of real fleets, contracts, spines, and one shared log, exactly as this page
-prescribes.*
+*The live example is one directory up: [`loops/`](../../loops/README.md) — two days of real
+fleets, contracts, spines, and one shared log, arranged exactly as this page prescribes.*
 
-*Sources:* multi-loop coordination draws on the reference repo's own `multi-loop.md`
-(the `cobusgreyling/loop-engineering` reference repo (MIT, S7)), Sydney Runkle's *The
-Art of Loop Engineering* (LangChain, S6), and Anthropic's multi-agent essays. Full
-attribution: [resources/sources.md](../../resources/sources.md).
+*Sources:* multi-loop coordination draws on the reference repo's own `multi-loop.md` (the
+`cobusgreyling/loop-engineering` reference repo,
+[S7](https://github.com/cobusgreyling/loop-engineering), MIT), Sydney Runkle's *The Art of Loop
+Engineering* ([S6](https://www.langchain.com/blog/the-art-of-loop-engineering)), and Anthropic's
+multi-agent essays. Full attribution: [resources/sources.md](../../resources/sources.md).

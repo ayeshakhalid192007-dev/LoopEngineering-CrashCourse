@@ -1,79 +1,82 @@
 # Part 3 Quiz · The Body
 
-> Five questions on isolation, skills, hands, and honest grading. Bar: 4 of 5.
+> Five questions on isolation, taught moves, hands, and honest grading. The bar for moving on
+> is 4 of 5.
 
 ## Question 1
 
-Two makers write into the same repo all day without a worktree, safely. What made
-that possible, and what change would force a worktree
+Two makers wrote into one repo all day, without a worktree, and never collided. What made
+that safe — and what one change would have made a worktree mandatory
 ([Step 8](08-worktrees.md))?
 
 <details><summary>Show answer</summary>
 
-**Disjoint file ownership**, enforced by rule — neither maker may touch the
-other's files, so a shared tree can't collide. The moment both need the *same
-file*, path ownership can't split it: worktree, merge-when-green.
+Their files were **owned disjointly**, enforced by rule — neither maker could touch the
+other's paths, so a shared tree had nothing to collide over. The instant both need the *same
+file*, path ownership can't slice it in two: worktree, merged only when green.
 
 </details>
 
 ## Question 2
 
-Your loop prompt has swollen to 600 words of step-by-step procedure. Name the
-refactor and its two payoffs ([Step 9](09-skills.md)).
+Your loop prompt has swollen to 600 words of blow-by-blow procedure. Name the fix and its two
+payoffs ([Step 9](09-skills.md)).
 
 <details><summary>Show answer</summary>
 
-Extract the procedure into a **skill** (`SKILL.md` with a when-to-use
-description); the prompt shrinks back to intent. Payoffs: consistency (every beat
-follows the same written move) and maintainability (fix the procedure once, every
-future beat inherits it).
+Move the procedure into a **skill** (a `SKILL.md` with a when-to-use description); the prompt
+falls back to intent. Payoffs: consistency (every beat runs the same recorded move) and
+maintainability (correct the procedure once, and every later beat inherits the fix).
 
 </details>
 
 ## Question 3
 
-State the three connector rules, and for each, the failure it prevents
+Recite the three connector rules, and for each, the disaster it heads off
 ([Step 10](10-connectors-mcp.md)).
 
 <details><summary>Show answer</summary>
 
-**Few, focused tools** — prevents a confused beat reaching for `delete_*` nobody
-should have exposed. **Idempotent writes** — prevents retries/double-fires from
-double-posting. **Actionable errors** — prevents 3 am stalls on opaque failures
-the loop can't route around.
+**Few, focused tools** — stops a confused beat from grabbing a `delete_*` that never should
+have been exposed. **Idempotent writes** — stops retries and double-fires from posting
+twice. **Actionable errors** — stops 3 am stalls on opaque failures the loop can't route
+around.
 
 </details>
 
 ## Question 4
 
-A merged maker-checker "self-reviews before committing" and has passed 100% for a
-month. Why is that statistic evidence against the design
-([Step 11](11-maker-checker.md))?
+A fused maker-checker "self-reviews before committing" and has passed 100% for a month. Why
+is that statistic a red flag rather than a gold star ([Step 11](11-maker-checker.md))?
 
 <details><summary>Show answer</summary>
 
-A self-grading maker measures agreement with itself: the blind spot that produces
-a bug also produces the approving review. 100% means failures are being co-signed,
-not caught. Health looks like a *separate* checker occasionally filing
-`items_found > 0, actions_taken: 0`.
+A self-grader only ever measures how much it agrees with itself: the blind spot that ships a
+bug is the same one approving the review. 100% means defects are being co-signed, not caught.
+Health actually looks like a *separate* checker now and then logging `items_found > 0,
+actions_taken: 0`.
 
 </details>
 
 ## Question 5
 
-Rank these checkers by cost, and state when the cheapest is also the *best*:
-read-only LLM with a rubric · human review · a script.
+Rank these checkers by cost, and say when the cheapest is also the *best*: a read-only LLM
+with a rubric · a human reviewer · a script.
 
 <details><summary>Show answer</summary>
 
-Script < read-only LLM < human. The script is best whenever the check is a *fact*
-(links resolve, tests pass, schema valid) — it costs nothing, has no opinions, and
-can't be argued with. Save the LLM for judgment-shaped checks and the human for
-what actually needs accountability.
+Script < read-only LLM < human. The script wins outright whenever the check is a *fact*
+(links resolve, tests pass, schema validates) — free, opinionless, unarguable. Keep the LLM
+for judgment calls and the human for whatever truly needs someone accountable.
 
 </details>
 
 ---
 
-*Next: [Part 4 · The Spine](../06-part-4-the-spine/README.md) ·
-[flashcards](flashcards.md)*
+*Next: [Part 4 · The Spine](../06-part-4-the-spine/README.md) · [flashcards](flashcards.md)*
+
+*Sources:* this quiz tests Part 3, drawn from Panaversity's *Loop Engineering: A Crash Course*
+([S1](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course)) and
+*Agentic Coding Crash Course*
+([S2](https://agentfactory.panaversity.org/docs/agentic-coding-crash-course)). Full
+attribution: [resources/sources.md](../../resources/sources.md).

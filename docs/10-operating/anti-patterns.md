@@ -1,8 +1,8 @@
 # Anti-Patterns
 
-> [Failure modes](failure-modes.md) are how running loops break. Anti-patterns are
-> how loops get *designed* broken — the mistakes this catalog exists to catch at
-> the whiteboard, where they cost a conversation instead of an incident.
+> [Failure modes](failure-modes.md) are how running loops break. Anti-patterns are how loops get
+> *designed* broken in the first place — the mistakes this catalog exists to catch at the
+> whiteboard, where they cost you a conversation instead of an incident.
 
 ## Design anti-patterns
 
@@ -33,16 +33,16 @@
 
 ## Human anti-patterns
 
-The expensive ones — they arrive last and cost the most:
+The expensive ones — they show up last and cost the most:
 
-- **Cognitive surrender.** "The loop probably knows better" as a reflex. The
-  loop is never the authority on itself. Instruments are.
-- **Comprehension debt as a lifestyle.** Shipping faster than anyone understands,
-  indefinitely — until the first "why?" nobody can answer.
-- **Intent debt as a lifestyle.** Specs that stay vague because tightening them
-  is work. The loop collects on every vague word, at scale.
-- **AI gravity.** Each success pulls the next decision toward the system — scope
-  creep without a decider. Antidote: capability changes are *written* decisions.
+- **Cognitive surrender.** "The loop probably knows better," fired off as a reflex. The loop is
+  never the authority on itself. The instruments are.
+- **Comprehension debt as a lifestyle.** Shipping faster than anyone understands, indefinitely —
+  right up until the first "why?" that nobody in the room can answer.
+- **Intent debt as a lifestyle.** Specs left vague because tightening them is genuine work. And
+  the loop collects on every vague word, at scale.
+- **AI gravity.** Each success tugs the next decision toward the system — scope creep with no
+  decider in sight. The antidote: capability changes are *written* decisions.
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
@@ -60,11 +60,13 @@ flowchart LR
     classDef stop fill:#f1f5f9,stroke:#94a3b8,stroke-width:1.5px,color:#334155;
 ```
 
-*Use at the whiteboard: walk any new `loop.md` down the design table — every row
-you can't rule out with a sentence is homework before the
+*Use it at the whiteboard: walk any new `loop.md` down the design table — every row you can't
+rule out in a sentence is homework to finish before the
 [design checklist](../09-methods/loop-design-checklist.md) gets its checkmarks.*
 
-*Sources:* the anti-pattern catalog is drawn from the `cobusgreyling/loop-engineering`
-reference repo (MIT, S7) and the essays of Addy Osmani's *Loop Engineering* (S5) and
-Sydney Runkle's *The Art of Loop Engineering* (LangChain, S6). Full attribution:
+*Sources:* the anti-pattern catalog is drawn from the `cobusgreyling/loop-engineering` reference
+repo ([S7](https://github.com/cobusgreyling/loop-engineering), MIT) and the essays of Addy
+Osmani's *Loop Engineering* ([S5](https://addyosmani.com/blog/loop-engineering/)) and Sydney
+Runkle's *The Art of Loop Engineering*
+([S6](https://www.langchain.com/blog/the-art-of-loop-engineering)). Full attribution:
 [resources/sources.md](../../resources/sources.md).

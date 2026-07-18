@@ -1,6 +1,7 @@
 # Part 2 Flashcards · The Heartbeat
 
-> Ten cards on the four heartbeats and their sharp edges.
+> Ten cards on the four heartbeats and their sharp edges. Cover the right column, answer
+> aloud, flip.
 
 | # | Front | Back |
 | - | ----- | ---- |
@@ -15,5 +16,12 @@
 | 9 | Event loop + burst = missing beats. The fix? | a reconciliation sweep: slow scheduled loop that catches what events dropped |
 | 10 | Channel-triggered loops: the security rule | anyone who can post holds your trigger — treat all inbound text as untrusted input, never as commands |
 
-*Drill, then: [Part 2 quiz](quiz.md) ·
-[Part 3](../05-part-3-the-body/README.md)*
+*Drill, then: [Part 2 quiz](quiz.md) · [Part 3](../05-part-3-the-body/README.md)*
+
+---
+
+*Sources:* these cards test Part 2, drawn from Panaversity's *Loop Engineering: A Crash
+Course* ([S1](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course)) and
+*Scheduled Tasks: The Loop Skill & Cron Tools*
+([S4](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course)). Full
+attribution: [resources/sources.md](../../resources/sources.md).

@@ -1,7 +1,9 @@
+![Part 3 · The Body — worktrees, skills, MCP, maker–checker](../../assets/banner-05-the-body.svg)
+
 # Part 3 · The Body
 
-> What a beat may *do* and *touch* — and how to keep many hands from colliding:
-> isolation, taught moves, hands on the world, and the split that keeps work honest.
+> What a beat may *do* and *touch* — and how to keep many hands from colliding: isolation,
+> taught moves, hands on the world, and the split that keeps work honest.
 
 ## The steps
 
@@ -28,11 +30,11 @@ flowchart LR
 
 ## The thread through all four
 
-The body is where **blast radius** is decided. Every page above is one instance
-of the same rule. Give a beat exactly the standing room, moves, and reach its
-job needs — nothing more. Put the grading outside the hands that did the work.
-What the body *remembers* between beats is
-[Part 4](../06-part-4-the-spine/README.md)'s problem.
+The body is where **blast radius** gets decided — and every page in this part is really
+the same rule wearing a different hat. Give a beat exactly the standing room, the moves,
+and the reach its job needs, and not one inch more. Put the grading outside the hands that
+did the work. What the body *remembers* between beats is
+[Part 4](../06-part-4-the-spine/README.md)'s problem, not this one's.
 
 ## Check your understanding
 
@@ -40,7 +42,10 @@ What the body *remembers* between beats is
 
 *This part belongs to track [T2 · Practitioner](../00-start-here/learning-tracks.md).*
 
-*Sources:* Part 3 draws on Panaversity's *Loop Engineering: A Crash Course* (S1),
-Panaversity's *Agentic Coding Crash Course* (S2), and Sydney Runkle's *The Art of Loop
-Engineering* (LangChain, S6). Full attribution:
+*Sources:* Part 3 draws on Panaversity's *Loop Engineering: A Crash Course*
+([S1](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course)),
+*Agentic Coding Crash Course*
+([S2](https://agentfactory.panaversity.org/docs/agentic-coding-crash-course)), and Sydney
+Runkle's *The Art of Loop Engineering*
+([S6](https://www.langchain.com/blog/the-art-of-loop-engineering)). Full attribution:
 [resources/sources.md](../../resources/sources.md).

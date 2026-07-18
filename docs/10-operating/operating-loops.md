@@ -1,29 +1,30 @@
+![Operating · Run loops for real — safety, failure modes, fleets](../../assets/banner-10-operating.svg)
+
 # Operating Loops — the Day-to-Day Handbook
 
-> Designing a loop is an afternoon. *Operating* loops is every day after — the
-> routines that keep a running fleet boring. This page is the front door of the
+> Designing a loop takes an afternoon. *Operating* loops is every day that comes after — the
+> routines that keep a running fleet reassuringly dull. This page is the front door to the
 > operating handbook.
 
 ## The operator's day (the short version)
 
-- **Morning (2 min):** scan the last 24 hours of the run log. Did every loop
-  that should have beaten actually beat? Is any `escalations` count above zero?
-  Is any loop silent that shouldn't be? Treat silence as a *page*, not a
-  relief. No log line means the loop didn't run, and you want to know which
-  organ failed.
-- **On every escalation (10 min):** read the loop's spine, not just the alert.
-  The spine carries the context the alert lacks. Then decide one of three
-  things: fix the cause, raise a cap deliberately (like this repo's Day 1
+- **Morning (2 min):** skim the last 24 hours of the run log. Did every loop that was supposed
+  to beat actually beat? Is any `escalations` count sitting above zero? Is any loop silent that
+  shouldn't be? Read silence as a *page*, never as relief — no log line means the loop didn't
+  run, and you want to know which organ dropped.
+- **On every escalation (10 min):** read the loop's spine, not just the alert. The spine holds
+  the context the alert leaves out. Then pick exactly one of three moves: fix the cause, raise a
+  cap on purpose (the way this repo handled its Day 1
   [budget event](../../shared/loop-budget.md)), or pause the loop.
 - **Weekly (15 min):** the engineer's beat from
-  [Step 14](../08-part-6-human-control/14-staying-the-engineer.md) — cost per loop,
-  drift check (body vs. `loop.md`), promote/hold/demote/retire per loop.
+  [Step 14](../08-part-6-human-control/14-staying-the-engineer.md) — cost per loop, a drift check
+  (body vs. `loop.md`), and a promote/hold/demote/retire call per loop.
 - **On any incident:** stop reading this page, open the
-  [recovery playbook](recovery-playbook.md), follow the five steps in order.
+  [recovery playbook](recovery-playbook.md), and follow the five steps in order.
 
 ## The operating invariants
 
-Six rules that hold for every running loop, every day — each one earned by a
+Six rules that hold for every running loop, every day — and every one of them was paid for by a
 failure somewhere:
 
 | Invariant | Because otherwise |
@@ -63,16 +64,19 @@ flowchart LR
 
 ## The mindset
 
-A well-operated fleet is **boring**. Beats land. Logs accumulate. Escalations
-are rare and informative. The interesting decisions all happen in your loop,
-not the agent's. If operating your loops feels exciting, something in this
-handbook is being skipped. Excitement is unhandled risk with better marketing.
+A well-operated fleet is **boring**, and that's the highest compliment there is. Beats land.
+Logs pile up. Escalations are rare and, when they come, informative. All the interesting
+decisions happen inside *your* loop, never the agent's. If operating your loops starts to feel
+exciting, take it as a sign that something in this handbook is quietly being skipped —
+excitement is just unhandled risk with better marketing.
 
-*Live example: this repo's own operating artifacts are one directory up —
+*Live example: this repo's own operating artifacts sit one directory up —
 [`LOOP.md`](../../LOOP.md), [`shared/loop-budget.md`](../../shared/loop-budget.md),
-[`shared/loop-run-log.md`](../../shared/loop-run-log.md), and a spine per loop
-under [`loops/`](../../loops/README.md).*
+[`shared/loop-run-log.md`](../../shared/loop-run-log.md), and a spine per loop under
+[`loops/`](../../loops/README.md).*
 
-*Sources:* day-to-day operating practice draws on Panaversity's *Loop Engineering: A
-Crash Course* (S1) and the `cobusgreyling/loop-engineering` reference repo (MIT, S7).
-Full attribution: [resources/sources.md](../../resources/sources.md).
+*Sources:* day-to-day operating practice draws on Panaversity's *Loop Engineering: A Crash
+Course* ([S1](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course)) and the
+`cobusgreyling/loop-engineering` reference repo
+([S7](https://github.com/cobusgreyling/loop-engineering), MIT). Full attribution:
+[resources/sources.md](../../resources/sources.md).

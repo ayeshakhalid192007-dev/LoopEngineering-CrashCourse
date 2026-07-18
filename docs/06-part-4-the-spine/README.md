@@ -1,8 +1,10 @@
+![Part 4 · The Spine — state that survives between runs](../../assets/banner-06-the-spine.svg)
+
 # Part 4 · The Spine
 
-> One step, one organ, one rule: the model forgets, so the files must remember.
-> This is the shortest part of the course — and the one whose absence kills the
-> most loops.
+> One step, one organ, one unbending rule: the model forgets, so the files have to
+> remember. This is the briefest part of the whole course — and the one whose absence
+> quietly kills more loops than anything else.
 
 ## The step
 
@@ -22,14 +24,14 @@ flowchart LR
     classDef limit fill:#fff1f2,stroke:#f43f5e,stroke-width:1.5px,color:#9f1239;
 ```
 
-## Why this part is one page long
+## Why this part fits on one page
 
-Because the discipline is small and absolute. Every loop in this repo carries
-it, and you can audit them: each `loops/*/state.md` is a live spine. The Day 1
-reconstruction notices document what happens when the rule is skipped. With
-heartbeat, body, and spine in hand, you're ready to build the whole animal —
-[Part 5](../07-part-5-complete-loop/README.md) builds one loop twice, in two
-tools.
+Because the discipline itself is tiny and non-negotiable. Every loop in this repo lives by
+it, and you can check their homework: each `loops/*/state.md` is a spine you can open right
+now. The Day 1 reconstruction notices are the cautionary half — they record, in the loops'
+own words, what happens when the rule gets skipped. With heartbeat, body, and spine all in
+hand, you're finally equipped to assemble the whole creature —
+[Part 5](../07-part-5-complete-loop/README.md) builds one loop twice, once in each tool.
 
 ## Check your understanding
 
@@ -37,7 +39,10 @@ tools.
 
 *This part belongs to track [T2 · Practitioner](../00-start-here/learning-tracks.md).*
 
-*Sources:* Part 4 draws on Panaversity's *Loop Engineering: A Crash Course* (S1),
-Panaversity's *Agentic Coding Crash Course* (S2), and Sydney Runkle's *The Art of Loop
-Engineering* (LangChain, S6). Full attribution:
+*Sources:* Part 4 draws on Panaversity's *Loop Engineering: A Crash Course*
+([S1](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course)),
+*Agentic Coding Crash Course*
+([S2](https://agentfactory.panaversity.org/docs/agentic-coding-crash-course)), and Sydney
+Runkle's *The Art of Loop Engineering*
+([S6](https://www.langchain.com/blog/the-art-of-loop-engineering)). Full attribution:
 [resources/sources.md](../../resources/sources.md).

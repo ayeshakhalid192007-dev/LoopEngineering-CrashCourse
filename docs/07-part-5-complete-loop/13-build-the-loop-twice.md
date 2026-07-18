@@ -1,28 +1,28 @@
 # Step 13 · Build the Morning-Triage Loop — Twice
 
-> Everything from Steps 1–12 joins into one working loop: a morning triage that
-> reads your repo's overnight noise and hands you a report with your coffee. You'll
-> build it twice — Claude Code and OpenCode — to prove the shape is the thing.
+> Everything from Steps 1–12 finally clicks together into one working loop: a morning triage
+> that reads your repo's overnight noise and leaves a report next to your coffee. You'll build
+> it twice — Claude Code and OpenCode — to prove that the *shape* is what matters.
 
 ## The hook
 
-Tomorrow at 7:00 am, a loop will read every issue, PR, and CI failure that
-landed overnight. It will sort the urgent from the ignorable and leave a
-five-line report where you'll see it. It takes **no other action**. Building
-that is not a demo. It's the smallest loop with all six organs, and both
+Tomorrow at 7:00 am, a loop will comb through every issue, PR, and CI failure that arrived
+overnight. It will separate the genuinely urgent from the safely-ignorable and drop a
+five-line report where your eyes will land first. And it will do **nothing else**. That isn't
+a toy demo — it's the smallest possible loop that still has all six organs, and both
 walkthroughs in this part ship it for real.
 
 ## The design (plain English)
 
-**The job:** each morning, triage the repo. **The shape** follows from the
+**The job:** triage the repo, every morning. **The shape** falls straight out of the
 pattern-picker logic in the methods layer
 ([09-methods/pattern-picker.md](../09-methods/pattern-picker.md)):
 
-- The work *repeats* on a calendar, so the heartbeat is a **schedule**.
-- The beat is a read, so it runs **L1 report-only**.
-- The output is judgment, so a **human gate** reads the report.
+- The work comes back on a calendar, so the heartbeat is a **schedule**.
+- The beat only reads, so it runs **L1 report-only**.
+- The output is a judgment call, so a **human gate** reads the report.
 
-The six parts, filled in:
+Here are the six parts, filled in:
 
 | Part | The triage loop's answer |
 | --- | --- |
@@ -33,11 +33,11 @@ The six parts, filled in:
 | Checker | the report *format* is script-checkable; content graded by you |
 | Human gate | you read the report; nothing acts until you do |
 
-Both tools share two artifacts, written once. A **`daily-triage/SKILL.md`**
-carries the procedure: what to read, how to rank, the report template. A
-**`reviewer` agent** definition is the read-only grader both tools run over the
-report. The walkthroughs differ only in heartbeat plumbing — a cloud Routine or
-`claude -p` cron ([13a](13a-claude-code-walkthrough.md)) vs. cron/GitHub Actions
+Both tools lean on two artifacts you write exactly once. A **`daily-triage/SKILL.md`** holds
+the procedure — what to read, how to rank it, the report template. A **`reviewer` agent**
+definition is the read-only grader both tools point at the finished report. The two
+walkthroughs part ways on only one thing: the heartbeat plumbing — a cloud Routine or
+`claude -p` cron ([13a](13a-claude-code-walkthrough.md)) versus cron/GitHub Actions
 ([13b](13b-opencode-walkthrough.md)).
 
 ```mermaid
@@ -61,8 +61,8 @@ flowchart LR
 
 ## The minimum-safe checklist (before EITHER version runs)
 
-Seven items. This repo's own loops clear this list before every first run. Yours
-does too, or it doesn't run:
+Seven items. This repo's own loops clear this list before every first run, and so does yours
+— or it doesn't get to run:
 
 1. Provable success condition (report file exists, matches template)
 2. Run limit (daily cap: 1)
@@ -74,8 +74,8 @@ does too, or it doesn't run:
 
 ## The skill both versions share
 
-One skill file carries the whole procedure, and one reviewer definition grades
-its output. Both walkthroughs use these verbatim:
+A single skill file carries the entire procedure, and one reviewer definition grades what it
+produces. Both walkthroughs use these two verbatim:
 
 ```claude
 # daily-triage/SKILL.md — used verbatim by BOTH walkthroughs
@@ -97,51 +97,52 @@ its output. Both walkthroughs use these verbatim:
 ```
 
 > [!NOTE]
-> **Going deeper:** "one real morning" is the graduation rule — the loop earns
-> trust by running for real, watched, at L1, at least once before you stop
-> checking it daily. The promotion ladder beyond L1 (labeling issues at L2,
-> and what would justify L3) is [Step 14](../08-part-6-human-control/14-staying-the-engineer.md)'s
-> subject. Build it now: [13a — Claude Code](13a-claude-code-walkthrough.md) ·
+> **Going deeper:** "one real morning" is the graduation rule — a loop earns trust by running
+> for real, watched, at L1, at least once before you're allowed to stop checking it daily. The
+> promotion ladder past L1 (labeling issues at L2, and what would ever justify L3) is
+> [Step 14](../08-part-6-human-control/14-staying-the-engineer.md)'s subject. Go build it now:
+> [13a — Claude Code](13a-claude-code-walkthrough.md) ·
 > [13b — OpenCode](13b-opencode-walkthrough.md).
 
 ## Check yourself
 
-**Q: The triage loop's body could easily label the issues while it's reading them —
-it would save you clicks. The design says no. What justifies leaving obvious value
-on the table on day one?**
+**Q: While it's reading, the triage loop could trivially label the issues too — it would save
+you clicks. The design says don't. What justifies leaving obvious value on the table on day
+one?**
 
 <details><summary>Answer</summary>
 
-Trust hasn't been earned yet — and **labels are writes on a shared system**
-other people see. L1 first means the loop's judgment gets audited, via reports,
-for real mornings before its hands are granted. If the ranking logic is subtly
-wrong, you find out from a wrong *report*, not from a hundred wrong labels. The
-clicks are the tuition. Promotion to labeling-at-L2 comes after the reports have
-been boringly right for a while.
+Trust hasn't been earned yet — and **labels are writes on a shared system** other people see.
+Starting at L1 means the loop's judgment gets audited, through reports, across real mornings
+before it's ever handed a pair of hands. If the ranking logic is subtly wrong, you learn it
+from one wrong *report*, not from a hundred wrong labels. The saved clicks are the tuition.
+Promotion to labeling-at-L2 comes only after the reports have been boringly correct for a
+while.
 
 </details>
 
 ## Try With AI
 
-Fill in the six-part table above for **your** repo before opening either
-walkthrough: real ranking rules (what counts as urgent *here*?), real report
-destination, real cap. Ask your agent to red-team the design against the 7-item
-checklist. Every mismatch it finds now is a 7 am surprise it prevents later.
+Before you open either walkthrough, fill in the six-part table above for **your** repo: the
+real ranking rules (what actually counts as urgent *here*?), the real report destination, the
+real cap. Then ask your agent to red-team that design against the 7-item checklist. Every
+mismatch it turns up now is a 7 am surprise it just spared you.
 
 ## When it goes wrong
 
 | Symptom | Cause | Fix |
 | --- | --- | --- |
-| Report re-triages the same items daily | Spine has no last-seen marks | State the marks; beat reads them first, updates them last |
+| Report re-triages the same items daily | Spine has no last-seen marks | Record the marks; beat reads them first, updates them last |
 | Report ballooned to 40 lines | No format contract | The skill's template is the contract; reviewer FAILs oversized reports |
-| Loop labeled/closed things at 7 am | Writes granted before earned | L1: body = report + spine only; promotion is a human decision |
-| Beautiful reports, wrong priorities | Skill's ranking ≠ your ranking | Fix the skill (once), not the report (daily); that's the whole point of skills |
+| Loop labeled/closed things at 7 am | Writes granted before they were earned | L1: body = report + spine only; promotion is a human decision |
+| Beautiful reports, wrong priorities | The skill's ranking ≠ your ranking | Fix the skill (once), not the report (daily) — that's the entire point of skills |
 
 ---
 
 *Glossary terms used on this page:* **minimum-safe checklist**, **L1 (report-only)**,
 **routine**, **human gate** — see the [glossary](../02-foundations/glossary.md).
 
-*Sources:* the morning-triage build and the minimum-safe checklist come from
-Panaversity's *Loop Engineering: A Crash Course* (S1). Full attribution:
-[resources/sources.md](../../resources/sources.md).
+*Sources:* the morning-triage build and the minimum-safe checklist come from Panaversity's
+*Loop Engineering: A Crash Course*
+([S1](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course)). Full
+attribution: [resources/sources.md](../../resources/sources.md).

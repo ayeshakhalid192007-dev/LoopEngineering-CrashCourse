@@ -1,8 +1,10 @@
+![Part 5 · A Complete Loop — build the same loop twice, in two tools](../../assets/banner-07-complete-loop.svg)
+
 # Part 5 · A Complete Loop, Twice
 
-> The capstone of the build track: every organ from Parts 1–4 assembled into one
-> production loop — then assembled *again* in a second tool, to separate the shape
-> from the plumbing.
+> The capstone of the build track: every organ from Parts 1–4 wired together into one
+> production loop — and then wired together *again* in a second tool, so you can finally see
+> where the shape ends and the plumbing begins.
 
 ## The steps
 
@@ -23,22 +25,24 @@ flowchart LR
     classDef win fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
 ```
 
-## Why twice?
+## Why build it twice?
 
-Because after the second build you can answer the only portability question that
-matters: *which parts would survive a tool change?* (All six organs, the
-checklist, the L1 discipline.) *Which parts wouldn't?* (Every command you
-typed.) Memorize the first list. Look up the second. That's the
-lasting-vs-mechanical rule this course repeats on purpose.
+Because the second build is what finally lets you answer the one portability question that
+actually counts: *if you switched tools tomorrow, what would carry over?* (Every one of the
+six organs, the checklist, the L1 discipline.) *And what wouldn't?* (Every command you typed.)
+Commit the first list to memory; look the second one up when you need it. That's the
+lasting-vs-mechanical rule this course keeps hammering on — and here you get to watch it play
+out live.
 
 ## Check your understanding
 
-[Take the Part 5 quiz](quiz.md) — *(this part has no flashcards: the exercise IS
+[Take the Part 5 quiz](quiz.md) — *(this part has no flashcards on purpose: the exercise IS
 the two builds).*
 
-Then on to the last part: [Part 6 · Human Control](../08-part-6-human-control/README.md).
+Then onward to the final part: [Part 6 · Human Control](../08-part-6-human-control/README.md).
 
 *This part belongs to track [T3 · Engineer](../00-start-here/learning-tracks.md).*
 
-*Sources:* Part 5 draws on Panaversity's *Loop Engineering: A Crash Course* (S1). Full
+*Sources:* Part 5 draws on Panaversity's *Loop Engineering: A Crash Course*
+([S1](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course)). Full
 attribution: [resources/sources.md](../../resources/sources.md).

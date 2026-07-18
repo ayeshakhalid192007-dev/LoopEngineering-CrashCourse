@@ -1,7 +1,8 @@
 # Glossary
 
-> Every term the course uses, defined once, linked from everywhere. Keep this page
-> open in a tab — the popovers on the website come from these entries.
+> Every term this course leans on, defined once and linked from everywhere. Keep this page
+> open in a spare tab — the popovers on the website are generated straight from these
+> entries.
 
 ## Core
 
@@ -118,18 +119,19 @@ flowchart LR
     classDef stop fill:#fff1f2,stroke:#f43f5e,stroke-width:1.5px,color:#9f1239;
 ```
 
-Read any page in the course and every bold term on it sits somewhere on this picture.
+Open any page in this course, and every bold term on it lands somewhere on this one
+picture. That's the whole point of learning the vocabulary first.
 
 ## Check yourself
 
-**Q: Cover the "six parts" section above and name all six from memory — with the job
-of each.**
+**Q: Cover the "six parts" section above and name all six from memory — with the job of
+each.**
 
 <details><summary>Answer</summary>
 
-Heartbeat (when it runs) · body (what it can do) · spine (what it remembers) ·
-stopping condition (when it's done) · checker (who verifies) · human gate (where a
-person decides). That's the lasting layer of this entire course.
+Heartbeat (when it runs) · body (what it can do) · spine (what it remembers) · stopping
+condition (when it's done) · checker (who verifies) · human gate (where a person decides).
+That right there is the lasting layer of this entire course.
 
 </details>
 
@@ -141,15 +143,22 @@ Paste any three definitions from this page into your agent and ask:
 > I have to build in the outer loop?"
 
 Its answer sorts the vocabulary into harness-given vs. loop-engineered — the exact
-boundary [concepts.md](concepts.md) teaches.
+boundary [concepts.md](concepts.md) is built to teach.
 
 ## When it goes wrong
 
 | Symptom | Cause | Fix |
 | --- | --- | --- |
-| Team uses "loop" for both cycles | Inner/outer distinction not shared | Point them at **beat**: one inner run = one outer beat |
-| "It has a stopping condition" (it's "when it looks done") | Vibe wearing a spec's name | A stop must be one of the three: success, limit, no-progress |
+| Team uses "loop" for both cycles | The inner/outer distinction isn't shared | Point everyone at **beat**: one inner run = one outer beat |
+| "It has a stopping condition" (it means "when it looks done") | A vibe wearing a spec's name | A stop must be one of the three: success, limit, no-progress |
 | Glossary drift — pages redefine terms locally | Definitions duplicated instead of linked | Define once here; pages link, never restate |
 
-*Adapted terminology is credited in [../../resources/sources.md](../../resources/sources.md)
-(notably sources 1, 5, 6, 7).*
+---
+
+*Sources:* terminology adapted from Panaversity's *Loop Engineering: A Crash Course*
+([S1](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course)), Addy
+Osmani's *Loop Engineering* ([S5](https://addyosmani.com/blog/loop-engineering/)), Sydney
+Runkle's *The Art of Loop Engineering*
+([S6](https://www.langchain.com/blog/the-art-of-loop-engineering)), and
+cobusgreyling/loop-engineering ([S7](https://github.com/cobusgreyling/loop-engineering)).
+Full attribution: [../../resources/sources.md](../../resources/sources.md).

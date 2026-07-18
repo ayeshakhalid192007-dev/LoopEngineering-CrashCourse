@@ -1,7 +1,10 @@
+![Part 2 · The Heartbeat — what makes a loop run again](../../assets/banner-04-heartbeat.svg)
+
 # Part 2 · The Heartbeat
 
-> Four ways a loop decides *when to beat* — from a timer you can watch, to the world
-> itself pulling the trigger. This part is a menu: real fleets mix all four.
+> Four ways a loop decides *when to beat* — from a timer you can watch tick, to the world
+> itself reaching over and pulling the trigger. Read this part as a menu, not a ladder:
+> real fleets mix all four.
 
 ## The steps
 
@@ -30,11 +33,12 @@ flowchart LR
 
 ## The thread through all four
 
-Two rules repeat on every page, because they hold for every heartbeat:
+Two rules keep coming back on every page, because they hold for every heartbeat there is:
 
-- **Missed beats are dropped, not queued** — design beats that act on *now*.
-- **The heartbeat only decides *when*.** What a beat may touch (body), what it
-  remembers (spine), and when it all ends (stops) are the other four organs —
+- **Missed beats are dropped, not queued** — so design beats that act on *now*, not on a
+  backlog of moments that have already passed.
+- **The heartbeat only decides *when*.** What a beat may touch (body), what it remembers
+  (spine), and when it all ends (stops) are the other four organs —
   [Part 3](../05-part-3-the-body/README.md) picks up the body.
 
 ## Check your understanding
@@ -43,7 +47,12 @@ Two rules repeat on every page, because they hold for every heartbeat:
 
 *This part belongs to track [T2 · Practitioner](../00-start-here/learning-tracks.md).*
 
-*Sources:* Part 2 draws on Panaversity's *Loop Engineering: A Crash Course* (S1),
-Panaversity's *Spec-Driven Development* (S3), Panaversity's *Scheduled Tasks: The Loop
-Skill & Cron Tools* (S4), and the `cobusgreyling/loop-engineering` reference repo (MIT,
-S7). Full attribution: [resources/sources.md](../../resources/sources.md).
+*Sources:* Part 2 draws on Panaversity's *Loop Engineering: A Crash Course*
+([S1](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course)),
+*Spec-Driven Development*
+([S3](https://agentfactory.panaversity.org/docs/spec-driven-development-crash-course)),
+*Scheduled Tasks: The Loop Skill & Cron Tools*
+([S4](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course)), and the
+`cobusgreyling/loop-engineering` reference repo
+([S7](https://github.com/cobusgreyling/loop-engineering), MIT). Full attribution:
+[resources/sources.md](../../resources/sources.md).

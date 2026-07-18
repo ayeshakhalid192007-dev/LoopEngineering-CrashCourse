@@ -1,36 +1,36 @@
 # Step 5 · Conditional Loops — Run Until Done
 
-> No clock at all: the next beat starts because the last one finished and the goal
-> isn't met yet. The whole design lives in one sentence — the stopping condition.
+> No clock at all: the next beat starts because the last one finished and the goal still
+> isn't met. The whole design lives in a single sentence — the stopping condition.
 
 ## The hook
 
-"Make the tests pass, then stop." Eleven minutes later the suite is green and the
-loop is idle. Same prompt on a messier repo: forty minutes in, it's "fixing" the same
-test for the ninth time, each fix undoing the last. One sentence separated those two
-afternoons — and it wasn't the goal, it was the stop.
+"Make the tests pass, then stop." Eleven minutes later the suite is green and the loop is
+idle. Now run the exact same prompt on a messier repo: forty minutes in, it's "fixing" the
+same test for the ninth time, each fix undoing the last. One sentence separated those two
+afternoons — and it was not the goal. It was the stop.
 
 ## Run-until-done (plain English)
 
-A **conditional loop** has no timer. Its heartbeat is *the condition itself*: beat,
-check the condition, beat again, until the condition holds. It's the natural shape
-for work that **ends** — empty the checklist, green the suite, resolve the findings.
+A **conditional loop** has no timer. Its heartbeat is *the condition itself*: beat, check
+the condition, beat again, until the condition holds. It's the natural shape for work that
+genuinely **ends** — empty the checklist, green the suite, resolve the findings.
 
-Because nothing external paces it, everything depends on three stops working:
+And because nothing external paces it, everything rides on three stops actually working:
 
-1. **Success** — the condition is provably met. Write it like a spec, because it is
-   one: *"suite exits 0"*, *"no unchecked boxes"* — never *"looks good."*
-2. **Limit** — a max-runs cap it can never exceed. This is doom-loop insurance. The
-   ninth identical "fix" above should have been impossible. A sane limit — plus
-   per-item retry caps like `MAX_RETRIES` and a watchdog on retries — turns an
-   infinite argument with reality into a bounded one that escalates to you.
-3. **No progress** — nothing changed for 3 consecutive beats → log it and stop.
-   Progress is measured against the spine, not against effort.
+1. **Success** — the condition is provably met. Write it like a spec, because it *is* one:
+   *"suite exits 0"*, *"no unchecked boxes"* — never *"looks good."*
+2. **Limit** — a max-runs cap it can never exceed. This is your doom-loop insurance. That
+   ninth identical "fix" above should have been flatly impossible. A sane limit — plus
+   per-item retry caps like `MAX_RETRIES` and a watchdog on retries — turns an infinite
+   argument with reality into a bounded one that escalates to you.
+3. **No progress** — nothing changed for 3 consecutive beats → log it and stop. Progress is
+   measured against the spine, never against effort.
 
 The folk name for the degenerate case is the **Ralph loop** — the same beat repeated
-naively until something gives. Here's the punchline. With a provable stop, a limit,
-and a no-progress rule, even a Ralph loop is safe. Without them, no amount of model
-intelligence is.
+naively until something gives. Here's the punchline worth tattooing on: with a provable
+stop, a limit, and a no-progress rule, even a Ralph loop is safe. Without them, no amount
+of model intelligence is.
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
@@ -50,8 +50,7 @@ flowchart TD
 
 ## The mechanics in each tool
 
-Each tool expresses the same three stops. Watch where the success test and the cap
-live:
+Each tool expresses the same three stops. Watch where the success test and the cap live:
 
 ```claude
 # Claude Code — live docs: https://docs.claude.com/en/docs/claude-code
@@ -74,33 +73,32 @@ done
 ```
 
 > [!NOTE]
-> **Going deeper:** "stopping condition = spec" is the bridge to the
-> [spec-driven primer](../01-prerequisites/spec-driven-primer.md) — a stop you can't
-> write precisely is a goal you haven't specified yet. The doom loop and its
-> cousins get a full page in [failure modes](../10-operating/failure-modes.md).
+> **Going deeper:** "stopping condition = spec" is the bridge back to the
+> [spec-driven primer](../01-prerequisites/spec-driven-primer.md) — a stop you can't write
+> precisely is simply a goal you haven't specified yet. The doom loop and its cousins get a
+> full page in [failure modes](../10-operating/failure-modes.md).
 
 ## Check yourself
 
-**Q: "Stop when the code is clean" vs. "stop when `npm run lint` exits 0, or after 10
-runs, or after 3 beats with an unchanged lint count." What does the second version
-have that the first doesn't — name all three?**
+**Q: "Stop when the code is clean" vs. "stop when `npm run lint` exits 0, or after 10 runs,
+or after 3 beats with an unchanged lint count." What does the second version have that the
+first doesn't — name all three?**
 
 <details><summary>Answer</summary>
 
 All three stops: a **provable success condition** (lint exits 0 — a fact), a **limit**
-(10 runs — doom-loop insurance), and a **no-progress rule** (unchanged lint count for
-3 beats — stuck-detection measured against real state). "Clean" is a feeling. The
-loop can neither prove it nor be safely trusted to pursue it unboundedly.
+(10 runs — doom-loop insurance), and a **no-progress rule** (unchanged lint count for 3
+beats — stuck-detection measured against real state). "Clean" is a feeling. The loop can
+neither prove it nor be safely trusted to pursue it unboundedly.
 
 </details>
 
 ## Try With AI
 
-Break 3 tests yourself in a throwaway repo. Run "Fix the FIRST failing test only,
-then stop" by hand, three times. Now wrap it in a conditional loop with the three
-stops and run it once. Diff the experience: what you did between manual runs — check,
-decide, re-prompt — is exactly what the condition, limit, and progress rule now
-encode.
+Break 3 tests yourself in a throwaway repo. Run "Fix the FIRST failing test only, then
+stop" by hand, three times over. Now wrap it in a conditional loop with the three stops and
+run it once. Diff the two experiences: what you did between the manual runs — check, decide,
+re-prompt — is exactly what the condition, limit, and progress rule now encode for you.
 
 ## When it goes wrong
 
@@ -117,6 +115,9 @@ encode.
 condition**, **run limit** — see the [glossary](../02-foundations/glossary.md).
 
 *Sources:* run-until-done mechanics come from Panaversity's *Loop Engineering: A Crash
-Course* (S1) and Panaversity's *Scheduled Tasks: The Loop Skill & Cron Tools* (S4);
-stopping-condition-as-spec from Panaversity's *Spec-Driven Development* (S3). Full
-attribution: [resources/sources.md](../../resources/sources.md).
+Course* ([S1](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course)) and
+*Scheduled Tasks: The Loop Skill & Cron Tools*
+([S4](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course));
+stopping-condition-as-spec from *Spec-Driven Development*
+([S3](https://agentfactory.panaversity.org/docs/spec-driven-development-crash-course)).
+Full attribution: [resources/sources.md](../../resources/sources.md).

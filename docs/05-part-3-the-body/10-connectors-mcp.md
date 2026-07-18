@@ -1,37 +1,38 @@
 # Step 10 · Connectors (MCP)
 
-> Without connectors a loop can only talk about the world. With them it can act
-> on issues, PRs, and messages. That is why connector rules are the strictest
-> rules in the body.
+> Strip a loop of connectors and it can only *describe* the world. Give it connectors and it
+> can *change* the world — issues, PRs, messages. That single upgrade is why connector rules
+> are the tightest rules anywhere in the body.
 
 ## The hook
 
-Your triage loop writes a beautiful nightly report: "issue #482 duplicates issue
-number 291 — recommend closing." It has written that same line for four nights, because
-recommending is all it can do. Wire it to the issue tracker and the beat becomes:
-*linked, labeled, closed, one line logged.* Same intelligence — the difference is
-hands.
+Four nights running, your triage loop files the same immaculate sentence: "issue #482 looks
+like a duplicate of #291 — suggest closing." Four nights, zero closures. Not because it's
+timid — because *suggesting* is the ceiling of what it can reach. Now hand it a wire into the
+issue tracker and watch the very same beat rewrite itself: linked, labeled, closed, one tidy
+line in the log. The brain didn't change. It grew hands.
 
 ## Act vs. talk (plain English)
 
-**MCP (Model Context Protocol)** is the standard plug by which agents reach
-external systems. An MCP server exposes a system — GitHub, a database, a mail
-box — as a set of **tools** the agent can call. Connectors are the loop's
-**hands**: the part of the body that touches the world outside the repo.
+**MCP (Model Context Protocol)** is the shared socket agents use to plug into outside
+systems. An MCP server takes something — GitHub, a database, a mailbox — and re-exposes it as
+a handful of **tools** the agent is allowed to call. So connectors are, quite literally, the
+loop's **hands**: the organ that reaches past the repo and touches the wider world.
 
-Hands raise the stakes. A bad file edit is caught by git. A bad *email* is
-caught by nobody. So connector design follows three rules:
+Hands are also where mistakes stop being cheap. Botch a file and git has your back. Botch an
+*email* and nobody does. That asymmetry is why every connector you build should obey three
+non-negotiables:
 
-1. **Few, focused tools.** Expose the five tools the loop's job needs, not the
-   fifty the API offers. Every extra tool is surface for a confused beat. A loop
-   that only triages issues needs `search`, `label`, `comment`, `link`, `close` —
-   it does not need `delete_repository`.
-2. **Idempotent writes.** Beats retry and events double-fire (Step 7). An action
-   applied twice must equal it applied once. "Ensure label X is on issue N"
-   beats "add label X". Dedupe against the spine before acting.
-3. **Actionable errors.** When a call fails, the error must tell the *model* what to
-   do next ("rate-limited, retry after 60s" / "issue is locked — skip and log"), not
-   just fail. A loop can't ask you what an opaque 400 means at 3 am.
+1. **Few, focused tools.** Hand the loop the five tools its job requires, never the fifty the
+   API happens to publish. Each spare tool is one more wrong turn a distracted beat can take.
+   An issue-triage loop wants `search`, `label`, `comment`, `link`, `close` — and has no
+   earthly need for `delete_repository`.
+2. **Idempotent writes.** Beats retry; events fire twice (Step 7). So an action done twice
+   has to land exactly like an action done once. Prefer "make sure label X is on issue N"
+   over "add label X," and check the spine before you commit anything.
+3. **Actionable errors.** A failed call should tell the *model* its next move — "rate-limited,
+   wait 60s and retry," "issue locked, skip and log" — not just collapse. At 3 am there's
+   nobody around to decode an anonymous `400`.
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
@@ -50,8 +51,8 @@ flowchart LR
 
 ## The mechanics in each tool
 
-Each tool registers MCP servers in config and gates their write tools like any
-other permission. Watch where the allowlist discipline lands:
+Both tools register MCP servers in config and treat their write tools like any other
+permission you have to grant. Notice where the allowlist discipline sits:
 
 ```claude
 # Claude Code — live docs: https://docs.claude.com/en/docs/claude-code
@@ -71,45 +72,44 @@ claude mcp add github -- npx -y @modelcontextprotocol/server-github
 ```
 
 > [!NOTE]
-> **Going deeper:** connectors are where the L1→L2→L3 ladder bites hardest — this
-> repo's own loops ran *file-only* on Day 1–2 precisely to keep the blast radius at
-> "a weird commit." The rules for granting hands live in
+> **Going deeper:** connectors are exactly where the L1→L2→L3 ladder earns its keep — this
+> repo deliberately kept its own loops *file-only* through Days 1–2 so the worst possible
+> outcome stayed "a weird commit." The rules for handing over real hands live in
 > [10-operating/safety.md](../10-operating/safety.md); the per-tool mapping is in the
 > [primitives matrix](../02-foundations/primitives-matrix.md).
 
 ## Check yourself
 
-**Q: A retried beat just posted the same PR comment twice, and last week a beat
-called a `delete_branch` tool nobody remembers allowing. Which two of the three
-connector rules were broken?**
+**Q: A retried beat just posted an identical PR comment twice, and last week a beat reached
+for a `delete_branch` tool nobody recalls granting. Which two of the three connector rules
+got broken?**
 
 <details><summary>Answer</summary>
 
-**Idempotent writes** — a retry must not double-post. The beat should have
-checked "is my comment already there?", or the tool should be "ensure-comment".
-And **few, focused tools** — `delete_branch` had no business being exposed to a
-comment loop. Every unneeded tool is a loaded option for a confused beat. (The
-third rule, actionable errors, is what keeps failures from becoming silent
-no-ops.)
+**Idempotent writes** — a retry must never double-post; the beat should have asked "is my
+comment already here?", or the tool should have been an "ensure-comment." And **few, focused
+tools** — `delete_branch` had no place in a comment loop's toolbox; every surplus tool is a
+live round for a confused beat. (The third rule, actionable errors, is the one that keeps a
+failure from quietly becoming a no-op.)
 
 </details>
 
 ## Try With AI
 
-Wire one read-only connector into a throwaway project (the GitHub MCP server against
-a scratch repo works well). Run an L1 beat: "list open issues, propose labels,
-take no action." Then look at the tool list the server exposed and count the tools
-your loop's job actually needs. Write the allowlist you'd grant before this loop
-ever earned writes — that list *is* your connector design.
+Plug one read-only connector into a throwaway project — the GitHub MCP server pointed at a
+scratch repo does nicely. Run an L1 beat: "list the open issues, propose labels, take no
+action." Then read the full tool list that server handed over, and count how many of those
+tools your loop's actual job needs. Write down the allowlist you'd grant *before* this loop
+ever earned a single write. That short list is your connector design.
 
 ## When it goes wrong
 
 | Symptom | Cause | Fix |
 | --- | --- | --- |
-| Duplicate comments/labels after retries | Non-idempotent writes | "Ensure"-shaped actions; dedupe against the spine before acting |
-| Beat did something no one granted | Over-broad tool surface | Few, focused tools; explicit per-tool allowlist |
-| Loop stalls on every API hiccup | Opaque errors | Errors that say what to do next; retry/skip/escalate logic in the loop |
-| An email/comment went out that shouldn't have | Hands granted before trust | External writes are L3-grade: earn them last, gate them hardest |
+| Duplicate comments/labels after retries | Writes aren't idempotent | Reshape actions as "ensure X"; dedupe against the spine before acting |
+| Beat did something no one authorized | Tool surface far too broad | Expose few, focused tools; allowlist each write explicitly |
+| Loop freezes on every API hiccup | Errors are opaque | Return errors that name the next move; add retry/skip/escalate logic |
+| An email/comment escaped that shouldn't have | Hands granted before trust was earned | External writes are L3-grade — grant them last, guard them hardest |
 
 ---
 
@@ -117,5 +117,7 @@ ever earned writes — that list *is* your connector design.
 **blast radius** — see the [glossary](../02-foundations/glossary.md).
 
 *Sources:* connectors and the three connector rules come from Panaversity's *Loop
-Engineering: A Crash Course* (S1) and Panaversity's *Agentic Coding Crash Course* (S2).
-Full attribution: [resources/sources.md](../../resources/sources.md).
+Engineering: A Crash Course* ([S1](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course))
+and *Agentic Coding Crash Course*
+([S2](https://agentfactory.panaversity.org/docs/agentic-coding-crash-course)). Full
+attribution: [resources/sources.md](../../resources/sources.md).

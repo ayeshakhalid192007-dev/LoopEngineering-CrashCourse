@@ -1,14 +1,17 @@
 
 <!-- HERO-START -->
 
+![Loop Engineering — design the system that prompts the agent, not the prompt](assets/hero-loop-cycle.svg)
+
 # Loop Engineering Crash Course
 
-**Learn to build AI agent loops: autonomous systems with a heartbeat, a spine,
-a checker, and a provable stop.**
+**Learn to build AI agent loops — autonomous systems with a heartbeat, a spine, a
+checker, and a stop you can prove.**
 
-By the end you will have designed, built, and safely operated real loops in two
-different tools — starting from a single in-session loop and finishing with a
-certified multi-loop fleet. Free, open source, readable entirely on GitHub.
+You will not read *about* loops here; you will build them. By the last page you will
+have designed, shipped, and safely operated real loops in two different tools — opening
+with a single in-session loop and closing with a certified multi-loop fleet. It is free,
+open source, and readable end to end on GitHub.
 
 <!-- HERO-END -->
 
@@ -17,21 +20,27 @@ certified multi-loop fleet. Free, open source, readable entirely on GitHub.
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Built with loops](https://img.shields.io/badge/built%20with-its%20own%20loops-8A2BE2.svg)](LOOP.md)
 
-Loop Engineering is the emerging practice of **designing the system that prompts AI
-agents**, rather than prompting them by hand. This repo packages the whole discipline —
-concepts, mechanics, a library of ready-to-run loops, practice labs, and safety
-guidance — as a complete, GitHub-browsable course. The same `docs/` content also powers
-the course website (single source of truth — the two never diverge).
+Loop Engineering is the fast-emerging craft of **designing the system that prompts your
+AI agents** instead of prompting them one message at a time. The leverage has moved: it
+no longer lives in the perfect prompt, but in the control system that keeps an agent
+working toward a goal over time. This repository packages that whole discipline — the
+concepts, the mechanics, a library of ready-to-run loops, hands-on labs, and the safety
+guidance that keeps you in charge — as a complete course you can read start to finish on
+GitHub. The same `docs/` content powers the course website too, so the two surfaces can
+never drift apart (one source of truth, always).
 
-> **Dogfooding note:** this course about loops is *built by loops*. The rulebook is in
-> [`LOOP.md`](LOOP.md), the spine in [`STATE.md`](STATE.md), and every run is logged in
+> **We eat our own cooking.** This is a course about loops that is *built by loops*. The
+> rulebook lives in [`LOOP.md`](LOOP.md), the durable spine in [`STATE.md`](STATE.md),
+> and every single run is logged, one line at a time, in
 > [`shared/loop-run-log.md`](shared/loop-run-log.md).
 
 ## Start here
 
-**New? Take the 60-second router:** → [`docs/00-start-here/README.md`](docs/00-start-here/README.md)
+**New? Spend 60 seconds on the router before anything else:** →
+[`docs/00-start-here/README.md`](docs/00-start-here/README.md)
 
-It places you on one of four tracks:
+Answer four honest questions and it drops you onto exactly one of four tracks — so a
+first-timer never drowns and a veteran never yawns:
 
 | Track | You are… | You'll learn to… |
 | ------- | ---------- | ------------------ |
@@ -93,6 +102,7 @@ certification capstone.
 
 ## Contributing & credits
 
-Contributions welcome — see [`CONTRIBUTING.md`](CONTRIBUTING.md). This course adapts
-MIT-licensed material and public writing with full attribution in
-[`resources/sources.md`](resources/sources.md). Licensed [MIT](LICENSE).
+Pull requests are genuinely welcome — start with [`CONTRIBUTING.md`](CONTRIBUTING.md).
+This course stands on the shoulders of nine primary sources: it synthesizes and adapts
+MIT-licensed material and public writing, and it credits every one of them, page by page,
+in [`resources/sources.md`](resources/sources.md). Licensed [MIT](LICENSE).

@@ -1,15 +1,15 @@
 # Failure Modes
 
-> When a loop misbehaves, the fastest diagnostic is a name. This catalog gives every
-> operational failure its name, its tell in the instruments, and its fix — grouped
-> by the organ that failed.
+> When a loop misbehaves, the single fastest diagnostic is a name. This catalog gives every
+> operational failure its name, its tell in the instruments, and its fix — sorted by the organ
+> that broke.
 
 ## How to use this page
 
-Something feels off? Find the symptom in the tables. The failure's *organ* tells
-you where the fix belongs. (Design-time mistakes have their own catalog in
-[anti-patterns.md](anti-patterns.md); a failure already in progress goes straight
-to the [recovery playbook](recovery-playbook.md).)
+Something feels off? Hunt down the symptom in the tables below. The failure's *organ* tells you
+where the fix belongs. (Design-time mistakes have a catalog of their own in
+[anti-patterns.md](anti-patterns.md); a failure that's already unfolding goes straight to the
+[recovery playbook](recovery-playbook.md).)
 
 ## Heartbeat failures
 
@@ -76,11 +76,12 @@ flowchart TD
     classDef win fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
 ```
 
-*The rule under the whole page: incidents repeat until the organ is fixed. Patch
-the output and you've scheduled the failure again — that's
-[recovery playbook](recovery-playbook.md) step 4's entire argument.*
+*The rule underneath the whole page: incidents keep repeating until the organ is fixed. Patch the
+output and all you've done is reschedule the failure — which is exactly the argument of
+[recovery playbook](recovery-playbook.md) step 4.*
 
-*Sources:* the failure catalog is drawn from the `cobusgreyling/loop-engineering`
-reference repo (MIT, S7) and the essays of Addy Osmani's *Loop Engineering* (S5) and
-Sydney Runkle's *The Art of Loop Engineering* (LangChain, S6). Full attribution:
-[resources/sources.md](../../resources/sources.md).
+*Sources:* the failure catalog is drawn from the `cobusgreyling/loop-engineering` reference repo
+([S7](https://github.com/cobusgreyling/loop-engineering), MIT) and the essays of Addy Osmani's
+*Loop Engineering* ([S5](https://addyosmani.com/blog/loop-engineering/)) and Sydney Runkle's *The
+Art of Loop Engineering* ([S6](https://www.langchain.com/blog/the-art-of-loop-engineering)). Full
+attribution: [resources/sources.md](../../resources/sources.md).

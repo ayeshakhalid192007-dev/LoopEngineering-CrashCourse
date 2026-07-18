@@ -1,8 +1,7 @@
 # The Loop Design Checklist
 
-> Print-and-fill companion to [the A–F method](make-your-own-loop.md). If any box
-> resists a one-line answer, the design isn't done — the resistance *is* the
-> finding.
+> A print-and-fill companion to [the A–F method](make-your-own-loop.md). If any box refuses a
+> one-line answer, the design isn't finished — that resistance *is* the finding.
 
 ## Identity
 
@@ -23,7 +22,7 @@
 ## The three stops
 
 - [ ] Success = the spec above
-- [ ] Limit = max `____` runs/day (would the number embarrass you if hit? good)
+- [ ] Limit = max `____` runs/day (would the number embarrass you if it were hit? good)
 - [ ] No progress = 3 unchanged beats → log and stop
 
 ## Guardrails
@@ -42,7 +41,7 @@
 
 ## The seven-item minimum before the FIRST run
 
-The same list every loop in this repo clears
+The very same list every loop in this repo clears
 (cf. [Step 13](../07-part-5-complete-loop/13-build-the-loop-twice.md)):
 
 | # | Item | ✔ |
@@ -71,6 +70,8 @@ flowchart LR
 *Live examples of filled-in designs: every `loop.md` under
 [`loops/`](../../loops/README.md) is this checklist, answered for real.*
 
-*Sources:* the checklist condenses the minimum-safe practice of Panaversity's *Loop
-Engineering: A Crash Course* (S1) and the `cobusgreyling/loop-engineering` reference
-repo (MIT, S7). Full attribution: [resources/sources.md](../../resources/sources.md).
+*Sources:* the checklist condenses the minimum-safe practice of Panaversity's *Loop Engineering:
+A Crash Course* ([S1](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course))
+and the `cobusgreyling/loop-engineering` reference repo
+([S7](https://github.com/cobusgreyling/loop-engineering), MIT). Full attribution:
+[resources/sources.md](../../resources/sources.md).

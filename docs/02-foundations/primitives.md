@@ -1,19 +1,20 @@
 # Primitives
 
-> The raw materials every loop is assembled from — what each one is *for* when the
-> goal is autonomy, not assistance.
+> The raw materials every loop is assembled from — and what each one is *for* once the
+> goal is autonomy instead of assistance.
 
 ## The hook
 
-Ask ten engineers to "build a loop" and the weak ones start writing a scheduler from
-scratch. The strong ones open their agent's docs and find that eight primitives —
-already built, already tested — snap together into the whole thing. Loop engineering
-is *assembly*, not invention.
+Ask ten engineers to "build a loop" and watch what they reach for. The weak ones start
+writing a scheduler from scratch. The strong ones open their agent's docs and discover
+that eight primitives — already built, already tested — snap together into the entire
+thing. Loop engineering is *assembly*, not invention. That reframe alone will save you
+weeks.
 
 ## The eight primitives, seen through loop eyes (plain English)
 
-The [agentic coding primer](../01-prerequisites/agentic-coding-primer.md) introduced
-these as features you use by hand. Here's the shift: each one maps to a part of the
+The [agentic coding primer](../01-prerequisites/agentic-coding-primer.md) met these as
+features you drive by hand. Here is the shift: each one maps cleanly onto a part of the
 loop's anatomy.
 
 | Primitive | Hand-driven use | **Loop use (the upgrade)** |
@@ -69,27 +70,28 @@ inbox is empty, after 10 runs, or after 3 no-change runs.
 ```
 
 > [!WARNING]
-> Flags and file names drift weekly; the *mapping* (primitive → loop part) is the
-> lasting layer. Cross-tool specifics live in the
-> [primitives matrix](primitives-matrix.md); commands live in each tool's docs.
+> Flags and file names drift weekly; the *mapping* (primitive → loop part) is the lasting
+> layer. Cross-tool specifics live in the [primitives matrix](primitives-matrix.md);
+> commands live in each tool's docs.
 
 > [!NOTE]
-> **Going deeper:** Part 3 (Day 2) gives worktrees, skills, connectors, and
-> maker/checker a full lesson each. Attribution: sources 1, 2, 7 —
-> [../../resources/sources.md](../../resources/sources.md).
+> **Going deeper:** Part 3 (Day 2) gives worktrees, skills, connectors, and maker/checker
+> a full lesson each. Sourced from Panaversity's *Loop Engineering*
+> ([S1](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course)) and
+> *Agentic Coding* ([S2](https://agentfactory.panaversity.org/docs/agentic-coding-crash-course)),
+> plus cobusgreyling/loop-engineering ([S7](https://github.com/cobusgreyling/loop-engineering)).
 
 ## Check yourself
 
-**Q: Your loop needs to (a) never touch `secrets/` and (b) always summarize its diff
-in the PR body. Which primitive carries each requirement, and why aren't they the
-same one?**
+**Q: Your loop must (a) never touch `secrets/` and (b) always summarize its diff in the PR
+body. Which primitive carries each requirement — and why aren't they the same one?**
 
 <details><summary>Answer</summary>
 
-(a) **Permissions/hooks** — it's a guarantee, so it must be unbypassable machinery.
-(b) **Rules file (or a skill)** — it's a behavior, advisory by nature and fine that
-way. Putting (a) in prose makes it persuadable; putting (b) in a hook is rigidity
-you'll regret. Guarantees in the harness, habits in the rules.
+(a) **Permissions/hooks** — it's a guarantee, so it has to be unbypassable machinery.
+(b) **Rules file (or a skill)** — it's a behavior, advisory by nature and perfectly fine
+that way. Put (a) in prose and it becomes persuadable; put (b) in a hook and you've built
+rigidity you'll come to regret. Guarantees in the harness, habits in the rules.
 
 </details>
 
@@ -102,13 +104,13 @@ In your sandbox repo, ask your agent:
 > compiling. Name which primitive plays which part."
 
 Grade its sketch against the table above: did it put the checker in a subagent? Did a
-guarantee end up in prose?
+guarantee quietly end up living in prose?
 
 ## When it goes wrong
 
 | Symptom | Cause | Fix |
 | --- | --- | --- |
-| Loop reinvents scheduling/state in custom scripts | Assembly treated as invention | Use the tool's heartbeat + a plain state file first |
+| Loop reinvents scheduling/state in custom scripts | Assembly mistaken for invention | Use the tool's heartbeat + a plain state file first |
 | Checker agrees with the maker suspiciously often | Same session graded its own work | Move the checker to a separate subagent (or separate loop) |
 | Guardrail held for weeks, failed once at 3 a.m. | It was a rule, not a hook | Promote guarantees to permissions/hooks |
 | Loop is powerful but terrifying | All eight primitives at L3 on day one | Climb the ladder: L1 → watch → L2 → watch → L3 |
@@ -117,3 +119,11 @@ guarantee end up in prose?
 
 *Glossary terms used on this page:* **primitive**, **beat**, **spine**, **L1/L2/L3** —
 see [glossary.md](glossary.md).
+
+*Sources:* the primitives and their loop mapping come from Panaversity's *Agentic Coding
+Crash Course* ([S2](https://agentfactory.panaversity.org/docs/agentic-coding-crash-course))
+and *Loop Engineering: A Crash Course*
+([S1](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course)), with
+assembly patterns from cobusgreyling/loop-engineering
+([S7](https://github.com/cobusgreyling/loop-engineering)). Full attribution:
+[../../resources/sources.md](../../resources/sources.md).

@@ -1,14 +1,16 @@
 # Agentic Coding Primer
 
-> The eight primitives your agent already has — the raw parts every loop is built from.
+> The eight primitives your agent already ships with — the raw parts every loop is
+> assembled from.
 
 ## The hook
 
-You ask your agent to "clean up the failing tests." It edits four files, runs the
-suite, opens a plan for the risky part, and asks permission before touching CI config.
-None of that was in your prompt. Where did that behavior come from? From eight
-primitives that were configured before you typed a word — and loop engineering is the
-craft of configuring them *deliberately*.
+You ask your agent to "clean up the failing tests." It edits four files, runs the suite,
+opens a plan for the one risky change, and stops to ask permission before it touches your
+CI config. Read your prompt again: none of that was in it. So where did the behavior come
+from? From eight primitives that were configured before you typed a single word — and
+loop engineering is, at bottom, the craft of configuring them *on purpose* instead of by
+accident.
 
 ## The eight primitives (plain English)
 
@@ -50,6 +52,9 @@ flowchart TD
     style REACH fill:#f2fdfb,stroke:#99f6e4,stroke-width:1.5px,color:#0f766e;
 ```
 
+You don't need to master all eight today. You need to know they exist, and to recognize
+which one you're reaching for when a loop misbehaves later.
+
 ## See them in your tool
 
 ```claude
@@ -72,25 +77,27 @@ flowchart TD
 ```
 
 > [!WARNING]
-> Exact flags and file names shift often — the shapes don't. When a command here and
-> the tool's live docs disagree, the docs win.
+> The exact flags and file names drift constantly — the *shapes* do not. When a command
+> here and the tool's live docs disagree, believe the docs.
 
 > [!NOTE]
-> **Going deeper:** this repo practices what it teaches — its own `CLAUDE.md` is a
-> rules file, its loop guardrails live in `loop-constraints.md`, and its checker runs
-> as a separate reviewer. Browse them from the repo root after this page.
+> **Going deeper:** this repo practices what the page preaches — its own `CLAUDE.md` is a
+> rules file, its loop guardrails live in `loop-constraints.md`, and its checker runs as
+> a genuinely separate reviewer. Browse them from the repo root once you've read this.
 
 ## Check yourself
 
-**Q: You want a guarantee that no loop can ever edit `.env`, even if a prompt asks it
-to. Which primitive — rules file or hooks/permissions — and why?**
+**Q: You want an ironclad guarantee that no loop can *ever* edit `.env`, even if some
+prompt cheerfully asks it to. Which primitive — rules file, or hooks/permissions — and
+why?**
 
 <details><summary>Answer</summary>
 
-**Hooks/permissions.** A rules file is an instruction the model reads and follows —
-strong, but ultimately advisory. Permissions and hooks are *enforced by the harness*:
-the edit is blocked mechanically no matter what the prompt says. Rule of thumb: put
-intent in rules, put guarantees in permissions and hooks.
+**Hooks/permissions.** A rules file is an instruction the model reads and (usually)
+follows — strong, but in the end advisory. Permissions and hooks are *enforced by the
+harness*: the edit is blocked mechanically, no matter how the prompt is worded. The rule
+of thumb worth memorizing: put **intent** in rules, put **guarantees** in permissions and
+hooks.
 
 </details>
 
@@ -98,25 +105,26 @@ intent in rules, put guarantees in permissions and hooks.
 
 In your sandbox repo:
 
-> 1. Create a `CLAUDE.md` (or `AGENTS.md`) with one rule: "Always run the test suite
+> 1. Create a `CLAUDE.md` (or `AGENTS.md`) with a single rule: "Always run the test suite
 >    before claiming a task is done."
-> 2. Ask your agent to fix any small thing, and watch whether it obeys the rule.
-> 3. Then ask it: "Which of your eight primitives did that rule use, and which would
->    make it *unbreakable*?"
+> 2. Ask your agent to fix any tiny thing, and watch whether it actually obeys the rule.
+> 3. Then ask it directly: "Which of your eight primitives did that rule use, and which
+>    one would make it *unbreakable*?"
 
 ## When it goes wrong
 
 | Symptom | Cause | Fix |
 | --- | --- | --- |
-| Agent ignores your standing instruction | Rule buried in a huge rules file | Rules files are context too — keep them short and binding |
+| Agent ignores your standing instruction | The rule is buried in a bloated rules file | Rules files are context too — keep them short and binding |
 | Agent asks permission for everything | Permission mode too strict for the task | Loosen for the session, not globally; keep write-paths narrow |
-| Agent confidently edits the wrong module | Context too broad or too stale | Point it at specific files; start a fresh session for new work |
-| A "safety rule" was talked around | Guarantee placed in prose, not machinery | Move it from the rules file into permissions or a hook |
+| Agent confidently edits the wrong module | Context too broad, or gone stale | Point it at specific files; start a fresh session for new work |
+| A "safety rule" got talked around | The guarantee lived in prose, not machinery | Move it from the rules file into permissions or a hook |
 
 ---
 
 *Attribution: this page condenses ideas from Panaversity's Agentic Coding Crash Course
-(source 2 in [../../resources/sources.md](../../resources/sources.md)).*
+([S2](https://agentfactory.panaversity.org/docs/agentic-coding-crash-course); see also
+[../../resources/sources.md](../../resources/sources.md)).*
 
 *Glossary terms used on this page:* **primitive**, **rules file**, **hook**,
 **subagent**, **MCP** — see [../02-foundations/glossary.md](../02-foundations/glossary.md).

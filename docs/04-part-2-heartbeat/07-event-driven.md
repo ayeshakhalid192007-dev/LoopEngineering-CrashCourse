@@ -1,33 +1,33 @@
 # Step 7 · Event-Driven Loops
 
-> The heartbeat stops being a clock and becomes the world: a PR opens, a release
-> tags, a webhook fires — and a beat answers it. Fastest cadence, sharpest edges.
+> The heartbeat stops being a clock and becomes the world: a PR opens, a release tags, a
+> webhook fires — and a beat answers it. Fastest cadence, sharpest edges.
 
 ## The hook
 
-A contributor opens a PR at 2:47 pm. At 2:48 the loop has read the diff, run the
-lint, and left one comment on the exact line that breaks the style guide. The
-contributor pushes a fix. The `synchronize` event fires. The loop re-checks and
-resolves its own comment. No clock did this — the *PR* did.
+A contributor opens a PR at 2:47 pm. By 2:48 the loop has read the diff, run the lint, and
+left one comment on the exact line that breaks the style guide. The contributor pushes a
+fix. The `synchronize` event fires. The loop re-checks and resolves its own comment. No
+clock did any of that — the *PR* did.
 
 ## Event-driven (plain English)
 
-An **event-driven loop** beats when something happens, not when time passes. The
-three trigger families you'll actually use:
+An **event-driven loop** beats when something happens, not when time passes. The three
+trigger families you'll actually use:
 
-- **SCM events** — PR opened, PR updated (the `synchronize` event — every new push
-  to an open PR), release published, issue labeled. The workhorse family.
-- **Channel messages** — a chat message or mention wakes a running session. Powerful,
-  and *the* one to be cautious with. Anyone who can post in the channel is now holding
-  your loop's trigger, so treat inbound text as untrusted input.
-- **Direct API fire** — an HTTP endpoint (a "/fire"-style call) that starts a beat.
-  Your own systems become heartbeats.
+- **SCM events** — PR opened, PR updated (the `synchronize` event — every new push to an
+  open PR), release published, issue labeled. This is the workhorse family.
+- **Channel messages** — a chat message or mention wakes a running session. Powerful, and
+  *the* one to be careful with. Anyone who can post in the channel is now holding your
+  loop's trigger, so treat inbound text as untrusted input, never as commands.
+- **Direct API fire** — an HTTP endpoint (a "/fire"-style call) that starts a beat. This is
+  how your own systems become heartbeats.
 
-The rule that makes this family safe is the same one from Step 4, with higher
-stakes: **events are dropped, not queued.** Burst past the cap — twenty PRs land in
-a minute — and some events simply never become beats. An event-driven loop therefore
-always ships with a **reconciliation sweep**: a slow scheduled loop (Step 6) that
-periodically asks "what did the events miss?" and catches the gaps.
+The rule that keeps this whole family safe is the same one from Step 4, just with higher
+stakes: **events are dropped, not queued.** Burst past the cap — twenty PRs land in a
+minute — and some events simply never become beats. So an event-driven loop *always* ships
+with a **reconciliation sweep**: a slow scheduled loop (Step 6) that periodically asks
+"what did the events miss?" and quietly closes the gaps.
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
@@ -47,8 +47,8 @@ flowchart LR
 
 ## The mechanics in each tool
 
-Each tool binds a beat to SCM events, channels, or an API fire. Note where the
-"untrusted input" and reconciliation reminders land:
+Each tool binds a beat to SCM events, channels, or an API fire. Note where the "untrusted
+input" and reconciliation reminders land:
 
 ```claude
 # Claude Code — live docs: https://docs.claude.com/en/docs/claude-code
@@ -71,34 +71,33 @@ Each tool binds a beat to SCM events, channels, or an API fire. Note where the
 ```
 
 > [!NOTE]
-> **Going deeper:** the four heartbeats you now know — interval (4), conditional
-> (5), schedule (6), event (7) — are a menu, not a ladder. Real fleets mix them:
-> this repo pairs run-until-done makers with scheduled checkers (see
+> **Going deeper:** the four heartbeats you now know — interval (4), conditional (5),
+> schedule (6), event (7) — are a menu, not a ladder. Real fleets mix them freely: this
+> repo pairs run-until-done makers with scheduled checkers (see
 > [`LOOP.md`](../../LOOP.md)). Choosing among them is the pattern-picker's job in
 > [methods](../09-methods/pattern-picker.md).
 
 ## Check yourself
 
-**Q: Your PR-review loop worked perfectly for a month, then silently skipped three
-PRs during Friday's release rush. Nothing errored. What happened, and what was
-missing from the design?**
+**Q: Your PR-review loop worked perfectly for a month, then silently skipped three PRs
+during Friday's release rush. Nothing errored. What happened, and what was missing from the
+design?**
 
 <details><summary>Answer</summary>
 
-The burst blew past the event cap and the overflow events were **dropped, not
-queued** — no error, because nothing failed. The beats just never existed. Missing
-was the **reconciliation sweep**: a slow scheduled loop asking "any open PRs without
-a review from me?" It exists precisely to turn silent gaps into caught gaps.
+The burst blew past the event cap and the overflow events were **dropped, not queued** — no
+error, because nothing actually failed. The beats simply never existed. What was missing is
+the **reconciliation sweep**: a slow scheduled loop asking "any open PRs without a review
+from me?" It exists for exactly this — turning silent gaps into caught gaps.
 
 </details>
 
 ## Try With AI
 
 Wire the simplest event loop you can in a throwaway repo: a GitHub Action on
-`pull_request` that runs your agent in report-only mode ("comment a one-line summary
-of the diff — take no other action"). Open a PR, push twice, and watch `synchronize`
-fire the beat again. Then write, on paper, the reconciliation sweep this loop would
-need in production.
+`pull_request` that runs your agent in report-only mode ("comment a one-line summary of the
+diff — take no other action"). Open a PR, push twice, and watch `synchronize` fire the beat
+again. Then write, on paper, the reconciliation sweep this loop would need in production.
 
 ## When it goes wrong
 
@@ -115,7 +114,9 @@ need in production.
 **reconciliation sweep**, **idempotent** — see the
 [glossary](../02-foundations/glossary.md).
 
-*Sources:* event triggers, channels, and the dropped-not-queued rule come from
-Panaversity's *Loop Engineering: A Crash Course* (S1) and Panaversity's *Scheduled
-Tasks: The Loop Skill & Cron Tools* (S4). Full attribution:
-[resources/sources.md](../../resources/sources.md).
+*Sources:* event triggers, channels, and the dropped-not-queued rule come from Panaversity's
+*Loop Engineering: A Crash Course*
+([S1](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course)) and
+*Scheduled Tasks: The Loop Skill & Cron Tools*
+([S4](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course)). Full
+attribution: [resources/sources.md](../../resources/sources.md).

@@ -1,8 +1,10 @@
+![Part 6 · Human Control — cost, verification, staying the engineer](../../assets/banner-08-human-control.svg)
+
 # Part 6 · Human Control
 
-> The course ends where accountability lives: with you. Four pages on the job that
-> can't be automated — paying for, verifying, and understanding what your loops do,
-> inside a structure that keeps every decision human.
+> The course ends exactly where accountability lives: with you. Four pages on the one job
+> that can't be handed off — paying for, verifying, and understanding what your loops do —
+> held inside a structure that keeps every real decision in human hands.
 
 ## The steps
 
@@ -27,10 +29,10 @@ flowchart LR
 
 ## Where to next
 
-The 14 steps taught the *shape*. Two layers turn it into daily practice: the
-[methods pages](../09-methods/make-your-own-loop.md) (design your own loop, A–F)
-and the [operating handbook](../10-operating/operating-loops.md) (running fleets
-without surprises). Both belong to this part's track.
+The 14 steps taught you the *shape*. Two more layers turn that shape into daily practice: the
+[methods pages](../09-methods/make-your-own-loop.md) (design a loop of your own, A through F)
+and the [operating handbook](../10-operating/operating-loops.md) (running fleets without
+nasty surprises). Both belong to this part's track.
 
 ## Check your understanding
 
@@ -38,6 +40,8 @@ without surprises). Both belong to this part's track.
 
 *This part belongs to track [T3 · Engineer](../00-start-here/learning-tracks.md).*
 
-*Sources:* Part 6 draws on Panaversity's *Loop Engineering: A Crash Course* (S1), Addy
-Osmani's *Loop Engineering* (S5), and Andrew Ng & Andrej Karpathy's public statements
-(S9). Full attribution: [resources/sources.md](../../resources/sources.md).
+*Sources:* Part 6 draws on Panaversity's *Loop Engineering: A Crash Course*
+([S1](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course)), Addy Osmani's
+*Loop Engineering* ([S5](https://addyosmani.com/blog/loop-engineering/)), and Andrew Ng &
+Andrej Karpathy's public statements ([S9](https://x.com/karpathy)). Full attribution:
+[resources/sources.md](../../resources/sources.md).
