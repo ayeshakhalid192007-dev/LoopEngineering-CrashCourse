@@ -30,6 +30,23 @@ and it decomposes into exactly the three things loops are worst at:
   [concepts](../02-foundations/concepts.md) — and loops generate it at machine
   speed. Small beats, read reports, and spot-reads are how you stay solvent.
 
+The three pillars at a glance, each with the practice that keeps it standing:
+
+```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
+flowchart LR
+    OWN("🧑 ownership —<br/>the job that remains"):::human2 --> CO("paying attention<br/>to cost"):::cfg
+    OWN --> VO("verifying outcomes,<br/>not statuses"):::check
+    OWN --> KO("keeping<br/>comprehension"):::beat
+    CO -.-> CP(["cost-management:<br/>caps + tripwire"]):::cfg
+    VO -.-> VP(["verification:<br/>green ≠ done"]):::check
+    KO -.-> KP(["small beats ·<br/>spot-reads"]):::beat
+    classDef human2 fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
+    classDef cfg fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
+    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
+    classDef beat fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
+```
+
 The frame that holds it together is [the three nested
 loops](the-three-nested-loops.md): the agent's loop runs inside *your* engineering
 loop, which runs inside the *team's* governance loop. Autonomy levels, promotions,

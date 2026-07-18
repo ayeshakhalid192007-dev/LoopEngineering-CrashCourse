@@ -35,6 +35,21 @@ And the spine is a *record*, not a scratchpad. Escalations, discrepancies, and
 lessons go in it, because the spine is what the next beat — and the human — will
 actually read.
 
+Here is that order as one picture. A crash at any point only costs what comes
+after it:
+
+```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
+flowchart LR
+    RD("read the spine"):::file --> WK("do the work"):::beat --> VF("verify it"):::beat
+    VF --> UP("update the spine"):::file --> LG("log one line"):::file --> CM(["commit —<br/>now it's durable"]):::cfg
+    CR("💥 crash here?<br/>you lose a log line,<br/>never the work"):::crash -.-> LG
+    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
+    classDef beat fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
+    classDef cfg fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
+    classDef crash fill:#fff1f2,stroke:#f43f5e,stroke-width:1.5px,color:#9f1239;
+```
+
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
 flowchart LR

@@ -32,6 +32,26 @@ the beat. The loop prompt stops carrying the how-to and shrinks to intent:
 /loop Check the queue. Deploy anything approved, per the deploy skill.
 ```
 
+The same contrast as a picture — the prompt carries intent, the skill carries
+procedure:
+
+```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
+flowchart LR
+    subgraph FAT ["without a skill"]
+      P1("prompt = intent<br/>+ 400-word manual"):::stop --> B1("every beat<br/>re-reads the manual"):::stop
+    end
+    subgraph LEAN ["with a skill"]
+      P2("prompt = intent,<br/>one sentence"):::win --> B2("clean beat"):::win
+      SK[("SKILL.md<br/>written once, versioned")]:::cfg --> B2
+    end
+    classDef stop fill:#f1f5f9,stroke:#94a3b8,stroke-width:1.5px,color:#334155;
+    classDef win fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
+    classDef cfg fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
+    style FAT fill:#fbfcfd,stroke:#cbd5e1,stroke-width:1.5px,color:#334155;
+    style LEAN fill:#fbfffd,stroke:#99f6e4,stroke-width:1.5px,color:#115e59;
+```
+
 **Skill vs. plugin:** a skill is *instructions* the model follows — markdown, no
 install. A plugin is *software* the harness runs: code, hooks, commands. Teach
 judgment-shaped procedure as a skill. Ship mechanical capability as a plugin.

@@ -9,8 +9,14 @@
 **Progress:** 36 / 36 processed (33 rewritten, 3 already compliant) · runs used 38 / 40 · tokens ≈240k / 700k
 **Checklist complete. Revisit queue complete.** ✅ **SUCCESS STOP** — all 36
 pages processed and the human-feedback revisits (observability, operating-loops)
-are done. 2 runs under the 40-run limit. Awaiting human review; per the human
-gate, no commit/push and no checkpoint declaration by this loop.
+are done. 2 runs under the 40-run limit. Committed and pushed on human approval
+(2026-07-18); draft PR #4 open for review.
+**Post-stop addendum (human-directed, 2026-07-18):** diagram pass — ONE new
+mermaid diagram added to 3 pages where a flow/contrast was prose-only
+(12-state-between-runs: beat order of operations; 09-skills: fat-prompt vs
+intent+skill contrast; 14-staying-the-engineer: three ownership pillars). House
+init header + framing sentence each. All pre-existing diagrams verified
+byte-identical (diff shows additions only). 3 beats logged.
 **Human feedback (mid-run, 2026-07-18):** rewrites must be recast prose, not
 punctuation fixes. Applied from beat 35 on; prose-heavy pages 30–32
 (operating-loops, observability) queued for a deeper revisit within the run cap.
