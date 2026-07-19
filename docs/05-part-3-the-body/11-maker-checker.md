@@ -1,41 +1,48 @@
 # Step 11 · Maker–Checker
 
-> The oldest control in banking, ported to loops: the hand that writes is never the
-> hand that approves. One cheap read-only grader turns "probably fine" into a system.
+> Banking figured this out centuries ago: whoever writes the entry is never the one who signs
+> it off. Port that single rule to loops and one cheap, read-only grader turns "looks fine to
+> me" into an actual system.
 
 ## The hook
 
-Day 1 of building *this course*, the run log recorded a quiet, perfect moment:
-`items_found: 3, actions_taken: 0`. The checker loop had found three problems in the
-maker's pages — and fixed none of them, because fixing wasn't its job. The maker
-fixed them the next beat. That boring pair of numbers is the whole pattern working.
+On Day 1 of building *this course*, the run log caught a small, perfect moment:
+`items_found: 3, actions_taken: 0`. The checker loop had spotted three problems in the
+maker's pages — and repaired exactly none of them, because repair was never its job. The
+maker cleaned them up on the following beat. Those two unglamorous numbers are the entire
+pattern, working as designed.
 
 ## Writer ≠ grader (plain English)
 
-A loop that grades its own work will always, eventually, find its own work
-acceptable — not from vanity but from shared blind spots: the misreading that
-produced the bug also passes the self-review. The **maker–checker** split breaks the
-blind spot with structure:
+Hand a loop the job of grading its own output and, sooner or later, it will pronounce that
+output good. Not out of ego — out of a shared blind spot. The very misreading that produced
+the bug is sitting there to wave the self-review through. The **maker–checker** split
+dismantles that blind spot with structure instead of hope:
 
-- The **maker** does the work. It may write its files, tick its spine — and it
-  *cannot* declare the work good.
-- The **checker** grades the work against a rubric. It is **read-only on the work**
-  — it *cannot* fix anything, which is exactly what makes its findings trustworthy.
+- The **maker** produces the work. It writes its files, ticks its own spine — and it is
+  flatly forbidden from declaring the work good.
+- The **checker** measures the work against a rubric. It is **read-only on the work**, which
+  means it can't touch a thing — and that powerlessness is precisely what makes its verdict
+  worth trusting.
 
-The checker can be three things, in rising cost: a **script** (link checker, linter
-— cheapest, never has an opinion), a **read-only LLM session** with a rubric
-(LLM-as-judge — catches judgment-shaped problems scripts can't), or a **human** (the
-gate — final, expensive, reserved for what matters). Use the cheapest checker that
-can actually catch the failure you fear; a read-only LLM beat costs a fraction of a
-maker beat (this repo's Day 1 checker used ~3% of its token budget in one run).
+A checker comes in three grades, from cheapest to dearest:
 
-**The dynamic-workflows interlude:** a *workflow* (fixed steps, deterministic
-order) isn't a rival to loops — a workflow is the **body of one beat**. The loop
-decides *when* and *whether*; the workflow inside the beat does *how*; the checker
-grades what came out.
+- **A script** — a link checker, a linter. Costs nothing and holds no opinions.
+- **A read-only LLM session with a rubric** — LLM-as-judge, for the judgment-shaped problems
+  a script will never see.
+- **A human** — the gate itself: final, costly, and saved for what genuinely warrants it.
+
+Reach for the cheapest checker that can still catch the failure you're actually afraid of. A
+read-only LLM beat runs at a sliver of a maker beat's cost — this repo's Day 1 checker burned
+roughly 3% of its token budget in a single run.
+
+**A word on dynamic workflows:** a *workflow* — fixed steps in a deterministic order — is not
+the enemy of a loop. A workflow is simply **the body of one beat**. The loop rules on *when*
+and *whether*; the workflow inside the beat handles *how*; the checker judges what dropped out
+the other end.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     M("maker<br/>writes, never grades"):::maker -->|output| W[("the work")]:::file
     W --> C1("script checker<br/>facts, free"):::check
@@ -43,13 +50,17 @@ flowchart LR
     C1 & C2 -->|findings| F[("checker's spine")]:::file
     F --> H(["🧑 human gate<br/>decides what's real"]):::human
     H -.->|"fix list"| M
-    classDef maker fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
-    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
-    classDef human fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef maker fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef check fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
+    classDef file fill:#f1f5f9,stroke:#64748b,stroke-width:2.5px,color:#334155,font-weight:600;
+    classDef human fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
 ```
 
 ## The mechanics in each tool
+
+Permissions enforce the split — not good manners. Two loops, two permission sets, and a
+checker that cannot write the work no matter what verdict it reaches:
 
 ```claude
 # Claude Code — live docs: https://docs.claude.com/en/docs/claude-code
@@ -70,51 +81,53 @@ opencode run "READ-ONLY: grade the newest pages against rubric.md;
 ```
 
 > [!NOTE]
-> **Going deeper:** this pattern is running in the repo you're reading —
-> [`loops/day2/template-checker/`](../../loops/day2/template-checker/loop.md) grades
-> the very page in front of you against a 9-row rubric it cannot edit. When the
-> checker can be a *script*, prefer it: see the link-check loop's
+> **Going deeper:** this pattern is alive in the repo you're reading right now —
+> [`loops/day2/template-checker/`](../../loops/day2/template-checker/loop.md) grades this very
+> page against a 9-row rubric it has no power to edit. And whenever the checker *can* be a
+> plain script, let it: see the link-check loop's
 > [provability note](../../loops/day1/link-check/loop.md).
 
 ## Check yourself
 
-**Q: To save tokens, a team merges their maker and checker into one loop that
-"self-reviews before committing." Reviews pass 100% for a month. Why is that number
-evidence *against* the design rather than for it?**
+**Q: To trim tokens, a team fuses maker and checker into one loop that "self-reviews before
+committing." Reviews come back 100% clean for a month. Why does that number argue *against*
+the design instead of for it?**
 
 <details><summary>Answer</summary>
 
-Because a 100% pass rate from a self-grading maker measures *agreement with itself*,
-not quality. Whatever blind spot produces a defect also produces the approving
-review — the failures aren't being caught, they're being co-signed. A separate
-checker's value shows up precisely as the findings a self-review would never file:
-`items_found > 0` with `actions_taken: 0`.
+Because a perfect pass rate from a self-grader measures nothing but *agreement with itself*.
+The same blind spot that lets a defect through is the one nodding along at the review — the
+failures aren't being caught, they're being co-signed. A real separate checker proves its
+worth in exactly the reports a self-review would never write: `items_found > 0` alongside
+`actions_taken: 0`.
 
 </details>
 
 ## Try With AI
 
-Take any finished piece of agent work and run a read-only checker over it: give a
-fresh session a 5-row rubric and the instruction "grade only — you may not fix."
-Compare its findings with what the maker said about its own work in the transcript.
-The delta between those two reports is the exact value of the split — measured, in
-one experiment, on your own repo.
+Grab any finished piece of agent work and turn a read-only checker loose on it: give a fresh
+session a five-row rubric and the standing order "grade only — you may not fix." Then set its
+findings next to what the maker claimed about its own work in the transcript. The gap between
+those two accounts *is* the value of the split — and you just measured it, on your own repo.
 
 ## When it goes wrong
 
 | Symptom | Cause | Fix |
 | --- | --- | --- |
-| Checker "fixed" the pages itself | Checker has write access to the work | Permissions, not promises: read-only on the work, write-only to its spine |
-| Findings vanish between runs | Checker reports to chat / uncommitted file | Findings go in the checker's **committed** spine (this repo learned this the hard way) |
-| Checker rubber-stamps everything | No rubric — "review this" | Explicit rubric rows; PASS/FAIL per row, one line on what's missing |
-| Checker costs as much as the maker | Full-context grading of everything | Grade the diff, not the repo; scripts for facts; LLM only for judgment |
+| Checker "fixed" the pages itself | It has write access to the work | Permissions, not promises: read-only on the work, write-only to its own spine |
+| Findings evaporate between runs | Checker reports to chat / an uncommitted file | Findings land in the checker's **committed** spine (this repo learned that the hard way) |
+| Checker rubber-stamps everything | No rubric — just "review this" | Spell out rubric rows; PASS/FAIL each, one line on what's missing |
+| Checker costs as much as the maker | Full-context grading of everything | Grade the diff, not the repo; scripts for facts, LLM only for judgment |
 
 ---
 
 *Glossary terms used on this page:* **maker–checker**, **LLM-as-judge**,
 **workflow**, **human gate** — see the [glossary](../02-foundations/glossary.md).
 
-*Sources:* maker–checker and LLM-as-judge come from Panaversity's *Loop Engineering: A
-Crash Course* (S1) and Panaversity's *Agentic Coding Crash Course* (S2); the
-verification-loop framing from Sydney Runkle's *The Art of Loop Engineering* (LangChain,
-S6). Full attribution: [resources/sources.md](../../resources/sources.md).
+*Sources:* maker–checker and LLM-as-judge come from Panaversity's *Loop Engineering: A Crash
+Course* ([S1](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course)) and
+*Agentic Coding Crash Course*
+([S2](https://agentfactory.panaversity.org/docs/agentic-coding-crash-course)); the
+verification-loop framing from Sydney Runkle's *The Art of Loop Engineering*
+([S6](https://www.langchain.com/blog/the-art-of-loop-engineering)). Full attribution:
+[resources/sources.md](../../resources/sources.md).

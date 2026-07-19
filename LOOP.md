@@ -9,7 +9,7 @@
 
 | Loop | Folder | Heartbeat | Cadence | Level | Role |
 | ------ | -------- | ----------- | --------- | ------- | ------ |
-| step-writer | `loops/day2/step-writer/` | conditional (run-until-done) | self-paced | L2 (writes docs) | Writes the 14 steps, part indexes, methods, operating handbook |
+| step-writer | `loops/day2/step-writer/` | conditional (run-until-done) | self-paced | L2 (writes docs) | Writes the 14 steps, part indexes, methods, operating handbook. **Current mission: pass-2 tone rewrite per `shared/style-guide.md`** |
 | template-checker | `loops/day2/template-checker/` | schedule | 20m (ceiling) | L1 (report-only) | PASS/FAIL per page against the §10 rubric |
 | quiz-writer | `loops/day2/quiz-writer/` | conditional, gated on checker PASS | per part | L2 (writes quiz/flashcards only) | One part's `quiz.md` + `flashcards.md` per beat |
 | link-check | `loops/day1/link-check/` *(continues unchanged)* | schedule | 30m | L1 (report-only) | Keeps relative links honest all day |
@@ -25,7 +25,7 @@
 How the fleet coordinates — no loop calls another; they meet only through files:
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     PW("page-writer<br/>L2 · maker"):::maker -->|writes| DOCS[("docs/")]:::file
     PW -->|writes own spine| PWS[("page-writer<br/>state.md")]:::file
@@ -38,11 +38,12 @@ flowchart LR
     CKS -.-> H
     LCS -.-> H
     H -.->|approves| PW
-    classDef maker fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
-    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
-    classDef log fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
-    classDef human fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef maker fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef check fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
+    classDef file fill:#f1f5f9,stroke:#64748b,stroke-width:2.5px,color:#334155,font-weight:600;
+    classDef log fill:#ede9fe,stroke:#8b5cf6,stroke-width:2.5px,color:#5b21b6,font-weight:600;
+    classDef human fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
 ```
 
 ## Shared rules (binding for every loop)
@@ -60,6 +61,7 @@ flowchart LR
 | Path | Owner (only writer) | Everyone else |
 | ------ | -------------------- | --------------- |
 | `docs/*-part-*` step pages + `README.md`, `docs/09-methods/`, `docs/10-operating/` | **step-writer** (Day 2) | read-only |
+| `starters/` and the **banner line only** of `docs/00-start-here/README.md`, `docs/01-prerequisites/environment-setup.md`, `docs/02-foundations/mental-models.md` | **step-writer** (pass-3 grant, human-approved 2026-07-19) | read-only |
 | `docs/*-part-*/quiz.md`, `docs/*-part-*/flashcards.md` | **quiz-writer** (Day 2) | read-only |
 | `docs/` Day 1 entry layer (foundations, prerequisites, routers) | **page-writer** (retired) | read-only |
 | `loops/day2/step-writer/state.md` | **step-writer** | read-only |
@@ -67,7 +69,7 @@ flowchart LR
 | `loops/day2/quiz-writer/state.md` | **quiz-writer** | read-only |
 | `loops/day1/<loop>/state.md` | that Day 1 loop (retired) | read-only |
 | `shared/loop-run-log.md` | all loops, **append-only** | — |
-| `LOOP.md`, `CLAUDE.md`, `loop-plan.md`, `shared/goal.md`, `shared/loop-budget.md`, `STATE.md` | **human** | read-only |
+| `LOOP.md`, `CLAUDE.md`, `loop-plan.md`, `shared/goal.md`, `shared/loop-budget.md`, `shared/style-guide.md`, `STATE.md` | **human** | read-only |
 
 If a loop needs a change outside its ownership, it writes the request into its own
 `state.md` under "Escalations" and stops touching that path.

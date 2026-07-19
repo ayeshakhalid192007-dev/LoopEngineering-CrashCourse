@@ -1,0 +1,35 @@
+# Spine: `<loop-name>`
+
+> **Owned by `<loop-name>`. No other loop may write this file.**
+> Definition: [`LOOP.md`](LOOP.md) · Rulebook: `<path to your LOOP.md rulebook>`
+>
+> Rename this file to `<loop-name>-state.md` and **commit it before the first beat.**
+> An uncommitted spine is already lost.
+
+**Status:** `<⏳ running / ✅ stopped on success / 🧯 stopped on limit / 🪨 no-progress>`
+**Last beat:** `<YYYY-MM-DDTHH:MM:SSZ>`
+**Runs used:** `<n>` / `<max>` · **Tokens used:** `≈<n>k` / `<max>k`
+
+---
+
+## Checklist (the work)
+
+- [ ] `<first unit of work>`
+- [ ] `<second unit of work>`
+- [ ] `<…>`
+
+## Run history
+
+| # | Time (Z) | Duration | Items found | Actions taken | Tokens | Outcome |
+| - | -------- | -------- | ----------- | ------------- | ------ | ------- |
+| 1 | `<HH:MM:SS>` | `<Ns>` | `<n>` | `<n>` | `<n>k` | `<report-only / write>` |
+
+## Findings / escalations
+
+`<Record what the beat found and anything that needs a human. This is what the next
+beat — and you — actually read. Escalations are a guardrail succeeding, not failing.>`
+
+## Lessons
+
+`<When a beat disappoints, note WHY here, then fix the skill/rubric/spec — not the
+output. This is where hill-climbing starts.>`

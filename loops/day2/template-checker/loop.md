@@ -38,17 +38,18 @@ Two Day 1 lessons applied:
    as a *ceiling*; batching reviews per finished part is a valid reading.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     SW("step-writer<br/>the maker"):::maker -->|writes| DOCS[("docs/*-part-*<br/>methods · operating")]:::file
     TC("template-checker<br/>the grader"):::check -.->|reads only| DOCS
     TC -->|"PASS / FAIL<br/>+ what's missing"| ST[("own state.md<br/>(committed!)")]:::file
     ST -.-> H(["🧑 Human — FAILs go<br/>back on the maker's list"]):::human
     H -.-> SW
-    classDef maker fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
-    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
-    classDef human fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef maker fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef check fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
+    classDef file fill:#f1f5f9,stroke:#64748b,stroke-width:2.5px,color:#334155,font-weight:600;
+    classDef human fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
 ```
 
 ## The rubric (one row per §10 section)
@@ -69,6 +70,46 @@ Index pages (`README.md`), `09-methods/`, and `10-operating/` pages are **struct
 not concept pages — they are graded on: purpose stated, working links, at least one
 diagram or table, no broken template imports. (Same reading Day 1's checker applied to
 `glossary.md`.)
+
+### The tone rubric (added for the step-writer's pass 2, 2026-07-18)
+
+Pages rewritten in the step-writer's pass 2 are additionally graded against the
+**tone checklist** at the bottom of
+[`shared/style-guide.md`](../../../shared/style-guide.md): sentence and paragraph
+caps, em-dash density, hook length, framed code blocks, credited quotes, imperative
+exercises, mechanism-mapped analogies. One FAIL line names the rule broken and the
+section it was broken in. The style guide's "what does NOT change" list is part of
+this rubric — a rewrite that drops a §10 section FAILs regardless of tone. Tone
+rules apply to the prose of structural pages too; the §10 section rubric does not.
+
+Three diff-based checks (provable with `git diff` against the pass-1 version):
+
+1. Every **pre-existing mermaid fence** is byte-identical. A redrawn or restyled
+   diagram is a FAIL.
+2. The ***Sources:* footer and glossary line** are byte-identical on every page.
+   A dropped or reworded reference is a FAIL.
+3. **At most one NEW mermaid diagram** was added, and only where it explains a
+   flow, contrast, or timeline the prose walks through; it must use the house
+   init header and have a framing sentence above it. A second added diagram, or
+   a decorative one, is a FAIL.
+
+### The pass-3 rubric (banners + starter commands, 2026-07-19)
+
+The step-writer's pass 3 is mechanical, so it is graded by presence and diff, not
+by the §10 concept rubric:
+
+1. **Banners gone.** `grep -rn 'assets/banner' docs/` returns nothing. For each of
+   the 11 landing pages listed in the step-writer's `state.md`, the diff shows
+   **only** the leading banner image line and its trailing blank line removed — any
+   other changed line on those pages is a FAIL.
+2. **Starter file present and correct.** `starters/getting-started.md` exists with a
+   `## Manual setup` section and a `## Starter commands` section. The manual `cp -r`
+   flow is preserved; the four S7 `npx` commands appear verbatim; the S7 attribution
+   footer is present. A missing section or command is a FAIL.
+3. **Link added.** `starters/README.md` links `getting-started.md`, and its existing
+   `cp -r` line is unchanged.
+4. **Tone.** Group B prose is graded against the style-guide tone checklist. Flashy
+   or informal wording is a FAIL with the offending line named.
 
 ## Limits
 

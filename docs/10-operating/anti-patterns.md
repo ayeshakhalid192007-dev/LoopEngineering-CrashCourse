@@ -1,15 +1,15 @@
 # Anti-Patterns
 
-> [Failure modes](failure-modes.md) are how running loops break. Anti-patterns are
-> how loops get *designed* broken — the mistakes this catalog exists to catch at
-> the whiteboard, where they cost a conversation instead of an incident.
+> [Failure modes](failure-modes.md) are how running loops break. Anti-patterns are how loops get
+> *designed* broken in the first place — the mistakes this catalog exists to catch at the
+> whiteboard, where they cost you a conversation instead of an incident.
 
 ## Design anti-patterns
 
 | Anti-pattern | Why it feels right | Why it's wrong | Instead |
 | --- | --- | --- | --- |
 | **No spending limit** | "it's just a small loop" | small × unattended × daily compounds | caps + tripwire before beat 1 |
-| **No stuck-check** | "it'll finish eventually" | doom loops burn budget invisibly | no-progress stop, 3 beats |
+| **No stuck-check** | "it'll finish eventually" | doom loops burn budget invisibly ([the eight infinite-loop scenarios](infinite-loops.md)) | no-progress stop, 3 beats |
 | **Maker grades itself** | "self-review saves a loop" | blind spots co-sign their own bugs | separate checker, cheapest kind that works |
 | **Vague stopping condition** | "we'll know it when we see it" | the loop won't; it manufactures plausible progress | stop written as a machine-checkable spec |
 | **Prompting-instead-of-looping maintenance** | each fix is "just one prompt" | you become the heartbeat; nothing accumulates | third repetition → build the loop |
@@ -33,38 +33,41 @@
 
 ## Human anti-patterns
 
-The expensive ones — they arrive last and cost the most:
+The expensive ones — they show up last and cost the most:
 
-- **Cognitive surrender.** "The loop probably knows better" as a reflex. The loop
-  is never the authority on itself; instruments are.
-- **Comprehension debt as a lifestyle.** Shipping faster than anyone understands,
-  indefinitely — until the first "why?" nobody can answer.
-- **Intent debt as a lifestyle.** Specs that stay vague because tightening them is
-  work; the loop collects on every vague word, at scale.
-- **AI gravity.** Each success pulls the next decision toward the system — scope
-  creep without a decider. Antidote: capability changes are *written* decisions.
+- **Cognitive surrender.** "The loop probably knows better," fired off as a reflex. The loop is
+  never the authority on itself. The instruments are.
+- **Comprehension debt as a lifestyle.** Shipping faster than anyone understands, indefinitely —
+  right up until the first "why?" that nobody in the room can answer.
+- **Intent debt as a lifestyle.** Specs left vague because tightening them is genuine work. And
+  the loop collects on every vague word, at scale.
+- **AI gravity.** Each success tugs the next decision toward the system — scope creep with no
+  decider in sight. The antidote: capability changes are *written* decisions.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     D("design<br/>anti-pattern"):::warn -->|"survives the<br/>whiteboard"| O("operational<br/>failure mode"):::bad
     O -->|"survives the<br/>instruments"| H("human<br/>anti-pattern"):::worse
     CATCH1(["cheapest catch:<br/>this page, at design"]):::win -.-> D
     CATCH2(["still cheap:<br/>observability"]):::ok -.-> O
     CATCH3(["most expensive:<br/>culture change"]):::stop -.-> H
-    classDef warn fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
-    classDef bad fill:#fff1f2,stroke:#f43f5e,stroke-width:1.5px,color:#9f1239;
-    classDef worse fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
-    classDef win fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
-    classDef ok fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef stop fill:#f1f5f9,stroke:#94a3b8,stroke-width:1.5px,color:#334155;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef warn fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
+    classDef bad fill:#ffe4e6,stroke:#f43f5e,stroke-width:2.5px,color:#9f1239,font-weight:600;
+    classDef worse fill:#ede9fe,stroke:#8b5cf6,stroke-width:2.5px,color:#5b21b6,font-weight:600;
+    classDef win fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
+    classDef ok fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef stop fill:#e2e8f0,stroke:#94a3b8,stroke-width:2.5px,color:#334155,font-weight:600;
 ```
 
-*Use at the whiteboard: walk any new `loop.md` down the design table — every row
-you can't rule out with a sentence is homework before the
+*Use it at the whiteboard: walk any new `loop.md` down the design table — every row you can't
+rule out in a sentence is homework to finish before the
 [design checklist](../09-methods/loop-design-checklist.md) gets its checkmarks.*
 
-*Sources:* the anti-pattern catalog is drawn from the `cobusgreyling/loop-engineering`
-reference repo (MIT, S7) and the essays of Addy Osmani's *Loop Engineering* (S5) and
-Sydney Runkle's *The Art of Loop Engineering* (LangChain, S6). Full attribution:
+*Sources:* the anti-pattern catalog is drawn from the `cobusgreyling/loop-engineering` reference
+repo ([S7](https://github.com/cobusgreyling/loop-engineering), MIT) and the essays of Addy
+Osmani's *Loop Engineering* ([S5](https://addyosmani.com/blog/loop-engineering/)) and Sydney
+Runkle's *The Art of Loop Engineering*
+([S6](https://www.langchain.com/blog/the-art-of-loop-engineering)). Full attribution:
 [resources/sources.md](../../resources/sources.md).

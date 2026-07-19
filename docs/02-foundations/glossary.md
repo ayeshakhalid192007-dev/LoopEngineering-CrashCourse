@@ -1,7 +1,8 @@
 # Glossary
 
-> Every term the course uses, defined once, linked from everywhere. Keep this page
-> open in a tab — the popovers on the website come from these entries.
+> Every term this course leans on, defined once and linked from everywhere. Keep this page
+> open in a spare tab — the popovers on the website are generated straight from these
+> entries.
 
 ## Core
 
@@ -102,7 +103,7 @@ tools and data ("connectors").
 ## How the vocabulary fits together
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':60,'padding':10}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':60,'padding':12}}}%%
 flowchart LR
     HB("Heartbeat"):::time -->|starts a| BT("Beat"):::time
     BT -->|uses the| BD("<b>Body</b><br/>skills · connectors · worktree"):::body
@@ -110,26 +111,28 @@ flowchart LR
     BT -->|is graded by the| CHK("Checker"):::check
     CHK -->|reports through the| HG("Human gate"):::human
     BT -->|repeats until a| STP("<b>Stopping condition</b><br/>success · limit · no-progress"):::stop
-    classDef time fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
-    classDef body fill:#f1f5f9,stroke:#94a3b8,stroke-width:1.5px,color:#334155;
-    classDef spine fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
-    classDef human fill:#ecfdf5,stroke:#10b981,stroke-width:1.5px,color:#065f46;
-    classDef stop fill:#fff1f2,stroke:#f43f5e,stroke-width:1.5px,color:#9f1239;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef time fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
+    classDef body fill:#e2e8f0,stroke:#94a3b8,stroke-width:2.5px,color:#334155,font-weight:600;
+    classDef spine fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef check fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
+    classDef human fill:#d1fae5,stroke:#10b981,stroke-width:2.5px,color:#065f46,font-weight:600;
+    classDef stop fill:#ffe4e6,stroke:#f43f5e,stroke-width:2.5px,color:#9f1239,font-weight:600;
 ```
 
-Read any page in the course and every bold term on it sits somewhere on this picture.
+Open any page in this course, and every bold term on it lands somewhere on this one
+picture. That's the whole point of learning the vocabulary first.
 
 ## Check yourself
 
-**Q: Cover the "six parts" section above and name all six from memory — with the job
-of each.**
+**Q: Cover the "six parts" section above and name all six from memory — with the job of
+each.**
 
 <details><summary>Answer</summary>
 
-Heartbeat (when it runs) · body (what it can do) · spine (what it remembers) ·
-stopping condition (when it's done) · checker (who verifies) · human gate (where a
-person decides). That's the lasting layer of this entire course.
+Heartbeat (when it runs) · body (what it can do) · spine (what it remembers) · stopping
+condition (when it's done) · checker (who verifies) · human gate (where a person decides).
+That right there is the lasting layer of this entire course.
 
 </details>
 
@@ -141,15 +144,22 @@ Paste any three definitions from this page into your agent and ask:
 > I have to build in the outer loop?"
 
 Its answer sorts the vocabulary into harness-given vs. loop-engineered — the exact
-boundary [concepts.md](concepts.md) teaches.
+boundary [concepts.md](concepts.md) is built to teach.
 
 ## When it goes wrong
 
 | Symptom | Cause | Fix |
 | --- | --- | --- |
-| Team uses "loop" for both cycles | Inner/outer distinction not shared | Point them at **beat**: one inner run = one outer beat |
-| "It has a stopping condition" (it's "when it looks done") | Vibe wearing a spec's name | A stop must be one of the three: success, limit, no-progress |
+| Team uses "loop" for both cycles | The inner/outer distinction isn't shared | Point everyone at **beat**: one inner run = one outer beat |
+| "It has a stopping condition" (it means "when it looks done") | A vibe wearing a spec's name | A stop must be one of the three: success, limit, no-progress |
 | Glossary drift — pages redefine terms locally | Definitions duplicated instead of linked | Define once here; pages link, never restate |
 
-*Adapted terminology is credited in [../../resources/sources.md](../../resources/sources.md)
-(notably sources 1, 5, 6, 7).*
+---
+
+*Sources:* terminology adapted from Panaversity's *Loop Engineering: A Crash Course*
+([S1](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course)), Addy
+Osmani's *Loop Engineering* ([S5](https://addyosmani.com/blog/loop-engineering/)), Sydney
+Runkle's *The Art of Loop Engineering*
+([S6](https://www.langchain.com/blog/the-art-of-loop-engineering)), and
+cobusgreyling/loop-engineering ([S7](https://github.com/cobusgreyling/loop-engineering)).
+Full attribution: [../../resources/sources.md](../../resources/sources.md).

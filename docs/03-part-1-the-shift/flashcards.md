@@ -1,7 +1,8 @@
 # Part 1 Flashcards · The Shift
 
-> Ten cards. Cover the right column, answer aloud, flip. The lasting layer — worth
-> actually memorizing; commands are look-up material, these are not.
+> Ten cards. Cover the right column, say the answer out loud, then flip. This is the
+> lasting layer — genuinely worth memorizing. (Commands are look-up material; these
+> are not.)
 
 | # | Front | Back |
 | - | ----- | ---- |
@@ -18,3 +19,12 @@
 
 *Drill until instant, then: [Part 1 quiz](quiz.md) ·
 [Part 2](../04-part-2-heartbeat/README.md)*
+
+---
+
+*Sources:* these cards test Part 1, which draws on Panaversity's *Loop Engineering: A
+Crash Course* ([S1](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course)),
+Addy Osmani's *Loop Engineering* ([S5](https://addyosmani.com/blog/loop-engineering/)),
+and Sydney Runkle's *The Art of Loop Engineering*
+([S6](https://www.langchain.com/blog/the-art-of-loop-engineering)). Full attribution:
+[resources/sources.md](../../resources/sources.md).

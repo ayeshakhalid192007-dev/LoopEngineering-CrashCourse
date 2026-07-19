@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" role="img" aria-label="Loop Engineering: a heartbeat runs the agent, the body does the work, a checker verifies, and a spine remembers — every beat ends at a provable stop, and you stay the engineer.">
+  <defs>
+    <linearGradient id="purpleSwoosh" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#4c1d95"/>
+    </linearGradient>
+    <linearGradient id="goldSwoosh" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbbf24"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7c3aed"/>
+      <stop offset="0.55" stop-color="#c026d3"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="beatGold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbbf24"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="bodyPurple" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#6d28d9"/>
+    </linearGradient>
+    <linearGradient id="checkTeal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#14b8a6"/>
+      <stop offset="1" stop-color="#0d9488"/>
+    </linearGradient>
+    <linearGradient id="spineViolet" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a855f7"/>
+      <stop offset="1" stop-color="#7e22ce"/>
+    </linearGradient>
+    <radialGradient id="ringGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#c026d3" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#c026d3" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#4c1d95" flood-opacity="0.16"/>
+    </filter>
+    <filter id="nodeShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#4c1d95" flood-opacity="0.28"/>
+    </filter>
+    <clipPath id="frame"><rect width="1200" height="380" rx="26"/></clipPath>
+  </defs>
+
+  <!-- canvas -->
+  <rect width="1200" height="380" rx="26" fill="#f6f4fc"/>
+
+  <g clip-path="url(#frame)">
+    <!-- corner swooshes -->
+    <path d="M -60 -60 L 190 -60 Q 60 44 22 250 Q -24 130 -60 56 Z" fill="url(#purpleSwoosh)" opacity="0.95"/>
+    <path d="M -60 -60 L 128 -60 Q 34 30 8 170 Q -34 92 -60 34 Z" fill="#fbbf24" opacity="0.35"/>
+    <path d="M 1260 440 L 820 440 Q 1060 320 1180 90 Q 1230 260 1260 320 Z" fill="url(#purpleSwoosh)" opacity="0.95"/>
+    <path d="M 1260 440 L 940 440 Q 1120 350 1200 190 Q 1240 300 1260 350 Z" fill="url(#goldSwoosh)" opacity="0.85"/>
+
+    <!-- sparkles -->
+    <g fill="#f59e0b">
+      <path d="M 470 46 l 5 13 l 13 5 l -13 5 l -5 13 l -5 -13 l -13 -5 l 13 -5 z"/>
+      <path d="M 214 250 l 3.5 9 l 9 3.5 l -9 3.5 l -3.5 9 l -3.5 -9 l -9 -3.5 l 9 -3.5 z"/>
+    </g>
+    <g fill="#7c3aed">
+      <path d="M 430 92 l 3.5 9 l 9 3.5 l -9 3.5 l -3.5 9 l -3.5 -9 l -9 -3.5 l 9 -3.5 z"/>
+      <path d="M 505 96 l 3 7.5 l 7.5 3 l -7.5 3 l -3 7.5 l -3 -7.5 l -7.5 -3 l 7.5 -3 z"/>
+    </g>
+  </g>
+
+  <!-- title block -->
+  <text x="70" y="150" font-family="ui-sans-serif, system-ui, Segoe UI, sans-serif" font-size="60" font-weight="800" letter-spacing="0.5"><tspan fill="#7c3aed">LOOP</tspan><tspan fill="#1a1246"> ENGINEERING</tspan></text>
+  <rect x="72" y="170" width="150" height="7" rx="3.5" fill="url(#goldSwoosh)"/>
+  <text x="72" y="214" font-family="ui-sans-serif, system-ui, Segoe UI, sans-serif" font-size="21" font-weight="600" fill="#3b3170">Design the system that prompts the agent —</text>
+  <text x="72" y="243" font-family="ui-sans-serif, system-ui, Segoe UI, sans-serif" font-size="21" font-weight="700" fill="#6d28d9">not the prompt.</text>
+
+  <!-- course pill -->
+  <g transform="translate(72,278)">
+    <rect width="304" height="38" rx="19" fill="#4c1d95"/>
+    <circle cx="26" cy="19" r="9" fill="#fbbf24"/>
+    <path d="M 21 19 l 3 3 l 7 -8" fill="none" stroke="#4c1d95" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="46" y="25" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="800" letter-spacing="1.1" fill="#ffffff">A HANDS-ON CRASH COURSE</text>
+  </g>
+
+  <!-- the loop ring -->
+  <g transform="translate(918,190)">
+    <circle r="150" fill="url(#ringGlow)"/>
+    <circle r="118" fill="none" stroke="#e5ddf7" stroke-width="9"/>
+    <circle r="118" fill="none" stroke="url(#ring)" stroke-width="9" stroke-dasharray="560 741" stroke-linecap="round" transform="rotate(-90)"/>
+
+    <!-- flow arrows around the ring -->
+    <g fill="#a855f7">
+      <path d="M 83 -83 l 5 -13 l 8 12 z"/>
+      <path d="M 83 83 l 13 -1 l -6 13 z"/>
+      <path d="M -83 83 l -5 13 l -8 -12 z"/>
+      <path d="M -83 -83 l -13 1 l 6 -13 z"/>
+    </g>
+
+    <!-- heartbeat (top) -->
+    <g transform="translate(0,-118)" filter="url(#nodeShadow)">
+      <circle r="33" fill="url(#beatGold)"/>
+      <path d="M -17 0 L -7 0 L -2 -12 L 3 13 L 8 -4 L 12 0 L 17 0" fill="none" stroke="#ffffff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="0" y="-118" dy="52" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="800" fill="#1a1246">heartbeat</text>
+
+    <!-- body / agent (right) -->
+    <g transform="translate(118,0)" filter="url(#nodeShadow)">
+      <circle r="33" fill="url(#bodyPurple)"/>
+      <rect x="-11" y="-11" width="22" height="22" rx="4" fill="none" stroke="#ffffff" stroke-width="3"/>
+      <path d="M -6 -20 v 6 M 0 -20 v 6 M 6 -20 v 6 M -6 14 v 6 M 0 14 v 6 M 6 14 v 6 M -20 -6 h 6 M -20 0 h 6 M -20 6 h 6 M 14 -6 h 6 M 14 0 h 6 M 14 6 h 6" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"/>
+    </g>
+    <text x="118" y="0" dy="52" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="800" fill="#1a1246">body</text>
+
+    <!-- checker (bottom) -->
+    <g transform="translate(0,118)" filter="url(#nodeShadow)">
+      <circle r="33" fill="url(#checkTeal)"/>
+      <path d="M -14 1 L -4 12 L 15 -12" fill="none" stroke="#ffffff" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="0" y="118" dy="52" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="800" fill="#1a1246">checker</text>
+
+    <!-- spine (left) -->
+    <g transform="translate(-118,0)" filter="url(#nodeShadow)">
+      <circle r="33" fill="url(#spineViolet)"/>
+      <g stroke="#ffffff" stroke-width="3" fill="none" stroke-linejoin="round">
+        <rect x="-14" y="-14" width="28" height="8" rx="2"/>
+        <rect x="-14" y="-4" width="28" height="8" rx="2"/>
+        <rect x="-14" y="6" width="28" height="8" rx="2"/>
+      </g>
+    </g>
+    <text x="-118" y="0" dy="52" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="800" fill="#1a1246">spine</text>
+
+    <!-- center: provable stop -->
+    <circle r="42" fill="#1a1246"/>
+    <circle r="42" fill="none" stroke="url(#ring)" stroke-width="3"/>
+    <text y="-3" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="800" fill="#ffffff">provable</text>
+    <text y="15" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="800" fill="#fbbf24">stop</text>
+  </g>
+
+  <!-- human / engineer gate -->
+  <g transform="translate(72,330)" filter="url(#soft)">
+    <rect width="214" height="44" rx="14" fill="#ffffff"/>
+    <rect x="0.5" y="0.5" width="213" height="43" rx="13.5" fill="none" stroke="#e5ddf7"/>
+    <g transform="translate(30,22)">
+      <circle cy="-7" r="7.5" fill="#7c3aed"/>
+      <path d="M -12 13 a 12 12 0 0 1 24 0 z" fill="#7c3aed"/>
+    </g>
+    <text x="54" y="19" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="700" fill="#1a1246">You stay</text>
+    <text x="54" y="37" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="800" fill="#6d28d9">the engineer</text>
+  </g>
+</svg>

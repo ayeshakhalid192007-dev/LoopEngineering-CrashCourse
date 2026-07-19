@@ -1,34 +1,36 @@
 # Learning Tracks — the T1→T4 map
 
-> Four tracks take you from never-having-built-a-loop to designing and governing loop
-> *fleets*. You graduate a track by **building**, not by reading.
+> Four tracks carry you from *never having built a loop* all the way to *designing and
+> governing loop fleets*. And you graduate each one by **building**, never by reading.
 
 ## The hook
 
-A colleague asks: "I did the intro — am I qualified to put a loop on our production
-repo?" The honest answer isn't a page count, it's an exit assessment: *show me the loop
-you built, its stopping condition, and who checks its work.* Tracks make that answer
-concrete.
+A colleague corners you: "I finished the intro — am I qualified to put a loop on our
+production repo?" The honest answer is never a page count. It's an exit assessment:
+*show me the loop you built, its stopping condition, and who checks its work.* Tracks
+exist to turn that fuzzy question into a concrete, gradeable one.
 
 ## How tracks work (plain English)
 
-Each track is a contract with three parts: an **entry check** (what you're assumed to
-know — verify it in minutes), a **body of study** (pages plus labs), and an **exit
-assessment** (something you build that a rubric can grade). Finish the exit assessment
-and the next track's entry check is already satisfied.
+Every track is a contract with three clauses. An **entry check** — what you're assumed
+to know, verifiable in minutes, not a quiz. A **body of study** — pages plus labs. And
+an **exit assessment** — something you build that a rubric can actually grade. The design
+has one deliberate property worth pointing out: finish one track's exit, and you have
+already satisfied the next track's entry. There is never a gap to fall into.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':40,'rankSpacing':70,'padding':10}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':70,'padding':12}}}%%
 flowchart LR
     T1("<b>T1</b><br/>Foundations"):::t1 -->|"exit: run your first<br/>in-session loop"| T2("<b>T2</b><br/>Practitioner"):::t2
     T2 -->|"exit: a loop with a provable<br/>stop and a separate checker"| T3("<b>T3</b><br/>Engineer"):::t3
     T3 -->|"exit: the same six-part loop<br/>shipped in two tools"| T4("<b>T4</b><br/>Ultra-Pro"):::t4
     T4 -->|capstone| C(["🎖 Loop Ready<br/>certification"]):::cert
-    classDef t1 fill:#eef6ff,stroke:#3b82f6,stroke-width:1.5px,color:#1e40af;
-    classDef t2 fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
-    classDef t3 fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef t4 fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
-    classDef cert fill:#ecfdf5,stroke:#10b981,stroke-width:2px,color:#065f46;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef t1 fill:#dbeafe,stroke:#3b82f6,stroke-width:2.5px,color:#1e40af,font-weight:600;
+    classDef t2 fill:#ede9fe,stroke:#8b5cf6,stroke-width:2.5px,color:#5b21b6,font-weight:600;
+    classDef t3 fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef t4 fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
+    classDef cert fill:#d1fae5,stroke:#10b981,stroke-width:2.5px,color:#065f46,font-weight:600;
 ```
 
 ## The four tracks
@@ -71,8 +73,9 @@ flowchart LR
 
 ## Which tools you'll touch
 
-Every track teaches with **Claude Code ↔ OpenCode** side by side; Codex and Grok appear
-where a mechanic differs. Verify your setup:
+Every track teaches with **Claude Code ↔ OpenCode** shown side by side, and brings in
+Codex and Grok only where a mechanic genuinely differs. Before you begin, confirm your
+setup answers back:
 
 ```claude
 claude --version
@@ -83,37 +86,39 @@ opencode --version
 ```
 
 > [!NOTE]
-> **Going deeper:** the tracks map onto the "lasting vs mechanical" split — tracks
-> certify the *lasting* layer (shapes, judgment). The mechanical layer (today's flags
-> and commands) is looked up, never memorized. See
+> **Going deeper:** the tracks map cleanly onto the "lasting vs. mechanical" split. What
+> a track *certifies* is the lasting layer — the shapes and the judgment. The mechanical
+> layer (this week's flags and commands) is something you look up, never something you
+> memorize. The distinction is drawn out in
 > [02-foundations/mental-models.md](../02-foundations/mental-models.md).
 
 ## Check yourself
 
-**Q: You finished T2's exit assessment. What's the T3 entry check, and do you pass it?**
+**Q: You just finished T2's exit assessment. What is the T3 entry check — and do you
+already pass it?**
 
 <details><summary>Answer</summary>
 
-The T3 entry check is "you've assembled a working loop of your own" — which is exactly
-what T2's exit assessment made you build. That's the design: each exit satisfies the
-next entry, so there's never a placement gap.
+The T3 entry check is "you've assembled a working loop of your own" — which is *exactly*
+what T2's exit assessment made you build. That is the whole design at work: every exit
+quietly satisfies the next entry, so you never hit a placement gap.
 
 </details>
 
 ## Try With AI
 
 Paste your current track's **exit assessment** into your agent and ask: "Draft the
-smallest plan to get me there in one week, using only this repo's pages and labs."
-Grade *its plan* against the track table above — did it skip the labs? (Reading
-doesn't graduate a track. Building does.)
+smallest plan to get me there in one week, using only this repo's pages and labs." Now do
+the interesting part — grade *its plan* against the track table above. Did it quietly
+drop the labs? (Reading never graduates a track. Building does.)
 
 ## When it goes wrong
 
 | Symptom | Cause | Fix |
 | --- | --- | --- |
-| Stuck mid-track, pages feel abstract | Skipped the labs | Do the track's first lab before reading further |
-| Passed the exit but production loops still scare you | Exit done in a toy repo only | Re-run the assessment on a real (low-stakes) repo |
-| Team members all claim different tracks | Self-assessment drift | Use entry checks as a shared bar — they're verifiable in minutes |
+| Stuck mid-track, pages feel abstract | You skipped the labs | Do the track's first lab before reading any further |
+| Passed the exit, but production loops still scare you | Exit was done in a toy repo only | Re-run the assessment on a real (but low-stakes) repo |
+| Teammates all claim different tracks | Self-assessment drift | Treat the entry checks as a shared bar — they're verifiable in minutes |
 
 ---
 
@@ -121,5 +126,5 @@ doesn't graduate a track. Building does.)
 **maker/checker**, **Loop Ready** — see [02-foundations/glossary.md](../02-foundations/glossary.md).
 
 *Sources:* the four-track design and entry/exit checks follow the curriculum backbone of
-Panaversity's *Loop Engineering: A Crash Course* (S1). Full attribution:
-[resources/sources.md](../../resources/sources.md).
+Panaversity's *Loop Engineering: A Crash Course* ([S1](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course)).
+Full attribution: [resources/sources.md](../../resources/sources.md).

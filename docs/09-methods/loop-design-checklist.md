@@ -1,8 +1,7 @@
 # The Loop Design Checklist
 
-> Print-and-fill companion to [the A–F method](make-your-own-loop.md). If any box
-> resists a one-line answer, the design isn't done — the resistance *is* the
-> finding.
+> A print-and-fill companion to [the A–F method](make-your-own-loop.md). If any box refuses a
+> one-line answer, the design isn't finished — that resistance *is* the finding.
 
 ## Identity
 
@@ -23,7 +22,7 @@
 ## The three stops
 
 - [ ] Success = the spec above
-- [ ] Limit = max `____` runs/day (would the number embarrass you if hit? good)
+- [ ] Limit = max `____` runs/day (would the number embarrass you if it were hit? good)
 - [ ] No progress = 3 unchanged beats → log and stop
 
 ## Guardrails
@@ -42,7 +41,7 @@
 
 ## The seven-item minimum before the FIRST run
 
-The same list every loop in this repo clears
+The very same list every loop in this repo clears
 (cf. [Step 13](../07-part-5-complete-loop/13-build-the-loop-twice.md)):
 
 | # | Item | ✔ |
@@ -56,21 +55,28 @@ The same list every loop in this repo clears
 | 7 | Kill switch tested | ☐ |
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     CL("checklist<br/>all boxes"):::step --> Q{"any box<br/>resisted?"}:::limit
     Q -->|yes| FIX("that resistance is<br/>the design flaw — fix it"):::warn
     FIX --> CL
     Q -->|no| RUN(["cleared to run<br/>at L1"]):::win
-    classDef step fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef limit fill:#fff1f2,stroke:#f43f5e,stroke-width:1.5px,color:#9f1239;
-    classDef warn fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
-    classDef win fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef step fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef limit fill:#ffe4e6,stroke:#f43f5e,stroke-width:2.5px,color:#9f1239,font-weight:600;
+    classDef warn fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
+    classDef win fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
 ```
+
+*Rather fill blanks than start from an empty page? This checklist comes pre-poured as a
+copyable kit — see [scaffold-from-template](scaffold-from-template.md) and
+[`starters/_template/`](../../starters/_template/README.md).*
 
 *Live examples of filled-in designs: every `loop.md` under
 [`loops/`](../../loops/README.md) is this checklist, answered for real.*
 
-*Sources:* the checklist condenses the minimum-safe practice of Panaversity's *Loop
-Engineering: A Crash Course* (S1) and the `cobusgreyling/loop-engineering` reference
-repo (MIT, S7). Full attribution: [resources/sources.md](../../resources/sources.md).
+*Sources:* the checklist condenses the minimum-safe practice of Panaversity's *Loop Engineering:
+A Crash Course* ([S1](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course))
+and the `cobusgreyling/loop-engineering` reference repo
+([S7](https://github.com/cobusgreyling/loop-engineering), MIT). Full attribution:
+[resources/sources.md](../../resources/sources.md).

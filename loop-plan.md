@@ -15,7 +15,7 @@
 **The plan at a glance** — one content source, two surfaces, four days:
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     SRC("Nine primary<br/>sources<br/>§5"):::cfg --> DOCS[("docs/<br/>single source<br/>of truth")]:::file
     LOOPS("Build loops<br/>maker + checker fleets<br/>§25"):::maker -->|write, one page<br/>per beat| DOCS
@@ -24,12 +24,13 @@ flowchart LR
     GATES("Quality gates<br/>link-check · lint · audit<br/>§26"):::check -.->|grade| DOCS
     H(["🧑 Human gates<br/>review · checkpoint · deploy"]):::human -.-> GH
     H -.-> WEB
-    classDef cfg fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
-    classDef maker fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
-    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
-    classDef surface fill:#eef6ff,stroke:#3b82f6,stroke-width:1.5px,color:#1e40af;
-    classDef human fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef cfg fill:#ede9fe,stroke:#8b5cf6,stroke-width:2.5px,color:#5b21b6,font-weight:600;
+    classDef maker fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef check fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
+    classDef file fill:#f1f5f9,stroke:#64748b,stroke-width:2.5px,color:#334155,font-weight:600;
+    classDef surface fill:#dbeafe,stroke:#3b82f6,stroke-width:2.5px,color:#1e40af,font-weight:600;
+    classDef human fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
 ```
 
 ---

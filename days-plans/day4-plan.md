@@ -55,7 +55,7 @@ Both deliverables are live, every `docs/` file renders on the site, all CI gates
 Website day has a different shape: less repetitive writing, more build-fix-verify cycles. So today's loops are **verification loops** — a checker drives, and the maker fixes what it finds.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     L1("Loop 1 · build-fixer<br/>run-until-green"):::maker -->|fix FIRST error,<br/>repeat| BUILD{"build +<br/>typecheck<br/>green?"}:::verify
     BUILD -->|no, ≤15 runs| L1
@@ -65,12 +65,13 @@ flowchart LR
     H(["🧑 You — judge the design,<br/>final a11y pass, press deploy"]):::human --> DEP(["🚀 Deployed site"]):::win
     SITE -.-> H
     DEP -.-> L4("Loop 4 · deploy-watcher<br/>every 30m · L1 forever"):::check
-    classDef maker fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
-    classDef verify fill:#fff1f2,stroke:#f43f5e,stroke-width:1.5px,color:#9f1239;
-    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
-    classDef human fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
-    classDef win fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef maker fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef check fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
+    classDef verify fill:#ffe4e6,stroke:#f43f5e,stroke-width:2.5px,color:#9f1239,font-weight:600;
+    classDef file fill:#f1f5f9,stroke:#64748b,stroke-width:2.5px,color:#334155,font-weight:600;
+    classDef human fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
+    classDef win fill:#ede9fe,stroke:#8b5cf6,stroke-width:2.5px,color:#5b21b6,font-weight:600;
 ```
 
 ### Loop 1 — The build-fixer loop (run-until-green)

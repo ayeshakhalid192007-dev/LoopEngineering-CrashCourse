@@ -1,15 +1,16 @@
 # Failure Modes
 
-> When a loop misbehaves, the fastest diagnostic is a name. This catalog gives every
-> operational failure its name, its tell in the instruments, and its fix — grouped
-> by the organ that failed.
+> When a loop misbehaves, the single fastest diagnostic is a name. This catalog gives every
+> operational failure its name, its tell in the instruments, and its fix — sorted by the organ
+> that broke.
 
 ## How to use this page
 
-Something feels off → find the symptom in the tables → the failure's *organ* tells
-you where the fix belongs. (Design-time mistakes have their own catalog in
-[anti-patterns.md](anti-patterns.md); a failure already in progress goes straight
-to the [recovery playbook](recovery-playbook.md).)
+Something feels off? Hunt down the symptom in the tables below. The failure's *organ* tells you
+where the fix belongs. (Design-time mistakes have a catalog of their own in
+[anti-patterns.md](anti-patterns.md); the specific ways a loop runs *forever* get a deep dive in
+[infinite-loops.md](infinite-loops.md); a failure that's already unfolding goes straight to the
+[recovery playbook](recovery-playbook.md).)
 
 ## Heartbeat failures
 
@@ -58,7 +59,7 @@ to the [recovery playbook](recovery-playbook.md).)
 | **Same loop, opposite results** | pattern worked in repo A, misfires in repo B | context differs; re-run the L1 proving period per deployment — trust doesn't transfer |
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':40,'rankSpacing':45,'padding':10}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart TD
     S("a symptom"):::q --> O{"which organ<br/>does the tell<br/>point at?"}:::q
     O --> HBt("heartbeat<br/>timing/firing"):::hb
@@ -67,20 +68,22 @@ flowchart TD
     O --> BGt("budget<br/>spend/attention"):::bg
     O --> HJt("human judgment<br/>debt/gravity"):::hj
     HBt & SPt & VFt & BGt & HJt --> FIX(["fix the ORGAN,<br/>not the incident —<br/>then recovery playbook step 4"]):::win
-    classDef q fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
-    classDef hb fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
-    classDef sp fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef vf fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
-    classDef bg fill:#fff1f2,stroke:#f43f5e,stroke-width:1.5px,color:#9f1239;
-    classDef hj fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
-    classDef win fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef q fill:#f1f5f9,stroke:#64748b,stroke-width:2.5px,color:#334155,font-weight:600;
+    classDef hb fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
+    classDef sp fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef vf fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
+    classDef bg fill:#ffe4e6,stroke:#f43f5e,stroke-width:2.5px,color:#9f1239,font-weight:600;
+    classDef hj fill:#ede9fe,stroke:#8b5cf6,stroke-width:2.5px,color:#5b21b6,font-weight:600;
+    classDef win fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
 ```
 
-*The rule under the whole page: incidents repeat until the organ is fixed. Patch
-the output and you've scheduled the failure again — that's
-[recovery playbook](recovery-playbook.md) step 4's entire argument.*
+*The rule underneath the whole page: incidents keep repeating until the organ is fixed. Patch the
+output and all you've done is reschedule the failure — which is exactly the argument of
+[recovery playbook](recovery-playbook.md) step 4.*
 
-*Sources:* the failure catalog is drawn from the `cobusgreyling/loop-engineering`
-reference repo (MIT, S7) and the essays of Addy Osmani's *Loop Engineering* (S5) and
-Sydney Runkle's *The Art of Loop Engineering* (LangChain, S6). Full attribution:
-[resources/sources.md](../../resources/sources.md).
+*Sources:* the failure catalog is drawn from the `cobusgreyling/loop-engineering` reference repo
+([S7](https://github.com/cobusgreyling/loop-engineering), MIT) and the essays of Addy Osmani's
+*Loop Engineering* ([S5](https://addyosmani.com/blog/loop-engineering/)) and Sydney Runkle's *The
+Art of Loop Engineering* ([S6](https://www.langchain.com/blog/the-art-of-loop-engineering)). Full
+attribution: [resources/sources.md](../../resources/sources.md).

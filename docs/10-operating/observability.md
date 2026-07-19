@@ -1,15 +1,15 @@
 # Observability
 
-> You can't stay the engineer of a fleet you can't see. Observability for loops is
-> three artifacts — the run log, the spines, the escalations — and the discipline
-> of reading them before they're interesting.
+> You can't stay the engineer of a fleet you can't see. Observability for loops boils down to
+> three artifacts — the run log, the spines, the escalations — and the discipline of reading them
+> *before* they get interesting.
 
 ## The three instruments
 
 ### 1 · The run log — the fleet's heartbeat monitor
 
-One shared, append-only file; **one line per beat, no exceptions**. This repo's
-format ([`shared/loop-run-log.md`](../../shared/loop-run-log.md)):
+One shared, append-only file. **One line per beat, no exceptions.** Here's this repo's format
+([`shared/loop-run-log.md`](../../shared/loop-run-log.md)):
 
 ```text
 {"run_id": "2026-07-16T10:31:10Z", "pattern": "checker", "duration_s": 120,
@@ -17,79 +17,80 @@ format ([`shared/loop-run-log.md`](../../shared/loop-run-log.md)):
  "tokens_estimate": 15000, "outcome": "report-only"}
 ```
 
-Every field earns its place: `items_found` vs `actions_taken` *proves* maker ≠
-checker held (3 found, 0 taken — the compliance record from
-[Step 11](../05-part-3-the-body/11-maker-checker.md)); `tokens_estimate` feeds
-[cost management](../08-part-6-human-control/cost-management.md); `outcome` makes the
-line greppable. **Silence is the loudest signal:** a loop with no line for a period
-it should have beaten is *down*, and nothing else will tell you.
+Every field is pulling its weight. `items_found` sitting next to `actions_taken` proves the
+maker–checker split held — 3 found, 0 taken is the compliance record from
+[Step 11](../05-part-3-the-body/11-maker-checker.md). `tokens_estimate` feeds
+[cost management](../08-part-6-human-control/cost-management.md). `outcome` keeps the line
+greppable. And here's the field that isn't there: **silence is the loudest signal of all**. A
+loop with no line for a stretch it should have beaten is *down*, and nothing else on earth will
+tell you.
 
 ### 2 · The spines — per-loop narrative
 
-The run log says *that* things happened; the spine says *what and why*. A healthy
-spine reads like a diary: checklist state, lessons, discrepancies honestly
-recorded. (See this repo's Day 1 spines — including the beat-count discrepancy
-they chose to *document* rather than smooth over. That's what trustworthy state
-looks like.)
+The run log records *that* things happened; the spine explains *what and why*. A healthy spine
+reads like a diary — checklist state, lessons, and discrepancies, all recorded honestly. Read
+this repo's Day 1 spines for the live version: they document a beat-count discrepancy rather than
+quietly smoothing it over. That, right there, is what trustworthy state looks like.
 
 ### 3 · Escalations — the fleet asking for help
 
-An escalation is a loop writing "I need a human" into its own spine and stopping —
-the *success* of a guardrail, not a failure. Track the rate: zero forever means
-limits are too loose to ever trip; constant means the loop's job is misdesigned.
+An escalation is a loop writing "I need a human" into its own spine and then stopping. That's a
+guardrail *succeeding*, not failing. Track the rate. A rate stuck at zero forever means your
+limits are too loose to ever trip; a constant stream means the loop's job is misdesigned.
 
 ## Green ≠ done, operationalized
 
-A status is a claim about the *loop*; verification is a claim about the *work*.
-The [verification ladder](../08-part-6-human-control/verification.md) turns that
-slogan into layers; observability's job is to make each layer's evidence **visible
-in one place** — checker verdicts in a committed spine, script results in CI, the
-run log tying them together by timestamp.
+A status is a claim about the *loop*. Verification is a claim about the *work*. The two pull
+apart, and the [verification ladder](../08-part-6-human-control/verification.md) exists for
+precisely that gap. Observability's job here is simpler: park each layer's evidence **in one
+visible place**. Checker verdicts live in a committed spine. Script results live in CI. The run
+log knits them together by timestamp.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     L("run log<br/>one line per beat"):::file --> V("the 5-minute view:<br/>what ran · what it cost ·<br/>what asked for help"):::step
     S("spines<br/>narrative + lessons"):::file --> V
     E("escalations<br/>guardrails firing"):::warn --> V
     V --> H(["🧑 engineer's beat:<br/>decisions, not archaeology"]):::human
     SIL("⚠️ missing log line<br/>= loop is DOWN"):::limit -.-> V
-    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
-    classDef step fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef warn fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
-    classDef limit fill:#fff1f2,stroke:#f43f5e,stroke-width:1.5px,color:#9f1239;
-    classDef human fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef file fill:#f1f5f9,stroke:#64748b,stroke-width:2.5px,color:#334155,font-weight:600;
+    classDef step fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef warn fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
+    classDef limit fill:#ffe4e6,stroke:#f43f5e,stroke-width:2.5px,color:#9f1239,font-weight:600;
+    classDef human fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
 ```
 
 ## The five-minute fleet review
 
-The test of your observability: can you answer these in five minutes, from files,
+The real test of your observability: can you answer these five in five minutes, from files alone,
 without asking any model?
 
 1. What ran yesterday, and did anything that *should* have run stay silent?
-2. What did each loop cost, and who's nearest their tripwire?
+2. What did each loop cost, and who's closest to their tripwire?
 3. Did any maker take an action its checker or level doesn't justify?
-4. What escalated, and has a human responded to each?
-5. Is any spine's story inconsistent with the log's numbers?
+4. What escalated, and has a human answered each one?
+5. Is any spine's story out of step with the log's numbers?
 
-If any answer requires reconstruction, that's the observability gap to fix *this
-week* — reconstruction after the fact is exactly how this repo's Day 1 spines had
-to be rebuilt, and some of that history is permanently gone.
+If any answer requires reconstruction, you've just located your observability gap. Fix it *this
+week*. This repo rebuilt its Day 1 spines by reconstruction, and some of that history is gone for
+good.
 
 ## Practical defaults
 
-- **Retention:** prune run-log entries older than 30 days (this repo's rule);
-  spines keep their narrative — they're the long-term memory.
-- **Timestamps:** UTC everywhere, ISO-8601, or correlating log↔spine↔CI becomes
-  archaeology.
-- **Dashboards:** optional; files are the source of truth. A dashboard that
-  disagrees with the run log is wrong by definition.
-- **Alerting:** two rules only — page on *silence* (expected beat missing) and on
-  *escalation*. Alerting on every beat trains you to ignore alerts.
+- **Retention:** prune run-log entries older than 30 days (this repo's rule). Spines keep their
+  narrative — they're the long-term memory.
+- **Timestamps:** UTC everywhere, ISO-8601. Anything else turns correlating the log, the spine,
+  and CI into archaeology.
+- **Dashboards:** optional. Files are the source of truth, and a dashboard that disagrees with the
+  run log is wrong by definition.
+- **Alerting:** just two rules — page on *silence* (an expected beat missing) and on *escalation*.
+  Alert on every beat and you'll train yourself to ignore alerts.
 
-*Next in the handbook: what the instruments catch —
-[failure-modes.md](failure-modes.md).*
+*Next in the handbook: what the instruments catch — [failure-modes.md](failure-modes.md).*
 
-*Sources:* observability and “green ≠ done” draw on Panaversity's *Loop Engineering: A
-Crash Course* (S1) and Addy Osmani's *Loop Engineering* (S5). Full attribution:
-[resources/sources.md](../../resources/sources.md).
+*Sources:* observability and "green ≠ done" draw on Panaversity's *Loop Engineering: A Crash
+Course* ([S1](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course)) and Addy
+Osmani's *Loop Engineering* ([S5](https://addyosmani.com/blog/loop-engineering/)). Full
+attribution: [resources/sources.md](../../resources/sources.md).

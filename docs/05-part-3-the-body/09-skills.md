@@ -1,27 +1,34 @@
 # Step 9 · Skills
 
-> Every beat starts with total amnesia. A skill is the move you teach once, so no
-> beat ever has to figure it out again — and the loop prompt shrinks to a sentence.
+> A loop is reborn with amnesia at the start of every beat. A skill is how you hand that
+> newborn a cheat sheet — write the move down once, and no future beat ever has to
+> improvise it.
 
 ## The hook
 
-Beat 14, 2:00 am: the loop spends nine minutes rediscovering how this repo deploys —
-reading scripts, guessing at flags, almost running the wrong one. Beat 15, 2:30 am:
-same nine minutes. Beat 16… You could keep paying that toll every beat, or you could
-write the deploy steps down *once*, in a file the harness hands to any beat that
-needs it. That file is a skill.
+Imagine hiring a brilliant temp who forgets everything the instant their shift ends. Monday
+they work out, from first principles, how your release process runs — and mostly get there.
+Tuesday, the same person, the same puzzle, the same hour lost. Wednesday too. That is your
+loop without skills: capable every beat, but condemned to solve the identical procedure over
+and over because nothing it learns is allowed to stick. The cure is almost insultingly
+simple — leave the instructions taped to the workbench where the next shift will find them.
 
 ## The cold-start problem (plain English)
 
-A loop's beats are stateless — each one wakes knowing nothing it learned last time.
-The spine (Step 12) solves cold-start for **facts** (*what's done, what's next*). A
-**skill** solves cold-start for **procedure**: *how do we deploy, how do we review,
-what's the checklist for a release note*.
+Beats don't remember. Each one boots fresh, with none of the working knowledge the last one
+earned. Two different kinds of forgetting come out of that, and they have two different
+fixes:
 
-Mechanically, a skill is a markdown file (canonically `SKILL.md` in a named folder)
-with a description that tells the harness *when* it applies. The harness surfaces
-matching skills to the agent; invoking one loads the instructions into the beat.
-Result: the loop prompt stops carrying the how-to and shrinks to intent —
+- Forgetting **facts** — *what's finished, what's queued, what failed* — is what the spine
+  (Step 12) is for.
+- Forgetting **procedure** — *the steps to deploy, the review checklist, the shape of a
+  release note* — is what a **skill** is for.
+
+A skill is nothing more exotic than a markdown file (conventionally `SKILL.md`, tucked in a
+named folder) topped with a description that advertises *when* it applies. The harness reads
+those descriptions, offers the matching skill to the agent, and — once invoked — folds the
+steps straight into the beat. The immediate payoff shows up in your prompt, which stops
+lugging a procedure manual around and collapses down to plain intent:
 
 ```text
 # without a skill — the prompt smuggles in a manual
@@ -32,25 +39,52 @@ Result: the loop prompt stops carrying the how-to and shrinks to intent —
 /loop Check the queue. Deploy anything approved, per the deploy skill.
 ```
 
-**Skill vs. plugin:** a skill is *instructions* the model follows (markdown, no
-install); a plugin is *software* the harness runs (code, hooks, commands). Teach
-judgment-shaped procedure as a skill; ship mechanical capability as a plugin.
+Here is that same division of labor drawn out — intent stays in the prompt, the how-to moves
+into the skill:
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+flowchart LR
+    subgraph FAT ["without a skill"]
+      P1("prompt = intent<br/>+ 400-word manual"):::stop --> B1("every beat<br/>re-reads the manual"):::stop
+    end
+    subgraph LEAN ["with a skill"]
+      P2("prompt = intent,<br/>one sentence"):::win --> B2("clean beat"):::win
+      SK[("SKILL.md<br/>written once, versioned")]:::cfg --> B2
+    end
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef stop fill:#e2e8f0,stroke:#94a3b8,stroke-width:2.5px,color:#334155,font-weight:600;
+    classDef win fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
+    classDef cfg fill:#ede9fe,stroke:#8b5cf6,stroke-width:2.5px,color:#5b21b6,font-weight:600;
+    style FAT fill:#fbfcfd,stroke:#cbd5e1,stroke-width:1.5px,color:#334155;
+    style LEAN fill:#fbfffd,stroke:#99f6e4,stroke-width:1.5px,color:#115e59;
+```
+
+One distinction saves confusion later. A **skill** is *words the model chooses to follow* —
+markdown, nothing installed. A **plugin** is *code the harness executes on its own* — hooks,
+commands, real software. If what you're capturing is judgment ("here's how we decide"), it's
+a skill; if it's a mechanical capability ("do this exact thing, every time, no discretion"),
+reach for a plugin.
+
+```mermaid
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     B1("beat 14"):::beat --> CS{"knows the<br/>procedure?"}:::limit
     CS -->|"no skill:<br/>rediscover (9 min,<br/>maybe wrong)"| W1("wobbly beat"):::stop
     CS -->|"skill loaded:<br/>follow the move"| W2("clean beat"):::win
     SK[("SKILL.md<br/>written once")]:::cfg -.-> CS
-    classDef beat fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef limit fill:#fff1f2,stroke:#f43f5e,stroke-width:1.5px,color:#9f1239;
-    classDef cfg fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
-    classDef stop fill:#f1f5f9,stroke:#94a3b8,stroke-width:1.5px,color:#334155;
-    classDef win fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef beat fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef limit fill:#ffe4e6,stroke:#f43f5e,stroke-width:2.5px,color:#9f1239,font-weight:600;
+    classDef cfg fill:#ede9fe,stroke:#8b5cf6,stroke-width:2.5px,color:#5b21b6,font-weight:600;
+    classDef stop fill:#e2e8f0,stroke:#94a3b8,stroke-width:2.5px,color:#334155,font-weight:600;
+    classDef win fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
 ```
 
 ## The mechanics in each tool
+
+The pattern is identical across tools: one small named file holds the steps, and the prompt
+just gestures at it. The deploy example, rendered in each:
 
 ```claude
 # Claude Code — live docs: https://docs.claude.com/en/docs/claude-code
@@ -74,49 +108,53 @@ flowchart LR
 ```
 
 > [!NOTE]
-> **Going deeper:** skills are how a loop's quality becomes *versioned and
-> reviewable* — a bad beat traced to a bad instruction is fixed in the skill file,
-> and every future beat inherits the fix. That's the seed of the hill-climbing idea
-> in [Step 12](../06-part-4-the-spine/12-state-between-runs.md): improve the loop, not
-> just the work.
+> **Going deeper:** a skill is also where a loop's quality becomes something you can *edit*.
+> Trace a bad beat back to a fuzzy instruction, sharpen the line in the skill file, and every
+> beat from then on inherits the correction — no re-training, no re-prompting. That is the
+> quiet beginning of the hill-climbing idea in
+> [Step 12](../06-part-4-the-spine/12-state-between-runs.md): you improve the machine, not
+> just its latest output.
 
 ## Check yourself
 
-**Q: Your loop's prompt has grown to 600 words, mostly step-by-step procedure, and
-beats still occasionally skip a step. What refactor does this page prescribe, and
-what two benefits does it buy?**
+**Q: A loop's prompt has ballooned to 600 words — nearly all of it procedure — and beats
+*still* drop a step now and then. What does this page tell you to do, and what two wins
+does that buy?**
 
 <details><summary>Answer</summary>
 
-Extract the procedure into a **skill** and shrink the prompt back to intent plus a
-pointer. Benefits: **consistency** (every beat follows the same written move instead
-of re-deriving it) and **maintainability** (the procedure is versioned, reviewable,
-and fixable in one place — the prompt never bloats again).
+Lift the procedure out into a **skill**, and let the prompt fall back to intent plus a
+pointer. Two wins: beats become **consistent** (they follow one written move instead of
+reinventing it each time), and the knowledge becomes **maintainable** (it now lives in a
+single versioned, reviewable file you fix once — and the prompt is free to stay short
+forever).
 
 </details>
 
 ## Try With AI
 
-Find a task you've explained to your agent more than twice — that's the tell. Write
-it as a skill: name, one-line description of *when it applies*, then the steps in
-imperative voice. Run one beat that uses it, then deliberately ask for the task in
-different words and confirm the skill still triggers. You've just converted tribal
-knowledge into infrastructure.
+Notice the next task you find yourself explaining to your agent for the third time — that
+repetition is your signal. Capture it as a skill: a name, a one-line note on *when it should
+fire*, then the steps written as commands. Run a beat that leans on it, then rephrase the
+request in completely different words and check that the skill still catches. Congratulations
+— you just turned something that lived only in your head into shared infrastructure.
 
 ## When it goes wrong
 
 | Symptom | Cause | Fix |
 | --- | --- | --- |
-| Every beat re-figures out the same task | Procedure lives nowhere | Write the skill; prompt carries intent only |
-| Skill never triggers | Vague description | Description says *when to use it*, in the words a task would use |
-| Skill triggers on the wrong tasks | Description too broad | Narrow it; skills should be few and sharply scoped |
-| Fat prompt *and* fat skill | Manual pasted, not distilled | A skill is the checklist, not the essay — steps, constraints, done-check |
+| Beats keep re-deriving the same routine | The procedure isn't written down anywhere | Capture it as a skill; leave only intent in the prompt |
+| The skill sits unused | Its description doesn't say when it applies | Phrase the description in the words a real task would use |
+| It fires on tasks it shouldn't | The description casts too wide a net | Tighten the scope — keep skills few and sharp |
+| Bloated prompt *and* bloated skill | You pasted the manual instead of distilling it | A skill is a checklist, not an essay: steps, limits, a done-check |
 
 ---
 
 *Glossary terms used on this page:* **skill**, **cold-start problem**, **plugin**,
 **rules file** — see the [glossary](../02-foundations/glossary.md).
 
-*Sources:* skills and the cold-start problem come from Panaversity's *Loop Engineering:
-A Crash Course* (S1) and Panaversity's *Agentic Coding Crash Course* (S2). Full
+*Sources:* skills and the cold-start problem come from Panaversity's *Loop Engineering: A
+Crash Course* ([S1](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course))
+and *Agentic Coding Crash Course*
+([S2](https://agentfactory.panaversity.org/docs/agentic-coding-crash-course)). Full
 attribution: [resources/sources.md](../../resources/sources.md).

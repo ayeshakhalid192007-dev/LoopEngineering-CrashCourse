@@ -1,30 +1,30 @@
 # Step 1 · From Prompting to Looping
 
-> The single shift the whole course hangs on: stop sending instructions one at a time,
-> start engineering the system that sends them for you.
+> The single shift this entire course hangs on: stop sending instructions one at a time,
+> and start engineering the system that sends them for you.
 
 ## The hook
 
-It's 9:14 am. You've typed "now fix the failing test" for the eleventh time today,
-pasted the same error twice, and re-explained the project layout the agent forgot
-overnight. You are not doing engineering right now — you are doing *dispatch*. And
-dispatch, it turns out, is a job a loop can hold.
+It's 9:14 am. You've typed "now fix the failing test" for the eleventh time today, pasted
+the same stack trace twice, and re-explained the project layout the agent quietly forgot
+overnight. Be honest about what that is: it isn't engineering. It's *dispatch* — and
+dispatch is precisely the job a loop was born to hold.
 
 ## The shift (plain English)
 
-**Prompting** is driving the agent by hand: you decide the next unit of work, you
-send it, you read the result, you decide again. The intelligence sits in the model,
-but the *management* sits in you — every cycle burns your attention.
+**Prompting** is driving the agent by hand. You pick the next unit of work, you send it,
+you read the result, and you decide again. The intelligence lives in the model. The
+management lives in you — and every single cycle spends your attention.
 
-**Looping** moves that management into a system you design once: something decides
-*when* to run (a heartbeat), *what* to work on (a spine of durable state), and *when
-to stop* (a provable condition) — without you in the chair. You stop being the
-dispatcher and become the engineer of the dispatcher.
+**Looping** lifts that management out of your head and into a system you design once. A
+heartbeat decides *when* the agent runs. A spine decides *what* it works on. A provable
+stop decides *when* it's finished. None of it needs you in the chair. You stop dispatching
+work and start engineering the dispatcher.
 
-The critical part of the shift is what you keep: **intent and accountability**. The
-loop inherits your typing, never your judgment. You still decide what "good" means,
-you still review what ships, and you still answer for the result. A loop with your
-keystrokes but without your intent is just intent debt executing at scale.
+And here's the part people miss: the shift deliberately keeps two things with you —
+**intent and accountability**. The loop inherits your typing, never your judgment. You
+still decide what "good" means. You still review what ships. You still answer for the
+result.
 
 ## Prompting vs. looping
 
@@ -38,7 +38,7 @@ keystrokes but without your intent is just intent debt executing at scale.
 | Your role | dispatcher | engineer, reviewer, owner |
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     subgraph HAND ["Prompting — you are the loop"]
       U("🧑 you"):::human -->|prompt| A1("agent"):::agent -->|result| U
@@ -49,17 +49,21 @@ flowchart LR
       A2 --> CK("checker"):::check --> SP
       U2("🧑 you"):::human -.->|"design · review · own"| ENG2(" "):::ghost
     end
-    classDef human fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
-    classDef agent fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef time fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
-    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
-    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef human fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
+    classDef agent fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef time fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
+    classDef file fill:#f1f5f9,stroke:#64748b,stroke-width:2.5px,color:#334155,font-weight:600;
+    classDef check fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
     classDef ghost fill:#ffffff00,stroke:#ffffff00;
     style HAND fill:#fffbf5,stroke:#fcd34d,stroke-width:1.5px,color:#92400e;
     style ENG fill:#fbfbff,stroke:#c7d2fe,stroke-width:1.5px,color:#4338ca;
 ```
 
 ## The same task, both ways
+
+Here is one task — fix the first failing test — written both ways, in each tool. The
+prompting version you type every cycle. The looping version you type once, and walk away.
 
 ```claude
 # Claude Code — live docs: https://docs.claude.com/en/docs/claude-code
@@ -83,42 +87,42 @@ done
 ```
 
 > [!NOTE]
-> **Going deeper:** the loop above already contains four of the six parts you'll meet
-> in [Step 3](03-anatomy-of-a-loop.md) — a heartbeat, a body, a stop, and a limit. The
-> shift is also covered from the spec side in the
+> **Going deeper:** the loop above already carries four of the six parts you'll meet in
+> [Step 3](03-anatomy-of-a-loop.md) — a heartbeat, a body, a stop, and a limit. The same
+> shift is approached from the spec side in the
 > [spec-driven primer](../01-prerequisites/spec-driven-primer.md).
 
 ## Check yourself
 
-**Q: "I prompt the agent 40 times a day, so I'm basically already looping." What's
-missing from that picture?**
+**Q: "I prompt the agent 40 times a day, so I'm basically already looping." What's missing
+from that picture?**
 
 <details><summary>Answer</summary>
 
-The *system* is missing — those 40 prompts have no heartbeat (they happen when you're
-free), no spine (each one starts from your memory), no provable stop, and no checker
-but your tired eyes. Prompting a lot is not looping; looping is when the deciding,
-remembering, and stopping are engineered so they happen **without you in the chair**.
+The *system* is missing. Those 40 prompts have no heartbeat, so they only fire when you're
+free. They have no spine, so each one starts from your memory. They have no provable stop
+and no checker but your tired eyes. Prompting a lot is not looping. Looping is when the
+deciding, remembering, and stopping are engineered to happen **without you in the chair**.
 
 </details>
 
 ## Try With AI
 
-In a throwaway repo, pick a task you'd normally do in 5–10 manual prompts (e.g., "add
-docstrings to every function in `src/`"). First do three of them by hand and notice
-what *you* are deciding between prompts. Then write those decisions down as one loop
-prompt with a stop ("stop when every function has a docstring") and a limit ("max 10
-runs") — and run it. Compare the two transcripts: everything you stopped typing is
-what the loop now owns.
+Pick a task in a throwaway repo that you'd normally do in 5–10 manual prompts — say, "add
+docstrings to every function in `src/`." Do three of them by hand first, and watch closely
+what *you* decide between prompts. Now write those decisions down as one loop prompt with a
+stop ("stop when every function has a docstring") and a limit ("max 10 runs"), and run it.
+Compare the two transcripts. Everything you stopped typing is exactly what the loop now
+owns.
 
 ## When it goes wrong
 
 | Symptom | Cause | Fix |
 | --- | --- | --- |
 | Loop runs but results miss the point | You automated the typing, not the intent | Write the goal + constraints into the prompt/spec before looping it |
-| "It never knows when it's finished" | Stop condition lives in your head | Make the stop provable: a file state, a green suite, an empty checklist |
+| "It never knows when it's finished" | The stop condition lives in your head | Make the stop provable: a file state, a green suite, an empty checklist |
 | You check every beat anyway | No trusted checker | Add a separate checker (Step 11) and a human gate where judgment matters |
-| Fires when you're away, work is wrong by morning | Looping before proving | Start report-only (L1); earn autonomy one level at a time |
+| Fires while you're away, work is wrong by morning | Looping before proving | Start report-only (L1); earn autonomy one level at a time |
 
 ---
 
@@ -126,6 +130,9 @@ what the loop now owns.
 debt**, **human gate** — see the [glossary](../02-foundations/glossary.md).
 
 *Sources:* the shift and the prompting-vs-looping contrast come from Panaversity's *Loop
-Engineering: A Crash Course* (S1) and Addy Osmani's *Loop Engineering* (S5); the origin
-quotes from Peter Steinberger & Boris Cherny's public statements (S8). Full attribution:
+Engineering: A Crash Course*
+([S1](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course)) and Addy
+Osmani's *Loop Engineering* ([S5](https://addyosmani.com/blog/loop-engineering/)); the
+origin quotes from Peter Steinberger & Boris Cherny's public statements
+([S8](https://x.com/steipete)). Full attribution:
 [resources/sources.md](../../resources/sources.md).
