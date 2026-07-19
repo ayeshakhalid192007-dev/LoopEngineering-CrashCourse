@@ -1,5 +1,3 @@
-![Part 5 · A Complete Loop — build the same loop twice, in two tools](../../assets/banner-07-complete-loop.svg)
-
 # Part 5 · A Complete Loop, Twice
 
 > The capstone of the build track: every organ from Parts 1–4 wired together into one

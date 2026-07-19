@@ -1,5 +1,3 @@
-![Part 3 · The Body — worktrees, skills, MCP, maker–checker](../../assets/banner-05-the-body.svg)
-
 # Part 3 · The Body
 
 > What a beat may *do* and *touch* — and how to keep many hands from colliding: isolation,

@@ -5,13 +5,27 @@
 > methods, operating handbook), one page per beat, and stops when the checklist is
 > empty. It is the only Day 2 loop with permission to write its slice of `docs/`.
 
-> **Current mission: pass 2 — the tone rewrite (2026-07-18).** Pass 1 wrote all 36
-> pages and stopped on success. The human's tone study found the pass-1 prose denser
-> and more aphoristic than the source voice (Agent Factory S1–S4, the
-> `cobusgreyling/loop-engineering` repo S7). Pass 2 rewrites every page to match
+> **Current mission: pass 3 — banner cleanup + starter-command reference (2026-07-19).**
+> Passes 1 and 2 are complete (all 36 pages written, then tone-rewritten). Pass 3 is a
+> small, mechanical, human-requested pass with two work groups:
+>
+> 1. **Remove the section banners.** The human finds the SVG banner at the top of every
+>    section landing page unprofessional and does not want one on each part. Delete the
+>    leading `![…](../../assets/banner-*.svg)` image line, and the blank line after it,
+>    from all 11 landing pages. Nothing else on the page changes.
+> 2. **Add a starter-command reference.** Create `starters/getting-started.md` with two
+>    clearly separated sections — **Manual setup** (the existing clone-and-fill flow, kept
+>    exactly as it is, so anyone who prefers to set a loop up by hand still can) and
+>    **Starter commands** (the one-line scaffolding commands from the
+>    `cobusgreyling/loop-engineering` repo, S7). Write both in plain, professional prose —
+>    no flashy or informal wording. Then link the new page from `starters/README.md`.
+>
+> The exact banner list, the exact S7 commands, and the wording rules are baked into
+> [`state.md`](state.md). Read it at the start of every beat.
+>
+> **Pass 2 (complete, 2026-07-18):** rewrote every page to match
 > [`shared/style-guide.md`](../../../shared/style-guide.md) — same pages, same §10
-> structure, same facts; only the voice changes. Read the style guide at the start
-> of every beat.
+> structure, same facts; voice only. Read the style guide before any prose change.
 
 ## The six parts
 
@@ -20,7 +34,7 @@
 | **Heartbeat**          | Conditional — *run-until-done*. Self-paced: the next beat starts as soon as the last one finishes.                                       |
 | **Body**               | May write `docs/*-part-*` (except `quiz.md`/`flashcards.md`), `docs/09-methods/`, `docs/10-operating/`. Own `state.md`. Run-log appends. |
 | **Spine**              | [`state.md`](state.md) — the pass-2 rewrite checklist plus what was finished. Updated every beat.                                        |
-| **Stopping condition** | Every box in the pass-2 checklist is checked AND each page keeps all §10 sections AND passes the style-guide tone checklist. Machine-checkable. |
+| **Stopping condition** | Pass 3: every pass-3 box checked AND `grep -rn 'assets/banner' docs/` returns nothing AND `starters/getting-started.md` exists with both a **Manual setup** and a **Starter commands** section. Machine-checkable. |
 | **Checker**            | The [`template-checker`](../template-checker/loop.md) loop. **This loop never grades its own pages.**                                    |
 | **Human gate**         | The human spot-reads one page per part and declares the Day 2 checkpoint. This loop never declares day-level done.                       |
 
@@ -30,7 +44,20 @@ started this Day 2 run.
 
 ## The prompt
 
-Pass 2 (current — supersedes the pass-1 prompt below):
+Pass 3 (current — the banner + starter-command pass):
+
+```text
+/loop Read loops/day2/step-writer/state.md. Take the FIRST unchecked item in
+the pass-3 checklist. If it is a banner removal: delete the leading banner
+image line, and the blank line after it, from that page — and nothing else.
+If it is the starter-command file: create starters/getting-started.md with a
+"Manual setup" section and a "Starter commands" section exactly as state.md
+specifies, in plain professional prose, then add a link to it from
+starters/README.md. Check the item off, append one line to
+shared/loop-run-log.md. Stop when every pass-3 box is checked.
+```
+
+Pass 2 (complete — the tone rewrite):
 
 ```text
 /loop Read loops/day2/step-writer/state.md and shared/style-guide.md.
@@ -98,6 +125,8 @@ flowchart TD
 | -------------------------------------------------------------------- | ---------------------- |
 | `docs/*-part-*` step pages + `README.md` (NOT quiz/flashcards)       | **write** (sole owner) |
 | `docs/09-methods/`, `docs/10-operating/`                             | **write** (sole owner) |
+| `starters/` (pass-3 grant — `getting-started.md` + a link from `README.md`) | **write** (pass-3 grant) |
+| `docs/00-start-here/README.md`, `docs/01-prerequisites/environment-setup.md`, `docs/02-foundations/mental-models.md` — **banner line only** (pass-3 grant; page-writer retired) | **write** (pass-3 grant) |
 | `loops/day2/step-writer/state.md`                                    | **write** (sole owner) |
 | `shared/loop-run-log.md`                                             | **append-only**        |
 | `docs/*-part-*/quiz.md` + `flashcards.md` (`quiz-writer` owns)       | read-only              |
@@ -107,8 +136,9 @@ flowchart TD
 
 ## The three valid stops
 
-- **Success** — every pass-2 box checked, all §10 sections still present per page,
-  tone checklist passed (per the `template-checker`'s verdicts).
+- **Success** — every pass-3 box checked: all 11 banners gone (`grep` clean) and
+  `starters/getting-started.md` present with both required sections (per the
+  `template-checker`'s verdicts). This loop never grades its own work.
 - **Limit** — 40 runs or 700k tokens.
 - **No progress** — nothing changed for 3 consecutive beats.
 

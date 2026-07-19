@@ -1,5 +1,3 @@
-![Part 1 · The Shift — from prompting to looping](../../assets/banner-03-the-shift.svg)
-
 # Part 1 · The Shift
 
 > From prompting to looping: what actually changes, which layer you're standing in, and

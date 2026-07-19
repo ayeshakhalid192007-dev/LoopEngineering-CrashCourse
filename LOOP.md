@@ -60,6 +60,7 @@ flowchart LR
 | Path | Owner (only writer) | Everyone else |
 | ------ | -------------------- | --------------- |
 | `docs/*-part-*` step pages + `README.md`, `docs/09-methods/`, `docs/10-operating/` | **step-writer** (Day 2) | read-only |
+| `starters/` and the **banner line only** of `docs/00-start-here/README.md`, `docs/01-prerequisites/environment-setup.md`, `docs/02-foundations/mental-models.md` | **step-writer** (pass-3 grant, human-approved 2026-07-19) | read-only |
 | `docs/*-part-*/quiz.md`, `docs/*-part-*/flashcards.md` | **quiz-writer** (Day 2) | read-only |
 | `docs/` Day 1 entry layer (foundations, prerequisites, routers) | **page-writer** (retired) | read-only |
 | `loops/day2/step-writer/state.md` | **step-writer** | read-only |

@@ -16,6 +16,9 @@ cp -r starters/_template starters/<loop-name>
 The step-by-step walkthrough (with a worked example and the cross-tool plumbing) is the
 methods page **[Scaffold a Loop from the Template](../docs/09-methods/scaffold-from-template.md)**.
 
+For both ways to stand up a kit side by side — the manual copy above and the
+command-line scaffolding tools — see **[Getting Started with a Starter Kit](getting-started.md)**.
+
 ## What a kit contains
 
 ```text

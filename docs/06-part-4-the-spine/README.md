@@ -1,5 +1,3 @@
-![Part 4 · The Spine — state that survives between runs](../../assets/banner-06-the-spine.svg)
-
 # Part 4 · The Spine
 
 > One step, one organ, one unbending rule: the model forgets, so the files have to

@@ -1,5 +1,3 @@
-![Operating · Run loops for real — safety, failure modes, fleets](../../assets/banner-10-operating.svg)
-
 # Operating Loops — the Day-to-Day Handbook
 
 > Designing a loop takes an afternoon. *Operating* loops is every day that comes after — the

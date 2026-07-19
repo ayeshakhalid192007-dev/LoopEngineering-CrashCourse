@@ -1,5 +1,3 @@
-![Methods · Design a loop of your own — the A–F method](../../assets/banner-09-methods.svg)
-
 # Make Your Own Loop — the A–F Method
 
 > The 14 steps taught you the organs. This page is the surgery manual: six moves, A through F,

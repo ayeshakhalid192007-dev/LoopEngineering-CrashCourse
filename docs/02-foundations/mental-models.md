@@ -1,5 +1,3 @@
-![Foundations — the vocabulary every loop is built from](../../assets/banner-02-foundations.svg)
-
 # Mental Models
 
 > Three pictures to carry in your head for the whole course: the operator you're

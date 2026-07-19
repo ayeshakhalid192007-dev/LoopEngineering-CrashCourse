@@ -1,5 +1,3 @@
-![Part 6 · Human Control — cost, verification, staying the engineer](../../assets/banner-08-human-control.svg)
-
 # Part 6 · Human Control
 
 > The course ends exactly where accountability lives: with you. Four pages on the one job

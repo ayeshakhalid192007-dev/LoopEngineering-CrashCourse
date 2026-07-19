@@ -1,5 +1,3 @@
-![Prerequisites — install your agent and speed-run the primers](../../assets/banner-01-prerequisites.svg)
-
 # Environment Setup
 
 > Get one AI coding agent installed and verified. Fifteen minutes, done once, never

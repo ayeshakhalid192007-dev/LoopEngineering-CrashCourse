@@ -1,5 +1,3 @@
-![Start Here — the 60-second router that places you on a track](../../assets/banner-00-start-here.svg)
-
 # Start Here — the 60-second router
 
 > You are one honest answer away from knowing exactly where to begin. No account, no

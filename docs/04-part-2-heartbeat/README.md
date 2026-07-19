@@ -1,5 +1,3 @@
-![Part 2 · The Heartbeat — what makes a loop run again](../../assets/banner-04-heartbeat.svg)
-
 # Part 2 · The Heartbeat
 
 > Four ways a loop decides *when to beat* — from a timer you can watch tick, to the world

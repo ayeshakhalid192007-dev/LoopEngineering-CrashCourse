@@ -92,6 +92,24 @@ Three diff-based checks (provable with `git diff` against the pass-1 version):
    init header and have a framing sentence above it. A second added diagram, or
    a decorative one, is a FAIL.
 
+### The pass-3 rubric (banners + starter commands, 2026-07-19)
+
+The step-writer's pass 3 is mechanical, so it is graded by presence and diff, not
+by the §10 concept rubric:
+
+1. **Banners gone.** `grep -rn 'assets/banner' docs/` returns nothing. For each of
+   the 11 landing pages listed in the step-writer's `state.md`, the diff shows
+   **only** the leading banner image line and its trailing blank line removed — any
+   other changed line on those pages is a FAIL.
+2. **Starter file present and correct.** `starters/getting-started.md` exists with a
+   `## Manual setup` section and a `## Starter commands` section. The manual `cp -r`
+   flow is preserved; the four S7 `npx` commands appear verbatim; the S7 attribution
+   footer is present. A missing section or command is a FAIL.
+3. **Link added.** `starters/README.md` links `getting-started.md`, and its existing
+   `cp -r` line is unchanged.
+4. **Tone.** Group B prose is graded against the style-guide tone checklist. Flashy
+   or informal wording is a FAIL with the offending line named.
+
 ## Limits
 
 | Guard            | Value                                        |
