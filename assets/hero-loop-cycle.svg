@@ -71,10 +71,10 @@
 
   <!-- course pill -->
   <g transform="translate(72,278)">
-    <rect width="234" height="38" rx="19" fill="#4c1d95"/>
+    <rect width="304" height="38" rx="19" fill="#4c1d95"/>
     <circle cx="26" cy="19" r="9" fill="#fbbf24"/>
     <path d="M 21 19 l 3 3 l 7 -8" fill="none" stroke="#4c1d95" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="46" y="25" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="800" letter-spacing="1.5" fill="#ffffff">A HANDS-ON CRASH COURSE</text>
+    <text x="46" y="25" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="800" letter-spacing="1.1" fill="#ffffff">A HANDS-ON CRASH COURSE</text>
   </g>
 
   <!-- the loop ring -->
