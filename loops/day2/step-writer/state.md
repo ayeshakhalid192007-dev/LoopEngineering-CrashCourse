@@ -63,7 +63,7 @@ documented in `starters/README.md`:
 cp -r starters/_template starters/<loop-name>
 ```
 
-Point to [Scaffold a Loop from the Template](../docs/09-methods/scaffold-from-template.md)
+Point to [Scaffold a Loop from the Template](../../../docs/09-methods/scaffold-from-template.md)
 for the step-by-step walkthrough.
 
 ### Section 2 — `## Starter commands`
