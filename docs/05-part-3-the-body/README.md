@@ -1,3 +1,5 @@
+![Part 3, the body — what a beat may do and touch: worktrees (elbow room), skills (trained moves), connectors/MCP (hands), and maker-checker (a second pair of eyes)](../../assets/part-3-the-body.svg)
+
 # Part 3 · The Body
 
 > What a beat may *do* and *touch* — and how to keep many hands from colliding: isolation,

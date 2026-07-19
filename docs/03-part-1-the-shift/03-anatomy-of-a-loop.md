@@ -1,3 +1,5 @@
+![Anatomy of a loop: five parts (heartbeat, worktree, skill, sub-agents, connector) plus a spine, the human gate, and the checker ladder from a passing test to mechanical checks to a rubric](../../assets/anatomy-of-a-loop.svg)
+
 # Step 3 · Anatomy of a Loop
 
 > Six parts, every loop, no exceptions: heartbeat, body, spine, stopping condition,

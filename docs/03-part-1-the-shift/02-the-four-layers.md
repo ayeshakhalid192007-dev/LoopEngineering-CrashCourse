@@ -1,3 +1,5 @@
+![The four layers of the work, each wrapping the one before it: prompt engineering, context engineering, harness engineering, and loop engineering (this course)](../../assets/the-four-layers.svg)
+
 # Step 2 · The Four Layers
 
 > Prompt → context → harness → loop. Working out which layer you're standing in is the

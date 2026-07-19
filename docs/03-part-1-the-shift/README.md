@@ -1,3 +1,5 @@
+![The leverage point moves from the prompt (turn by turn) to the loop (a system you design once that prompts itself, with you as the human gate)](../../assets/the-shift.svg)
+
 # Part 1 · The Shift
 
 > From prompting to looping: what actually changes, which layer you're standing in, and

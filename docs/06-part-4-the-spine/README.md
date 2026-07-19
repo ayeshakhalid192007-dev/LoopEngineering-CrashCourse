@@ -1,3 +1,5 @@
+![The spine, memory between runs: the model forgets but the repo does not — each run reads the spine first, does the work, updates the spine last. No spine, no loop](../../assets/part-4-the-spine.svg)
+
 # Part 4 · The Spine
 
 > One step, one organ, one unbending rule: the model forgets, so the files have to

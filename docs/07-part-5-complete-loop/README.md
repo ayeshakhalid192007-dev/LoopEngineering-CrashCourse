@@ -1,3 +1,5 @@
+![The complete loop: six parts all pointing at memory — a daily loop writes run logs to the repository, and once a week the complete loop finds what repeats and proposes a PR for human review](../../assets/complete-loop.svg)
+
 # Part 5 · A Complete Loop, Twice
 
 > The capstone of the build track: every organ from Parts 1–4 wired together into one

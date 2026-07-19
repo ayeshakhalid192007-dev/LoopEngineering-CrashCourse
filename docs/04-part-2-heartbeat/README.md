@@ -1,3 +1,5 @@
+![The four heartbeats a loop can start with — in-session, conditional, scheduled, event-driven — ranging from you-hold-it to it-runs-without-you; each firing is called a beat](../../assets/part-2-heartbeat.svg)
+
 # Part 2 · The Heartbeat
 
 > Four ways a loop decides *when to beat* — from a timer you can watch tick, to the world
