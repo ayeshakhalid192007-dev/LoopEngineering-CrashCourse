@@ -9,7 +9,7 @@
 | Anti-pattern | Why it feels right | Why it's wrong | Instead |
 | --- | --- | --- | --- |
 | **No spending limit** | "it's just a small loop" | small × unattended × daily compounds | caps + tripwire before beat 1 |
-| **No stuck-check** | "it'll finish eventually" | doom loops burn budget invisibly | no-progress stop, 3 beats |
+| **No stuck-check** | "it'll finish eventually" | doom loops burn budget invisibly ([the eight infinite-loop scenarios](infinite-loops.md)) | no-progress stop, 3 beats |
 | **Maker grades itself** | "self-review saves a loop" | blind spots co-sign their own bugs | separate checker, cheapest kind that works |
 | **Vague stopping condition** | "we'll know it when we see it" | the loop won't; it manufactures plausible progress | stop written as a machine-checkable spec |
 | **Prompting-instead-of-looping maintenance** | each fix is "just one prompt" | you become the heartbeat; nothing accumulates | third repetition → build the loop |

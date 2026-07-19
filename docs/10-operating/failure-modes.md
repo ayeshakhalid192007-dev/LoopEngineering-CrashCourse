@@ -8,7 +8,8 @@
 
 Something feels off? Hunt down the symptom in the tables below. The failure's *organ* tells you
 where the fix belongs. (Design-time mistakes have a catalog of their own in
-[anti-patterns.md](anti-patterns.md); a failure that's already unfolding goes straight to the
+[anti-patterns.md](anti-patterns.md); the specific ways a loop runs *forever* get a deep dive in
+[infinite-loops.md](infinite-loops.md); a failure that's already unfolding goes straight to the
 [recovery playbook](recovery-playbook.md).)
 
 ## Heartbeat failures

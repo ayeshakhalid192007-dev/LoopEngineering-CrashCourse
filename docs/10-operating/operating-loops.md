@@ -56,6 +56,7 @@ flowchart LR
 | [safety.md](safety.md) | granting any permission, ever |
 | [observability.md](observability.md) | you can't answer "what did the fleet do yesterday?" in 5 minutes |
 | [failure-modes.md](failure-modes.md) | something feels off and you want its name |
+| [infinite-loops.md](infinite-loops.md) | a loop won't stop — the eight scenarios and their bounds |
 | [anti-patterns.md](anti-patterns.md) | *before* building — the mistakes catalog |
 | [recovery-playbook.md](recovery-playbook.md) | a loop has already failed — five steps, in order |
 | [multi-loop.md](multi-loop.md) | running two makers, or your first fleet |

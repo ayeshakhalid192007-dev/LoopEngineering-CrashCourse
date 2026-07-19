@@ -11,6 +11,47 @@ it ran *two* makers simultaneously. There was no orchestrator, no message bus, a
 any loop call another. Nothing collided. The entire trick is a four-clause contract, written down
 before the second loop ever drew its first breath.
 
+## One loop or many?
+
+Before the contract, the prior question: should there be a second loop at all? A **single-loop
+system** is one heartbeat, one body, one spine, one bill — everything this course teaches through
+Step 13. A **multi-loop system** is several of those running side by side, each still a complete
+six-part loop, coordinated only by the contract below. The fleet is not a new kind of loop; it is
+ordinary loops plus an agreement.
+
+What actually changes when you go from one to many:
+
+| Dimension | Single loop | Multi-loop fleet |
+| --- | --- | --- |
+| **State** | one spine tells the whole story | one spine *per loop*; fleet state is their sum |
+| **Failure surface** | the loop breaks, work stops — simple | one loop fails, the rest keep beating — but new failure classes appear (collisions, ping-pong, ownership gaps) |
+| **Throughput** | serial; bounded by one heartbeat | parallel across independent surfaces |
+| **Cost** | one budget, easy to reason about | multiplies fast — Anthropic measured multi-agent systems at roughly **15× the tokens** of a single chat |
+| **Observability** | read one log | one *shared* log, or you lose the fleet's timeline |
+| **Design overhead** | the six parts | the six parts × N, plus the four-clause contract |
+
+**Reach for a single loop when** the work is one job with one owner: a coherent task stream
+(triage, a sweep, a nightly report), sequential by nature, or anything still in its L1 proving
+period. One loop with a good spine outperforms a fleet whose coordination you haven't earned yet
+— and every failure on [the infinite-loops page](infinite-loops.md) gets strictly harder to
+diagnose with each loop you add.
+
+**Reach for a multi-loop system when** the *jobs* genuinely differ — not the workload size:
+
+- **Different cadences.** A self-paced maker and a 20-minute checker cannot share one heartbeat.
+- **Maker–checker independence.** The grader must not live inside the loop it grades
+  ([Step 11](../05-part-3-the-body/11-maker-checker.md)); at fleet scale that means separate
+  loops, separate spines.
+- **Parallel, disjoint surfaces.** Two makers on two ownership zones (docs and CI, say) that
+  never touch the same path.
+- **Different trust levels.** A proven L3 sweeper and a brand-new L1 reporter shouldn't ride one
+  loop's permissions.
+
+The wrong reason to split is theater — one "role" per loop because roles demo well. Splitting
+pays only when the boundaries are real: each loop ownable, each output verifiable on its own.
+The practical path is the one this repo took: run one loop to done, prove it, then add the
+*second* loop under the contract below — never design a fleet on day one.
+
 ## The coordination contract
 
 ### 1 · One owner per path
@@ -105,4 +146,9 @@ fleets, contracts, spines, and one shared log, arranged exactly as this page pre
 `cobusgreyling/loop-engineering` reference repo,
 [S7](https://github.com/cobusgreyling/loop-engineering), MIT), Sydney Runkle's *The Art of Loop
 Engineering* ([S6](https://www.langchain.com/blog/the-art-of-loop-engineering)), and Anthropic's
-multi-agent essays. Full attribution: [resources/sources.md](../../resources/sources.md).
+multi-agent essays — [*Building Effective
+Agents*](https://www.anthropic.com/research/building-effective-agents) and [*How we built our
+multi-agent research
+system*](https://www.anthropic.com/engineering/built-multi-agent-research-system), the latter
+the source of the ~15× token measurement. Full attribution:
+[resources/sources.md](../../resources/sources.md).

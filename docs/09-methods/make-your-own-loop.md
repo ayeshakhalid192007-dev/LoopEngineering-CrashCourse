@@ -81,6 +81,8 @@ not Tuesday's individual entry.
 
 ## Use it against real paper
 
+- The method applied to a full project, decision by decision:
+  [worked-example-dependency-sweeper](worked-example-dependency-sweeper.md)
 - Blank six-part table + checklist: [loop-design-checklist](loop-design-checklist.md)
 - A ready-made kit to copy and fill: [scaffold-from-template](scaffold-from-template.md)
 - Which heartbeat/pattern fits: [pattern-picker](pattern-picker.md)
