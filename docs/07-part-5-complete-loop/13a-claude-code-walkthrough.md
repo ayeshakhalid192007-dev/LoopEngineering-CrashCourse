@@ -49,18 +49,18 @@ writes to exactly three paths: `triage-report.md`, `triage-state.md`, and the ru
 a guarantee.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     S1("1 · spine<br/>committed"):::file --> S2("2 · skill<br/>SKILL.md"):::cfg
     S2 --> S3("3 · reviewer<br/>agent"):::check --> S4("4 · schedule<br/>07:00 ×1/day"):::time
     S4 --> S5("5 · permissions<br/>report-only"):::limit --> RUN(["one real<br/>morning, watched"]):::win
-    linkStyle default stroke:#64748b,stroke-width:2px;
-    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155;
-    classDef cfg fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px,color:#5b21b6;
-    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
-    classDef time fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
-    classDef limit fill:#fff1f2,stroke:#f43f5e,stroke-width:2px,color:#9f1239;
-    classDef win fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef file fill:#f1f5f9,stroke:#64748b,stroke-width:2.5px,color:#334155,font-weight:600;
+    classDef cfg fill:#ede9fe,stroke:#8b5cf6,stroke-width:2.5px,color:#5b21b6,font-weight:600;
+    classDef check fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
+    classDef time fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
+    classDef limit fill:#ffe4e6,stroke:#f43f5e,stroke-width:2.5px,color:#9f1239,font-weight:600;
+    classDef win fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
 ```
 
 ## The first real morning

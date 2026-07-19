@@ -45,20 +45,20 @@ The expensive ones — they show up last and cost the most:
   decider in sight. The antidote: capability changes are *written* decisions.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     D("design<br/>anti-pattern"):::warn -->|"survives the<br/>whiteboard"| O("operational<br/>failure mode"):::bad
     O -->|"survives the<br/>instruments"| H("human<br/>anti-pattern"):::worse
     CATCH1(["cheapest catch:<br/>this page, at design"]):::win -.-> D
     CATCH2(["still cheap:<br/>observability"]):::ok -.-> O
     CATCH3(["most expensive:<br/>culture change"]):::stop -.-> H
-    linkStyle default stroke:#64748b,stroke-width:2px;
-    classDef warn fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
-    classDef bad fill:#fff1f2,stroke:#f43f5e,stroke-width:2px,color:#9f1239;
-    classDef worse fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px,color:#5b21b6;
-    classDef win fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
-    classDef ok fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
-    classDef stop fill:#f1f5f9,stroke:#94a3b8,stroke-width:2px,color:#334155;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef warn fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
+    classDef bad fill:#ffe4e6,stroke:#f43f5e,stroke-width:2.5px,color:#9f1239,font-weight:600;
+    classDef worse fill:#ede9fe,stroke:#8b5cf6,stroke-width:2.5px,color:#5b21b6,font-weight:600;
+    classDef win fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
+    classDef ok fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef stop fill:#e2e8f0,stroke:#94a3b8,stroke-width:2.5px,color:#334155,font-weight:600;
 ```
 
 *Use it at the whiteboard: walk any new `loop.md` down the design table — every row you can't

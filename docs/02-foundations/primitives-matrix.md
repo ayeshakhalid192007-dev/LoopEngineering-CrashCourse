@@ -29,15 +29,15 @@ belongs to the tool's live docs (linked in the header). The discipline in one li
 | **Headless / loop driver** | `claude -p`, `/loop`, Cron tools | `opencode run` + cron/Actions | `codex exec` + cron | `grok --prompt` + cron |
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':70,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':70,'padding':12}}}%%
 flowchart LR
     CONCEPT("<b>One concept</b><br/>e.g. maker/checker"):::concept --> CC("<b>Claude Code</b><br/>subagent .md"):::tool
     CONCEPT --> OC("<b>OpenCode</b><br/>agent config"):::tool
     CONCEPT --> CX("<b>Codex</b><br/>sub-task"):::tool
     CONCEPT --> GK("<b>Grok</b><br/>subagent"):::tool
-    linkStyle default stroke:#64748b,stroke-width:2px;
-    classDef concept fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
-    classDef tool fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef concept fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef tool fill:#f1f5f9,stroke:#64748b,stroke-width:2.5px,color:#334155,font-weight:600;
 ```
 
 > [!WARNING]

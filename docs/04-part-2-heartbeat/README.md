@@ -16,7 +16,7 @@
 | 07 | [Event-Driven](07-event-driven.md) | the world | dropped-not-queued; always pair with a reconciliation sweep |
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     subgraph MENU ["the heartbeat menu"]
       direction TB
@@ -26,9 +26,9 @@ flowchart LR
       E("⚡ event<br/>step 07"):::hb
     end
     MENU --> PICK(["pick per job —<br/>methods/pattern-picker"]):::next
-    linkStyle default stroke:#64748b,stroke-width:2px;
-    classDef hb fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
-    classDef next fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef hb fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
+    classDef next fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
     style MENU fill:#fffbf5,stroke:#fcd34d,stroke-width:1.5px,color:#92400e;
 ```
 

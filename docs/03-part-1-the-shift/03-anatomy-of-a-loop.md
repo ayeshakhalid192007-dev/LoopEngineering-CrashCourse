@@ -33,7 +33,7 @@ Drop any one of them and the loop earns a familiar failure name:
 - **No human gate:** it ships with no owner.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     subgraph LOOP ["🔄 one loop"]
       direction LR
@@ -43,13 +43,13 @@ flowchart LR
     STOPC("Stopping condition"):::limit -->|"provably met? exit"| HB
     CK("Checker"):::check -.->|grades| B
     H(["🧑 Human gate"]):::human -.->|approves| LOOP
-    linkStyle default stroke:#64748b,stroke-width:2px;
-    classDef time fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
-    classDef beat fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
-    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155;
-    classDef limit fill:#fff1f2,stroke:#f43f5e,stroke-width:2px,color:#9f1239;
-    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
-    classDef human fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef time fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
+    classDef beat fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef file fill:#f1f5f9,stroke:#64748b,stroke-width:2.5px,color:#334155,font-weight:600;
+    classDef limit fill:#ffe4e6,stroke:#f43f5e,stroke-width:2.5px,color:#9f1239,font-weight:600;
+    classDef check fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
+    classDef human fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
     style LOOP fill:#fbfbff,stroke:#c7d2fe,stroke-width:1.5px,color:#4338ca;
 ```
 

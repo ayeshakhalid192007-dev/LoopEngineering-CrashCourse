@@ -15,18 +15,18 @@
 | 11 | [Maker–Checker](11-maker-checker.md) | second pair of eyes | the hand that writes never approves; cheapest checker that catches the failure |
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     B("one beat's body"):::beat --> WT("worktree<br/>where it stands"):::cfg
     B --> SK("skills<br/>how it moves"):::cfg
     B --> MC("connectors<br/>what it reaches"):::cfg
     B --> CK("checker<br/>who grades it"):::check
     CK --> NEXT(["Part 4 ·<br/>the spine"]):::next
-    linkStyle default stroke:#64748b,stroke-width:2px;
-    classDef beat fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
-    classDef cfg fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px,color:#5b21b6;
-    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
-    classDef next fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef beat fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef cfg fill:#ede9fe,stroke:#8b5cf6,stroke-width:2.5px,color:#5b21b6,font-weight:600;
+    classDef check fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
+    classDef next fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
 ```
 
 ## The thread through all four

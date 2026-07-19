@@ -26,7 +26,7 @@ a quiz and flashcards for every part.
 ## How the outcomes become "done"
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     O1("1 · 14 steps written<br/>§10 template"):::outcome --> DOD{"Definition<br/>of done<br/>all boxes"}:::dod
     O2("2 · Indexes + quizzes<br/>+ flashcards per part"):::outcome --> DOD
@@ -34,11 +34,11 @@ flowchart LR
     O4("4 · Operating handbook<br/>7 pages"):::outcome --> DOD
     DOD --> GATE(["🧑 Human gate —<br/>spot-read one page per part"]):::human
     GATE --> CP(["✅ Day 2 checkpoint<br/>declared"]):::win
-    linkStyle default stroke:#64748b,stroke-width:2px;
-    classDef outcome fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
-    classDef dod fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px,color:#5b21b6;
-    classDef human fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
-    classDef win fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef outcome fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef dod fill:#ede9fe,stroke:#8b5cf6,stroke-width:2.5px,color:#5b21b6,font-weight:600;
+    classDef human fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
+    classDef win fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
 ```
 
 ## Definition of done (the provable stopping condition)

@@ -103,7 +103,7 @@ tools and data ("connectors").
 ## How the vocabulary fits together
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':60,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':60,'padding':12}}}%%
 flowchart LR
     HB("Heartbeat"):::time -->|starts a| BT("Beat"):::time
     BT -->|uses the| BD("<b>Body</b><br/>skills · connectors · worktree"):::body
@@ -111,13 +111,13 @@ flowchart LR
     BT -->|is graded by the| CHK("Checker"):::check
     CHK -->|reports through the| HG("Human gate"):::human
     BT -->|repeats until a| STP("<b>Stopping condition</b><br/>success · limit · no-progress"):::stop
-    linkStyle default stroke:#64748b,stroke-width:2px;
-    classDef time fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
-    classDef body fill:#f1f5f9,stroke:#94a3b8,stroke-width:2px,color:#334155;
-    classDef spine fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
-    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
-    classDef human fill:#ecfdf5,stroke:#10b981,stroke-width:2px,color:#065f46;
-    classDef stop fill:#fff1f2,stroke:#f43f5e,stroke-width:2px,color:#9f1239;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef time fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
+    classDef body fill:#e2e8f0,stroke:#94a3b8,stroke-width:2.5px,color:#334155,font-weight:600;
+    classDef spine fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef check fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
+    classDef human fill:#d1fae5,stroke:#10b981,stroke-width:2.5px,color:#065f46,font-weight:600;
+    classDef stop fill:#ffe4e6,stroke:#f43f5e,stroke-width:2.5px,color:#9f1239,font-weight:600;
 ```
 
 Open any page in this course, and every bold term on it lands somewhere on this one

@@ -59,7 +59,7 @@ where the fix belongs. (Design-time mistakes have a catalog of their own in
 | **Same loop, opposite results** | pattern worked in repo A, misfires in repo B | context differs; re-run the L1 proving period per deployment — trust doesn't transfer |
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart TD
     S("a symptom"):::q --> O{"which organ<br/>does the tell<br/>point at?"}:::q
     O --> HBt("heartbeat<br/>timing/firing"):::hb
@@ -68,14 +68,14 @@ flowchart TD
     O --> BGt("budget<br/>spend/attention"):::bg
     O --> HJt("human judgment<br/>debt/gravity"):::hj
     HBt & SPt & VFt & BGt & HJt --> FIX(["fix the ORGAN,<br/>not the incident —<br/>then recovery playbook step 4"]):::win
-    linkStyle default stroke:#64748b,stroke-width:2px;
-    classDef q fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155;
-    classDef hb fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
-    classDef sp fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
-    classDef vf fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
-    classDef bg fill:#fff1f2,stroke:#f43f5e,stroke-width:2px,color:#9f1239;
-    classDef hj fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px,color:#5b21b6;
-    classDef win fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef q fill:#f1f5f9,stroke:#64748b,stroke-width:2.5px,color:#334155,font-weight:600;
+    classDef hb fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
+    classDef sp fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef vf fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
+    classDef bg fill:#ffe4e6,stroke:#f43f5e,stroke-width:2.5px,color:#9f1239,font-weight:600;
+    classDef hj fill:#ede9fe,stroke:#8b5cf6,stroke-width:2.5px,color:#5b21b6,font-weight:600;
+    classDef win fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
 ```
 
 *The rule underneath the whole page: incidents keep repeating until the organ is fixed. Patch the

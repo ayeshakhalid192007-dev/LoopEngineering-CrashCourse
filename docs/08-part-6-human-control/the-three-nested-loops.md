@@ -36,7 +36,7 @@ above them. Break that nesting and you get an anti-pattern with a name:
   governance by drift.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart TB
     subgraph T ["team governance — months: policy, budgets, registry"]
       subgraph Y ["your engineering — days: verify, tune, promote"]
@@ -49,8 +49,8 @@ flowchart TB
     Y -- "configures ↓" --> A
     Y -- "reports ↑ only" --> T
     T -- "sets rules ↓" --> Y
-    linkStyle default stroke:#64748b,stroke-width:2px;
-    classDef beat fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef beat fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
     style A fill:#fbfdfc,stroke:#99f6e4,stroke-width:1.5px,color:#115e59;
     style Y fill:#fbfbff,stroke:#c7d2fe,stroke-width:1.5px,color:#4338ca;
     style T fill:#fffbf5,stroke:#fcd34d,stroke-width:1.5px,color:#92400e;

@@ -21,7 +21,7 @@ is the important part — you don't graduate a track by *reading* it. You gradua
 ## Find your track
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart TD
     A("Do you use an AI coding agent?<br/>Claude Code · OpenCode · Codex · Grok"):::q -->|"no / only chat"| T1
     A -->|"yes, by hand"| B("Can you name the six parts<br/>of a loop?"):::q
@@ -31,12 +31,12 @@ flowchart TD
     C -->|yes| D("Do you run several loops,<br/>or set policy for a team?"):::q
     D -->|no| T3(["<b>T3</b> · Engineer"]):::t3
     D -->|yes| T4(["<b>T4</b> · Ultra-Pro"]):::t4
-    linkStyle default stroke:#64748b,stroke-width:2px;
-    classDef q fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155;
-    classDef t1 fill:#eef6ff,stroke:#3b82f6,stroke-width:2px,color:#1e40af;
-    classDef t2 fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px,color:#5b21b6;
-    classDef t3 fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
-    classDef t4 fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef q fill:#f1f5f9,stroke:#64748b,stroke-width:2.5px,color:#334155,font-weight:600;
+    classDef t1 fill:#dbeafe,stroke:#3b82f6,stroke-width:2.5px,color:#1e40af,font-weight:600;
+    classDef t2 fill:#ede9fe,stroke:#8b5cf6,stroke-width:2.5px,color:#5b21b6,font-weight:600;
+    classDef t3 fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef t4 fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
 ```
 
 | Your answer | Go to | First stop |

@@ -33,7 +33,7 @@ stop, a limit, and a no-progress rule, even a Ralph loop is safe. Without them, 
 of model intelligence is.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart TD
     B("one beat"):::beat --> S{"success<br/>condition met?"}:::limit
     S -->|yes| W(["✅ success stop"]):::win
@@ -42,11 +42,11 @@ flowchart TD
     L -->|no| P{"progress in<br/>last 3 beats?"}:::limit
     P -->|no| PS(["🪨 no-progress stop —<br/>log and escalate"]):::stop
     P -->|yes| B
-    linkStyle default stroke:#64748b,stroke-width:2px;
-    classDef beat fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
-    classDef limit fill:#fff1f2,stroke:#f43f5e,stroke-width:2px,color:#9f1239;
-    classDef win fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
-    classDef stop fill:#f1f5f9,stroke:#94a3b8,stroke-width:2px,color:#334155;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef beat fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef limit fill:#ffe4e6,stroke:#f43f5e,stroke-width:2.5px,color:#9f1239,font-weight:600;
+    classDef win fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
+    classDef stop fill:#e2e8f0,stroke:#94a3b8,stroke-width:2.5px,color:#334155,font-weight:600;
 ```
 
 ## The mechanics in each tool

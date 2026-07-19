@@ -33,7 +33,7 @@ up front:
   across real mornings.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     TR("⏰ trigger<br/>cron · timezone"):::time --> RT("routine beat"):::beat
     P("prompt<br/>(the spec)"):::cfg --> RT
@@ -42,13 +42,13 @@ flowchart LR
     RT -->|"L1: report"| OUT(["📬 morning report<br/>0 actions taken"]):::win
     RT -->|"L2+: writes"| BR[("claude/ branches<br/>only — never main")]:::limit
     CAP("daily caps"):::limit -.-> RT
-    linkStyle default stroke:#64748b,stroke-width:2px;
-    classDef time fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
-    classDef beat fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
-    classDef cfg fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px,color:#5b21b6;
-    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155;
-    classDef limit fill:#fff1f2,stroke:#f43f5e,stroke-width:2px,color:#9f1239;
-    classDef win fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef time fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
+    classDef beat fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef cfg fill:#ede9fe,stroke:#8b5cf6,stroke-width:2.5px,color:#5b21b6,font-weight:600;
+    classDef file fill:#f1f5f9,stroke:#64748b,stroke-width:2.5px,color:#334155,font-weight:600;
+    classDef limit fill:#ffe4e6,stroke:#f43f5e,stroke-width:2.5px,color:#9f1239,font-weight:600;
+    classDef win fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
 ```
 
 ## The mechanics in each tool

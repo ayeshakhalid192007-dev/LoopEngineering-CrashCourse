@@ -36,7 +36,7 @@ grades its own work* — and its checkpoints exist precisely because rule 12 of
 [`CLAUDE.md`](../../CLAUDE.md) forbids declaring "done" before verification has happened.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart TD
     W("the work"):::beat --> L1c("1 · scripts<br/>broken?"):::check
     L1c --> L2c("2 · checker loop<br/>off-spec?"):::check
@@ -44,12 +44,12 @@ flowchart TD
     L3c --> L4c(["4 · 🧑 spot-read<br/>drifting?"]):::human
     L4c --> D(["✅ 'done' may<br/>now be said"]):::win
     G("green status"):::stop -. "is NOT" .-> D
-    linkStyle default stroke:#64748b,stroke-width:2px;
-    classDef beat fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
-    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
-    classDef human fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
-    classDef win fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
-    classDef stop fill:#f1f5f9,stroke:#94a3b8,stroke-width:2px,color:#334155;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef beat fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef check fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
+    classDef human fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
+    classDef win fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
+    classDef stop fill:#e2e8f0,stroke:#94a3b8,stroke-width:2.5px,color:#334155,font-weight:600;
 ```
 
 ## The habit in each tool

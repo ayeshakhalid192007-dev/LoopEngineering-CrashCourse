@@ -32,17 +32,17 @@ seven-item minimum is most of the way done for you.
 ```
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     T[("starters/_template<br/>the blank kit")]:::file --> CP("cp → starters/<loop-name>"):::step
     CP --> FILL("fill the <blanks><br/>LOOP.md · SKILL.md · budget"):::step
     FILL --> COMMIT("commit the spine<br/>before beat 1"):::gate
     COMMIT --> RUN(["run at L1, watched —<br/>one real cycle"]):::win
-    linkStyle default stroke:#64748b,stroke-width:2px;
-    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155;
-    classDef step fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
-    classDef gate fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
-    classDef win fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef file fill:#f1f5f9,stroke:#64748b,stroke-width:2.5px,color:#334155,font-weight:600;
+    classDef step fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef gate fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
+    classDef win fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
 ```
 
 ## What each file in the kit is for

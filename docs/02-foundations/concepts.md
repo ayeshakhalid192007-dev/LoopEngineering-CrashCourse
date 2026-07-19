@@ -37,16 +37,16 @@ that tell you what changed and why.
 ## Harness vs. loop
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':50,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':50,'rankSpacing':55,'padding':12}}}%%
 flowchart TD
     P("<b>1 · Prompt</b><br/>the words you send"):::l1 --> C("<b>2 · Context</b><br/>everything the model sees"):::l2
     C --> H("<b>3 · Harness</b> — code around the model<br/>(tools, permissions, hooks)<br/><i>the inner loop lives here</i>"):::l3
     H --> L("<b>4 · Loop</b> — the outer cycle<br/>(what to work on, when, done-ness)<br/><i>you engineer this</i>"):::l4
-    linkStyle default stroke:#64748b,stroke-width:2px;
-    classDef l1 fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
-    classDef l2 fill:#eef6ff,stroke:#3b82f6,stroke-width:2px,color:#1e40af;
-    classDef l3 fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px,color:#5b21b6;
-    classDef l4 fill:#ecfdf5,stroke:#10b981,stroke-width:2px,color:#065f46;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef l1 fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
+    classDef l2 fill:#dbeafe,stroke:#3b82f6,stroke-width:2.5px,color:#1e40af,font-weight:600;
+    classDef l3 fill:#ede9fe,stroke:#8b5cf6,stroke-width:2.5px,color:#5b21b6,font-weight:600;
+    classDef l4 fill:#d1fae5,stroke:#10b981,stroke-width:2.5px,color:#065f46,font-weight:600;
 ```
 
 The **harness** is the software shell your agent vendor built for you: tool execution,

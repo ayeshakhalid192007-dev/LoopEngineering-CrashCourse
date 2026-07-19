@@ -58,16 +58,16 @@ output. Output fixes evaporate by morning; loop fixes compound. (This is the see
 hill-climbing: see [Step 12](../06-part-4-the-spine/12-state-between-runs.md).)
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     A("A · task<br/>+ shape"):::step --> B2("B · stop<br/>as spec"):::step
     B2 --> C("C · six<br/>parts"):::step --> D("D · stops +<br/>guardrails"):::step
     D --> E("E · prove,<br/>then let go"):::gate --> F("F · improve<br/>the loop"):::win
     F -.->|"each lesson"| C
-    linkStyle default stroke:#64748b,stroke-width:2px;
-    classDef step fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
-    classDef gate fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
-    classDef win fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef step fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef gate fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
+    classDef win fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
 ```
 
 ## Worked in 90 seconds

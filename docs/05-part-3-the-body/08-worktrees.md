@@ -28,7 +28,7 @@ And the decision rule is about *files*, not vibes:
   single unit.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     R[("one git repo<br/>shared history")]:::file --> W1
     R --> W2
@@ -40,10 +40,10 @@ flowchart LR
     end
     W1 -->|"merge only<br/>when green"| MAIN[("main")]:::win
     W2 -->|"merge only<br/>when green"| MAIN
-    linkStyle default stroke:#64748b,stroke-width:2px;
-    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155;
-    classDef maker fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
-    classDef win fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef file fill:#f1f5f9,stroke:#64748b,stroke-width:2.5px,color:#334155,font-weight:600;
+    classDef maker fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef win fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
     style W1 fill:#fbfbff,stroke:#c7d2fe,stroke-width:1.5px,color:#4338ca;
     style W2 fill:#fbfbff,stroke:#c7d2fe,stroke-width:1.5px,color:#4338ca;
 ```

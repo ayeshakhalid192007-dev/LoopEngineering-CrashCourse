@@ -54,7 +54,7 @@ The repo is browsable on GitHub. The tracks map, prerequisites, and foundations 
 The trick: don't write every file by hand, one prompt at a time. Set up small loops that do the repetitive work while you review.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     L1("Loop 1 · page-writer<br/>run-until-done"):::maker -->|writes pages| DOCS[("docs/")]:::file
     L2("Loop 2 · checker<br/>every 10m"):::check -.->|reads| DOCS
@@ -62,11 +62,11 @@ flowchart LR
     L2 & L3 -->|findings| RN[("review-notes")]:::file
     RN -.-> H(["🧑 You — review notes<br/>every hour or two,<br/>commit at checkpoint"]):::human
     H -.->|fixes flow back| L1
-    linkStyle default stroke:#64748b,stroke-width:2px;
-    classDef maker fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
-    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
-    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155;
-    classDef human fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef maker fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef check fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
+    classDef file fill:#f1f5f9,stroke:#64748b,stroke-width:2.5px,color:#334155,font-weight:600;
+    classDef human fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
 ```
 
 ### Loop 1 — The page-writer loop (conditional / run-until-done)

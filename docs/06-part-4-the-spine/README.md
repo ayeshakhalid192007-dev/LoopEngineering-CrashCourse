@@ -13,16 +13,16 @@
 | 12 | [State Between Runs](12-state-between-runs.md) | constitution + diary, updated every beat, **committed** — resume, never restart |
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     B7("beat 7<br/>💥 crash"):::stop --> SP[("committed<br/>spine")]:::file
     SP ==> B8("beat 8<br/>resumes at item 8"):::beat
     NOSP("no spine?"):::limit -.-> B1("beat 1, again,<br/>forever"):::stop
-    linkStyle default stroke:#64748b,stroke-width:2px;
-    classDef stop fill:#f1f5f9,stroke:#94a3b8,stroke-width:2px,color:#334155;
-    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155;
-    classDef beat fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
-    classDef limit fill:#fff1f2,stroke:#f43f5e,stroke-width:2px,color:#9f1239;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef stop fill:#e2e8f0,stroke:#94a3b8,stroke-width:2.5px,color:#334155,font-weight:600;
+    classDef file fill:#f1f5f9,stroke:#64748b,stroke-width:2.5px,color:#334155,font-weight:600;
+    classDef beat fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef limit fill:#ffe4e6,stroke:#f43f5e,stroke-width:2.5px,color:#9f1239,font-weight:600;
 ```
 
 ## Why this part fits on one page

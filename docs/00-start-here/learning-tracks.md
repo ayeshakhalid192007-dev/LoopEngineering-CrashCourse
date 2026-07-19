@@ -19,18 +19,18 @@ has one deliberate property worth pointing out: finish one track's exit, and you
 already satisfied the next track's entry. There is never a gap to fall into.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':70,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':70,'padding':12}}}%%
 flowchart LR
     T1("<b>T1</b><br/>Foundations"):::t1 -->|"exit: run your first<br/>in-session loop"| T2("<b>T2</b><br/>Practitioner"):::t2
     T2 -->|"exit: a loop with a provable<br/>stop and a separate checker"| T3("<b>T3</b><br/>Engineer"):::t3
     T3 -->|"exit: the same six-part loop<br/>shipped in two tools"| T4("<b>T4</b><br/>Ultra-Pro"):::t4
     T4 -->|capstone| C(["🎖 Loop Ready<br/>certification"]):::cert
-    linkStyle default stroke:#64748b,stroke-width:2px;
-    classDef t1 fill:#eef6ff,stroke:#3b82f6,stroke-width:2px,color:#1e40af;
-    classDef t2 fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px,color:#5b21b6;
-    classDef t3 fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
-    classDef t4 fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
-    classDef cert fill:#ecfdf5,stroke:#10b981,stroke-width:2px,color:#065f46;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef t1 fill:#dbeafe,stroke:#3b82f6,stroke-width:2.5px,color:#1e40af,font-weight:600;
+    classDef t2 fill:#ede9fe,stroke:#8b5cf6,stroke-width:2.5px,color:#5b21b6,font-weight:600;
+    classDef t3 fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef t4 fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
+    classDef cert fill:#d1fae5,stroke:#10b981,stroke-width:2.5px,color:#065f46,font-weight:600;
 ```
 
 ## The four tracks

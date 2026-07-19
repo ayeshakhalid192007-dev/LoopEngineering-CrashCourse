@@ -32,7 +32,7 @@ breaks down neatly into the three things loops are worst at:
 Here are the three pillars at a glance, each paired with the practice that keeps it upright:
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     OWN("🧑 ownership —<br/>the job that remains"):::human2 --> CO("paying attention<br/>to cost"):::cfg
     OWN --> VO("verifying outcomes,<br/>not statuses"):::check
@@ -40,11 +40,11 @@ flowchart LR
     CO -.-> CP(["cost-management:<br/>caps + tripwire"]):::cfg
     VO -.-> VP(["verification:<br/>green ≠ done"]):::check
     KO -.-> KP(["small beats ·<br/>spot-reads"]):::beat
-    linkStyle default stroke:#64748b,stroke-width:2px;
-    classDef human2 fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
-    classDef cfg fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px,color:#5b21b6;
-    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
-    classDef beat fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef human2 fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
+    classDef cfg fill:#ede9fe,stroke:#8b5cf6,stroke-width:2.5px,color:#5b21b6,font-weight:600;
+    classDef check fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
+    classDef beat fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
 ```
 
 The frame that holds all three together is [the three nested loops](the-three-nested-loops.md):
@@ -63,7 +63,7 @@ Two rules from those outer loops are non-negotiable:
    written-down human decision, or it simply doesn't happen.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     subgraph GOV ["team governance loop — slowest"]
       subgraph ENG ["your engineering loop"]
@@ -76,11 +76,11 @@ flowchart LR
     end
     B -.->|"logs, costs"| R
     POL -.-> ENG
-    linkStyle default stroke:#64748b,stroke-width:2px;
-    classDef beat fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
-    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
-    classDef human2 fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
-    classDef cfg fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px,color:#5b21b6;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef beat fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef check fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
+    classDef human2 fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
+    classDef cfg fill:#ede9fe,stroke:#8b5cf6,stroke-width:2.5px,color:#5b21b6,font-weight:600;
     style GOV fill:#fffbf5,stroke:#fcd34d,stroke-width:1.5px,color:#92400e;
     style ENG fill:#fbfbff,stroke:#c7d2fe,stroke-width:1.5px,color:#4338ca;
     style AG fill:#fbfdfc,stroke:#99f6e4,stroke-width:1.5px,color:#115e59;

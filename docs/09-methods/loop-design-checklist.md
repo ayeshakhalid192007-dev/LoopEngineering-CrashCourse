@@ -55,17 +55,17 @@ The very same list every loop in this repo clears
 | 7 | Kill switch tested | ☐ |
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     CL("checklist<br/>all boxes"):::step --> Q{"any box<br/>resisted?"}:::limit
     Q -->|yes| FIX("that resistance is<br/>the design flaw — fix it"):::warn
     FIX --> CL
     Q -->|no| RUN(["cleared to run<br/>at L1"]):::win
-    linkStyle default stroke:#64748b,stroke-width:2px;
-    classDef step fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
-    classDef limit fill:#fff1f2,stroke:#f43f5e,stroke-width:2px,color:#9f1239;
-    classDef warn fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
-    classDef win fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef step fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef limit fill:#ffe4e6,stroke:#f43f5e,stroke-width:2.5px,color:#9f1239,font-weight:600;
+    classDef warn fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
+    classDef win fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
 ```
 
 *Rather fill blanks than start from an empty page? This checklist comes pre-poured as a

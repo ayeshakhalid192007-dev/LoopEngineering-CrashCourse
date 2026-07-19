@@ -14,16 +14,16 @@
 | — | [The Three Nested Loops](the-three-nested-loops.md) | agent < engineer < governance; every arrow points inward |
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     S14("14 · staying the<br/>engineer"):::step --> C("cost<br/>management"):::pillar
     S14 --> V("verification"):::pillar
     S14 --> N("three nested<br/>loops"):::pillar
     C & V & N --> DONE(["🎓 course body complete —<br/>methods & operating next"]):::win
-    linkStyle default stroke:#64748b,stroke-width:2px;
-    classDef step fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
-    classDef pillar fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px,color:#5b21b6;
-    classDef win fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef step fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef pillar fill:#ede9fe,stroke:#8b5cf6,stroke-width:2.5px,color:#5b21b6,font-weight:600;
+    classDef win fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
 ```
 
 ## Where to next

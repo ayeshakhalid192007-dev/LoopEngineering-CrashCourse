@@ -15,13 +15,13 @@
 | 03 | [Anatomy of a Loop](03-anatomy-of-a-loop.md) | Six parts, every loop: heartbeat, body, spine, stop, checker, gate |
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     S1("01 · the shift"):::step --> S2("02 · the layers"):::step --> S3("03 · the anatomy"):::step
     S3 --> NEXT(["Part 2 ·<br/>the heartbeat"]):::next
-    linkStyle default stroke:#64748b,stroke-width:2px;
-    classDef step fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
-    classDef next fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef step fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef next fill:#fef3c7,stroke:#f59e0b,stroke-width:2.5px,color:#92400e,font-weight:600;
 ```
 
 ## Before you start

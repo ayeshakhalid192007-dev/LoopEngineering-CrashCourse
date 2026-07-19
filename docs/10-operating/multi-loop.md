@@ -104,7 +104,7 @@ only once the checker's spine reads PASS. That's a *gate on durable state*: read
 and never once a call.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     subgraph FLEET ["independent heartbeats — no arrows between loops"]
       direction TB
@@ -118,12 +118,12 @@ flowchart LR
     M1 & M2 & CK -->|"own spine each"| SP[("state.md × 3")]:::file
     M1 & M2 & CK -->|append-only| LOG[("shared run log")]:::log
     BUD[("one budget +<br/>loop-pause-all")]:::limit -.->|"read first,<br/>every beat"| FLEET
-    linkStyle default stroke:#64748b,stroke-width:2px;
-    classDef maker fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
-    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
-    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155;
-    classDef log fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px,color:#5b21b6;
-    classDef limit fill:#fff1f2,stroke:#f43f5e,stroke-width:2px,color:#9f1239;
+    linkStyle default stroke:#475569,stroke-width:2px;
+    classDef maker fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
+    classDef check fill:#ccfbf1,stroke:#14b8a6,stroke-width:2.5px,color:#115e59,font-weight:600;
+    classDef file fill:#f1f5f9,stroke:#64748b,stroke-width:2.5px,color:#334155,font-weight:600;
+    classDef log fill:#ede9fe,stroke:#8b5cf6,stroke-width:2.5px,color:#5b21b6,font-weight:600;
+    classDef limit fill:#ffe4e6,stroke:#f43f5e,stroke-width:2.5px,color:#9f1239,font-weight:600;
     style FLEET fill:#fbfbff,stroke:#c7d2fe,stroke-width:1.5px,color:#4338ca;
 ```
 
