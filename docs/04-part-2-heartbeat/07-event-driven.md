@@ -30,7 +30,7 @@ with a **reconciliation sweep**: a slow scheduled loop (Step 6) that periodicall
 "what did the events miss?" and quietly closes the gaps.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     E1("PR opened /<br/>synchronize"):::time --> G{"under<br/>the cap?"}:::limit
     E2("channel message<br/>⚠️ untrusted input"):::time --> G
@@ -38,11 +38,12 @@ flowchart LR
     G -->|yes| B("one beat<br/>answers the event"):::beat
     G -->|"no — dropped,<br/>never queued"| X(("·")):::ghost
     SW("🧹 reconciliation sweep<br/>slow schedule"):::check -.->|"catches what<br/>events missed"| B
-    classDef time fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
-    classDef beat fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef limit fill:#fff1f2,stroke:#f43f5e,stroke-width:1.5px,color:#9f1239;
-    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
-    classDef ghost fill:#f1f5f9,stroke:#94a3b8,color:#334155;
+    linkStyle default stroke:#64748b,stroke-width:2px;
+    classDef time fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
+    classDef beat fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
+    classDef limit fill:#fff1f2,stroke:#f43f5e,stroke-width:2px,color:#9f1239;
+    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
+    classDef ghost fill:#f1f5f9,stroke:#94a3b8,stroke-width:2px,color:#334155;
 ```
 
 ## The mechanics in each tool

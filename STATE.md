@@ -8,14 +8,15 @@ Current phase: **Day 2 complete — Day 3 not started** (next plan:
 Last updated: 2026-07-18 (Day 2 checkpoint declared: human merged PR #3 to `main`)
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     D1(["Day 1<br/>foundation + tracks<br/>+ prerequisites"]):::done --> D2(["Day 2<br/>14 steps<br/>+ assessments"]):::done
     D2 --> D3(["Day 3<br/>loop library + labs<br/>+ certification"]):::next
     D3 --> D4(["Day 4<br/>website + polish<br/>+ ship"]):::todo
-    classDef done fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
-    classDef next fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
-    classDef todo fill:#f1f5f9,stroke:#94a3b8,stroke-width:1.5px,color:#334155;
+    linkStyle default stroke:#64748b,stroke-width:2px;
+    classDef done fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
+    classDef next fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
+    classDef todo fill:#f1f5f9,stroke:#94a3b8,stroke-width:2px,color:#334155;
 ```
 
 ## Day progress

@@ -34,18 +34,19 @@ in a shared tree with disjoint ownership is the file-level equivalent of a workt
 if the two makers ever need the same file, a real `git worktree` becomes mandatory.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     TC("template-checker"):::check -.->|"part PASSed?"| GATE{"gate"}:::limit
     GATE -->|yes| QW("quiz-writer<br/>one part per beat"):::maker
     QW -->|"quiz.md +<br/>flashcards.md"| F[("docs/part-N/")]:::file
     QW --> SP[("own state.md")]:::file
     GATE -->|no| WAIT(["wait for the<br/>next PASS"]):::stop
-    classDef maker fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
-    classDef limit fill:#fff1f2,stroke:#f43f5e,stroke-width:1.5px,color:#9f1239;
-    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
-    classDef stop fill:#f1f5f9,stroke:#94a3b8,stroke-width:1.5px,color:#334155;
+    linkStyle default stroke:#64748b,stroke-width:2px;
+    classDef maker fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
+    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
+    classDef limit fill:#fff1f2,stroke:#f43f5e,stroke-width:2px,color:#9f1239;
+    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155;
+    classDef stop fill:#f1f5f9,stroke:#94a3b8,stroke-width:2px,color:#334155;
 ```
 
 ## Limits

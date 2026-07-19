@@ -58,7 +58,7 @@ even a thoroughly confused beat can't slip past a `set -euo pipefail` script tha
 commits three paths.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     CRON("⏰ cron<br/>07:00 ×weekdays"):::time --> WR("triage-beat.sh<br/>kill switch · cap · commit"):::limit
     WR --> RUN("opencode run<br/>the skill"):::beat
@@ -66,11 +66,12 @@ flowchart LR
     WR --> REV("reviewer run<br/>read-only rubric"):::check
     REV --> RN[("review-notes.md")]:::file
     WR -->|"git commit"| SP[("triage-state.md<br/>durable spine")]:::file
-    classDef time fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
-    classDef limit fill:#fff1f2,stroke:#f43f5e,stroke-width:1.5px,color:#9f1239;
-    classDef beat fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
-    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
+    linkStyle default stroke:#64748b,stroke-width:2px;
+    classDef time fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
+    classDef limit fill:#fff1f2,stroke:#f43f5e,stroke-width:2px,color:#9f1239;
+    classDef beat fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
+    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
+    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155;
 ```
 
 ## The first real morning

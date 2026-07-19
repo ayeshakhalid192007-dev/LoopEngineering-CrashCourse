@@ -42,28 +42,30 @@ Here is that ordering as a single picture. A crash at any point only forfeits wh
 after it:
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     RD("read the spine"):::file --> WK("do the work"):::beat --> VF("verify it"):::beat
     VF --> UP("update the spine"):::file --> LG("log one line"):::file --> CM(["commit —<br/>now it's durable"]):::cfg
     CR("💥 crash here?<br/>you lose a log line,<br/>never the work"):::crash -.-> LG
-    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
-    classDef beat fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef cfg fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
-    classDef crash fill:#fff1f2,stroke:#f43f5e,stroke-width:1.5px,color:#9f1239;
+    linkStyle default stroke:#64748b,stroke-width:2px;
+    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155;
+    classDef beat fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
+    classDef cfg fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px,color:#5b21b6;
+    classDef crash fill:#fff1f2,stroke:#f43f5e,stroke-width:2px,color:#9f1239;
 ```
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     RF[("rules file<br/>constitution — rarely edited")]:::cfg --> B("beat N<br/>(total amnesia)"):::beat
     SP[("progress file<br/>diary — every beat")]:::file --> B
     B -->|"work, then<br/>write the diary"| SP
     B --> LOG[("run log<br/>one line")]:::file
     SP ==>|"resume, not restart"| B2("beat N+1"):::beat
-    classDef cfg fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
-    classDef beat fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
+    linkStyle default stroke:#64748b,stroke-width:2px;
+    classDef cfg fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px,color:#5b21b6;
+    classDef beat fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
+    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155;
 ```
 
 ## The mechanics in each tool

@@ -47,18 +47,19 @@ visible place**. Checker verdicts live in a committed spine. Script results live
 log knits them together by timestamp.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     L("run log<br/>one line per beat"):::file --> V("the 5-minute view:<br/>what ran · what it cost ·<br/>what asked for help"):::step
     S("spines<br/>narrative + lessons"):::file --> V
     E("escalations<br/>guardrails firing"):::warn --> V
     V --> H(["🧑 engineer's beat:<br/>decisions, not archaeology"]):::human
     SIL("⚠️ missing log line<br/>= loop is DOWN"):::limit -.-> V
-    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
-    classDef step fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef warn fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
-    classDef limit fill:#fff1f2,stroke:#f43f5e,stroke-width:1.5px,color:#9f1239;
-    classDef human fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
+    linkStyle default stroke:#64748b,stroke-width:2px;
+    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155;
+    classDef step fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
+    classDef warn fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
+    classDef limit fill:#fff1f2,stroke:#f43f5e,stroke-width:2px,color:#9f1239;
+    classDef human fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
 ```
 
 ## The five-minute fleet review

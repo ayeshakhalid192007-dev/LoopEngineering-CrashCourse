@@ -38,7 +38,7 @@ result.
 | Your role | dispatcher | engineer, reviewer, owner |
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     subgraph HAND ["Prompting — you are the loop"]
       U("🧑 you"):::human -->|prompt| A1("agent"):::agent -->|result| U
@@ -49,11 +49,12 @@ flowchart LR
       A2 --> CK("checker"):::check --> SP
       U2("🧑 you"):::human -.->|"design · review · own"| ENG2(" "):::ghost
     end
-    classDef human fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
-    classDef agent fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef time fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
-    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
-    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
+    linkStyle default stroke:#64748b,stroke-width:2px;
+    classDef human fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
+    classDef agent fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
+    classDef time fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
+    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155;
+    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
     classDef ghost fill:#ffffff00,stroke:#ffffff00;
     style HAND fill:#fffbf5,stroke:#fcd34d,stroke-width:1.5px,color:#92400e;
     style ENG fill:#fbfbff,stroke:#c7d2fe,stroke-width:1.5px,color:#4338ca;

@@ -7,15 +7,16 @@
 > you're looking at *is* the syllabus.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     R("start-here<br/>60-second router"):::route --> P("01 prerequisites<br/>02 foundations"):::prep
     P --> S("03–08<br/>Parts 1–6 · the 14 steps"):::core
     S --> M("09 methods<br/>10 operating"):::adv
-    classDef route fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
-    classDef prep fill:#eef6ff,stroke:#3b82f6,stroke-width:1.5px,color:#1e40af;
-    classDef core fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef adv fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
+    linkStyle default stroke:#64748b,stroke-width:2px;
+    classDef route fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155;
+    classDef prep fill:#eef6ff,stroke:#3b82f6,stroke-width:2px,color:#1e40af;
+    classDef core fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
+    classDef adv fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px,color:#5b21b6;
 ```
 
 ## The sequence

@@ -31,7 +31,7 @@ this one has a real heartbeat, a real body, a real spine, a provable stop, and a
 gate, in fewer words than most commit messages.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     T("⏱ every 30m"):::time --> SCAN("Run link checker<br/>over docs/"):::beat
     SCAN --> Q{"Anything<br/>broken?"}:::limit
@@ -39,10 +39,11 @@ flowchart LR
     Q -->|no| CLEAN("Log a clean pass"):::check
     REP --> LOG("One log line"):::beat --> T
     CLEAN --> LOG
-    classDef time fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
-    classDef beat fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef limit fill:#fff1f2,stroke:#f43f5e,stroke-width:1.5px,color:#9f1239;
-    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
+    linkStyle default stroke:#64748b,stroke-width:2px;
+    classDef time fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
+    classDef beat fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
+    classDef limit fill:#fff1f2,stroke:#f43f5e,stroke-width:2px,color:#9f1239;
+    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
 ```
 
 ## Why this loop is the best one to learn from

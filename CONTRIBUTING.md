@@ -29,7 +29,7 @@ improvements**.
 5. A human maintainer reviews everything, including (especially) loop-generated PRs.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     I("Open an issue<br/>right template"):::step --> W("Fork + branch<br/>make the change"):::step
     W --> LC("Check links +<br/>lint locally"):::verify
@@ -38,10 +38,11 @@ flowchart LR
     CI -->|no| W
     CI -->|yes| REV(["🧑 Human review<br/>especially loop-made PRs"]):::human
     REV --> M(["Merge"]):::win
-    classDef step fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef verify fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
-    classDef human fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
-    classDef win fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
+    linkStyle default stroke:#64748b,stroke-width:2px;
+    classDef step fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
+    classDef verify fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
+    classDef human fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
+    classDef win fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px,color:#5b21b6;
 ```
 
 ## If your contribution was produced by a loop

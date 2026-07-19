@@ -47,7 +47,7 @@ while not stopping_condition_met():      # provable, or it isn't a stop
 ```
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart TB
     subgraph BIG ["The big loop — yours (loop layer)"]
       SP[("spine")]:::file --> BEAT("one beat"):::beat
@@ -57,10 +57,11 @@ flowchart TB
       end
       BEAT --- SMALL
     end
-    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
-    classDef beat fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef agent fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
-    classDef cfg fill:#eef6ff,stroke:#3b82f6,stroke-width:1.5px,color:#1e40af;
+    linkStyle default stroke:#64748b,stroke-width:2px;
+    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155;
+    classDef beat fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
+    classDef agent fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px,color:#5b21b6;
+    classDef cfg fill:#eef6ff,stroke:#3b82f6,stroke-width:2px,color:#1e40af;
     style BIG fill:#fbfbff,stroke:#c7d2fe,stroke-width:1.5px,color:#4338ca;
     style SMALL fill:#fbfdfc,stroke:#99f6e4,stroke-width:1.5px,color:#115e59;
 ```

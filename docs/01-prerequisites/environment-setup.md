@@ -27,14 +27,15 @@ Three things, and the order matters:
 > no contest.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':38,'rankSpacing':55,'padding':10}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     A("Terminal<br/>ready"):::step --> B("Install<br/>one agent"):::step
     B --> C("Verify:<br/>--version"):::step
     C --> D("Log in /<br/>authenticate"):::step
     D --> E("Make a<br/>throwaway repo"):::step
     E --> F(["✓ Ready for<br/>the course"]):::done
-    classDef step fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
+    linkStyle default stroke:#64748b,stroke-width:2px;
+    classDef step fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
     classDef done fill:#ecfdf5,stroke:#10b981,stroke-width:2px,color:#065f46;
 ```
 

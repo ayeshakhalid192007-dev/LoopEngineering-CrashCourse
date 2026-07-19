@@ -33,7 +33,7 @@ up front:
   across real mornings.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     TR("⏰ trigger<br/>cron · timezone"):::time --> RT("routine beat"):::beat
     P("prompt<br/>(the spec)"):::cfg --> RT
@@ -42,12 +42,13 @@ flowchart LR
     RT -->|"L1: report"| OUT(["📬 morning report<br/>0 actions taken"]):::win
     RT -->|"L2+: writes"| BR[("claude/ branches<br/>only — never main")]:::limit
     CAP("daily caps"):::limit -.-> RT
-    classDef time fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
-    classDef beat fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef cfg fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
-    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
-    classDef limit fill:#fff1f2,stroke:#f43f5e,stroke-width:1.5px,color:#9f1239;
-    classDef win fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
+    linkStyle default stroke:#64748b,stroke-width:2px;
+    classDef time fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
+    classDef beat fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
+    classDef cfg fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px,color:#5b21b6;
+    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155;
+    classDef limit fill:#fff1f2,stroke:#f43f5e,stroke-width:2px,color:#9f1239;
+    classDef win fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
 ```
 
 ## The mechanics in each tool

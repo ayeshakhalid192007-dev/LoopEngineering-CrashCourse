@@ -44,18 +44,19 @@ recoveries into `stories/` entries, because a documented failure teaches far mor
 undocumented success.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     S1("1 · STOP<br/>the loop"):::stop --> S2("2 · save the<br/>evidence"):::file
     S2 --> S3("3 · find the<br/>real cause"):::q --> S4("4 · fix the LOOP,<br/>not the output"):::fix
     S4 --> S5("5 · drop a level,<br/>watch one run,<br/>re-promote"):::gate
     S5 --> OUT(["loop runs again —<br/>stronger, written up"]):::win
-    classDef stop fill:#fff1f2,stroke:#f43f5e,stroke-width:1.5px,color:#9f1239;
-    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
-    classDef q fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef fix fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
-    classDef gate fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
-    classDef win fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
+    linkStyle default stroke:#64748b,stroke-width:2px;
+    classDef stop fill:#fff1f2,stroke:#f43f5e,stroke-width:2px,color:#9f1239;
+    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155;
+    classDef q fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
+    classDef fix fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px,color:#5b21b6;
+    classDef gate fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
+    classDef win fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
 ```
 
 ## Why a fixed sequence

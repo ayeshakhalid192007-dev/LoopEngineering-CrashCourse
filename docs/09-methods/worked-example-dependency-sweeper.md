@@ -111,7 +111,7 @@ Each incident, once processed this way, permanently narrows the class of failure
 repeat. That is the compounding the spine exists to support.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     HB("⏰ nightly 02:00"):::hb --> DISC("discover outdated<br/>(skip own PRs)"):::step
     DISC --> UP("update ONE package<br/>in a worktree"):::step
@@ -121,12 +121,13 @@ flowchart LR
     BL --> SP
     SP -->|"list not empty<br/>and < 10 attempts"| UP
     PR --> H(["🧑 human merges —<br/>the gate, permanently"]):::human
-    classDef hb fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
-    classDef step fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
-    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
-    classDef human fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
-    classDef limit fill:#fff1f2,stroke:#f43f5e,stroke-width:1.5px,color:#9f1239;
+    linkStyle default stroke:#64748b,stroke-width:2px;
+    classDef hb fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
+    classDef step fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
+    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
+    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155;
+    classDef human fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
+    classDef limit fill:#fff1f2,stroke:#f43f5e,stroke-width:2px,color:#9f1239;
 ```
 
 ## The finished design, on one screen

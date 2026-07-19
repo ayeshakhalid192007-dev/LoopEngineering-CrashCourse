@@ -102,7 +102,7 @@ and escalates the *disagreement* to the human gate
 | 8 | Maker–checker standoff | same item, N straight FAILs | rejection cap → human escalation |
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     T("trigger"):::hb --> B("beat"):::step --> OUT("output"):::step
     OUT -.->|"③ self-trigger"| T
@@ -110,9 +110,10 @@ flowchart LR
     OUT -.->|"④⑤ another loop /<br/>opposite fix"| B
     OUT -.->|"⑦ transcript into<br/>next context"| B
     BOUND(["every backward arrow<br/>gets a BOUND:<br/>success · limit · no-progress"]):::win -.-> B
-    classDef hb fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
-    classDef step fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef win fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
+    linkStyle default stroke:#64748b,stroke-width:2px;
+    classDef hb fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
+    classDef step fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
+    classDef win fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
 ```
 
 ## The universal rule

@@ -36,7 +36,7 @@ one: a loop whose report you have to read daily has quietly *hired you*. If valu
 cost, the by-hand version was fine all along.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':40,'rankSpacing':45,'padding':10}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart TD
     T("the task"):::q --> R{"1 · repeated<br/>3× for real?"}:::q
     R -->|no| HAND(["do it by hand /<br/>script the workflow"]):::stop
@@ -47,10 +47,11 @@ flowchart TD
     TOL -->|yes| ECON{"4 · value ><br/>cost incl. your<br/>attention?"}:::q
     ECON -->|no| HAND
     ECON -->|yes| GO(["build it →<br/>pattern picker + A–F"]):::win
-    classDef q fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
-    classDef stop fill:#f1f5f9,stroke:#94a3b8,stroke-width:1.5px,color:#334155;
-    classDef warn fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
-    classDef win fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
+    linkStyle default stroke:#64748b,stroke-width:2px;
+    classDef q fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155;
+    classDef stop fill:#f1f5f9,stroke:#94a3b8,stroke-width:2px,color:#334155;
+    classDef warn fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
+    classDef win fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
 ```
 
 ## The honest outcomes

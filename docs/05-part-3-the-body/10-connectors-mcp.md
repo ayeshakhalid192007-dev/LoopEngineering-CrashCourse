@@ -35,18 +35,19 @@ non-negotiables:
    nobody around to decode an anonymous `400`.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     B("one beat"):::beat --> MCP("MCP server<br/>few, focused tools"):::cfg
     MCP -->|"idempotent<br/>writes"| GH[("issues · PRs<br/>messages")]:::reach
     MCP -->|"actionable<br/>errors"| B
     PERM("permissions:<br/>read at L1 —<br/>writes earned"):::limit -.-> MCP
     LOG[("run log:<br/>every action")]:::file -.-> B
-    classDef beat fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef cfg fill:#f5f3ff,stroke:#8b5cf6,stroke-width:1.5px,color:#5b21b6;
-    classDef reach fill:#f1f5f9,stroke:#94a3b8,stroke-width:1.5px,color:#334155;
-    classDef limit fill:#fff1f2,stroke:#f43f5e,stroke-width:1.5px,color:#9f1239;
-    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
+    linkStyle default stroke:#64748b,stroke-width:2px;
+    classDef beat fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
+    classDef cfg fill:#f5f3ff,stroke:#8b5cf6,stroke-width:2px,color:#5b21b6;
+    classDef reach fill:#f1f5f9,stroke:#94a3b8,stroke-width:2px,color:#334155;
+    classDef limit fill:#fff1f2,stroke:#f43f5e,stroke-width:2px,color:#9f1239;
+    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155;
 ```
 
 ## The mechanics in each tool

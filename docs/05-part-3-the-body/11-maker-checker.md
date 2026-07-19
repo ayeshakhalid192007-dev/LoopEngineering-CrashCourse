@@ -42,7 +42,7 @@ and *whether*; the workflow inside the beat handles *how*; the checker judges wh
 the other end.
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     M("maker<br/>writes, never grades"):::maker -->|output| W[("the work")]:::file
     W --> C1("script checker<br/>facts, free"):::check
@@ -50,10 +50,11 @@ flowchart LR
     C1 & C2 -->|findings| F[("checker's spine")]:::file
     F --> H(["🧑 human gate<br/>decides what's real"]):::human
     H -.->|"fix list"| M
-    classDef maker fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
-    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:1.5px,color:#334155;
-    classDef human fill:#fef9ec,stroke:#f59e0b,stroke-width:1.5px,color:#92400e;
+    linkStyle default stroke:#64748b,stroke-width:2px;
+    classDef maker fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
+    classDef check fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
+    classDef file fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#334155;
+    classDef human fill:#fef9ec,stroke:#f59e0b,stroke-width:2px,color:#92400e;
 ```
 
 ## The mechanics in each tool

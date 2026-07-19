@@ -35,15 +35,16 @@ permission config enforcing it is the half that keeps working at 3 am.
 5 of the [recovery playbook](recovery-playbook.md).
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#94a3b8'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':50,'padding':10}}}%%
+%%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'14px','lineColor':'#64748b','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     L1c("L1 · report-only<br/>reads + own spine"):::l1 -->|"real runs, watched,<br/>written decision"| L2c("L2 · assisted<br/>writes, human reads all"):::l2
     L2c -->|"boring history,<br/>written decision"| L3c("L3 · unattended<br/>writes, human samples"):::l3
     L3c -.->|"any incident:<br/>automatic"| L2c
     L2c -.->|"any incident:<br/>automatic"| L1c
-    classDef l1 fill:#effcf9,stroke:#14b8a6,stroke-width:1.5px,color:#115e59;
-    classDef l2 fill:#eef2ff,stroke:#6366f1,stroke-width:1.5px,color:#312e81;
-    classDef l3 fill:#fff1f2,stroke:#f43f5e,stroke-width:1.5px,color:#9f1239;
+    linkStyle default stroke:#64748b,stroke-width:2px;
+    classDef l1 fill:#effcf9,stroke:#14b8a6,stroke-width:2px,color:#115e59;
+    classDef l2 fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81;
+    classDef l3 fill:#fff1f2,stroke:#f43f5e,stroke-width:2px,color:#9f1239;
 ```
 
 ## Human gates: placed, not sprinkled
