@@ -4,9 +4,9 @@
 > `patterns-page-loop`, and the human may read it, never edit it.
 > Definition: [`loops/day3/kit-stamper/loop.md`](loops/day3/kit-stamper/loop.md)
 
-**Status:** ⏳ running — 15 / 20 kits stamped. Group A complete; Group B underway.
-**Last beat:** 2026-07-20T02:10:00Z — stamped `ticket-to-pr-ready`
-**Runs used:** 15 / 25 · **Tokens used:** ≈380k / 500k
+**Status:** ⏳ running — 16 / 20 kits stamped. Group A complete; Group B underway.
+**Last beat:** 2026-07-20T02:20:00Z — stamped `clodex-adversarial-review`
+**Runs used:** 16 / 25 · **Tokens used:** ≈415k / 500k
 
 ---
 
@@ -49,7 +49,7 @@ repo/engineering-focused and avoid duplicating Group A.
 | 13 | The production error sweep | L · Monitoring & incident | schedule | 1–6h | L1 | Medium | [x] |
 | 14 | The repository cleanup loop | A · Repo maintenance | schedule | weekly | L1 | Low | [x] |
 | 15 | The ticket-to-PR-ready loop | D→B · Issue intake → PR | event (ticket) | per ticket | L2 | High | [x] |
-| 16 | The Clodex adversarial-review loop | B · PR & review | event (PR) | per PR | L1 | Medium | [ ] |
+| 16 | The Clodex adversarial-review loop | B · PR & review | event (PR) | per PR | L1 | Medium | [x] |
 | 17 | The Loop Harness verification loop | I · Self-improvement / meta | schedule | per scheduled run | L1 | Low | [ ] |
 | 18 | The Codex completion-contract loop | I · Self-improvement / meta | conditional | on-demand | L1 | Low | [ ] |
 | 19 | The spec dev-review loop | D · Issue & intake | conditional | on-demand | L1 | Medium | [ ] |
@@ -79,6 +79,7 @@ changelog loop" (dupes `changelog-drafter`), "the dependency triage loop" (dupes
 | 13 | 2026-07-20T01:50:00Z | ~500s | prod-error-sweep | ≈25k | fetched `.../loops/production-error-sweep/` for the real prompt + author credit (Matthew Berman); source's own explicit "never copy credentials/tokens/PII/private payloads" constraint carried forward as the kit's core rule, applied to report + spine + log; `loop-ready-audit.mjs` PASS |
 | 14 | 2026-07-20T02:00:00Z | ~450s | repo-cleanup-loop | ≈20k | fetched `.../loops/repository-cleanup-loop/` for the real prompt + author credit (Matthew Berman); source's own explicit "never delete uncertain work / discard uncommitted / close someone else's PR without confirmation" carried forward, and L1 goes further (deletes nothing at all); `loop-ready-audit.mjs` PASS |
 | 15 | 2026-07-20T02:10:00Z | ~500s | ticket-to-pr-ready | ≈30k | fetched `.../loops/ticket-to-pr-ready-loop/` for the real prompt + author credit (Hiten Shah); source's own "never fold unrelated refactors" rule matches this repo's own loop-constraints.md almost word for word; 2-attempt reproduction cap already the doom-loop bound; `loop-ready-audit.mjs` PASS — **3/4 of the library done** |
+| 16 | 2026-07-20T02:20:00Z | ~550s | clodex-adversarial-review | ≈35k | fetched `.../loops/clodex-adversarial-review-loop/` for the real prompt + author credit (Lukas Kucinski); a genuine two-agent maker-checker example (Claude implements, Codex/subagent adversarially reviews); source's "never describe an errored or exhausted run as approved" is this loop's own "green ≠ done"; `loop-ready-audit.mjs` PASS |
 
 ## Findings / escalations
 

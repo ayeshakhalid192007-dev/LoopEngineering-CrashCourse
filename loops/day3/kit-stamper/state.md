@@ -5,10 +5,10 @@
 > The work checklist itself lives in [`kit-state.md`](../../../kit-state.md), not
 > here — this file is the run history and escalations only.
 
-**Status:** ⏳ running — 15 / 20 kits stamped. Group A complete; Group B
+**Status:** ⏳ running — 16 / 20 kits stamped. Group A complete; Group B
 underway (WebFetch to `signals.forwardfuture.com/loop-library/` per kit).
-**Last beat:** 2026-07-20T02:10:00Z
-**Runs used:** 15 / 25 · **Tokens used:** ≈380k / 900k
+**Last beat:** 2026-07-20T02:20:00Z
+**Runs used:** 16 / 25 · **Tokens used:** ≈415k / 900k
 
 ## Run history
 
@@ -29,6 +29,7 @@ underway (WebFetch to `signals.forwardfuture.com/loop-library/` per kit).
 | 13 | 2026-07-20T01:50:00Z | ~500s | prod-error-sweep | ≈25k | fetched loop #4's detail page (Matthew Berman); source's own credential/PII/token redaction constraint carried forward as the kit's most important rule, applied across report + spine + log; row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS |
 | 14 | 2026-07-20T02:00:00Z | ~450s | repo-cleanup-loop | ≈20k | fetched loop #10's detail page (Matthew Berman); source's own explicit confirmation rule (uncertain work, unowned PRs) carried forward; L1 goes further, deletes nothing; row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS |
 | 15 | 2026-07-20T02:10:00Z | ~500s | ticket-to-pr-ready | ≈30k | fetched loop #16's detail page (Hiten Shah); source's own "never fold unrelated refactors" and "2-attempt reproduction cap" rules used near-verbatim; row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS — **3/4 of the library done, 15/20** |
+| 16 | 2026-07-20T02:20:00Z | ~550s | clodex-adversarial-review | ≈35k | fetched loop #9's detail page (Lukas Kucinski); genuine two-agent maker-checker design (Claude implements, Codex/subagent reviews); "never call exhausted approved" is this kit's own green-≠-done rule; row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS |
 
 ## Findings / escalations
 
