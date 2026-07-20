@@ -4,9 +4,9 @@
 > `patterns-page-loop`, and the human may read it, never edit it.
 > Definition: [`loops/day3/kit-stamper/loop.md`](loops/day3/kit-stamper/loop.md)
 
-**Status:** ⏳ running — 17 / 20 kits stamped. Group A complete; Group B underway.
-**Last beat:** 2026-07-20T02:30:00Z — stamped `loop-harness-verification`
-**Runs used:** 17 / 25 · **Tokens used:** ≈445k / 500k
+**Status:** ⏳ running — 18 / 20 kits stamped. Group A complete; Group B underway.
+**Last beat:** 2026-07-20T02:40:00Z — stamped `codex-completion-contract`
+**Runs used:** 18 / 25 · **Tokens used:** ≈470k / 500k
 
 ---
 
@@ -51,7 +51,7 @@ repo/engineering-focused and avoid duplicating Group A.
 | 15 | The ticket-to-PR-ready loop | D→B · Issue intake → PR | event (ticket) | per ticket | L2 | High | [x] |
 | 16 | The Clodex adversarial-review loop | B · PR & review | event (PR) | per PR | L1 | Medium | [x] |
 | 17 | The Loop Harness verification loop | I · Self-improvement / meta | schedule | per scheduled run | L1 | Low | [x] |
-| 18 | The Codex completion-contract loop | I · Self-improvement / meta | conditional | on-demand | L1 | Low | [ ] |
+| 18 | The Codex completion-contract loop | I · Self-improvement / meta | conditional | on-demand | L1 | Low | [x] |
 | 19 | The spec dev-review loop | D · Issue & intake | conditional | on-demand | L1 | Medium | [ ] |
 | 20 | The stale-safe batch release loop | C · Release | schedule/tag | per release window | L1 | Low | [ ] |
 
@@ -81,6 +81,7 @@ changelog loop" (dupes `changelog-drafter`), "the dependency triage loop" (dupes
 | 15 | 2026-07-20T02:10:00Z | ~500s | ticket-to-pr-ready | ≈30k | fetched `.../loops/ticket-to-pr-ready-loop/` for the real prompt + author credit (Hiten Shah); source's own "never fold unrelated refactors" rule matches this repo's own loop-constraints.md almost word for word; 2-attempt reproduction cap already the doom-loop bound; `loop-ready-audit.mjs` PASS — **3/4 of the library done** |
 | 16 | 2026-07-20T02:20:00Z | ~550s | clodex-adversarial-review | ≈35k | fetched `.../loops/clodex-adversarial-review-loop/` for the real prompt + author credit (Lukas Kucinski); a genuine two-agent maker-checker example (Claude implements, Codex/subagent adversarially reviews); source's "never describe an errored or exhausted run as approved" is this loop's own "green ≠ done"; `loop-ready-audit.mjs` PASS |
 | 17 | 2026-07-20T02:30:00Z | ~500s | loop-harness-verification | ≈30k | fetched `.../loops/loop-harness-verification-loop/` for the real prompt + author credit (Istasha); source's own "second Claude session verifies" design is exactly this library's own loop-verifier pattern, independently arrived at; `loop-ready-audit.mjs` PASS |
+| 18 | 2026-07-20T02:40:00Z | ~500s | codex-completion-contract | ≈25k | fetched `.../loops/codex-completion-contract-loop/` for the real prompt + author credit (3goblack); source's "budget exhaustion never counts as success" is this loop's own green-≠-done rule; requirement-to-evidence vocabulary (proved/weak/missing/contradicted) used verbatim; `loop-ready-audit.mjs` PASS — **2 kits left** |
 
 ## Findings / escalations
 

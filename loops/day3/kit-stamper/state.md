@@ -5,10 +5,10 @@
 > The work checklist itself lives in [`kit-state.md`](../../../kit-state.md), not
 > here — this file is the run history and escalations only.
 
-**Status:** ⏳ running — 17 / 20 kits stamped. Group A complete; Group B
+**Status:** ⏳ running — 18 / 20 kits stamped. Group A complete; Group B
 underway (WebFetch to `signals.forwardfuture.com/loop-library/` per kit).
-**Last beat:** 2026-07-20T02:30:00Z
-**Runs used:** 17 / 25 · **Tokens used:** ≈445k / 900k
+**Last beat:** 2026-07-20T02:40:00Z
+**Runs used:** 18 / 25 · **Tokens used:** ≈470k / 900k
 
 ## Run history
 
@@ -31,6 +31,7 @@ underway (WebFetch to `signals.forwardfuture.com/loop-library/` per kit).
 | 15 | 2026-07-20T02:10:00Z | ~500s | ticket-to-pr-ready | ≈30k | fetched loop #16's detail page (Hiten Shah); source's own "never fold unrelated refactors" and "2-attempt reproduction cap" rules used near-verbatim; row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS — **3/4 of the library done, 15/20** |
 | 16 | 2026-07-20T02:20:00Z | ~550s | clodex-adversarial-review | ≈35k | fetched loop #9's detail page (Lukas Kucinski); genuine two-agent maker-checker design (Claude implements, Codex/subagent reviews); "never call exhausted approved" is this kit's own green-≠-done rule; row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS |
 | 17 | 2026-07-20T02:30:00Z | ~500s | loop-harness-verification | ≈30k | fetched loop #17's detail page (Istasha); source's "second Claude session verifies" design is exactly this library's own loop-verifier pattern, independently arrived at; row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS |
+| 18 | 2026-07-20T02:40:00Z | ~500s | codex-completion-contract | ≈25k | fetched loop #28's detail page (3goblack); "budget exhaustion never counts as success" carried forward as this loop's own green-≠-done rule; row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS — **2 kits left, 18/20** |
 
 ## Findings / escalations
 
