@@ -5,9 +5,42 @@
 > The work checklist is the Day 3 section of [`STATE.md`](../../../STATE.md), not
 > here — this file is the run history only.
 
-**Status:** ✅ 29/29 checklist items done — all STATE.md rows checked. Self-check next.
+**Status:** ✅ 29/29 checklist items done — all STATE.md rows checked. Self-check passed
+(see below); official grading is `template-checker`'s per this loop's own `loop.md` —
+this loop never grades its own pages.
 **Last beat:** 2026-07-21T15:15:00Z — `docs/assessments/loop-ready-certification.md`
 **Runs used:** 29 / 45 · **Tokens used:** ≈399k / 750k
+
+## Self-check (honest, not the official grade)
+
+- **File count:** 39/39 files present (11 projects + 11 solutions + 1 routines.md + 6
+  cheatsheets + 7 advanced + 3 assessments), matching all 29 checklist rows.
+- **§10 template completeness (7 `docs/advanced/` pages):** all 7 have hook, plain-English
+  explanation, mermaid diagram, dual-tool (`claude`/`opencode`) code tabs, going-deeper
+  callout, check-yourself quiz, Try With AI, when-it-goes-wrong table, glossary line, and
+  a Sources footer — verified by grep count per page (1 each), not eyeballed.
+- **Mermaid syntax:** 10 new diagrams checked for balanced `()[]{}`  , balanced quotes, and
+  the required `%%{init:` header — all 10 clean. Could not render-validate to SVG in this
+  sandbox: `mmdc` (`@mermaid-js/mermaid-cli`) exits 1 with no stderr even with
+  `--no-sandbox`/`-p` puppeteer overrides and a real `google-chrome` binary present —
+  looks like a headless-Chrome launch restriction in this environment, not a diagram
+  problem. Every new diagram reuses the exact `%%{init%%}` theme string and `classDef`
+  pattern already rendering cleanly across this repo's 70+ existing diagrams, which is
+  the strongest available substitute for a live render here.
+- **Relative links:** 170 relative links across the 39 new files, all resolved to real
+  files on disk — 0 broken.
+- **Ownership scoping:** `git diff 9204530 --name-only` shows every changed file is inside
+  `docs/projects/`, `docs/appendix/`, `docs/advanced/`, `docs/assessments/`, this loop's
+  own `state.md`, `shared/loop-run-log.md`, or `STATE.md`. `git diff 9204530 -- STATE.md`
+  shows only the 29 checklist rows flipped `[ ]`→`[x]` — no other STATE.md line touched.
+- **Sources/attribution:** every page's footer names real S1–S9 sources and hyperlinks
+  their canonical URLs from `resources/sources.md`; the three per-tool cheatsheets with no
+  official course source (codex/grok/cursor/windsurf) are explicitly framed per the
+  attribution policy's "pointer to live docs, not authoritative reference" rule.
+
+**Escalation (informational, not blocking):** `mmdc` render-validation isn't available in
+this worktree's sandbox (see above) — flagging so `template-checker`'s own pass knows to
+either tolerate the same limitation or run somewhere with a working headless-Chrome path.
 
 ## Run history
 
@@ -45,4 +78,12 @@
 
 ## Findings / escalations
 
-None yet.
+- **Branch predated `day3/loop-library` at session start.** This worktree's branch was
+  reset (`git reset --hard 9204530`) to fast-forward onto kit-stamper's finished tip,
+  per this loop's own run instructions — same fix already applied to the sibling
+  `patterns-page-loop` agent run. No history rewritten, no work lost (working tree was
+  clean before the reset).
+- **`mmdc` render-validation unavailable in this sandbox** — see self-check above.
+  Structural checks (bracket/quote balance, required init header, pattern-matching the
+  70+ already-working diagrams elsewhere in this repo) substituted; genuine SVG rendering
+  should still happen wherever `template-checker` actually runs.
