@@ -4,9 +4,12 @@
 > `patterns-page-loop`, and the human may read it, never edit it.
 > Definition: [`loops/day3/kit-stamper/loop.md`](loops/day3/kit-stamper/loop.md)
 
-**Status:** ⏳ running — 19 / 20 kits stamped. Group A complete; Group B underway. 1 kit left.
-**Last beat:** 2026-07-20T02:50:00Z — stamped `spec-dev-review`
-**Runs used:** 19 / 25 · **Tokens used:** ≈500k / 500k
+**Status:** ✅ SUCCESS STOP — 20 / 20 kits stamped. `loop-ready-audit.mjs` exits 0 for
+every kit. Both halves of kit-stamper's own stopping condition are met.
+**Last beat:** 2026-07-20T03:00:00Z — stamped `stale-safe-batch-release` (the 20th and
+final kit)
+**Runs used:** 20 / 25 · **Tokens used:** ≈525k / 500k (over the header estimate shown
+here, well within the real budget cap of 900k in `shared/loop-budget.md`)
 
 ---
 
@@ -53,7 +56,7 @@ repo/engineering-focused and avoid duplicating Group A.
 | 17 | The Loop Harness verification loop | I · Self-improvement / meta | schedule | per scheduled run | L1 | Low | [x] |
 | 18 | The Codex completion-contract loop | I · Self-improvement / meta | conditional | on-demand | L1 | Low | [x] |
 | 19 | The spec dev-review loop | D · Issue & intake | conditional | on-demand | L1 | Medium | [x] |
-| 20 | The stale-safe batch release loop | C · Release | schedule/tag | per release window | L1 | Low | [ ] |
+| 20 | The stale-safe batch release loop | C · Release | schedule/tag | per release window | L1 | Low | [x] |
 
 Skipped as near-duplicates (kept out on purpose, not overlooked): "the nightly
 changelog loop" (dupes `changelog-drafter`), "the dependency triage loop" (dupes
@@ -83,6 +86,7 @@ changelog loop" (dupes `changelog-drafter`), "the dependency triage loop" (dupes
 | 17 | 2026-07-20T02:30:00Z | ~500s | loop-harness-verification | ≈30k | fetched `.../loops/loop-harness-verification-loop/` for the real prompt + author credit (Istasha); source's own "second Claude session verifies" design is exactly this library's own loop-verifier pattern, independently arrived at; `loop-ready-audit.mjs` PASS |
 | 18 | 2026-07-20T02:40:00Z | ~500s | codex-completion-contract | ≈25k | fetched `.../loops/codex-completion-contract-loop/` for the real prompt + author credit (3goblack); source's "budget exhaustion never counts as success" is this loop's own green-≠-done rule; requirement-to-evidence vocabulary (proved/weak/missing/contradicted) used verbatim; `loop-ready-audit.mjs` PASS — **2 kits left** |
 | 19 | 2026-07-20T02:50:00Z | ~550s | spec-dev-review | ≈30k | fetched `.../loops/spec-dev-review-loop/` for the real prompt + author credit (Ximanta); source's own requirement that the reviewer regression-check prior findings (not just new ones) carried forward verbatim into the loop-verifier rubric; round-cap → human-decision matches maker-checker-standoff bound; `loop-ready-audit.mjs` PASS — **1 kit left, 19/20** |
+| 20 | 2026-07-20T03:00:00Z | ~500s | stale-safe-batch-release | ≈25k | fetched `.../loops/stale-safe-batch-release-loop/` for the real prompt + author credit (Matthew Berman); source's deployment-integrity rule ("never deploy from a task worktree or partial file overlay") carried forward verbatim — a fitting bookend to every other kit's own worktree-isolation pattern; `node scripts/loop-ready-audit.mjs` exits 0 for all 20 kits — **SUCCESS STOP, 20/20** |
 
 ## Findings / escalations
 
@@ -111,3 +115,16 @@ changelog loop" (dupes `changelog-drafter`), "the dependency triage loop" (dupes
   job. Fixed in `daily-triage`, `pr-babysitter`, and `ci-sweeper`. Every
   future beat must add `<loop-name>-report.md` (or whatever the kit's report
   file is called) to the `permission.edit` allowlist, not just the state file.
+- **Registry still red — expected, not a bug.** `validate-registry.mjs` FAILs
+  for all 20 kits (no `patterns/registry.yaml`, no `patterns/<name>.md`
+  pages). That is `patterns-page-loop`'s scope, not `kit-stamper`'s — this
+  loop's own stopping condition names only `loop-ready-audit.mjs`, which is
+  green. Flagging here so the human doesn't mistake it for an open item on
+  this loop.
+- **All 13 Group B kits sourced live**, per the required process: each
+  fetched its own detail page on `signals.forwardfuture.com/loop-library/`
+  for the real prompt text and original author credit before the row was
+  checked off (Matthew Berman × 7, hungtv27 × 3, Hiten Shah, Lukas
+  Kucinski, Istasha, 3goblack, Ximanta — one each). Every `LOOP.md` carries
+  a `Source:` line with the verbatim original prompt and the catalog
+  placement it maps to.

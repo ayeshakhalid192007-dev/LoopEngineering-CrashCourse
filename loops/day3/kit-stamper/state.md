@@ -5,10 +5,12 @@
 > The work checklist itself lives in [`kit-state.md`](../../../kit-state.md), not
 > here — this file is the run history and escalations only.
 
-**Status:** ⏳ running — 19 / 20 kits stamped. Group A complete; Group B
-underway. **1 kit left: `stale-safe-batch-release-loop` (#20).**
-**Last beat:** 2026-07-20T02:50:00Z
-**Runs used:** 19 / 25 · **Tokens used:** ≈500k / 900k
+**Status:** ✅ SUCCESS STOP — 20 / 20 kits stamped, `loop-ready-audit.mjs`
+exits 0 for every kit. Both halves of this loop's own stopping condition
+(`kit-state.md`'s row count AND the audit script) are met. No more beats
+needed; nothing left on this loop's own checklist.
+**Last beat:** 2026-07-20T03:00:00Z
+**Runs used:** 20 / 25 · **Tokens used:** ≈525k / 900k
 
 ## Run history
 
@@ -33,6 +35,7 @@ underway. **1 kit left: `stale-safe-batch-release-loop` (#20).**
 | 17 | 2026-07-20T02:30:00Z | ~500s | loop-harness-verification | ≈30k | fetched loop #17's detail page (Istasha); source's "second Claude session verifies" design is exactly this library's own loop-verifier pattern, independently arrived at; row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS |
 | 18 | 2026-07-20T02:40:00Z | ~500s | codex-completion-contract | ≈25k | fetched loop #28's detail page (3goblack); "budget exhaustion never counts as success" carried forward as this loop's own green-≠-done rule; row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS — **2 kits left, 18/20** |
 | 19 | 2026-07-20T02:50:00Z | ~550s | spec-dev-review | ≈30k | fetched loop #21's detail page (Ximanta); source's regression-check-prior-findings requirement carried forward into loop-verifier rubric; row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS — **1 kit left, 19/20** |
+| 20 | 2026-07-20T03:00:00Z | ~500s | stale-safe-batch-release | ≈25k | fetched loop #33's detail page (Matthew Berman); source's deployment-integrity rule ("never deploy from a task worktree or partial file overlay") carried forward — an inverse bookend to every other kit's own worktree-isolation pattern; row checked in `kit-state.md`; `loop-ready-audit.mjs` exits 0 for all 20 kits — **SUCCESS STOP** |
 
 ## Findings / escalations
 
@@ -70,3 +73,15 @@ the job. A clean audit is necessary, not sufficient; re-read the six-part
 table against `kit-state.md`'s own rules and the shared-permission pattern
 across already-built kits before checking a row off, not just the script's
 exit code.
+
+**Closing lesson (run 20, SUCCESS STOP):** Group B's 13 kits turned out
+better-sourced than expected — nearly every fetched detail page contained
+its own stopping condition, checker, and often a human gate, sometimes
+already matching this course's own vocabulary (three stops, doom-loop
+bounds, green ≠ done) independently. The real per-kit work was rarely
+inventing a design; it was translating an already-good external design into
+this library's mandatory L1-first shape and catching the few places (a
+missing report-file permission, a Level column read as ship-state instead
+of target-state) where "looks filled in" wasn't "actually correct." That
+gap is exactly what the human's own spot-check job (per `shared/goal.md`)
+exists to catch next.
