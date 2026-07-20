@@ -3,15 +3,15 @@
   "//permission": "Allow reads; allow writes ONLY to this loop's owned paths + the log.",
   "permission": {
     "edit": {
-      "pr-status-report.md": "allow",
-      "pr-babysitter-state.md": "allow",
+      "ci-sweeper-report.md": "allow",
+      "ci-sweeper-state.md": "allow",
       "loop-run-log.md": "allow",
       "*": "deny"
     },
     "bash": "ask"
   },
   "//instructions": "OpenCode loads project rules from AGENTS.md — add one line there:",
-  "//agents_md_line": "For pr-babysitter, follow skills/loop-task.md exactly. Report only.",
+  "//agents_md_line": "For ci-sweeper, follow skills/loop-task.md exactly. Report only.",
   "//heartbeat": "cron or a wrapper script is the heartbeat; the kill switch, run cap, and git commit live in the wrapper (harness-layer guarantees), not the prompt.",
   "mcp": {}
 }

@@ -4,9 +4,9 @@
 > `patterns-page-loop`, and the human may read it, never edit it.
 > Definition: [`loops/day3/kit-stamper/loop.md`](loops/day3/kit-stamper/loop.md)
 
-**Status:** ⏳ running — 2 / 20 kits stamped.
-**Last beat:** 2026-07-20T00:10:00Z — stamped `pr-babysitter`
-**Runs used:** 2 / 25 · **Tokens used:** ≈40k / 500k
+**Status:** ⏳ running — 3 / 20 kits stamped.
+**Last beat:** 2026-07-20T00:20:00Z — stamped `ci-sweeper`
+**Runs used:** 3 / 25 · **Tokens used:** ≈70k / 500k
 
 ---
 
@@ -25,7 +25,7 @@ sources (S1–S9), not from any external site.
 | - | ---- | -------- | --------- | ------- | ----- | ---- | ------ |
 | 1 | daily-triage | A · Repo maintenance | schedule | 1d–2h | L1 | Low | [x] |
 | 2 | pr-babysitter | B · PR & review | schedule | 5–15m | L1 | High | [x] |
-| 3 | ci-sweeper | A · Repo maintenance | schedule/event | 5–15m | L2 | Very high | [ ] |
+| 3 | ci-sweeper | A · Repo maintenance | schedule/event | 5–15m | L2 | Very high | [x] |
 | 4 | dependency-sweeper | A · Repo maintenance | schedule | 6h–1d | L2 | Medium | [ ] |
 | 5 | changelog-drafter | C · Release | schedule/tag | 1d or tag | L1 | Low | [ ] |
 | 6 | post-merge-cleanup | A · Repo maintenance | schedule | 1d–6h | L1 | Low | [ ] |
@@ -66,6 +66,7 @@ changelog loop" (dupes `changelog-drafter`), "the dependency triage loop" (dupes
 | - | -------- | -------- | ------------- | ------ | ------- |
 | 1 | 2026-07-20T00:00:00Z | ~600s | daily-triage | ≈18k | scaffolded + filled from S1 Step 13; `loop-ready-audit.mjs` PASS |
 | 2 | 2026-07-20T00:10:00Z | ~500s | pr-babysitter | ≈22k | scaffolded + filled from S1 Step 7 (PR-review / reconciliation-sweep case study) + §15B catalog entry; `loop-ready-audit.mjs` PASS |
+| 3 | 2026-07-20T00:20:00Z | ~700s | ci-sweeper | ≈30k | scaffolded + filled from §15A catalog entry + infinite-loops.md scenario 1 (doom-loop bound) + the dependency-sweeper worked example (L2 design pattern); shipped at **L1**, not the catalog's L2, after catching a self-authored mistake (see Findings); `loop-ready-audit.mjs` PASS |
 
 ## Findings / escalations
 
@@ -77,3 +78,20 @@ changelog loop" (dupes `changelog-drafter`), "the dependency triage loop" (dupes
   `<ISO-8601-UTC>`) alongside `LOOP.md`/`SKILL.md`/the state example, or the audit
   will FAIL a kit that's actually done. Not a `_template/` edit (read-only) — a
   per-kit fix applied during stamping.
+- **Self-caught mistake (2026-07-20):** `ci-sweeper`'s catalog row lists Level
+  L2, and the first draft of its kit shipped it starting at L2 (worktree
+  writes + PR-opening from beat one) — a direct contradiction of this file's
+  own header rule ("All 20 ship at L1 first") and CLAUDE.md rule 4. Fixed
+  before commit: the catalog's Level column is the loop's **target** level
+  once promoted, never its ship state. `ci-sweeper` now ships L1 report-only
+  with an explicit "Promotion to L2" section in its `LOOP.md`. **Every
+  remaining Group A/B row with Level=L2 (`dependency-sweeper`, and any Group B
+  kit marked L2) needs the same read: build it L1-first with the L2 design
+  documented as an earned promotion, not the starting shape.**
+- **Consistency fix (2026-07-20):** all three stamped kits' `opencode.json.example`
+  write-allowlist was missing the kit's own report filename (only the state
+  file + run log were allowed) — the "write-narrow" permission config would
+  have actually blocked the loop from writing the report that's its entire
+  job. Fixed in `daily-triage`, `pr-babysitter`, and `ci-sweeper`. Every
+  future beat must add `<loop-name>-report.md` (or whatever the kit's report
+  file is called) to the `permission.edit` allowlist, not just the state file.

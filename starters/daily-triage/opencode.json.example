@@ -3,6 +3,7 @@
   "//permission": "Allow reads; allow writes ONLY to this loop's owned paths + the log.",
   "permission": {
     "edit": {
+      "triage-report.md": "allow",
       "daily-triage-state.md": "allow",
       "loop-run-log.md": "allow",
       "*": "deny"
