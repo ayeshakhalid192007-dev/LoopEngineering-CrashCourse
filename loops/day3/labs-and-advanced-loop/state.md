@@ -5,9 +5,9 @@
 > The work checklist is the Day 3 section of [`STATE.md`](../../../STATE.md), not
 > here — this file is the run history only.
 
-**Status:** 🏃 running — 19/29 checklist items done. All 6 cheatsheets + routines.md done.
-**Last beat:** 2026-07-21T12:10:00Z — `docs/appendix/cheatsheets/windsurf.md`
-**Runs used:** 19 / 45 · **Tokens used:** ≈221k / 750k
+**Status:** 🏃 running — 21/29 checklist items done.
+**Last beat:** 2026-07-21T12:50:00Z — `docs/advanced/loopcraft-stacking-loops.md`
+**Runs used:** 21 / 45 · **Tokens used:** ≈258k / 750k
 
 ## Run history
 
@@ -32,6 +32,8 @@
 | 17 | 2026-07-21T11:50:00Z | ~200s | `docs/appendix/cheatsheets/grok.md` | ~9k | Dense Grok CLI reference; STATE.md 17/29 checked |
 | 18 | 2026-07-21T12:00:00Z | ~210s | `docs/appendix/cheatsheets/cursor.md` | ~9.5k | Dense Cursor reference; STATE.md 18/29 checked |
 | 19 | 2026-07-21T12:10:00Z | ~200s | `docs/appendix/cheatsheets/windsurf.md` | ~9k | Dense Windsurf reference; STATE.md 19/29 checked |
+| 20 | 2026-07-21T12:30:00Z | ~380s | `docs/advanced/hill-climbing.md` | ~18k | Full T4 §10 page, self-learning/self-improving gate; STATE.md 20/29 checked |
+| 21 | 2026-07-21T12:50:00Z | ~390s | `docs/advanced/loopcraft-stacking-loops.md` | ~19k | Full T4 §10 page, 4-loop stack mapped onto this repo's fleet; STATE.md 21/29 checked |
 
 ## Findings / escalations
 

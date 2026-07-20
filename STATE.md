@@ -66,8 +66,8 @@ flowchart LR
     - [x] `docs/appendix/cheatsheets/grok.md`
     - [x] `docs/appendix/cheatsheets/cursor.md`
     - [x] `docs/appendix/cheatsheets/windsurf.md`
-    - [ ] `docs/advanced/hill-climbing.md`
-    - [ ] `docs/advanced/loopcraft-stacking-loops.md`
+    - [x] `docs/advanced/hill-climbing.md`
+    - [x] `docs/advanced/loopcraft-stacking-loops.md`
     - [ ] `docs/advanced/evals-and-traces.md`
     - [ ] `docs/advanced/multi-loop-coordination.md`
     - [ ] `docs/advanced/enterprise-scale.md`
