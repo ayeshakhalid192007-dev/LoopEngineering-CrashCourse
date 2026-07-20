@@ -53,9 +53,9 @@ flowchart LR
     - [x] `docs/projects/06-the-doorbell-loop.md`
     - [x] `docs/projects/07-break-it-on-purpose.md`
     - [x] `docs/projects/08-your-own-daily-loop-capstone.md`
-    - [ ] `docs/projects/09-rehearse-a-routine-for-free.md` (drill)
-    - [ ] `docs/projects/10-the-secrets-drill.md` (drill)
-    - [ ] `docs/projects/11-the-two-routine-gate.md` (drill)
+    - [x] `docs/projects/09-rehearse-a-routine-for-free.md` (drill)
+    - [x] `docs/projects/10-the-secrets-drill.md` (drill)
+    - [x] `docs/projects/11-the-two-routine-gate.md` (drill)
     - [ ] `docs/projects/solutions/` — reference solution for each of the 11 above
     - [ ] `docs/appendix/routines.md` — A1–A6 (local vs cloud · creation form
           field-by-field · the three triggers · secrets/state/identity · reading
