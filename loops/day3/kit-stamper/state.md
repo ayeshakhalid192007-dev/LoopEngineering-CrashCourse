@@ -5,10 +5,10 @@
 > The work checklist itself lives in [`kit-state.md`](../../../kit-state.md), not
 > here — this file is the run history and escalations only.
 
-**Status:** ⏳ running — 12 / 20 kits stamped. Group A complete; Group B
+**Status:** ⏳ running — 13 / 20 kits stamped. Group A complete; Group B
 underway (WebFetch to `signals.forwardfuture.com/loop-library/` per kit).
-**Last beat:** 2026-07-20T01:40:00Z
-**Runs used:** 12 / 25 · **Tokens used:** ≈305k / 900k
+**Last beat:** 2026-07-20T01:50:00Z
+**Runs used:** 13 / 25 · **Tokens used:** ≈330k / 900k
 
 ## Run history
 
@@ -26,6 +26,7 @@ underway (WebFetch to `signals.forwardfuture.com/loop-library/` per kit).
 | 10 | 2026-07-20T01:20:00Z | ~550s | test-stabilizer-loop | ≈30k | fetched loop #6's detail page (hungtv27); source's three-way stop (success/no-progress/approval) already matches this course's own stops framework almost exactly; "never blind sleep or retry" carried into loop-verifier as an automatic FAIL; row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS — **halfway, 10/20** |
 | 11 | 2026-07-20T01:30:00Z | ~550s | dependency-cve-burndown | ≈30k | fetched loop #7's detail page (hungtv27); used the source's own stopping condition, rank-then-patch-then-verify body, and explicit "ask before major upgrades/production/risk" human gate near-verbatim; row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS |
 | 12 | 2026-07-20T01:40:00Z | ~500s | page-load-loop | ≈25k | fetched loop #12's detail page (Matthew Berman); preserved the source's own required human setup (routes/warm-up/baseline) as mandatory spine fields before beat 1; row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS |
+| 13 | 2026-07-20T01:50:00Z | ~500s | prod-error-sweep | ≈25k | fetched loop #4's detail page (Matthew Berman); source's own credential/PII/token redaction constraint carried forward as the kit's most important rule, applied across report + spine + log; row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS |
 
 ## Findings / escalations
 
