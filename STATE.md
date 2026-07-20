@@ -57,15 +57,15 @@ flowchart LR
     - [x] `docs/projects/10-the-secrets-drill.md` (drill)
     - [x] `docs/projects/11-the-two-routine-gate.md` (drill)
     - [x] `docs/projects/solutions/` — reference solution for each of the 11 above
-    - [ ] `docs/appendix/routines.md` — A1–A6 (local vs cloud · creation form
+    - [x] `docs/appendix/routines.md` — A1–A6 (local vs cloud · creation form
           field-by-field · the three triggers · secrets/state/identity · reading
           the runs · the routine safety checklist)
-    - [ ] `docs/appendix/cheatsheets/claude-code.md`
-    - [ ] `docs/appendix/cheatsheets/opencode.md`
-    - [ ] `docs/appendix/cheatsheets/codex.md`
-    - [ ] `docs/appendix/cheatsheets/grok.md`
-    - [ ] `docs/appendix/cheatsheets/cursor.md`
-    - [ ] `docs/appendix/cheatsheets/windsurf.md`
+    - [x] `docs/appendix/cheatsheets/claude-code.md`
+    - [x] `docs/appendix/cheatsheets/opencode.md`
+    - [x] `docs/appendix/cheatsheets/codex.md`
+    - [x] `docs/appendix/cheatsheets/grok.md`
+    - [x] `docs/appendix/cheatsheets/cursor.md`
+    - [x] `docs/appendix/cheatsheets/windsurf.md`
     - [ ] `docs/advanced/hill-climbing.md`
     - [ ] `docs/advanced/loopcraft-stacking-loops.md`
     - [ ] `docs/advanced/evals-and-traces.md`

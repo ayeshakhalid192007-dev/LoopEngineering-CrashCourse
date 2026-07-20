@@ -5,9 +5,9 @@
 > The work checklist is the Day 3 section of [`STATE.md`](../../../STATE.md), not
 > here — this file is the run history only.
 
-**Status:** 🏃 running — 12/29 checklist items done. Projects + solutions complete.
-**Last beat:** 2026-07-21T11:00:00Z — `docs/projects/solutions/` (11 files)
-**Runs used:** 12 / 45 · **Tokens used:** ≈151k / 750k
+**Status:** 🏃 running — 19/29 checklist items done. All 6 cheatsheets + routines.md done.
+**Last beat:** 2026-07-21T12:10:00Z — `docs/appendix/cheatsheets/windsurf.md`
+**Runs used:** 19 / 45 · **Tokens used:** ≈221k / 750k
 
 ## Run history
 
@@ -25,6 +25,13 @@
 | 10 | 2026-07-21T10:30:00Z | ~180s | `docs/projects/10-the-secrets-drill.md` | ~8k | Fake-secret deny-list + connector-scope drill; STATE.md 10/29 checked |
 | 11 | 2026-07-21T10:40:00Z | ~200s | `docs/projects/11-the-two-routine-gate.md` | ~9k | Two Routines gated on durable state, no direct calls; STATE.md 11/29 checked |
 | 12 | 2026-07-21T11:00:00Z | ~700s | `docs/projects/solutions/*.md` (11 files) | ~42k | Worked reference solution for every lab/drill; STATE.md 12/29 checked |
+| 13 | 2026-07-21T11:10:00Z | ~300s | `docs/appendix/routines.md` | ~14k | A1-A6 Routines reference + mermaid; STATE.md 13/29 checked |
+| 14 | 2026-07-21T11:20:00Z | ~200s | `docs/appendix/cheatsheets/claude-code.md` | ~9k | Dense Claude Code reference; STATE.md 14/29 checked |
+| 15 | 2026-07-21T11:30:00Z | ~200s | `docs/appendix/cheatsheets/opencode.md` | ~9k | Dense OpenCode reference; STATE.md 15/29 checked |
+| 16 | 2026-07-21T11:40:00Z | ~210s | `docs/appendix/cheatsheets/codex.md` | ~9.5k | Dense Codex CLI reference; STATE.md 16/29 checked |
+| 17 | 2026-07-21T11:50:00Z | ~200s | `docs/appendix/cheatsheets/grok.md` | ~9k | Dense Grok CLI reference; STATE.md 17/29 checked |
+| 18 | 2026-07-21T12:00:00Z | ~210s | `docs/appendix/cheatsheets/cursor.md` | ~9.5k | Dense Cursor reference; STATE.md 18/29 checked |
+| 19 | 2026-07-21T12:10:00Z | ~200s | `docs/appendix/cheatsheets/windsurf.md` | ~9k | Dense Windsurf reference; STATE.md 19/29 checked |
 
 ## Findings / escalations
 
