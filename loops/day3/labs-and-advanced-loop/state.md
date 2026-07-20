@@ -5,9 +5,9 @@
 > The work checklist is the Day 3 section of [`STATE.md`](../../../STATE.md), not
 > here — this file is the run history only.
 
-**Status:** 🏃 running — 23/29 checklist items done.
-**Last beat:** 2026-07-21T13:30:00Z — `docs/advanced/multi-loop-coordination.md`
-**Runs used:** 23 / 45 · **Tokens used:** ≈295k / 750k
+**Status:** 🏃 running — 26/29 checklist items done. All 7 advanced/ pages complete.
+**Last beat:** 2026-07-21T14:30:00Z — `docs/advanced/authoring-your-own-loop.md`
+**Runs used:** 26 / 45 · **Tokens used:** ≈352k / 750k
 
 ## Run history
 
@@ -36,6 +36,9 @@
 | 21 | 2026-07-21T12:50:00Z | ~390s | `docs/advanced/loopcraft-stacking-loops.md` | ~19k | Full T4 §10 page, 4-loop stack mapped onto this repo's fleet; STATE.md 21/29 checked |
 | 22 | 2026-07-21T13:10:00Z | ~380s | `docs/advanced/evals-and-traces.md` | ~18k | Full T4 §10 page, checker/eval/trace distinction; STATE.md 22/29 checked |
 | 23 | 2026-07-21T13:30:00Z | ~400s | `docs/advanced/multi-loop-coordination.md` | ~19k | Full T4 §10 page, registries + meta-loops + fleets-of-fleets; STATE.md 23/29 checked |
+| 24 | 2026-07-21T13:50:00Z | ~390s | `docs/advanced/enterprise-scale.md` | ~18.5k | Full T4 §10 page, ownership/budget/trust-ladder/human-gate at scale; STATE.md 24/29 checked |
+| 25 | 2026-07-21T14:10:00Z | ~390s | `docs/advanced/governance.md` | ~18.5k | Full T4 §10 page, permission model + grant record + org policy; STATE.md 25/29 checked |
+| 26 | 2026-07-21T14:30:00Z | ~400s | `docs/advanced/authoring-your-own-loop.md` | ~19k | Full T4 §10 page, kit anatomy for shareable loops; STATE.md 26/29 checked |
 
 ## Findings / escalations
 
