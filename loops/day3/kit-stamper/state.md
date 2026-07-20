@@ -5,9 +5,11 @@
 > The work checklist itself lives in [`kit-state.md`](../../../kit-state.md), not
 > here — this file is the run history and escalations only.
 
-**Status:** ⏳ running — 4 / 20 kits stamped.
-**Last beat:** 2026-07-20T00:30:00Z
-**Runs used:** 4 / 25 · **Tokens used:** ≈95k / 900k
+**Status:** ⏳ running — 7 / 20 kits stamped. Group A (the original 7)
+complete; Group B (13 Forward Future kits) next — those need a live fetch to
+the source site, not just course docs.
+**Last beat:** 2026-07-20T00:50:00Z
+**Runs used:** 7 / 25 · **Tokens used:** ≈165k / 900k
 
 ## Run history
 
@@ -17,6 +19,9 @@
 | 2 | 2026-07-20T00:10:00Z | ~500s | pr-babysitter | ≈22k | scaffolded via `new-loop-scaffold.mjs`; filled six parts from S1 Step 7's PR-review/reconciliation-sweep case study + §15B catalog entry (schedule/10m/L1/High); row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS |
 | 3 | 2026-07-20T00:20:00Z | ~700s | ci-sweeper | ≈30k | scaffolded via `new-loop-scaffold.mjs`; filled from §15A catalog entry + infinite-loops.md scenario 1 (doom-loop retry bound) + the dependency-sweeper worked example; **first draft shipped it at L2, caught and corrected to L1-first before commit** (see Findings); row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS |
 | 4 | 2026-07-20T00:30:00Z | ~650s | dependency-sweeper | ≈25k | scaffolded via `new-loop-scaffold.mjs`; filled directly from `docs/09-methods/worked-example-dependency-sweeper.md` (the fullest single-source design in the catalog); applied the L1-first lesson from beat 3 correctly from the start, following the worked example's own "Week 1 L1 → Week 2 L2 permanent" verdict; row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS |
+| 5 | 2026-07-20T00:40:00Z | ~450s | changelog-drafter | ≈20k | scaffolded via `new-loop-scaffold.mjs`; filled from `make-your-own-loop.md`'s "Worked in 90 seconds" A–F example, adapted from per-merge event to schedule/tag; row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS |
+| 6 | 2026-07-20T00:45:00Z | ~400s | post-merge-cleanup | ≈18k | scaffolded via `new-loop-scaffold.mjs`; filled from §15A catalog entry, reused the daily-triage/Step-13a report mold; row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS |
+| 7 | 2026-07-20T00:50:00Z | ~400s | issue-triage | ≈18k | scaffolded via `new-loop-scaffold.mjs`; filled from §15D catalog entry, daily-triage mold narrowed to issues; row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS — **Group A complete, 7/7** |
 
 ## Findings / escalations
 

@@ -4,9 +4,9 @@
 > `patterns-page-loop`, and the human may read it, never edit it.
 > Definition: [`loops/day3/kit-stamper/loop.md`](loops/day3/kit-stamper/loop.md)
 
-**Status:** ⏳ running — 4 / 20 kits stamped.
-**Last beat:** 2026-07-20T00:30:00Z — stamped `dependency-sweeper`
-**Runs used:** 4 / 25 · **Tokens used:** ≈95k / 500k
+**Status:** ⏳ running — 7 / 20 kits stamped. Group A complete.
+**Last beat:** 2026-07-20T00:50:00Z — stamped `issue-triage`
+**Runs used:** 7 / 25 · **Tokens used:** ≈165k / 500k
 
 ---
 
@@ -27,9 +27,9 @@ sources (S1–S9), not from any external site.
 | 2 | pr-babysitter | B · PR & review | schedule | 5–15m | L1 | High | [x] |
 | 3 | ci-sweeper | A · Repo maintenance | schedule/event | 5–15m | L2 | Very high | [x] |
 | 4 | dependency-sweeper | A · Repo maintenance | schedule | 6h–1d | L2 | Medium | [x] |
-| 5 | changelog-drafter | C · Release | schedule/tag | 1d or tag | L1 | Low | [ ] |
-| 6 | post-merge-cleanup | A · Repo maintenance | schedule | 1d–6h | L1 | Low | [ ] |
-| 7 | issue-triage | D · Issue & intake | schedule | 2h–1d | L1 | Low | [ ] |
+| 5 | changelog-drafter | C · Release | schedule/tag | 1d or tag | L1 | Low | [x] |
+| 6 | post-merge-cleanup | A · Repo maintenance | schedule | 1d–6h | L1 | Low | [x] |
+| 7 | issue-triage | D · Issue & intake | schedule | 2h–1d | L1 | Low | [x] |
 
 ## Group B — curated from Forward Future's Loop Library (13)
 
@@ -68,6 +68,9 @@ changelog loop" (dupes `changelog-drafter`), "the dependency triage loop" (dupes
 | 2 | 2026-07-20T00:10:00Z | ~500s | pr-babysitter | ≈22k | scaffolded + filled from S1 Step 7 (PR-review / reconciliation-sweep case study) + §15B catalog entry; `loop-ready-audit.mjs` PASS |
 | 3 | 2026-07-20T00:20:00Z | ~700s | ci-sweeper | ≈30k | scaffolded + filled from §15A catalog entry + infinite-loops.md scenario 1 (doom-loop bound) + the dependency-sweeper worked example (L2 design pattern); shipped at **L1**, not the catalog's L2, after catching a self-authored mistake (see Findings); `loop-ready-audit.mjs` PASS |
 | 4 | 2026-07-20T00:30:00Z | ~650s | dependency-sweeper | ≈25k | scaffolded + filled directly from `docs/09-methods/worked-example-dependency-sweeper.md` — the fullest single-source design in the catalog, applying the A–F method end to end; shipped L1-first per that page's own "Week 1 L1 → Week 2 L2 permanent, L3 out of scope" verdict; `loop-ready-audit.mjs` PASS |
+| 5 | 2026-07-20T00:40:00Z | ~450s | changelog-drafter | ≈20k | scaffolded + filled from `make-your-own-loop.md`'s "Worked in 90 seconds" A–F example (this exact task, adapted from its per-merge event trigger to the catalog's schedule/tag heartbeat); 10/day limit and stuck-PR escalation taken directly from that source; `loop-ready-audit.mjs` PASS |
+| 6 | 2026-07-20T00:45:00Z | ~400s | post-merge-cleanup | ≈18k | scaffolded + filled from §15A catalog entry + the priority-order line naming it directly; reused the daily-triage/Step-13a scheduled-poll report mold per that page's own invitation to reuse; `loop-ready-audit.mjs` PASS |
+| 7 | 2026-07-20T00:50:00Z | ~400s | issue-triage | ≈18k | scaffolded + filled from §15D catalog entry; daily-triage's five-line-report mold narrowed to issues only, per Step 13a's explicit reuse invitation; `loop-ready-audit.mjs` PASS — **Group A (the original 7) complete** |
 
 ## Findings / escalations
 
