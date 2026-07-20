@@ -4,9 +4,9 @@
 > `patterns-page-loop`, and the human may read it, never edit it.
 > Definition: [`loops/day3/kit-stamper/loop.md`](loops/day3/kit-stamper/loop.md)
 
-**Status:** ⏳ running — 1 / 20 kits stamped.
-**Last beat:** 2026-07-20T00:00:00Z — stamped `daily-triage`
-**Runs used:** 1 / 25 · **Tokens used:** ≈18k / 500k
+**Status:** ⏳ running — 2 / 20 kits stamped.
+**Last beat:** 2026-07-20T00:10:00Z — stamped `pr-babysitter`
+**Runs used:** 2 / 25 · **Tokens used:** ≈40k / 500k
 
 ---
 
@@ -24,7 +24,7 @@ sources (S1–S9), not from any external site.
 | # | Loop | Category | Heartbeat | Cadence | Level | Cost | Built? |
 | - | ---- | -------- | --------- | ------- | ----- | ---- | ------ |
 | 1 | daily-triage | A · Repo maintenance | schedule | 1d–2h | L1 | Low | [x] |
-| 2 | pr-babysitter | B · PR & review | schedule | 5–15m | L1 | High | [ ] |
+| 2 | pr-babysitter | B · PR & review | schedule | 5–15m | L1 | High | [x] |
 | 3 | ci-sweeper | A · Repo maintenance | schedule/event | 5–15m | L2 | Very high | [ ] |
 | 4 | dependency-sweeper | A · Repo maintenance | schedule | 6h–1d | L2 | Medium | [ ] |
 | 5 | changelog-drafter | C · Release | schedule/tag | 1d or tag | L1 | Low | [ ] |
@@ -65,6 +65,7 @@ changelog loop" (dupes `changelog-drafter`), "the dependency triage loop" (dupes
 | # | Time (Z) | Duration | Kits stamped | Tokens | Outcome |
 | - | -------- | -------- | ------------- | ------ | ------- |
 | 1 | 2026-07-20T00:00:00Z | ~600s | daily-triage | ≈18k | scaffolded + filled from S1 Step 13; `loop-ready-audit.mjs` PASS |
+| 2 | 2026-07-20T00:10:00Z | ~500s | pr-babysitter | ≈22k | scaffolded + filled from S1 Step 7 (PR-review / reconciliation-sweep case study) + §15B catalog entry; `loop-ready-audit.mjs` PASS |
 
 ## Findings / escalations
 

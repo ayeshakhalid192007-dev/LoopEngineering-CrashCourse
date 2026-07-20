@@ -5,15 +5,16 @@
 > The work checklist itself lives in [`kit-state.md`](../../../kit-state.md), not
 > here — this file is the run history and escalations only.
 
-**Status:** ⏳ running — 1 / 20 kits stamped.
-**Last beat:** 2026-07-20T00:00:00Z
-**Runs used:** 1 / 25 · **Tokens used:** ≈18k / 900k
+**Status:** ⏳ running — 2 / 20 kits stamped.
+**Last beat:** 2026-07-20T00:10:00Z
+**Runs used:** 2 / 25 · **Tokens used:** ≈40k / 900k
 
 ## Run history
 
 | # | Time (Z) | Duration | Kit stamped | Tokens | Outcome |
 | - | -------- | -------- | ------------ | ------ | ------- |
 | 1 | 2026-07-20T00:00:00Z | ~600s | daily-triage | ≈18k | scaffolded via `new-loop-scaffold.mjs`; filled LOOP.md/SKILL.md (both tools)/loop-verifier/state/budget/constraints/README from S1 Step 13 verbatim; row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS |
+| 2 | 2026-07-20T00:10:00Z | ~500s | pr-babysitter | ≈22k | scaffolded via `new-loop-scaffold.mjs`; filled six parts from S1 Step 7's PR-review/reconciliation-sweep case study + §15B catalog entry (schedule/10m/L1/High); row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS |
 
 ## Findings / escalations
 
