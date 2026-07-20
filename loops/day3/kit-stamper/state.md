@@ -5,10 +5,11 @@
 > The work checklist itself lives in [`kit-state.md`](../../../kit-state.md), not
 > here — this file is the run history and escalations only.
 
-**Status:** ⏳ running — 9 / 20 kits stamped. Group A complete; Group B
-underway (WebFetch to `signals.forwardfuture.com/loop-library/` per kit).
-**Last beat:** 2026-07-20T01:10:00Z
-**Runs used:** 9 / 25 · **Tokens used:** ≈220k / 900k
+**Status:** ⏳ running — 10 / 20 kits stamped. Halfway. Group A complete;
+Group B underway (WebFetch to `signals.forwardfuture.com/loop-library/` per
+kit).
+**Last beat:** 2026-07-20T01:20:00Z
+**Runs used:** 10 / 25 · **Tokens used:** ≈250k / 900k
 
 ## Run history
 
@@ -23,6 +24,7 @@ underway (WebFetch to `signals.forwardfuture.com/loop-library/` per kit).
 | 7 | 2026-07-20T00:50:00Z | ~400s | issue-triage | ≈18k | scaffolded via `new-loop-scaffold.mjs`; filled from §15D catalog entry, daily-triage mold narrowed to issues; row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS — **Group A complete, 7/7** |
 | 8 | 2026-07-20T01:00:00Z | ~500s | docs-sweep | ≈25k | first Group B kit; WebFetch to Forward Future's index page found all 13 detail-page URLs, then fetched loop #1's page for the real prompt + Matthew Berman's author credit; adapted the source's direct-PR default to L1-first; row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS |
 | 9 | 2026-07-20T01:10:00Z | ~550s | test-coverage-loop | ≈30k | fetched loop #5's detail page (Matthew Berman); used the source's own stopping condition + checker verbatim; added worktree isolation + retry-once-then-exclusion-candidate doom-loop bound; carried the source's assertion-quality caveat into the reviewer; row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS |
+| 10 | 2026-07-20T01:20:00Z | ~550s | test-stabilizer-loop | ≈30k | fetched loop #6's detail page (hungtv27); source's three-way stop (success/no-progress/approval) already matches this course's own stops framework almost exactly; "never blind sleep or retry" carried into loop-verifier as an automatic FAIL; row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS — **halfway, 10/20** |
 
 ## Findings / escalations
 
