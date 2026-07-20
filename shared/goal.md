@@ -1,39 +1,41 @@
-# Goal — Day 2: Write the Full 14-Step Course + Assessments
+# Goal — Day 3: Loop Library + Labs + Advanced Tier + Certification
 
-> Shared by all Day 2 loops. Read-only for loops; only the human edits this file.
-> Source: `loop-plan.md` §10–§14 and `days-plans/day2-plan.md`.
-> (The Day 1 goal was met and its checkpoint declared 2026-07-16 — see `STATE.md`.)
+> Shared by all Day 3 loops. Read-only for loops; only the human edits this file.
+> Source: `loop-plan.md` §15 and `days-plans/day3-plan.md`.
+> (Day 1 and Day 2 goals were met and their checkpoints declared — see `STATE.md`.)
 
 ## The goal
 
-By the end of Day 2 the entire conceptual course — Parts 1–6, all 14 steps, the
-methods pages, and the operating handbook — is complete and readable on GitHub, with
-a quiz and flashcards for every part.
+By the end of Day 3, Deliverable 1 (the full GitHub learning system, T1 → T4) is
+feature-complete and production-ready: the 20-loop core library exists, every kit
+passes a deterministic audit, the practice content and ultra-pro tier are written,
+and all three quality gates are green.
 
 ## The four outcomes
 
-1. **The 14 steps are written** — every step page in `docs/part-1`…`part-6`
-   (including 13a/13b and the Part 6 companions: cost-management, verification,
-   the-three-nested-loops), each following the §10 template.
-2. **Every part is navigable and assessed** — a `README.md` index, a `quiz.md`
-   (5 questions + revealed answers), and a `flashcards.md` (10 cards) per part
-   (part 5: quiz only).
-3. **The methods layer exists** — `make-your-own-loop` (the A–F method),
-   `loop-design-checklist`, `pattern-picker`, `decision-framework`.
-4. **The operating handbook exists** — `operating-loops`, `safety`, `observability`,
-   `failure-modes`, `anti-patterns`, `recovery-playbook`, `multi-loop`.
+1. **The 20-loop core library is stamped** — the 7 original loops plus 13 curated
+   from Forward Future's Loop Library (`kit-state.md` is the full list and source
+   for each), each with a full multi-tool kit and a `Source:` line crediting where
+   its content came from.
+2. **Every kit passes a deterministic audit** — `loop-ready-audit.mjs` PASS on all
+   20, and `patterns/registry.yaml` matches them exactly (`validate-registry.mjs`
+   PASS).
+3. **The practice content exists** — 8 labs + 3 drills + reference `solutions/`,
+   the Routines appendix, and 6 tool cheatsheets.
+4. **The ultra-pro tier + certification exist** — 7 `advanced/` pages, the final
+   exam, the capstone rubric, and the Loop Ready certification.
 
 ## How the outcomes become "done"
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
-    O1("1 · 14 steps written<br/>§10 template"):::outcome --> DOD{"Definition<br/>of done<br/>all boxes"}:::dod
-    O2("2 · Indexes + quizzes<br/>+ flashcards per part"):::outcome --> DOD
-    O3("3 · Methods layer<br/>4 pages"):::outcome --> DOD
-    O4("4 · Operating handbook<br/>7 pages"):::outcome --> DOD
-    DOD --> GATE(["🧑 Human gate —<br/>spot-read one page per part"]):::human
-    GATE --> CP(["✅ Day 2 checkpoint<br/>declared"]):::win
+    O1("1 · 20 kits stamped<br/>kit-state.md"):::outcome --> DOD{"Definition<br/>of done<br/>all boxes"}:::dod
+    O2("2 · Audit + registry<br/>green"):::outcome --> DOD
+    O3("3 · Labs, drills,<br/>cheatsheets"):::outcome --> DOD
+    O4("4 · Advanced tier<br/>+ certification"):::outcome --> DOD
+    DOD --> GATE(["🧑 Human gate —<br/>spot-check 3 kits + a few pages"]):::human
+    GATE --> CP(["✅ Day 3 checkpoint<br/>declared"]):::win
     linkStyle default stroke:#475569,stroke-width:2px;
     classDef outcome fill:#e0e7ff,stroke:#6366f1,stroke-width:2.5px,color:#312e81,font-weight:600;
     classDef dod fill:#ede9fe,stroke:#8b5cf6,stroke-width:2.5px,color:#5b21b6,font-weight:600;
@@ -43,15 +45,20 @@ flowchart LR
 
 ## Definition of done (the provable stopping condition)
 
-- [ ] Every page on the `step-writer` checklist exists and carries all §10 sections
-- [ ] `template-checker` shows PASS on every page, zero open FAILs
-- [ ] Six `quiz.md` + five `flashcards.md` exist and PASS
-- [ ] No broken relative links anywhere in `docs/` (link-check clean)
-- [ ] `markdownlint` clean under the CI globs
-- [ ] Human has spot-read one page per part (human gate)
+- [ ] All 20 rows in `kit-state.md` are checked off
+- [ ] `node scripts/loop-ready-audit.mjs` exits 0 for every kit
+- [ ] `node scripts/validate-registry.mjs` exits 0 (registry matches all 20 kits)
+- [ ] Every item in the Day 3 section of `STATE.md` (labs, drills, cheatsheets,
+      advanced tier, assessments) is checked and passes `template-checker`
+- [ ] No broken relative links anywhere in the new paths (link-check clean)
+- [ ] Human has spot-checked 3 random kits and declared the Day 3 checkpoint
 
 ## Today's human jobs
 
-- Spot-read one page per part — you own content *quality*; the checker only owns shape
-- Read the `template-checker` verdicts and relay any FAILs to the maker
-- Declare the Day 2 checkpoint (only you can)
+- Design and approve `starters/_template/` quality (already in place — spot-check it)
+- Deep-check 3 random stamped kits, especially the borrowed-prompt ones
+- Read `review-notes.md`; any FAIL sends that kit back onto `kit-stamper`'s list
+- Watch the aggregate spend in `shared/loop-budget.md`; pause
+  `labs-and-advanced-loop` first if it's burning too fast (lowest fleet priority)
+- Decide any Group-B kit whose borrowed prompt needs trimming before commit
+- Declare the Day 3 checkpoint (only you can)

@@ -5,14 +5,23 @@
 > definition lives in `loops/day1/<loop>/loop.md`; each loop's private spine lives in
 > `loops/day1/<loop>/state.md`.
 
-## Registered loops (Day 2 — current fleet)
+## Registered loops (Day 3 — current fleet)
 
 | Loop | Folder | Heartbeat | Cadence | Level | Role |
 | ------ | -------- | ----------- | --------- | ------- | ------ |
-| step-writer | `loops/day2/step-writer/` | conditional (run-until-done) | self-paced | L2 (writes docs) | Writes the 14 steps, part indexes, methods, operating handbook. **Current mission: pass-2 tone rewrite per `shared/style-guide.md`** |
+| kit-stamper | `loops/day3/kit-stamper/` | conditional (run-until-done) | self-paced | L2 (writes `starters/`) | Stamps each of the 20 core loops in `kit-state.md` from `_template/`, fills in the loop-specific parts. The workhorse. |
+| audit-loop | `loops/day3/audit-loop/` | schedule | 15m (ceiling) | L1 (report-only) | Runs `loop-ready-audit.mjs` + `validate-registry.mjs`, logs failures to `review-notes.md` — a script is the checker |
+| patterns-page-loop | `loops/day3/patterns-page-loop/` | conditional (run-until-done, own worktree) | self-paced | L2 (writes `patterns/`) | Writes each checked-off kit's spec page + registry entry, in parallel with `kit-stamper` |
+| labs-and-advanced-loop | `loops/day3/labs-and-advanced-loop/` | conditional (run-until-done) | self-paced | L2 (writes `docs/projects,appendix,advanced,assessments`) | `step-writer`'s pattern reused on a new Day 3 checklist in `STATE.md` |
+| link-check | `loops/day1/link-check/` *(continues unchanged)* | schedule | 30m | L1 (report-only) | Keeps relative links honest all day |
+
+## Registered loops (Day 2 — retired 2026-07-19)
+
+| Loop | Folder | Heartbeat | Cadence | Level | Role |
+| ------ | -------- | ----------- | --------- | ------- | ------ |
+| step-writer | `loops/day2/step-writer/` | conditional (run-until-done) | self-paced | L2 (writes docs) | Writes the 14 steps, part indexes, methods, operating handbook. Final run: pass-3 banner cleanup + starter-command reference. |
 | template-checker | `loops/day2/template-checker/` | schedule | 20m (ceiling) | L1 (report-only) | PASS/FAIL per page against the §10 rubric |
 | quiz-writer | `loops/day2/quiz-writer/` | conditional, gated on checker PASS | per part | L2 (writes quiz/flashcards only) | One part's `quiz.md` + `flashcards.md` per beat |
-| link-check | `loops/day1/link-check/` *(continues unchanged)* | schedule | 30m | L1 (report-only) | Keeps relative links honest all day |
 
 ## Registered loops (Day 1 — retired 2026-07-16)
 
@@ -60,10 +69,20 @@ flowchart LR
 
 | Path | Owner (only writer) | Everyone else |
 | ------ | -------------------- | --------------- |
-| `docs/*-part-*` step pages + `README.md`, `docs/09-methods/`, `docs/10-operating/` | **step-writer** (Day 2) | read-only |
-| `starters/` and the **banner line only** of `docs/00-start-here/README.md`, `docs/01-prerequisites/environment-setup.md`, `docs/02-foundations/mental-models.md` | **step-writer** (pass-3 grant, human-approved 2026-07-19) | read-only |
-| `docs/*-part-*/quiz.md`, `docs/*-part-*/flashcards.md` | **quiz-writer** (Day 2) | read-only |
+| `starters/<name>/` (new Day 3 kit folders, never `_template/`) | **kit-stamper** (Day 3) | read-only |
+| `kit-state.md` | **kit-stamper** (Day 3) | read-only |
+| `patterns/*.md`, `patterns/registry.yaml` | **patterns-page-loop** (Day 3) | read-only |
+| `patterns-state.md` | **patterns-page-loop** (Day 3) | read-only |
+| `review-notes.md` | **audit-loop** (Day 3) | read-only |
+| `docs/projects/`, `docs/appendix/`, `docs/advanced/`, `docs/assessments/` | **labs-and-advanced-loop** (Day 3) | read-only |
+| `docs/*-part-*` step pages + `README.md`, `docs/09-methods/`, `docs/10-operating/` | **step-writer** (Day 2, retired) | read-only |
+| `starters/_template/` and the **banner line only** of `docs/00-start-here/README.md`, `docs/01-prerequisites/environment-setup.md`, `docs/02-foundations/mental-models.md` | **step-writer** (pass-3 grant, human-approved 2026-07-19, closed) | read-only |
+| `docs/*-part-*/quiz.md`, `docs/*-part-*/flashcards.md` | **quiz-writer** (Day 2, retired) | read-only |
 | `docs/` Day 1 entry layer (foundations, prerequisites, routers) | **page-writer** (retired) | read-only |
+| `loops/day3/kit-stamper/state.md` | **kit-stamper** | read-only |
+| `loops/day3/audit-loop/state.md` | **audit-loop** | read-only |
+| `loops/day3/patterns-page-loop/state.md` | **patterns-page-loop** | read-only |
+| `loops/day3/labs-and-advanced-loop/state.md` | **labs-and-advanced-loop** | read-only |
 | `loops/day2/step-writer/state.md` | **step-writer** | read-only |
 | `loops/day2/template-checker/state.md` | **template-checker** | read-only |
 | `loops/day2/quiz-writer/state.md` | **quiz-writer** | read-only |
