@@ -45,14 +45,14 @@ flowchart LR
       (full list in `kit-state.md`).
   - **`labs-and-advanced-loop` checklist** (source: `loop-plan.md` §18–19, §25) —
     take the FIRST unchecked item, one page per beat:
-    - [ ] `docs/projects/01-a-watch-loop.md`
-    - [ ] `docs/projects/02-make-the-tests-pass-then-stop.md`
-    - [ ] `docs/projects/03-the-morning-brief-with-a-memory.md`
-    - [ ] `docs/projects/04-a-fix-loop-with-a-real-checker.md`
-    - [ ] `docs/projects/05-codify-the-body.md`
-    - [ ] `docs/projects/06-the-doorbell-loop.md`
-    - [ ] `docs/projects/07-break-it-on-purpose.md`
-    - [ ] `docs/projects/08-your-own-daily-loop-capstone.md`
+    - [x] `docs/projects/01-a-watch-loop.md`
+    - [x] `docs/projects/02-make-the-tests-pass-then-stop.md`
+    - [x] `docs/projects/03-the-morning-brief-with-a-memory.md`
+    - [x] `docs/projects/04-a-fix-loop-with-a-real-checker.md`
+    - [x] `docs/projects/05-codify-the-body.md`
+    - [x] `docs/projects/06-the-doorbell-loop.md`
+    - [x] `docs/projects/07-break-it-on-purpose.md`
+    - [x] `docs/projects/08-your-own-daily-loop-capstone.md`
     - [ ] `docs/projects/09-rehearse-a-routine-for-free.md` (drill)
     - [ ] `docs/projects/10-the-secrets-drill.md` (drill)
     - [ ] `docs/projects/11-the-two-routine-gate.md` (drill)
