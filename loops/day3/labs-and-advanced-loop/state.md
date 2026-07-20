@@ -5,9 +5,9 @@
 > The work checklist is the Day 3 section of [`STATE.md`](../../../STATE.md), not
 > here — this file is the run history only.
 
-**Status:** 🏃 running — 11/29 checklist items done. All 11 project/drill pages complete.
-**Last beat:** 2026-07-21T10:40:00Z — `docs/projects/11-the-two-routine-gate.md`
-**Runs used:** 11 / 45 · **Tokens used:** ≈109k / 750k
+**Status:** 🏃 running — 12/29 checklist items done. Projects + solutions complete.
+**Last beat:** 2026-07-21T11:00:00Z — `docs/projects/solutions/` (11 files)
+**Runs used:** 12 / 45 · **Tokens used:** ≈151k / 750k
 
 ## Run history
 
@@ -24,6 +24,7 @@
 | 9 | 2026-07-21T10:20:00Z | ~180s | `docs/projects/09-rehearse-a-routine-for-free.md` | ~8k | Dry-run Routine creation-form drill; STATE.md 9/29 checked |
 | 10 | 2026-07-21T10:30:00Z | ~180s | `docs/projects/10-the-secrets-drill.md` | ~8k | Fake-secret deny-list + connector-scope drill; STATE.md 10/29 checked |
 | 11 | 2026-07-21T10:40:00Z | ~200s | `docs/projects/11-the-two-routine-gate.md` | ~9k | Two Routines gated on durable state, no direct calls; STATE.md 11/29 checked |
+| 12 | 2026-07-21T11:00:00Z | ~700s | `docs/projects/solutions/*.md` (11 files) | ~42k | Worked reference solution for every lab/drill; STATE.md 12/29 checked |
 
 ## Findings / escalations
 
