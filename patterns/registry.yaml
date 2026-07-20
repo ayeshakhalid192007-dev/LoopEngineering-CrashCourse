@@ -1,0 +1,266 @@
+# patterns/registry.yaml — flat registry of the Day 3 loop-library kits
+#
+# Owned by patterns-page-loop (Day 3, Loop 3). Sole author of this schema —
+# there is no prior example in this repo to match. One entry per kit in
+# starters/ (excluding _template), in the same order as kit-state.md's
+# 20-row checklist. Each entry's `name` matches its starters/<name>/ folder
+# exactly (checked by scripts/validate-registry.mjs) and its matching spec
+# page lives at patterns/<name>.md.
+#
+# Field notes:
+#   group          — "A" (kept as-is, written from this course's own S1-S9
+#                    sources) or "B" (curated from Forward Future's Loop
+#                    Library, adapted with a named-author Source line).
+#   level          — the level every kit actually SHIPS at today (all 20
+#                    ship L1 report-only first, per CLAUDE.md rule 4 and
+#                    kit-state.md's own header + Findings correction).
+#   target_level   — kit-state.md's catalog "Level" column: the level the
+#                    kit's own LOOP.md documents as an EARNED promotion, not
+#                    its starting shape. Equal to `level` when the catalog
+#                    never named a higher target.
+#   source_author  — for group A, the course source (S1) and the step/
+#                    section it draws from; for group B, the named original
+#                    author credited in the kit's own LOOP.md footer.
+#   source_url     — the real, live hyperlink backing source_author (the S1
+#                    course URL for group A; the kit's own Forward Future
+#                    Loop Library detail-page URL for group B).
+
+- name: daily-triage
+  category_code: "A"
+  category_name: "Repo maintenance"
+  heartbeat: "schedule"
+  cadence: "1d-2h"
+  level: "L1"
+  target_level: "L1"
+  cost: "Low"
+  group: "A"
+  source_author: "Panaversity - Loop Engineering: A Crash Course (S1), Step 13"
+  source_url: "https://agentfactory.panaversity.org/docs/loop-engineering-crash-course"
+
+- name: pr-babysitter
+  category_code: "B"
+  category_name: "PR and review"
+  heartbeat: "schedule"
+  cadence: "5-15m"
+  level: "L1"
+  target_level: "L1"
+  cost: "High"
+  group: "A"
+  source_author: "Panaversity - Loop Engineering: A Crash Course (S1), Step 7 and Part V section 15B"
+  source_url: "https://agentfactory.panaversity.org/docs/loop-engineering-crash-course"
+
+- name: ci-sweeper
+  category_code: "A"
+  category_name: "Repo maintenance"
+  heartbeat: "schedule/event"
+  cadence: "5-15m"
+  level: "L1"
+  target_level: "L2"
+  cost: "Very high"
+  group: "A"
+  source_author: "Panaversity - Loop Engineering: A Crash Course (S1), Part V section 15A"
+  source_url: "https://agentfactory.panaversity.org/docs/loop-engineering-crash-course"
+
+- name: dependency-sweeper
+  category_code: "A"
+  category_name: "Repo maintenance"
+  heartbeat: "schedule"
+  cadence: "6h-1d"
+  level: "L1"
+  target_level: "L2"
+  cost: "Medium"
+  group: "A"
+  source_author: "Panaversity - Loop Engineering: A Crash Course (S1), worked example (dependency-sweeper)"
+  source_url: "https://agentfactory.panaversity.org/docs/loop-engineering-crash-course"
+
+- name: changelog-drafter
+  category_code: "C"
+  category_name: "Release"
+  heartbeat: "schedule/tag"
+  cadence: "1d or tag"
+  level: "L1"
+  target_level: "L1"
+  cost: "Low"
+  group: "A"
+  source_author: "Panaversity - Loop Engineering: A Crash Course (S1), \"Worked in 90 seconds\" A-F example"
+  source_url: "https://agentfactory.panaversity.org/docs/loop-engineering-crash-course"
+
+- name: post-merge-cleanup
+  category_code: "A"
+  category_name: "Repo maintenance"
+  heartbeat: "schedule"
+  cadence: "1d-6h"
+  level: "L1"
+  target_level: "L1"
+  cost: "Low"
+  group: "A"
+  source_author: "Panaversity - Loop Engineering: A Crash Course (S1), Part V section 15A"
+  source_url: "https://agentfactory.panaversity.org/docs/loop-engineering-crash-course"
+
+- name: issue-triage
+  category_code: "D"
+  category_name: "Issue and intake"
+  heartbeat: "schedule"
+  cadence: "2h-1d"
+  level: "L1"
+  target_level: "L1"
+  cost: "Low"
+  group: "A"
+  source_author: "Panaversity - Loop Engineering: A Crash Course (S1), Part V section 15D"
+  source_url: "https://agentfactory.panaversity.org/docs/loop-engineering-crash-course"
+
+- name: docs-sweep
+  category_code: "E"
+  category_name: "Documentation"
+  heartbeat: "schedule/event (push)"
+  cadence: "1d"
+  level: "L1"
+  target_level: "L1"
+  cost: "Medium"
+  group: "B"
+  source_author: "Matthew Berman - Forward Future Loop Library, Loop #1 (\"The docs sweep\")"
+  source_url: "https://signals.forwardfuture.com/loop-library/loops/overnight-docs-sweep/"
+
+- name: test-coverage-loop
+  category_code: "J"
+  category_name: "Testing and QA"
+  heartbeat: "conditional"
+  cadence: "on-demand"
+  level: "L1"
+  target_level: "L2"
+  cost: "High"
+  group: "B"
+  source_author: "Matthew Berman - Forward Future Loop Library, Loop #5 (\"100% Test Coverage Loop\")"
+  source_url: "https://signals.forwardfuture.com/loop-library/loops/100-percent-test-coverage-loop/"
+
+- name: test-stabilizer-loop
+  category_code: "J"
+  category_name: "Testing and QA"
+  heartbeat: "conditional"
+  cadence: "on-demand"
+  level: "L1"
+  target_level: "L2"
+  cost: "High"
+  group: "B"
+  source_author: "hungtv27 - Forward Future Loop Library, Loop #6 (\"The test stabilizer loop\")"
+  source_url: "https://signals.forwardfuture.com/loop-library/loops/test-stabilizer-loop/"
+
+- name: dependency-cve-burndown
+  category_code: "F"
+  category_name: "Security"
+  heartbeat: "schedule"
+  cadence: "daily"
+  level: "L1"
+  target_level: "L2"
+  cost: "Medium"
+  group: "B"
+  source_author: "hungtv27 - Forward Future Loop Library, Loop #7 (\"The dependency-CVE burndown loop\")"
+  source_url: "https://signals.forwardfuture.com/loop-library/loops/dependency-cve-burndown-loop/"
+
+- name: page-load-loop
+  category_code: "N"
+  category_name: "Performance"
+  heartbeat: "schedule"
+  cadence: "weekly"
+  level: "L1"
+  target_level: "L2"
+  cost: "Medium"
+  group: "B"
+  source_author: "Matthew Berman - Forward Future Loop Library, Loop #12 (\"The sub-50 ms page-load loop\")"
+  source_url: "https://signals.forwardfuture.com/loop-library/loops/sub-50ms-page-load-loop/"
+
+- name: prod-error-sweep
+  category_code: "L"
+  category_name: "Monitoring and incident"
+  heartbeat: "schedule"
+  cadence: "1-6h"
+  level: "L1"
+  target_level: "L1"
+  cost: "Medium"
+  group: "B"
+  source_author: "Matthew Berman - Forward Future Loop Library, Loop #4 (\"The production error sweep\")"
+  source_url: "https://signals.forwardfuture.com/loop-library/loops/production-error-sweep/"
+
+- name: repo-cleanup-loop
+  category_code: "A"
+  category_name: "Repo maintenance"
+  heartbeat: "schedule"
+  cadence: "weekly"
+  level: "L1"
+  target_level: "L1"
+  cost: "Low"
+  group: "B"
+  source_author: "Matthew Berman - Forward Future Loop Library, Loop #10 (\"The repository cleanup loop\")"
+  source_url: "https://signals.forwardfuture.com/loop-library/loops/repository-cleanup-loop/"
+
+- name: ticket-to-pr-ready
+  category_code: "D-B"
+  category_name: "Issue intake to PR"
+  heartbeat: "event (ticket)"
+  cadence: "per ticket"
+  level: "L1"
+  target_level: "L2"
+  cost: "High"
+  group: "B"
+  source_author: "Hiten Shah - Forward Future Loop Library, Loop #16 (\"The ticket-to-PR-ready loop\")"
+  source_url: "https://signals.forwardfuture.com/loop-library/loops/ticket-to-pr-ready-loop/"
+
+- name: clodex-adversarial-review
+  category_code: "B"
+  category_name: "PR and review"
+  heartbeat: "event (PR)"
+  cadence: "per PR"
+  level: "L1"
+  target_level: "L1"
+  cost: "Medium"
+  group: "B"
+  source_author: "Lukas Kucinski - Forward Future Loop Library, Loop #9 (\"The Clodex adversarial-review loop\")"
+  source_url: "https://signals.forwardfuture.com/loop-library/loops/clodex-adversarial-review-loop/"
+
+- name: loop-harness-verification
+  category_code: "I"
+  category_name: "Self-improvement / meta"
+  heartbeat: "schedule"
+  cadence: "per scheduled run"
+  level: "L1"
+  target_level: "L1"
+  cost: "Low"
+  group: "B"
+  source_author: "Istasha - Forward Future Loop Library, Loop #17 (\"The Loop Harness verification loop\")"
+  source_url: "https://signals.forwardfuture.com/loop-library/loops/loop-harness-verification-loop/"
+
+- name: codex-completion-contract
+  category_code: "I"
+  category_name: "Self-improvement / meta"
+  heartbeat: "conditional"
+  cadence: "on-demand"
+  level: "L1"
+  target_level: "L1"
+  cost: "Low"
+  group: "B"
+  source_author: "3goblack - Forward Future Loop Library, Loop #28 (\"The Codex completion-contract loop\")"
+  source_url: "https://signals.forwardfuture.com/loop-library/loops/codex-completion-contract-loop/"
+
+- name: spec-dev-review
+  category_code: "D"
+  category_name: "Issue and intake"
+  heartbeat: "conditional"
+  cadence: "on-demand"
+  level: "L1"
+  target_level: "L1"
+  cost: "Medium"
+  group: "B"
+  source_author: "Ximanta - Forward Future Loop Library, Loop #21 (\"The spec dev-review loop\")"
+  source_url: "https://signals.forwardfuture.com/loop-library/loops/spec-dev-review-loop/"
+
+- name: stale-safe-batch-release
+  category_code: "C"
+  category_name: "Release"
+  heartbeat: "schedule/tag"
+  cadence: "per release window"
+  level: "L1"
+  target_level: "L1"
+  cost: "Low"
+  group: "B"
+  source_author: "Matthew Berman - Forward Future Loop Library, Loop #33 (\"The stale-safe batch release loop\")"
+  source_url: "https://signals.forwardfuture.com/loop-library/loops/stale-safe-batch-release-loop/"
