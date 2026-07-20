@@ -4,9 +4,9 @@
 > `patterns-page-loop`, and the human may read it, never edit it.
 > Definition: [`loops/day3/kit-stamper/loop.md`](loops/day3/kit-stamper/loop.md)
 
-**Status:** ⏳ running — 18 / 20 kits stamped. Group A complete; Group B underway.
-**Last beat:** 2026-07-20T02:40:00Z — stamped `codex-completion-contract`
-**Runs used:** 18 / 25 · **Tokens used:** ≈470k / 500k
+**Status:** ⏳ running — 19 / 20 kits stamped. Group A complete; Group B underway. 1 kit left.
+**Last beat:** 2026-07-20T02:50:00Z — stamped `spec-dev-review`
+**Runs used:** 19 / 25 · **Tokens used:** ≈500k / 500k
 
 ---
 
@@ -52,7 +52,7 @@ repo/engineering-focused and avoid duplicating Group A.
 | 16 | The Clodex adversarial-review loop | B · PR & review | event (PR) | per PR | L1 | Medium | [x] |
 | 17 | The Loop Harness verification loop | I · Self-improvement / meta | schedule | per scheduled run | L1 | Low | [x] |
 | 18 | The Codex completion-contract loop | I · Self-improvement / meta | conditional | on-demand | L1 | Low | [x] |
-| 19 | The spec dev-review loop | D · Issue & intake | conditional | on-demand | L1 | Medium | [ ] |
+| 19 | The spec dev-review loop | D · Issue & intake | conditional | on-demand | L1 | Medium | [x] |
 | 20 | The stale-safe batch release loop | C · Release | schedule/tag | per release window | L1 | Low | [ ] |
 
 Skipped as near-duplicates (kept out on purpose, not overlooked): "the nightly
@@ -82,6 +82,7 @@ changelog loop" (dupes `changelog-drafter`), "the dependency triage loop" (dupes
 | 16 | 2026-07-20T02:20:00Z | ~550s | clodex-adversarial-review | ≈35k | fetched `.../loops/clodex-adversarial-review-loop/` for the real prompt + author credit (Lukas Kucinski); a genuine two-agent maker-checker example (Claude implements, Codex/subagent adversarially reviews); source's "never describe an errored or exhausted run as approved" is this loop's own "green ≠ done"; `loop-ready-audit.mjs` PASS |
 | 17 | 2026-07-20T02:30:00Z | ~500s | loop-harness-verification | ≈30k | fetched `.../loops/loop-harness-verification-loop/` for the real prompt + author credit (Istasha); source's own "second Claude session verifies" design is exactly this library's own loop-verifier pattern, independently arrived at; `loop-ready-audit.mjs` PASS |
 | 18 | 2026-07-20T02:40:00Z | ~500s | codex-completion-contract | ≈25k | fetched `.../loops/codex-completion-contract-loop/` for the real prompt + author credit (3goblack); source's "budget exhaustion never counts as success" is this loop's own green-≠-done rule; requirement-to-evidence vocabulary (proved/weak/missing/contradicted) used verbatim; `loop-ready-audit.mjs` PASS — **2 kits left** |
+| 19 | 2026-07-20T02:50:00Z | ~550s | spec-dev-review | ≈30k | fetched `.../loops/spec-dev-review-loop/` for the real prompt + author credit (Ximanta); source's own requirement that the reviewer regression-check prior findings (not just new ones) carried forward verbatim into the loop-verifier rubric; round-cap → human-decision matches maker-checker-standoff bound; `loop-ready-audit.mjs` PASS — **1 kit left, 19/20** |
 
 ## Findings / escalations
 
