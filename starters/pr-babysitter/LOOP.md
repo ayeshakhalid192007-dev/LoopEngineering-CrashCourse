@@ -11,7 +11,7 @@
 | --- | --- |
 | **Heartbeat** | schedule — every 10 minutes, business hours (inside the 5–15m band) |
 | **Body** | reads all open PRs via the SCM CLI (review state, CI status, mergeability, staleness); **writes only `pr-status-report.md`, `pr-babysitter-state.md`, and the run log** |
-| **Spine** | `pr-babysitter-state.md` (renamed from [`loop-state.md.example`](loop-state.md.example)) — per-PR last-seen status, so a beat only reports what *changed* since the last poll |
+| **Spine** | `pr-babysitter-state.md` (renamed from [`loop-state.md.example`](../_template/loop-state.md.example)) — per-PR last-seen status, so a beat only reports what *changed* since the last poll |
 | **Stopping condition** | per-beat: `pr-status-report.md` written, ranked, matching the template — this loop never "finishes" (as long as PRs exist, it keeps polling) |
 | **Checker** | the `loop-verifier` agent (read-only) — grades the report's format; this loop is itself the **reconciliation sweep** (Step 7) for anything a future event-driven `pr-reviewer` might drop |
 | **Human gate** | you read the report and decide which flags to act on; nothing acts until you do |

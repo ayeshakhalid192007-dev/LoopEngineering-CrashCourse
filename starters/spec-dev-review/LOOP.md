@@ -12,14 +12,14 @@
 | --- | --- |
 | **Heartbeat** | conditional — run-until-done, on-demand, one invocation per ticket/story |
 | **Body** | writes the spec packet's four sections; verifies factual claims against the actual repo before relying on them; **writes only `spec-packet-draft.md`, `spec-dev-review-state.md`, and the run log** — the draft, not the project's canonical spec location |
-| **Spine** | `spec-dev-review-state.md` (renamed from [`loop-state.md.example`](loop-state.md.example)) — round count, the review log (finding + fix, per round), and whether each prior finding remains resolved |
+| **Spine** | `spec-dev-review-state.md` (renamed from [`loop-state.md.example`](../_template/loop-state.md.example)) — round count, the review log (finding + fix, per round), and whether each prior finding remains resolved |
 | **Stopping condition** | the source's own, verbatim: *"stop only when the reviewer returns ready with no material findings, or when the round cap is reached and the remaining blocker is logged for human decision"* |
 | **Checker** | an independent adversarial review, genuinely separate from the drafting pass — checks the packet against the ticket-derived rubric **and** regression-checks that every prior finding is still resolved, not just newly re-reviewed |
 | **Human gate** | the source's own — when the round cap is reached with an open blocker, it's logged for **human decision**, not silently retried or silently shipped |
 
 **Level: L1 (report-only, drafts-not-final)** — every kit in this library
 ships this way; no loop earns L2 until a human has watched one real run
-succeed ([`kit-state.md`](../../../kit-state.md), CLAUDE.md rule 4). See
+succeed ([`kit-state.md`](../../kit-state.md), CLAUDE.md rule 4). See
 [safety](../../docs/10-operating/safety.md) and
 [Step 11 · Maker–Checker](../../docs/05-part-3-the-body/11-maker-checker.md).
 

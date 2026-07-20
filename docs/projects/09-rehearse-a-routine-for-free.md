@@ -19,7 +19,7 @@ actually execute against anything live.
 ## What you'll do
 
 Using a real repo you control, fill out a Routine's creation form completely (see
-[A2 in the Routines appendix](../appendix/routines.md#a2-the-creation-form-field-by-field)
+[A2 in the Routines appendix](../appendix/routines.md#a2--the-creation-form-field-by-field)
 for every field), but set its **prompt** to a dry-run instruction: describe, in prose,
 exactly what it *would* do this beat — which files it would read, what it would write,
 what it would skip — without writing anything. Let it fire on its real schedule for at
@@ -45,7 +45,7 @@ opencode run "DRY RUN ONLY. Describe the beat's intended reads/writes without
 - [ ] The Routine fired on its own schedule at least 3 times, unattended.
 - [ ] Every fired beat produced a dry-run description and zero real writes — verified by
       `git status` showing no changes each time.
-- [ ] You've read [A5 — reading the runs](../appendix/routines.md#a5-reading-the-runs-green--done)
+- [ ] You've read [A5 — reading the runs](../appendix/routines.md#a5--reading-the-runs-green--done)
       and can point to where each run's evidence lives.
 
 ## When it goes wrong

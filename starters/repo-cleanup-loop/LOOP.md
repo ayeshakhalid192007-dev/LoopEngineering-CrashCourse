@@ -11,14 +11,14 @@
 | --- | --- |
 | **Heartbeat** | schedule — weekly |
 | **Body** | reads branches, PRs, commits, and worktrees via the SCM CLI and local git state; **writes only `repo-cleanup-report.md`, `repo-cleanup-loop-state.md`, and the run log** |
-| **Spine** | `repo-cleanup-loop-state.md` (renamed from [`loop-state.md.example`](loop-state.md.example)) — per-item classification (current / owned / safe-to-remove / uncertain) and evidence |
+| **Spine** | `repo-cleanup-loop-state.md` (renamed from [`loop-state.md.example`](../_template/loop-state.md.example)) — per-item classification (current / owned / safe-to-remove / uncertain) and evidence |
 | **Stopping condition** | the source's own, verbatim: *"valuable work is recovered and remaining repository state is intentional"* — checked against the source's own criteria: *"branches, pull requests, commits, and worktrees are current, owned, or safely removed with evidence"* |
 | **Checker** | the `loop-verifier` agent (read-only) — confirms every "safe to remove" classification actually has supporting evidence (merged, closed, orphaned), not a guess |
 | **Human gate** | named directly in the source — *"do not delete uncertain work, discard uncommitted changes, or close someone else's pull request without confirmation."* You review every classification before anything is actually removed |
 
 **Level: L1 (report-only)** — every kit in this library ships this way; no
 loop earns L2 until a human has watched one real run succeed
-([`kit-state.md`](../../../kit-state.md), CLAUDE.md rule 4). At L1 this loop
+([`kit-state.md`](../../kit-state.md), CLAUDE.md rule 4). At L1 this loop
 never deletes anything regardless — a stronger guarantee than even the
 source's own "confirmation for uncertain work only" rule. See
 [safety](../../docs/10-operating/safety.md).

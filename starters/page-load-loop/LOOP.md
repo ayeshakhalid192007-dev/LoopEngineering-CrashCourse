@@ -11,14 +11,14 @@
 | --- | --- |
 | **Heartbeat** | schedule — weekly (per catalog); the source's own cadence is *"after each significant change,"* which a human running this in-session can follow more tightly — the weekly schedule is this kit's default for unattended operation |
 | **Body** | measures page-load time across every route under fixed test conditions; drafts a candidate optimization in a throwaway worktree, re-measures there; **writes only `page-load-report.md`, `page-load-loop-state.md`, and the run log** |
-| **Spine** | `page-load-loop-state.md` (renamed from [`loop-state.md.example`](loop-state.md.example)) — per-route load-time history, baseline capture, and optimization attempts |
+| **Spine** | `page-load-loop-state.md` (renamed from [`loop-state.md.example`](../_template/loop-state.md.example)) — per-route load-time history, baseline capture, and optimization attempts |
 | **Stopping condition** | the source's own, verbatim: *"every page loads in under 50 ms"* |
 | **Checker** | the source's own, verbatim: *"the same benchmark and confirm there are no regressions"* — script-checkable, re-run every beat |
 | **Human gate** | the source requires **initial setup before any beat runs**: defining the metric, the routes, the test environment, warm-up behavior, and baseline capture — this is the spine's first entry, not optional. After that, you review each drafted optimization before applying it |
 
 **Level: L1 (report-only, drafts-not-applies)** — every kit in this library
 ships this way; no loop earns L2 until a human has watched one real run
-succeed ([`kit-state.md`](../../../kit-state.md), CLAUDE.md rule 4). The
+succeed ([`kit-state.md`](../../kit-state.md), CLAUDE.md rule 4). The
 source describes this loop as designed to run "iteratively without human
 intervention between cycles" once the human setup is done — this library's
 L1-first rule still applies to the first run regardless. See

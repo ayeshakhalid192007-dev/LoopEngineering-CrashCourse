@@ -15,14 +15,14 @@
 | --- | --- |
 | **Heartbeat** | schedule — per scheduled run of whatever task this instance wraps |
 | **Body** | in an isolated worktree, stages a patch or outbox message for the wrapped task; **writes only `harness-report.md`, `loop-harness-verification-state.md`, and the run log** — nothing is ever delivered outside this loop's own report at L1 |
-| **Spine** | `loop-harness-verification-state.md` (renamed from [`loop-state.md.example`](loop-state.md.example)) — source revision, staged output, verifier result, delivery status, and the next scheduled run, per the source's own required fields |
+| **Spine** | `loop-harness-verification-state.md` (renamed from [`loop-state.md.example`](../_template/loop-state.md.example)) — source revision, staged output, verifier result, delivery status, and the next scheduled run, per the source's own required fields |
 | **Stopping condition** | the source's own, verbatim: *"ship only after a pass; otherwise preserve the findings and retry only within the limit"* |
 | **Checker** | **a second, genuinely separate session** — the source's own design, verbatim: *"one Claude session stage a patch... and a second Claude session verify it against explicit criteria."* This is exactly the `loop-verifier` pattern this entire library already uses for every kit, independently arrived at by an external source |
 | **Human gate** | you read the harness report — staged output, verifier verdict, delivery status — and deliver (or apply) it yourself; nothing is delivered until you do |
 
 **Level: L1 (report-only, stages-not-delivers)** — every kit in this
 library ships this way; no loop earns L2 until a human has watched one real
-run succeed ([`kit-state.md`](../../../kit-state.md), CLAUDE.md rule 4). See
+run succeed ([`kit-state.md`](../../kit-state.md), CLAUDE.md rule 4). See
 [safety](../../docs/10-operating/safety.md) and
 [Step 11 · Maker–Checker](../../docs/05-part-3-the-body/11-maker-checker.md).
 

@@ -11,14 +11,14 @@
 | --- | --- |
 | **Heartbeat** | conditional — run-until-done, on-demand (you start it; it works the uncovered-region list to empty or to its per-beat limit) |
 | **Body** | reads the test suite and the coverage report; drafts candidate tests in a throwaway worktree and runs them there; **writes only `coverage-report.md`, `test-coverage-loop-state.md`, and the run log** — no test file is committed at L1 |
-| **Spine** | `test-coverage-loop-state.md` (renamed from [`loop-state.md.example`](loop-state.md.example)) — per-uncovered-region status, retry counts, and an `exclusion-candidate` register |
+| **Spine** | `test-coverage-loop-state.md` (renamed from [`loop-state.md.example`](../_template/loop-state.md.example)) — per-uncovered-region status, retry counts, and an `exclusion-candidate` register |
 | **Stopping condition** | the source's own spec, verbatim: *"the full test suite passes at 100% coverage."* A beat is complete when every uncovered region since the last mark has either a drafted, suite-passing test recommendation, or an `exclusion-candidate` entry |
 | **Checker** | the project's own coverage report — *"the source of truth,"* per the source — plus the `loop-verifier` agent (read-only), which checks that a drafted test actually asserts something meaningful, not just that it *executes* the line |
 | **Human gate** | you read the report, review each drafted test's assertions (not just the coverage number), and apply what you approve; nothing is committed until you do |
 
 **Level: L1 (report-only, drafts-not-commits)** — every kit in this library
 ships this way; no loop earns L2 until a human has watched one real run
-succeed ([`kit-state.md`](../../../kit-state.md), CLAUDE.md rule 4). The
+succeed ([`kit-state.md`](../../kit-state.md), CLAUDE.md rule 4). The
 source specifies no autonomy level; this library's rule applies regardless.
 See [safety](../../docs/10-operating/safety.md).
 

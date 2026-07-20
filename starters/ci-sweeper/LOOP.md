@@ -12,14 +12,14 @@
 | --- | --- |
 | **Heartbeat** | schedule/event — a CI-completion event fires a beat immediately; a 10-minute scheduled sweep is the reconciliation pass for anything the event dropped (inside the 5–15m band) |
 | **Body** | reads CI run logs and `main`'s status; **writes only `ci-sweeper-report.md`, `ci-sweeper-state.md`, and the run log** |
-| **Spine** | `ci-sweeper-state.md` (renamed from [`loop-state.md.example`](loop-state.md.example)) — per-failure status, classification, and retry count once promoted |
+| **Spine** | `ci-sweeper-state.md` (renamed from [`loop-state.md.example`](../_template/loop-state.md.example)) — per-failure status, classification, and retry count once promoted |
 | **Stopping condition** | a beat is complete when the triggering failure has a report entry: classification, why it matters, suggested (NOT applied) fix |
 | **Checker** | the `loop-verifier` agent (read-only) — grades the report's classification and format; **never the maker** |
 | **Human gate** | you read the report and decide whether to apply the suggested fix — and, separately, whether this loop has earned promotion to L2 |
 
 **Level: L1 (report-only)** — every kit in this library ships this way; no loop
 earns L2 until a human has watched one real run succeed
-([`kit-state.md`](../../../kit-state.md), CLAUDE.md rule 4). The catalog rates
+([`kit-state.md`](../../kit-state.md), CLAUDE.md rule 4). The catalog rates
 this loop's *target* level L2 and **Very high** cost because a red `main`
 blocks everyone — that urgency is why it's first in the fleet's priority
 order, not a reason to skip the L1 proving step. See

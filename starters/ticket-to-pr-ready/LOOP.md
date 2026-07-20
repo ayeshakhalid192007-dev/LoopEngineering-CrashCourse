@@ -12,14 +12,14 @@
 | --- | --- |
 | **Heartbeat** | event — one ticket, one run, per ticket |
 | **Body** | reproduces the failure in the smallest representative environment; drafts a fix in a throwaway worktree; re-runs the original reproduction plus regression tests; **writes only `ticket-report.md`, `ticket-to-pr-ready-state.md`, and the run log** |
-| **Spine** | `ticket-to-pr-ready-state.md` (renamed from [`loop-state.md.example`](loop-state.md.example)) — per-ticket reproduction evidence, root cause, fix draft, verification result, attempt count |
+| **Spine** | `ticket-to-pr-ready-state.md` (renamed from [`loop-state.md.example`](../_template/loop-state.md.example)) — per-ticket reproduction evidence, root cause, fix draft, verification result, attempt count |
 | **Stopping condition** | the source's own, verbatim: *"the issue reproduces before the fix, no longer reproduces afterward, and relevant regression checks pass"* |
 | **Checker** | the before/after reproduction itself (script-checkable: does the original repro still fail before the fix and pass after?) plus the `loop-verifier` agent (read-only), which fails any patch that touches files unrelated to the fix |
 | **Human gate** | the source's own review-ready checkpoint — you read the report (cause, changed files, before/after proof, risks) and open the real PR yourself, or promote the loop |
 
 **Level: L1 (report-only, drafts-not-opens-PR)** — every kit in this
 library ships this way; no loop earns L2 until a human has watched one real
-run succeed ([`kit-state.md`](../../../kit-state.md), CLAUDE.md rule 4). See
+run succeed ([`kit-state.md`](../../kit-state.md), CLAUDE.md rule 4). See
 [safety](../../docs/10-operating/safety.md).
 
 ## The prompt

@@ -13,14 +13,14 @@
 | --- | --- |
 | **Heartbeat** | conditional — run-until-done, on-demand |
 | **Body** | runs the test suite N times to find flakes; investigates the most frequent one's root cause; drafts a fix in a throwaway worktree and verifies it; **writes only `stabilizer-report.md`, `test-stabilizer-loop-state.md`, and the run log** — no fix is committed at L1 |
-| **Spine** | `test-stabilizer-loop-state.md` (renamed from [`loop-state.md.example`](loop-state.md.example)) — per-flake status, root cause, fix attempts, and a `quarantine-candidate` register |
+| **Spine** | `test-stabilizer-loop-state.md` (renamed from [`loop-state.md.example`](../_template/loop-state.md.example)) — per-flake status, root cause, fix attempts, and a `quarantine-candidate` register |
 | **Stopping condition** | the source's own, verbatim: *"N consecutive full-suite runs are green under the recorded conditions"* — or progress stalls, or approval is required |
 | **Checker** | the suite's own pass/fail streak (script-checkable) plus the `loop-verifier` agent (read-only), which fails any fix that hides an unresolved cause behind a blind sleep or retry |
 | **Human gate** | named directly in the source — *"approval is required"* is one of the loop's own three valid exits; you review each fix and each quarantine recommendation before either is applied |
 
 **Level: L1 (report-only, drafts-not-commits)** — every kit in this library
 ships this way; no loop earns L2 until a human has watched one real run
-succeed ([`kit-state.md`](../../../kit-state.md), CLAUDE.md rule 4). The
+succeed ([`kit-state.md`](../../kit-state.md), CLAUDE.md rule 4). The
 source specifies no autonomy level; this library's rule applies regardless.
 See [safety](../../docs/10-operating/safety.md).
 

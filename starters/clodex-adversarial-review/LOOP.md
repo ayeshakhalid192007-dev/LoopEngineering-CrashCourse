@@ -12,14 +12,14 @@
 | --- | --- |
 | **Heartbeat** | event — a PR opened or updated fires a beat; up to 5 iterations per PR (`--max-iter 5`) |
 | **Body** | reads the PR diff; runs an adversarial review (the real `codex` CLI if available, otherwise the `loop-verifier` agent standing in for it); for findings at or above the severity threshold (medium, by default), drafts a fix in a throwaway worktree; **writes only `clodex-review-report.md`, `clodex-adversarial-review-state.md`, and the run log** — no commit is pushed to the real PR branch |
-| **Spine** | `clodex-adversarial-review-state.md` (renamed from [`loop-state.md.example`](loop-state.md.example)) — per-PR iteration count, findings history, verdict; resumable, per the source's own requirement |
+| **Spine** | `clodex-adversarial-review-state.md` (renamed from [`loop-state.md.example`](../_template/loop-state.md.example)) — per-PR iteration count, findings history, verdict; resumable, per the source's own requirement |
 | **Stopping condition** | the source's own, verbatim: *"Codex approves, only accepted findings remain, progress stalls, or the iteration cap is reached"* |
 | **Checker** | the adversarial reviewer **is** the checker, by design — this is Step 11's maker–checker split made literal: Claude is the maker, Codex (or its subagent stand-in) is a genuinely separate reviewer, never the same pass grading itself |
 | **Human gate** | you read the verdict and findings and apply the drafted fixes to the real PR yourself; nothing is pushed until you do |
 
 **Level: L1 (report-only, drafts-not-pushes)** — every kit in this library
 ships this way; no loop earns L2 until a human has watched one real run
-succeed ([`kit-state.md`](../../../kit-state.md), CLAUDE.md rule 4). The
+succeed ([`kit-state.md`](../../kit-state.md), CLAUDE.md rule 4). The
 catalog's own target level for this loop is also L1 — a review loop's job
 is a verdict and findings, not a merge, at any level. See
 [safety](../../docs/10-operating/safety.md) and

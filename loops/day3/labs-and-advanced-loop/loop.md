@@ -56,7 +56,7 @@ flowchart TD
 | Max runs/day | 45 |
 | Max tokens/day | 750k |
 | Sub-agent spawns | 0 |
-| Self-throttle | at 80% of the **current** cap → report-only | re-read the cap every beat |
+| Self-throttle | at 80% of the **current** cap → report-only; re-read the cap every beat |
 | Kill switch | `loop-pause-all: on` → exit at start of beat |
 
 Source: [`shared/loop-budget.md`](../../../shared/loop-budget.md).

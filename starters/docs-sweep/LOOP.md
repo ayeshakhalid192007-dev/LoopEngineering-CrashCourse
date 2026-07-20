@@ -11,14 +11,14 @@
 | --- | --- |
 | **Heartbeat** | schedule/event (push) — daily, or triggered by a push to `main` touching source paths (inside the 1d band) |
 | **Body** | reads the codebase and its documentation; **writes only `docs-drift-report.md`, `docs-sweep-state.md`, and the run log** |
-| **Spine** | `docs-sweep-state.md` (renamed from [`loop-state.md.example`](loop-state.md.example)) — last-swept commit, so a beat only re-checks what changed since |
+| **Spine** | `docs-sweep-state.md` (renamed from [`loop-state.md.example`](../_template/loop-state.md.example)) — last-swept commit, so a beat only re-checks what changed since |
 | **Stopping condition** | per-beat: every doc page touching code that changed since the last mark has a report entry — drift confirmed or cleared |
 | **Checker** | the `loop-verifier` agent (read-only) — confirms each flagged drift is real by diffing the doc's claim against the actual code, not just a stale-looking phrase |
 | **Human gate** | you read the report and update the docs (or apply the loop's drafted fix) yourself; nothing is opened or committed until you do |
 
 **Level: L1 (report-only)** — every kit in this library ships this way; no
 loop earns L2 until a human has watched one real run succeed
-([`kit-state.md`](../../../kit-state.md), CLAUDE.md rule 4). The original
+([`kit-state.md`](../../kit-state.md), CLAUDE.md rule 4). The original
 design (see Source below) opens a PR directly — this library's L1-first rule
 applies regardless of what the source loop's own default was. See
 [safety](../../docs/10-operating/safety.md).

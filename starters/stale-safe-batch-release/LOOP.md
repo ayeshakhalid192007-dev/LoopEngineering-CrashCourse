@@ -14,14 +14,14 @@
 | --- | --- |
 | **Heartbeat** | schedule/tag — per release window |
 | **Body** | reads pending PRs and their merge/staleness status; builds a combined-release artifact from the latest integrated `main` (never a worktree or partial overlay); **writes only `release-batch-report.md`, `stale-safe-batch-release-state.md`, and the run log** |
-| **Spine** | `stale-safe-batch-release-state.md` (renamed from [`loop-state.md.example`](loop-state.md.example)) — per-PR inclusion decision (current/stale), the batch composition, and the artifact source verification |
+| **Spine** | `stale-safe-batch-release-state.md` (renamed from [`loop-state.md.example`](../_template/loop-state.md.example)) — per-PR inclusion decision (current/stale), the batch composition, and the artifact source verification |
 | **Stopping condition** | the source's own, verbatim: *"only current, complete changes ship in the combined release"* |
 | **Checker** | the `loop-verifier` agent (read-only) — confirms every included change is genuinely current (merged into `main`, not stale) and that the batch artifact traces to `main`, not a worktree or overlay |
 | **Human gate** | you read the release-batch report and perform the actual release yourself; nothing ships until you do |
 
 **Level: L1 (report-only)** — every kit in this library ships this way; no
 loop earns L2 until a human has watched one real run succeed
-([`kit-state.md`](../../../kit-state.md), CLAUDE.md rule 4). See
+([`kit-state.md`](../../kit-state.md), CLAUDE.md rule 4). See
 [safety](../../docs/10-operating/safety.md).
 
 ## The prompt

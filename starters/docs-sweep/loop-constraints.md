@@ -11,7 +11,7 @@
 - **At L1 (current, shipped level): never edit a doc file, never open a PR.**
   The original source loop opens a PR directly — this library ships every
   kit L1 report-only first, regardless of the source's own default
-  ([`kit-state.md`](../../../kit-state.md), CLAUDE.md rule 4).
+  ([`kit-state.md`](../../kit-state.md), CLAUDE.md rule 4).
 - **Once promoted to L2: never merge the opened PR itself** — a human always
   reviews and merges.
 - Never take an external, visible action beyond the report at L1, or

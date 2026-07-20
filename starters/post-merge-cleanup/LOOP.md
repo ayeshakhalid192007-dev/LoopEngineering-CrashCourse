@@ -11,14 +11,14 @@
 | --- | --- |
 | **Heartbeat** | schedule — every few hours (inside the 1d–6h band); merges are the trigger in spirit, but this is a polling sweep, not an event subscription |
 | **Body** | reads merged PRs, branches, linked issues, and preview-environment status via the SCM CLI; **writes only `cleanup-report.md`, `post-merge-cleanup-state.md`, and the run log** |
-| **Spine** | `post-merge-cleanup-state.md` (renamed from [`loop-state.md.example`](loop-state.md.example)) — per-item last-seen status, so a beat only reports newly-orphaned items, not the same stale branch every sweep |
+| **Spine** | `post-merge-cleanup-state.md` (renamed from [`loop-state.md.example`](../_template/loop-state.md.example)) — per-item last-seen status, so a beat only reports newly-orphaned items, not the same stale branch every sweep |
 | **Stopping condition** | per-beat: `cleanup-report.md` written listing every item newly eligible for cleanup since the last mark — machine-checkable: is the branch's PR actually merged? is the issue actually closed by that merge? |
 | **Checker** | the `loop-verifier` agent (read-only) — confirms each flagged item is genuinely orphaned (branch's PR state, issue's linked-PR state) before it's reported, not just guessed |
 | **Human gate** | you read the report and delete/close/tear down what you approve; nothing acts until you do |
 
 **Level: L1 (report-only)** — it observes and reports; it does not repair.
 Writes are earned one level at a time
-([`kit-state.md`](../../../kit-state.md), CLAUDE.md rule 4). See
+([`kit-state.md`](../../kit-state.md), CLAUDE.md rule 4). See
 [safety](../../docs/10-operating/safety.md).
 
 ## The prompt

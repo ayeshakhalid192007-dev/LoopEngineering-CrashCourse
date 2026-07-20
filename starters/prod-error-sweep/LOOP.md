@@ -11,14 +11,14 @@
 | --- | --- |
 | **Heartbeat** | schedule — every 1–6 hours |
 | **Body** | reads production logs and error telemetry; drafts a fix in a throwaway worktree, runs the tests there; **writes only `prod-error-report.md`, `prod-error-sweep-state.md`, and the run log** |
-| **Spine** | `prod-error-sweep-state.md` (renamed from [`loop-state.md.example`](loop-state.md.example)) — per-error status, root cause, fix draft, verification result |
+| **Spine** | `prod-error-sweep-state.md` (renamed from [`loop-state.md.example`](../_template/loop-state.md.example)) — per-error status, root cause, fix draft, verification result |
 | **Stopping condition** | the source's own, verbatim: *"if no actionable errors are present, stop without making changes"* — otherwise, a beat is complete when the traced error has a report entry with a verified fix |
 | **Checker** | the test suite re-run against the drafted fix (script-checkable); the `loop-verifier` agent (read-only) additionally scans the report itself for anything that looks like a credential, token, or payload that should never have left the logs |
 | **Human gate** | you read the report and apply the fix yourself (opening the real PR, once promoted); nothing is opened or committed until you do |
 
 **Level: L1 (report-only, drafts-not-opens-PR)** — every kit in this library
 ships this way; no loop earns L2 until a human has watched one real run
-succeed ([`kit-state.md`](../../../kit-state.md), CLAUDE.md rule 4). The
+succeed ([`kit-state.md`](../../kit-state.md), CLAUDE.md rule 4). The
 source's own default is to open a PR directly — this library's rule applies
 regardless. See [safety](../../docs/10-operating/safety.md).
 

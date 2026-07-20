@@ -11,14 +11,14 @@
 | --- | --- |
 | **Heartbeat** | schedule — every few hours (inside the 2h–1d band) |
 | **Body** | reads new/updated issues via the SCM CLI; **writes only `issue-triage-report.md`, `issue-triage-state.md`, and the run log** |
-| **Spine** | `issue-triage-state.md` (renamed from [`loop-state.md.example`](loop-state.md.example)) — last-seen issue marks, so a beat only triages what's new |
+| **Spine** | `issue-triage-state.md` (renamed from [`loop-state.md.example`](../_template/loop-state.md.example)) — last-seen issue marks, so a beat only triages what's new |
 | **Stopping condition** | per-beat: `issue-triage-report.md` written, ≤5 lines, most urgent first, matching the template |
 | **Checker** | the `loop-verifier` agent (read-only) — grades the report's format; content judgment stays with the human |
 | **Human gate** | you read the report and apply the labels/priority yourself; nothing is applied until you do |
 
 **Level: L1 (report-only)** — it observes and reports; it does not repair.
 Writes are earned one level at a time
-([`kit-state.md`](../../../kit-state.md), CLAUDE.md rule 4). See
+([`kit-state.md`](../../kit-state.md), CLAUDE.md rule 4). See
 [safety](../../docs/10-operating/safety.md).
 
 ## The prompt

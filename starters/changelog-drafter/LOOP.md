@@ -11,14 +11,14 @@
 | --- | --- |
 | **Heartbeat** | schedule/tag — daily, or triggered by a release-tag event, whichever comes first |
 | **Body** | reads merged PRs via the SCM CLI since the last-processed PR number; **writes only `changelog-draft.md`, `changelog-drafter-state.md`, and the run log** |
-| **Spine** | `changelog-drafter-state.md` (renamed from [`loop-state.md.example`](loop-state.md.example)) — the last-processed PR number, so a beat only drafts what's new |
+| **Spine** | `changelog-drafter-state.md` (renamed from [`loop-state.md.example`](../_template/loop-state.md.example)) — the last-processed PR number, so a beat only drafts what's new |
 | **Stopping condition** | every merged PR since the last beat has a changelog-draft line — machine-checkable: does every merged PR number since the last mark show up in the draft? |
 | **Checker** | a script (every merged PR number accounted for?) plus the `loop-verifier` agent (read-only) grading line quality; **never the maker** |
 | **Human gate** | the release manager reads `changelog-draft.md` before tagging — nothing lands in `CHANGELOG.md` until they say so |
 
 **Level: L1 (report-only, drafts-as-file, not commits)** — every kit in this
 library ships this way; no loop earns L2 until a human has watched one real
-run succeed ([`kit-state.md`](../../../kit-state.md), CLAUDE.md rule 4). The
+run succeed ([`kit-state.md`](../../kit-state.md), CLAUDE.md rule 4). The
 course's own worked example for this exact task specifies the identical
 schedule independently: *"one week of L1 drafts-as-comments before it's ever
 allowed to commit."* See [safety](../../docs/10-operating/safety.md).

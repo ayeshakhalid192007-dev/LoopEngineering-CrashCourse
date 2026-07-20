@@ -11,7 +11,7 @@
 | --- | --- |
 | **Heartbeat** | schedule — weekdays 07:00 (your timezone) |
 | **Body** | reads issues/PRs/CI runs via the SCM CLI; **writes only `triage-report.md`, `daily-triage-state.md`, and the run log** |
-| **Spine** | `daily-triage-state.md` (renamed from [`loop-state.md.example`](loop-state.md.example)) — last-seen timestamps for issues/PRs/CI, so a beat never re-triages what it already reported |
+| **Spine** | `daily-triage-state.md` (renamed from [`loop-state.md.example`](../_template/loop-state.md.example)) — last-seen timestamps for issues/PRs/CI, so a beat never re-triages what it already reported |
 | **Stopping condition** | one beat = one `triage-report.md` written, ≤5 lines, matching the template; daily cap 1 |
 | **Checker** | the `loop-verifier` agent (read-only) — grades the report's *format* against the rubric; content judgment stays with the human |
 | **Human gate** | you read the report over coffee; nothing acts until you do |

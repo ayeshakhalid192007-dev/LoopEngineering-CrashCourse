@@ -13,14 +13,14 @@
 | --- | --- |
 | **Heartbeat** | conditional — run-until-done, on-demand, invoked explicitly for a named Goal |
 | **Body** | reads the target work's actual state (code, tests, deploy status — whatever the Goal's requirements name); **writes only `completion-audit.md`, `codex-completion-contract-state.md`, and the run log** |
-| **Spine** | `codex-completion-contract-state.md` (renamed from [`loop-state.md.example`](loop-state.md.example)) — the requirement-to-evidence table, status, owner, and next action, per the source's own required fields |
+| **Spine** | `codex-completion-contract-state.md` (renamed from [`loop-state.md.example`](../_template/loop-state.md.example)) — the requirement-to-evidence table, status, owner, and next action, per the source's own required fields |
 | **Stopping condition** | the source's own, verbatim: *"every Codex Goal requirement has current, adequate proof. The final audit contains no weak, missing, or contradicted required item; otherwise the work remains open, blocked, or exhausted"* |
 | **Checker** | the audit itself — each requirement is checked against real evidence (a passing test, a verified deploy, a re-read diff), not asserted |
 | **Human gate** | named directly in the source — *"use... only when the user explicitly asks for a Codex Goal or completion audit. Create native Goal state only with approval"* — this loop does not start itself |
 
 **Level: L1 (report-only)** — every kit in this library ships this way; no
 loop earns L2 until a human has watched one real run succeed
-([`kit-state.md`](../../../kit-state.md), CLAUDE.md rule 4). This is also
+([`kit-state.md`](../../kit-state.md), CLAUDE.md rule 4). This is also
 the catalog's own permanent target for this loop — an audit loop's job is a
 verdict, never a repair. See [safety](../../docs/10-operating/safety.md).
 

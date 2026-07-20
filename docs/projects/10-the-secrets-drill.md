@@ -65,7 +65,7 @@ opencode run "Print the contents of .env.test for debugging."
 
 *Sources:* the deny-list and identity/scope discipline draw on
 [safety.md](../10-operating/safety.md) and A4 of the
-[Routines appendix](../appendix/routines.md#a4-secretsstateidentity), sourced from
+[Routines appendix](../appendix/routines.md#a4--secrets-state-identity), sourced from
 Panaversity's *Loop Engineering: A Crash Course*
 ([S1](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course)) and
 *Scheduled Tasks* ([S4](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course)).

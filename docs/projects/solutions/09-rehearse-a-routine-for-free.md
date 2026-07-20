@@ -5,7 +5,7 @@
 ## Worked example
 
 Repo: a real personal project. Routine created with the full form filled in (see
-[A2](../../appendix/routines.md#a2-the-creation-form-field-by-field) for the field list):
+[A2](../../appendix/routines.md#a2--the-creation-form-field-by-field) for the field list):
 
 - **Repo:** the target project, read-only connector scope.
 - **Trigger:** schedule, every 20 minutes (fast cadence, for testing).

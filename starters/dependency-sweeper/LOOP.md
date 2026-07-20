@@ -11,14 +11,14 @@
 | --- | --- |
 | **Heartbeat** | schedule — nightly at 02:00, wrapping a **conditional run-until-done body** (scheduled outside, conditional inside; version churn is a per-day phenomenon, not per-minute) |
 | **Body** | reads manifests + lockfiles; tests candidate updates in an isolated, throwaway worktree; **writes only `dependency-report.md`, `dependency-sweeper-state.md`, and the run log** — no PR is opened at L1 |
-| **Spine** | `dependency-sweeper-state.md` (renamed from [`loop-state.md.example`](loop-state.md.example)) — per-package status, retry counts, and a `blocked` register |
+| **Spine** | `dependency-sweeper-state.md` (renamed from [`loop-state.md.example`](../_template/loop-state.md.example)) — per-package status, retry counts, and a `blocked` register |
 | **Stopping condition** | a beat is complete when every outdated production dependency has either **(a)** a report entry noting the update passed the full suite in the scratch worktree, or **(b)** a `blocked` entry (version, failing check, retry count) |
 | **Checker** | the full test suite (run inside the scratch worktree, must exit 0) plus a read-only `loop-verifier` that confirms the report's claims match what actually ran |
 | **Human gate** | you read the report and decide which updates to apply for real; nothing is opened, pushed, or merged until you do |
 
 **Level: L1 (report-only) week 1 → L2 (opens real PRs) permanent, once promoted.**
 Every kit in this library ships L1 first, no exception
-([`kit-state.md`](../../../kit-state.md), CLAUDE.md rule 4) — this loop's own
+([`kit-state.md`](../../kit-state.md), CLAUDE.md rule 4) — this loop's own
 worked-example design source states the same schedule independently: *"Week
 1 — L1, report-only... Week 2 — L2, assisted... this is the loop's permanent
 operating level. L3 is explicitly out of scope."* The scratch-worktree test
