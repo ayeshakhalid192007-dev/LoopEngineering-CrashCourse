@@ -5,11 +5,11 @@
 > The work checklist lives in [`patterns-state.md`](../../../patterns-state.md), not
 > here — this file is the run history only.
 
-**Status:** ⏳ in progress — 7 / 20 kit pages written (Group A, the original 7,
-complete). `kit-stamper` finished all 20 kits before this run started, so this
-run is catching up in its own worktree, merged forward from `day3/loop-library`.
-**Last beat:** 2026-07-20T04:20:00Z — wrote issue-triage's page + registry entry
-**Runs used:** 7 / 25 · **Tokens used:** ≈44k / 300k
+**Status:** ⏳ in progress — 13 / 20 kit pages written. `kit-stamper` finished
+all 20 kits before this run started, so this run is catching up in its own
+worktree, merged forward from `day3/loop-library`.
+**Last beat:** 2026-07-20T04:50:00Z — wrote prod-error-sweep's page + registry entry
+**Runs used:** 13 / 25 · **Tokens used:** ≈86k / 300k
 
 ## Run history
 
@@ -22,6 +22,12 @@ run is catching up in its own worktree, merged forward from `day3/loop-library`.
 | 5 | 2026-07-20T04:15:00Z | ~350s | changelog-drafter | ≈6k | patterns/changelog-drafter.md + registry.yaml entry; row 5/20 checked |
 | 6 | 2026-07-20T04:17:00Z | ~350s | post-merge-cleanup | ≈6k | patterns/post-merge-cleanup.md + registry.yaml entry; row 6/20 checked |
 | 7 | 2026-07-20T04:20:00Z | ~350s | issue-triage | ≈6k | patterns/issue-triage.md + registry.yaml entry; row 7/20 checked — Group A (original 7) complete |
+| 8 | 2026-07-20T04:25:00Z | ~400s | docs-sweep | ≈7k | patterns/docs-sweep.md + registry.yaml entry; row 8/20 checked — first Group B page |
+| 9 | 2026-07-20T04:30:00Z | ~400s | test-coverage-loop | ≈7k | patterns/test-coverage-loop.md + registry.yaml entry; row 9/20 checked |
+| 10 | 2026-07-20T04:35:00Z | ~400s | test-stabilizer-loop | ≈7k | patterns/test-stabilizer-loop.md + registry.yaml entry; row 10/20 checked |
+| 11 | 2026-07-20T04:40:00Z | ~400s | dependency-cve-burndown | ≈7k | patterns/dependency-cve-burndown.md + registry.yaml entry; row 11/20 checked |
+| 12 | 2026-07-20T04:45:00Z | ~400s | page-load-loop | ≈7k | patterns/page-load-loop.md + registry.yaml entry; row 12/20 checked |
+| 13 | 2026-07-20T04:50:00Z | ~400s | prod-error-sweep | ≈7k | patterns/prod-error-sweep.md + registry.yaml entry; row 13/20 checked |
 
 ## Findings / escalations
 
