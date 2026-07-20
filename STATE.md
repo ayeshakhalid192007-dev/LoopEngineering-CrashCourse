@@ -73,9 +73,9 @@ flowchart LR
     - [x] `docs/advanced/enterprise-scale.md`
     - [x] `docs/advanced/governance.md`
     - [x] `docs/advanced/authoring-your-own-loop.md`
-    - [ ] `docs/assessments/final-exam.md`
-    - [ ] `docs/assessments/capstone-rubric.md`
-    - [ ] `docs/assessments/loop-ready-certification.md`
+    - [x] `docs/assessments/final-exam.md`
+    - [x] `docs/assessments/capstone-rubric.md`
+    - [x] `docs/assessments/loop-ready-certification.md`
 - [ ] Day 4 — Website + polish + ship
 
 ## Post-checkpoint content changes

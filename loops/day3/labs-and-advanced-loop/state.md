@@ -5,9 +5,9 @@
 > The work checklist is the Day 3 section of [`STATE.md`](../../../STATE.md), not
 > here — this file is the run history only.
 
-**Status:** 🏃 running — 26/29 checklist items done. All 7 advanced/ pages complete.
-**Last beat:** 2026-07-21T14:30:00Z — `docs/advanced/authoring-your-own-loop.md`
-**Runs used:** 26 / 45 · **Tokens used:** ≈352k / 750k
+**Status:** ✅ 29/29 checklist items done — all STATE.md rows checked. Self-check next.
+**Last beat:** 2026-07-21T15:15:00Z — `docs/assessments/loop-ready-certification.md`
+**Runs used:** 29 / 45 · **Tokens used:** ≈399k / 750k
 
 ## Run history
 
@@ -39,6 +39,9 @@
 | 24 | 2026-07-21T13:50:00Z | ~390s | `docs/advanced/enterprise-scale.md` | ~18.5k | Full T4 §10 page, ownership/budget/trust-ladder/human-gate at scale; STATE.md 24/29 checked |
 | 25 | 2026-07-21T14:10:00Z | ~390s | `docs/advanced/governance.md` | ~18.5k | Full T4 §10 page, permission model + grant record + org policy; STATE.md 25/29 checked |
 | 26 | 2026-07-21T14:30:00Z | ~400s | `docs/advanced/authoring-your-own-loop.md` | ~19k | Full T4 §10 page, kit anatomy for shareable loops; STATE.md 26/29 checked |
+| 27 | 2026-07-21T14:50:00Z | ~350s | `docs/assessments/final-exam.md` | ~16k | 21-question scored exam, 100pt/75-pass; STATE.md 27/29 checked |
+| 28 | 2026-07-21T15:00:00Z | ~320s | `docs/assessments/capstone-rubric.md` | ~15k | 100pt/70-pass rubric grading Project 8, auto-fail conditions; STATE.md 28/29 checked |
+| 29 | 2026-07-21T15:15:00Z | ~340s | `docs/assessments/loop-ready-certification.md` | ~16k | 7-item certification path tying T1-T4 + capstone together; STATE.md 29/29 checked — SUCCESS STOP |
 
 ## Findings / escalations
 
