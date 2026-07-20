@@ -5,9 +5,9 @@
 > The work checklist is the Day 3 section of [`STATE.md`](../../../STATE.md), not
 > here — this file is the run history only.
 
-**Status:** 🏃 running — 21/29 checklist items done.
-**Last beat:** 2026-07-21T12:50:00Z — `docs/advanced/loopcraft-stacking-loops.md`
-**Runs used:** 21 / 45 · **Tokens used:** ≈258k / 750k
+**Status:** 🏃 running — 23/29 checklist items done.
+**Last beat:** 2026-07-21T13:30:00Z — `docs/advanced/multi-loop-coordination.md`
+**Runs used:** 23 / 45 · **Tokens used:** ≈295k / 750k
 
 ## Run history
 
@@ -34,6 +34,8 @@
 | 19 | 2026-07-21T12:10:00Z | ~200s | `docs/appendix/cheatsheets/windsurf.md` | ~9k | Dense Windsurf reference; STATE.md 19/29 checked |
 | 20 | 2026-07-21T12:30:00Z | ~380s | `docs/advanced/hill-climbing.md` | ~18k | Full T4 §10 page, self-learning/self-improving gate; STATE.md 20/29 checked |
 | 21 | 2026-07-21T12:50:00Z | ~390s | `docs/advanced/loopcraft-stacking-loops.md` | ~19k | Full T4 §10 page, 4-loop stack mapped onto this repo's fleet; STATE.md 21/29 checked |
+| 22 | 2026-07-21T13:10:00Z | ~380s | `docs/advanced/evals-and-traces.md` | ~18k | Full T4 §10 page, checker/eval/trace distinction; STATE.md 22/29 checked |
+| 23 | 2026-07-21T13:30:00Z | ~400s | `docs/advanced/multi-loop-coordination.md` | ~19k | Full T4 §10 page, registries + meta-loops + fleets-of-fleets; STATE.md 23/29 checked |
 
 ## Findings / escalations
 

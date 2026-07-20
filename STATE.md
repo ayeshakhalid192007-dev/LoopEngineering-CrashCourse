@@ -68,8 +68,8 @@ flowchart LR
     - [x] `docs/appendix/cheatsheets/windsurf.md`
     - [x] `docs/advanced/hill-climbing.md`
     - [x] `docs/advanced/loopcraft-stacking-loops.md`
-    - [ ] `docs/advanced/evals-and-traces.md`
-    - [ ] `docs/advanced/multi-loop-coordination.md`
+    - [x] `docs/advanced/evals-and-traces.md`
+    - [x] `docs/advanced/multi-loop-coordination.md`
     - [ ] `docs/advanced/enterprise-scale.md`
     - [ ] `docs/advanced/governance.md`
     - [ ] `docs/advanced/authoring-your-own-loop.md`
