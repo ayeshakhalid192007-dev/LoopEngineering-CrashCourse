@@ -4,9 +4,11 @@
 > Definition: [`loops/day3/patterns-page-loop/loop.md`](loops/day3/patterns-page-loop/loop.md)
 > Reads (never writes): [`kit-state.md`](kit-state.md)
 
-**Status:** ⏳ in progress — 13 / 20 pages written.
-**Last beat:** 2026-07-20T04:50:00Z — wrote prod-error-sweep's page + registry entry
-**Runs used:** 13 / 25 · **Tokens used:** ≈95k / 250k
+**Status:** ✅ SUCCESS STOP — 20 / 20 pages written. `scripts/validate-registry.mjs`
+self-check PASS. Per this loop's own `loop.md`, this loop never grades its own
+pages — awaiting `audit-loop`'s official pass.
+**Last beat:** 2026-07-20T05:20:00Z — wrote stale-safe-batch-release's page + registry entry (the 20th and final kit)
+**Runs used:** 20 / 25 · **Tokens used:** ≈145k / 250k
 
 ---
 
@@ -30,13 +32,13 @@ it runs in its own worktree so it can work in parallel with `kit-stamper`.
 - [x] 11. the-dependency-cve-burndown-loop
 - [x] 12. the-sub-50ms-page-load-loop
 - [x] 13. the-production-error-sweep
-- [ ] 14. the-repository-cleanup-loop
-- [ ] 15. the-ticket-to-pr-ready-loop
-- [ ] 16. the-clodex-adversarial-review-loop
-- [ ] 17. the-loop-harness-verification-loop
-- [ ] 18. the-codex-completion-contract-loop
-- [ ] 19. the-spec-dev-review-loop
-- [ ] 20. the-stale-safe-batch-release-loop
+- [x] 14. the-repository-cleanup-loop
+- [x] 15. the-ticket-to-pr-ready-loop
+- [x] 16. the-clodex-adversarial-review-loop
+- [x] 17. the-loop-harness-verification-loop
+- [x] 18. the-codex-completion-contract-loop
+- [x] 19. the-spec-dev-review-loop
+- [x] 20. the-stale-safe-batch-release-loop
 
 ## Run history
 
@@ -55,6 +57,13 @@ it runs in its own worktree so it can work in parallel with `kit-stamper`.
 | 11 | 2026-07-20T04:40:00Z | ~400s | dependency-cve-burndown | ≈7k | wrote patterns/dependency-cve-burndown.md + registry.yaml entry (Loop #7, hungtv27) |
 | 12 | 2026-07-20T04:45:00Z | ~400s | page-load-loop | ≈7k | wrote patterns/page-load-loop.md + registry.yaml entry (Loop #12, Matthew Berman); kept the mandatory human-setup-before-beat-1 note |
 | 13 | 2026-07-20T04:50:00Z | ~400s | prod-error-sweep | ≈7k | wrote patterns/prod-error-sweep.md + registry.yaml entry (Loop #4, Matthew Berman); carried forward the never-copy-PII/credentials rule |
+| 14 | 2026-07-20T04:55:00Z | ~400s | repo-cleanup-loop | ≈7k | wrote patterns/repo-cleanup-loop.md + registry.yaml entry (Loop #10, Matthew Berman) |
+| 15 | 2026-07-20T05:00:00Z | ~400s | ticket-to-pr-ready | ≈7k | wrote patterns/ticket-to-pr-ready.md + registry.yaml entry (Loop #16, Hiten Shah) |
+| 16 | 2026-07-20T05:05:00Z | ~400s | clodex-adversarial-review | ≈7k | wrote patterns/clodex-adversarial-review.md + registry.yaml entry (Loop #9, Lukas Kucinski) |
+| 17 | 2026-07-20T05:10:00Z | ~400s | loop-harness-verification | ≈7k | wrote patterns/loop-harness-verification.md + registry.yaml entry (Loop #17, Istasha) |
+| 18 | 2026-07-20T05:13:00Z | ~350s | codex-completion-contract | ≈6k | wrote patterns/codex-completion-contract.md + registry.yaml entry (Loop #28, 3goblack) |
+| 19 | 2026-07-20T05:17:00Z | ~350s | spec-dev-review | ≈6k | wrote patterns/spec-dev-review.md + registry.yaml entry (Loop #21, Ximanta) |
+| 20 | 2026-07-20T05:20:00Z | ~350s | stale-safe-batch-release | ≈6k | wrote patterns/stale-safe-batch-release.md + registry.yaml entry (Loop #33, Matthew Berman); SUCCESS STOP — 20/20, validate-registry.mjs self-check PASS |
 
 ## Findings / escalations
 

@@ -5,11 +5,12 @@
 > The work checklist lives in [`patterns-state.md`](../../../patterns-state.md), not
 > here — this file is the run history only.
 
-**Status:** ⏳ in progress — 13 / 20 kit pages written. `kit-stamper` finished
-all 20 kits before this run started, so this run is catching up in its own
-worktree, merged forward from `day3/loop-library`.
-**Last beat:** 2026-07-20T04:50:00Z — wrote prod-error-sweep's page + registry entry
-**Runs used:** 13 / 25 · **Tokens used:** ≈86k / 300k
+**Status:** self-check passed, awaiting audit-loop's official pass. 20 / 20 kit
+pages + registry entries written; `node scripts/validate-registry.mjs` exits
+0. Per this loop's own `loop.md`, this loop never grades its own pages —
+`audit-loop` re-verifies before the Day 3 checkpoint is declared.
+**Last beat:** 2026-07-20T05:20:00Z — wrote stale-safe-batch-release's page + registry entry (the 20th and final kit)
+**Runs used:** 20 / 25 · **Tokens used:** ≈130k / 300k
 
 ## Run history
 
@@ -28,6 +29,13 @@ worktree, merged forward from `day3/loop-library`.
 | 11 | 2026-07-20T04:40:00Z | ~400s | dependency-cve-burndown | ≈7k | patterns/dependency-cve-burndown.md + registry.yaml entry; row 11/20 checked |
 | 12 | 2026-07-20T04:45:00Z | ~400s | page-load-loop | ≈7k | patterns/page-load-loop.md + registry.yaml entry; row 12/20 checked |
 | 13 | 2026-07-20T04:50:00Z | ~400s | prod-error-sweep | ≈7k | patterns/prod-error-sweep.md + registry.yaml entry; row 13/20 checked |
+| 14 | 2026-07-20T04:55:00Z | ~400s | repo-cleanup-loop | ≈7k | patterns/repo-cleanup-loop.md + registry.yaml entry; row 14/20 checked |
+| 15 | 2026-07-20T05:00:00Z | ~400s | ticket-to-pr-ready | ≈7k | patterns/ticket-to-pr-ready.md + registry.yaml entry; row 15/20 checked |
+| 16 | 2026-07-20T05:05:00Z | ~400s | clodex-adversarial-review | ≈7k | patterns/clodex-adversarial-review.md + registry.yaml entry; row 16/20 checked |
+| 17 | 2026-07-20T05:10:00Z | ~400s | loop-harness-verification | ≈7k | patterns/loop-harness-verification.md + registry.yaml entry; row 17/20 checked |
+| 18 | 2026-07-20T05:13:00Z | ~350s | codex-completion-contract | ≈6k | patterns/codex-completion-contract.md + registry.yaml entry; row 18/20 checked |
+| 19 | 2026-07-20T05:17:00Z | ~350s | spec-dev-review | ≈6k | patterns/spec-dev-review.md + registry.yaml entry; row 19/20 checked |
+| 20 | 2026-07-20T05:20:00Z | ~350s | stale-safe-batch-release | ≈6k | patterns/stale-safe-batch-release.md + registry.yaml entry; row 20/20 checked — SUCCESS STOP, validate-registry.mjs self-check PASS |
 
 ## Findings / escalations
 
