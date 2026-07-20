@@ -4,9 +4,9 @@
 > `patterns-page-loop`, and the human may read it, never edit it.
 > Definition: [`loops/day3/kit-stamper/loop.md`](loops/day3/kit-stamper/loop.md)
 
-**Status:** ⏳ running — 10 / 20 kits stamped. Group A complete; Group B underway. Halfway.
-**Last beat:** 2026-07-20T01:20:00Z — stamped `test-stabilizer-loop`
-**Runs used:** 10 / 25 · **Tokens used:** ≈250k / 500k
+**Status:** ⏳ running — 11 / 20 kits stamped. Group A complete; Group B underway.
+**Last beat:** 2026-07-20T01:30:00Z — stamped `dependency-cve-burndown`
+**Runs used:** 11 / 25 · **Tokens used:** ≈280k / 500k
 
 ---
 
@@ -44,7 +44,7 @@ repo/engineering-focused and avoid duplicating Group A.
 | 8 | The docs sweep | E · Documentation | schedule/event (push) | 1d | L1 | Medium | [x] |
 | 9 | The 100% test coverage loop | J · Testing & QA | conditional | on-demand | L2 | High | [x] |
 | 10 | The test stabilizer loop | J · Testing & QA | conditional | on-demand | L2 | High | [x] |
-| 11 | The dependency-CVE burndown loop | F · Security | schedule | daily | L2 | Medium | [ ] |
+| 11 | The dependency-CVE burndown loop | F · Security | schedule | daily | L2 | Medium | [x] |
 | 12 | The sub-50 ms page-load loop | N · Performance | schedule | weekly | L2 | Medium | [ ] |
 | 13 | The production error sweep | L · Monitoring & incident | schedule | 1–6h | L1 | Medium | [ ] |
 | 14 | The repository cleanup loop | A · Repo maintenance | schedule | weekly | L1 | Low | [ ] |
@@ -74,6 +74,7 @@ changelog loop" (dupes `changelog-drafter`), "the dependency triage loop" (dupes
 | 8 | 2026-07-20T01:00:00Z | ~500s | docs-sweep | ≈25k | first Group B kit — fetched `https://signals.forwardfuture.com/loop-library/loops/overnight-docs-sweep/` for the real prompt + author credit (Matthew Berman); adapted the source's PR-opening default to this library's mandatory L1-first shape; `loop-ready-audit.mjs` PASS |
 | 9 | 2026-07-20T01:10:00Z | ~550s | test-coverage-loop | ≈30k | fetched `.../loops/100-percent-test-coverage-loop/` for the real prompt + Matthew Berman credit; source's own stopping condition and checker used verbatim; carried the source's own coverage-vs-assertion-quality caveat into the loop-verifier rubric; `loop-ready-audit.mjs` PASS |
 | 10 | 2026-07-20T01:20:00Z | ~550s | test-stabilizer-loop | ≈30k | fetched `.../loops/test-stabilizer-loop/` for the real prompt + author credit (hungtv27); source's own three-way stop (success/no-progress/approval-required) maps almost exactly onto this course's three-stops framework; "never a blind sleep or retry" carried into loop-verifier as an automatic FAIL rule; `loop-ready-audit.mjs` PASS — **halfway, 10/20** |
+| 11 | 2026-07-20T01:30:00Z | ~550s | dependency-cve-burndown | ≈30k | fetched `.../loops/dependency-cve-burndown-loop/` for the real prompt + author credit (hungtv27); source's own stopping condition, rank-then-patch-then-verify body, and explicit human gate ("ask before major/breaking upgrades, production changes, or accepting risk") used near-verbatim; `loop-ready-audit.mjs` PASS |
 
 ## Findings / escalations
 
