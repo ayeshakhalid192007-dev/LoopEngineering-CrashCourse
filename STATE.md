@@ -45,37 +45,37 @@ flowchart LR
       (full list in `kit-state.md`).
   - **`labs-and-advanced-loop` checklist** (source: `loop-plan.md` §18–19, §25) —
     take the FIRST unchecked item, one page per beat:
-    - [ ] `docs/projects/01-a-watch-loop.md`
-    - [ ] `docs/projects/02-make-the-tests-pass-then-stop.md`
-    - [ ] `docs/projects/03-the-morning-brief-with-a-memory.md`
-    - [ ] `docs/projects/04-a-fix-loop-with-a-real-checker.md`
-    - [ ] `docs/projects/05-codify-the-body.md`
-    - [ ] `docs/projects/06-the-doorbell-loop.md`
-    - [ ] `docs/projects/07-break-it-on-purpose.md`
-    - [ ] `docs/projects/08-your-own-daily-loop-capstone.md`
-    - [ ] `docs/projects/09-rehearse-a-routine-for-free.md` (drill)
-    - [ ] `docs/projects/10-the-secrets-drill.md` (drill)
-    - [ ] `docs/projects/11-the-two-routine-gate.md` (drill)
-    - [ ] `docs/projects/solutions/` — reference solution for each of the 11 above
-    - [ ] `docs/appendix/routines.md` — A1–A6 (local vs cloud · creation form
+    - [x] `docs/projects/01-a-watch-loop.md`
+    - [x] `docs/projects/02-make-the-tests-pass-then-stop.md`
+    - [x] `docs/projects/03-the-morning-brief-with-a-memory.md`
+    - [x] `docs/projects/04-a-fix-loop-with-a-real-checker.md`
+    - [x] `docs/projects/05-codify-the-body.md`
+    - [x] `docs/projects/06-the-doorbell-loop.md`
+    - [x] `docs/projects/07-break-it-on-purpose.md`
+    - [x] `docs/projects/08-your-own-daily-loop-capstone.md`
+    - [x] `docs/projects/09-rehearse-a-routine-for-free.md` (drill)
+    - [x] `docs/projects/10-the-secrets-drill.md` (drill)
+    - [x] `docs/projects/11-the-two-routine-gate.md` (drill)
+    - [x] `docs/projects/solutions/` — reference solution for each of the 11 above
+    - [x] `docs/appendix/routines.md` — A1–A6 (local vs cloud · creation form
           field-by-field · the three triggers · secrets/state/identity · reading
           the runs · the routine safety checklist)
-    - [ ] `docs/appendix/cheatsheets/claude-code.md`
-    - [ ] `docs/appendix/cheatsheets/opencode.md`
-    - [ ] `docs/appendix/cheatsheets/codex.md`
-    - [ ] `docs/appendix/cheatsheets/grok.md`
-    - [ ] `docs/appendix/cheatsheets/cursor.md`
-    - [ ] `docs/appendix/cheatsheets/windsurf.md`
-    - [ ] `docs/advanced/hill-climbing.md`
-    - [ ] `docs/advanced/loopcraft-stacking-loops.md`
-    - [ ] `docs/advanced/evals-and-traces.md`
-    - [ ] `docs/advanced/multi-loop-coordination.md`
-    - [ ] `docs/advanced/enterprise-scale.md`
-    - [ ] `docs/advanced/governance.md`
-    - [ ] `docs/advanced/authoring-your-own-loop.md`
-    - [ ] `docs/assessments/final-exam.md`
-    - [ ] `docs/assessments/capstone-rubric.md`
-    - [ ] `docs/assessments/loop-ready-certification.md`
+    - [x] `docs/appendix/cheatsheets/claude-code.md`
+    - [x] `docs/appendix/cheatsheets/opencode.md`
+    - [x] `docs/appendix/cheatsheets/codex.md`
+    - [x] `docs/appendix/cheatsheets/grok.md`
+    - [x] `docs/appendix/cheatsheets/cursor.md`
+    - [x] `docs/appendix/cheatsheets/windsurf.md`
+    - [x] `docs/advanced/hill-climbing.md`
+    - [x] `docs/advanced/loopcraft-stacking-loops.md`
+    - [x] `docs/advanced/evals-and-traces.md`
+    - [x] `docs/advanced/multi-loop-coordination.md`
+    - [x] `docs/advanced/enterprise-scale.md`
+    - [x] `docs/advanced/governance.md`
+    - [x] `docs/advanced/authoring-your-own-loop.md`
+    - [x] `docs/assessments/final-exam.md`
+    - [x] `docs/assessments/capstone-rubric.md`
+    - [x] `docs/assessments/loop-ready-certification.md`
 - [ ] Day 4 — Website + polish + ship
 
 ## Post-checkpoint content changes
