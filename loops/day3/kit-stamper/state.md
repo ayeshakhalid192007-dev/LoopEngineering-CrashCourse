@@ -5,9 +5,9 @@
 > The work checklist itself lives in [`kit-state.md`](../../../kit-state.md), not
 > here — this file is the run history and escalations only.
 
-**Status:** ⏳ running — 3 / 20 kits stamped.
-**Last beat:** 2026-07-20T00:20:00Z
-**Runs used:** 3 / 25 · **Tokens used:** ≈70k / 900k
+**Status:** ⏳ running — 4 / 20 kits stamped.
+**Last beat:** 2026-07-20T00:30:00Z
+**Runs used:** 4 / 25 · **Tokens used:** ≈95k / 900k
 
 ## Run history
 
@@ -16,6 +16,7 @@
 | 1 | 2026-07-20T00:00:00Z | ~600s | daily-triage | ≈18k | scaffolded via `new-loop-scaffold.mjs`; filled LOOP.md/SKILL.md (both tools)/loop-verifier/state/budget/constraints/README from S1 Step 13 verbatim; row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS |
 | 2 | 2026-07-20T00:10:00Z | ~500s | pr-babysitter | ≈22k | scaffolded via `new-loop-scaffold.mjs`; filled six parts from S1 Step 7's PR-review/reconciliation-sweep case study + §15B catalog entry (schedule/10m/L1/High); row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS |
 | 3 | 2026-07-20T00:20:00Z | ~700s | ci-sweeper | ≈30k | scaffolded via `new-loop-scaffold.mjs`; filled from §15A catalog entry + infinite-loops.md scenario 1 (doom-loop retry bound) + the dependency-sweeper worked example; **first draft shipped it at L2, caught and corrected to L1-first before commit** (see Findings); row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS |
+| 4 | 2026-07-20T00:30:00Z | ~650s | dependency-sweeper | ≈25k | scaffolded via `new-loop-scaffold.mjs`; filled directly from `docs/09-methods/worked-example-dependency-sweeper.md` (the fullest single-source design in the catalog); applied the L1-first lesson from beat 3 correctly from the start, following the worked example's own "Week 1 L1 → Week 2 L2 permanent" verdict; row checked in `kit-state.md`; `loop-ready-audit.mjs` PASS |
 
 ## Findings / escalations
 

@@ -4,9 +4,9 @@
 > `patterns-page-loop`, and the human may read it, never edit it.
 > Definition: [`loops/day3/kit-stamper/loop.md`](loops/day3/kit-stamper/loop.md)
 
-**Status:** ⏳ running — 3 / 20 kits stamped.
-**Last beat:** 2026-07-20T00:20:00Z — stamped `ci-sweeper`
-**Runs used:** 3 / 25 · **Tokens used:** ≈70k / 500k
+**Status:** ⏳ running — 4 / 20 kits stamped.
+**Last beat:** 2026-07-20T00:30:00Z — stamped `dependency-sweeper`
+**Runs used:** 4 / 25 · **Tokens used:** ≈95k / 500k
 
 ---
 
@@ -26,7 +26,7 @@ sources (S1–S9), not from any external site.
 | 1 | daily-triage | A · Repo maintenance | schedule | 1d–2h | L1 | Low | [x] |
 | 2 | pr-babysitter | B · PR & review | schedule | 5–15m | L1 | High | [x] |
 | 3 | ci-sweeper | A · Repo maintenance | schedule/event | 5–15m | L2 | Very high | [x] |
-| 4 | dependency-sweeper | A · Repo maintenance | schedule | 6h–1d | L2 | Medium | [ ] |
+| 4 | dependency-sweeper | A · Repo maintenance | schedule | 6h–1d | L2 | Medium | [x] |
 | 5 | changelog-drafter | C · Release | schedule/tag | 1d or tag | L1 | Low | [ ] |
 | 6 | post-merge-cleanup | A · Repo maintenance | schedule | 1d–6h | L1 | Low | [ ] |
 | 7 | issue-triage | D · Issue & intake | schedule | 2h–1d | L1 | Low | [ ] |
@@ -67,6 +67,7 @@ changelog loop" (dupes `changelog-drafter`), "the dependency triage loop" (dupes
 | 1 | 2026-07-20T00:00:00Z | ~600s | daily-triage | ≈18k | scaffolded + filled from S1 Step 13; `loop-ready-audit.mjs` PASS |
 | 2 | 2026-07-20T00:10:00Z | ~500s | pr-babysitter | ≈22k | scaffolded + filled from S1 Step 7 (PR-review / reconciliation-sweep case study) + §15B catalog entry; `loop-ready-audit.mjs` PASS |
 | 3 | 2026-07-20T00:20:00Z | ~700s | ci-sweeper | ≈30k | scaffolded + filled from §15A catalog entry + infinite-loops.md scenario 1 (doom-loop bound) + the dependency-sweeper worked example (L2 design pattern); shipped at **L1**, not the catalog's L2, after catching a self-authored mistake (see Findings); `loop-ready-audit.mjs` PASS |
+| 4 | 2026-07-20T00:30:00Z | ~650s | dependency-sweeper | ≈25k | scaffolded + filled directly from `docs/09-methods/worked-example-dependency-sweeper.md` — the fullest single-source design in the catalog, applying the A–F method end to end; shipped L1-first per that page's own "Week 1 L1 → Week 2 L2 permanent, L3 out of scope" verdict; `loop-ready-audit.mjs` PASS |
 
 ## Findings / escalations
 
