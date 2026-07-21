@@ -146,9 +146,14 @@ A maintainer with an npm account publishes it from that directory:
 
 ```text
 npm adduser                              # one-time, interactive
-npm org create loop-engineering          # the scope — free for public packages
 cd packages/loop-kit && npm publish      # access:public is set in package.json
 ```
+
+The `@loop-engineering` scope has to exist before that publish will land. Scopes are not
+created from the CLI — there is no `npm org create`. Either register the free org at
+[npmjs.com/org/create](https://www.npmjs.com/org/create), or drop the org entirely and
+rename the package to your own username scope (`@your-npm-name/loop-kit`), which every
+account owns by default.
 
 Publishing does **not** wait on any branch merge. `npm publish` uploads the working tree
 you run it from, so a maintainer sitting on a feature branch can publish today and
