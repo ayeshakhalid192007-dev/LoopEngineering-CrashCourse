@@ -2,7 +2,7 @@
 
 **Goal for today:** By the end of the day, Deliverable 1 (the full GitHub learning system, T1 → T4) is feature-complete and production-ready.
 
-⚠️ **This is the highest-risk day** (34 core loop kits!). The plan's own advice: stamp kits out mechanically from a template — never hand-write them one by one. That makes today the most loop-friendly day of all.
+⚠️ **This is the highest-risk day** (20 core loop kits!). The plan's own advice: stamp kits out mechanically from a template — never hand-write them one by one. That makes today the most loop-friendly day of all.
 
 ---
 
@@ -18,7 +18,7 @@
 
 ### 2. The Prebuilt Loop Library
 
-- [ ] **34 core loops** with full multi-tool kits: the original 7 (daily-triage, pr-babysitter, ci-sweeper, dependency-sweeper, changelog-drafter, post-merge-cleanup, issue-triage) + all 27 loops in categories J–Q
+- [ ] **20 core loops** with full multi-tool kits: the original 7 (daily-triage, pr-babysitter, ci-sweeper, dependency-sweeper, changelog-drafter, post-merge-cleanup, issue-triage) + 13 curated from Forward Future's Loop Library (`https://signals.forwardfuture.com/loop-library/`) — full list and per-loop source in `kit-state.md`
 - [ ] **Extended loops:** remaining A–I entries + the 6 category-R fleet loops (Claude Code + OpenCode kits only, with porting notes)
 - [ ] `patterns/` — one spec page per loop (~62) + `registry.yaml` + schema
 - [ ] `examples/` — per-tool worked examples (10 tool folders)
@@ -49,13 +49,13 @@ Every folder in the repo tree is populated with real, copy-and-run files, and al
 
 ## 🔁 How to build today WITH loops
 
-Today you graduate from single loops to a small **fleet**. 34+ kits with identical shape = pure loop work.
+Today you graduate from single loops to a small **fleet**. 20 kits with identical shape = pure loop work.
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
     T[("starters/_template/<br/>designed by you")]:::human2 --> L1("Loop 1 · kit-stamper<br/>the workhorse"):::maker
-    L1 -->|stamps kits| K[("starters/<br/>34 kits")]:::file
+    L1 -->|stamps kits| K[("starters/<br/>20 kits")]:::file
     L2("Loop 2 · audit loop<br/>a SCRIPT is the checker"):::script -.->|every 15m| K
     L2 -->|failures| RN[("review-notes")]:::file
     RN -.->|red kits back<br/>on the list| L1
@@ -72,18 +72,18 @@ flowchart LR
 
 ### Loop 1 — The kit-stamper loop (the workhorse)
 
-First, make a list of all loops with their details (name, category, heartbeat, cadence, level, cost) in `kit-state.md`. Then:
+The list of all 20 loops with their details (name, category, heartbeat, cadence, level, cost, source) already lives in `kit-state.md`. Then:
 
 ```
 /loop Read kit-state.md. Take the FIRST unbuilt loop. Run
 scripts/new-loop-scaffold.mjs to stamp the kit from _template/, then
 fill in the loop-specific parts: LOOP.md (job, stops, gate), the
 SKILL.md prompt, and the state example. Check it off. Stop when
-all 34 core kits exist.
+all 20 core kits exist.
 ```
 
 - **Stopping condition:** all kits exist AND each passes `loop-ready-audit` (provable by script!).
-- **Limit:** max 40 runs.
+- **Limit:** max 25 runs.
 
 ### Loop 2 — The audit loop (a script IS the checker)
 

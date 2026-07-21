@@ -5,5 +5,6 @@
   "MD013": false, // line length — tables and link-dense prose exceed 80 chars
   "MD033": false, // inline HTML — <details>/<summary> power the check-yourself reveals
   "MD041": false, // first line need not be a top-level heading (HERO comment in README)
-  "MD028": false  // blank line between a quote and a > [!NOTE] callout is required by GFM
+  "MD028": false, // blank line between a quote and a > [!NOTE] callout is required by GFM
+  "MD029": false  // exam/assessment pages use continuous question numbering across section headings
 }

@@ -1,0 +1,6 @@
+# Build artifacts staged by scripts/bundle-kits.mjs at pack/publish time.
+# The originals live at the repo root; never edit or commit these copies.
+/starters/
+/patterns/
+/LICENSE
+*.tgz

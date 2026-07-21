@@ -16,10 +16,15 @@ loops/
 │   ├── page-writer/       the maker  (L2 — writes docs/)
 │   ├── checker/           the grader (L1 — report-only)
 │   └── link-check/        the heartbeat (L1 — still running in Day 2)
-└── day2/
-    ├── step-writer/       the maker  (L2 — steps, methods, operating)
-    ├── template-checker/  the grader (L1 — PASS/FAIL per §10 rubric)
-    └── quiz-writer/       the second maker (L2 — quiz.md + flashcards.md only)
+├── day2/
+│   ├── step-writer/       the maker  (L2 — steps, methods, operating)
+│   ├── template-checker/  the grader (L1 — PASS/FAIL per §10 rubric)
+│   └── quiz-writer/       the second maker (L2 — quiz.md + flashcards.md only)
+└── day3/
+    ├── kit-stamper/            the workhorse (L2 — stamps starters/ from kit-state.md)
+    ├── audit-loop/             the grader (L1 — a script IS the checker)
+    ├── patterns-page-loop/    parallel maker (L2 — patterns/, own worktree)
+    └── labs-and-advanced-loop/ parallel maker (L2 — projects/appendix/advanced/assessments)
 ```
 
 Each loop folder holds exactly two files:
@@ -81,6 +86,22 @@ flowchart TB
     style HEARTBEATS fill:#fbfbff,stroke:#c7d2fe,stroke-width:1.5px,color:#4338ca;
     style FILES fill:#fbfdfc,stroke:#99f6e4,stroke-width:1.5px,color:#115e59;
 ```
+
+## Day 3 fleet at a glance
+
+| Loop | Heartbeat | Cadence | Level | Runs | Status |
+| ---- | --------- | ------- | ----- | ---- | ------ |
+| [kit-stamper](day3/kit-stamper/loop.md) | conditional (run-until-done) | self-paced | L2 | 0 | not started |
+| [audit-loop](day3/audit-loop/loop.md) | schedule | 15m | L1 | 0 | not started |
+| [patterns-page-loop](day3/patterns-page-loop/loop.md) | conditional (run-until-done, own worktree) | self-paced | L2 | 0 | not started |
+| [labs-and-advanced-loop](day3/labs-and-advanced-loop/loop.md) | conditional (run-until-done) | self-paced | L2 | 0 | not started |
+
+Four loops instead of three — Day 3 is this course's first real **fleet**, not just
+parallel single loops. `kit-stamper` is the only writer of `starters/`;
+`patterns-page-loop` runs in its own worktree so it never has to wait for
+`kit-stamper`; `audit-loop` is a script wearing a checker's hat, not an LLM reading a
+rubric. The full checklist of what each of the 20 core loops is and where it came
+from lives in [`kit-state.md`](../kit-state.md).
 
 ## ⚠️ On the honesty of these files
 

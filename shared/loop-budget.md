@@ -3,15 +3,29 @@
 > One budget for the whole fleet, not per loop. Every loop checks this file at the
 > start of every beat (see the `loop-budget` skill and root `LOOP.md`).
 
-## Daily limits — Day 2 fleet (current)
+## Daily limits — Day 3 fleet (current)
+
+| Loop | Max runs/day | Max tokens/day | Max sub-agent spawns/run |
+| ------ | -------------- | ---------------- | -------------------------- |
+| kit-stamper | 25 | 900k | 0 |
+| audit-loop | 60 | 100k | 0 |
+| patterns-page-loop | 25 | 300k | 0 |
+| labs-and-advanced-loop | 45 | 750k | 0 |
+| link-check *(continues from Day 1)* | 20 | 50k | 0 |
+| **Fleet total** | — | **2,100k** | — |
+
+> Today is the most expensive day. If the fleet is burning too fast, pause
+> `labs-and-advanced-loop` first — it's the lowest-priority loop per the
+> coordination contract in `days-plans/day3-plan.md`.
+
+## Daily limits — Day 2 fleet (retired 2026-07-19)
 
 | Loop | Max runs/day | Max tokens/day | Max sub-agent spawns/run |
 | ------ | -------------- | ---------------- | -------------------------- |
 | step-writer | 40 | 700k | 0 |
 | template-checker | 12 | 150k | 0 |
 | quiz-writer | 10 | 150k | 0 |
-| link-check *(continues from Day 1)* | 20 | 50k | 0 |
-| **Fleet total** | — | **1,050k** | — |
+| **Fleet total** | — | **1,000k** | — |
 
 ## Daily limits — Day 1 fleet (retired 2026-07-16)
 

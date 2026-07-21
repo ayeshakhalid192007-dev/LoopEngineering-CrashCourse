@@ -1,0 +1,17 @@
+{
+  "//": "OpenCode variant of the kit. Rename to opencode.json. Read-broad, write-narrow:",
+  "//permission": "Allow reads; allow writes ONLY to this loop's owned paths + the log.",
+  "permission": {
+    "edit": {
+      "prod-error-report.md": "allow",
+      "prod-error-sweep-state.md": "allow",
+      "loop-run-log.md": "allow",
+      "*": "deny"
+    },
+    "bash": "ask"
+  },
+  "//instructions": "OpenCode loads project rules from AGENTS.md — add one line there:",
+  "//agents_md_line": "For prod-error-sweep, follow skills/loop-task.md exactly. Report only.",
+  "//heartbeat": "cron or a wrapper script is the heartbeat; the kill switch, run cap, and git commit live in the wrapper (harness-layer guarantees), not the prompt.",
+  "mcp": {}
+}

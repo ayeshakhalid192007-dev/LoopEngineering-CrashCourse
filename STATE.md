@@ -3,9 +3,12 @@
 > Owned by the human. Tracks overall progress across the 4-day plan. Per-loop state
 > lives in each loop's own file — loops write there, never here.
 
-Current phase: **Day 2 complete — Day 3 not started** (next plan:
-`days-plans/day3-plan.md`)
-Last updated: 2026-07-18 (Day 2 checkpoint declared: human merged PR #3 to `main`)
+Current phase: **Day 3 set up, not yet run** — the 4-loop fleet (`kit-stamper`,
+`audit-loop`, `patterns-page-loop`, `labs-and-advanced-loop`) is defined in
+`loops/day3/`, `kit-state.md`/`patterns-state.md`/`review-notes.md` exist, and the
+three audit scripts are built and tested. The human starts the loops when ready.
+Last updated: 2026-07-20 (Day 3 fleet scaffolded; loop library scoped to 20 kits —
+see `kit-state.md`)
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
@@ -33,7 +36,46 @@ flowchart LR
       sets. Post-fleet polish in the same PR: docs folders numbered in reading order
       (`00-start-here/` … `10-operating/`), `docs/README.md` contents page, and
       per-page *Sources:* footers (S1–S9) on all 40 course pages.
-- [ ] Day 3 — Loop library + labs + advanced tier + certification
+- [ ] Day 3 — Loop library + labs + advanced tier + certification. Fleet scaffolded
+      2026-07-20 (`loops/day3/`, `kit-state.md`, `patterns-state.md`,
+      `review-notes.md`, `scripts/{new-loop-scaffold,loop-ready-audit,validate-registry}.mjs`
+      — all three scripts tested against an empty `starters/`). **Not yet run.**
+      Loop library scope changed from the original 34 to **20 core loops**: the
+      original 7 unchanged, plus 13 curated from Forward Future's Loop Library
+      (full list in `kit-state.md`).
+  - **`labs-and-advanced-loop` checklist** (source: `loop-plan.md` §18–19, §25) —
+    take the FIRST unchecked item, one page per beat:
+    - [x] `docs/projects/01-a-watch-loop.md`
+    - [x] `docs/projects/02-make-the-tests-pass-then-stop.md`
+    - [x] `docs/projects/03-the-morning-brief-with-a-memory.md`
+    - [x] `docs/projects/04-a-fix-loop-with-a-real-checker.md`
+    - [x] `docs/projects/05-codify-the-body.md`
+    - [x] `docs/projects/06-the-doorbell-loop.md`
+    - [x] `docs/projects/07-break-it-on-purpose.md`
+    - [x] `docs/projects/08-your-own-daily-loop-capstone.md`
+    - [x] `docs/projects/09-rehearse-a-routine-for-free.md` (drill)
+    - [x] `docs/projects/10-the-secrets-drill.md` (drill)
+    - [x] `docs/projects/11-the-two-routine-gate.md` (drill)
+    - [x] `docs/projects/solutions/` — reference solution for each of the 11 above
+    - [x] `docs/appendix/routines.md` — A1–A6 (local vs cloud · creation form
+          field-by-field · the three triggers · secrets/state/identity · reading
+          the runs · the routine safety checklist)
+    - [x] `docs/appendix/cheatsheets/claude-code.md`
+    - [x] `docs/appendix/cheatsheets/opencode.md`
+    - [x] `docs/appendix/cheatsheets/codex.md`
+    - [x] `docs/appendix/cheatsheets/grok.md`
+    - [x] `docs/appendix/cheatsheets/cursor.md`
+    - [x] `docs/appendix/cheatsheets/windsurf.md`
+    - [x] `docs/advanced/hill-climbing.md`
+    - [x] `docs/advanced/loopcraft-stacking-loops.md`
+    - [x] `docs/advanced/evals-and-traces.md`
+    - [x] `docs/advanced/multi-loop-coordination.md`
+    - [x] `docs/advanced/enterprise-scale.md`
+    - [x] `docs/advanced/governance.md`
+    - [x] `docs/advanced/authoring-your-own-loop.md`
+    - [x] `docs/assessments/final-exam.md`
+    - [x] `docs/assessments/capstone-rubric.md`
+    - [x] `docs/assessments/loop-ready-certification.md`
 - [ ] Day 4 — Website + polish + ship
 
 ## Post-checkpoint content changes
@@ -66,10 +108,23 @@ flowchart LR
 | template-checker | `loops/day2/template-checker/state.md` |
 | quiz-writer | `loops/day2/quiz-writer/state.md` |
 
+## Per-loop spines (Day 3)
+
+| Loop | State file | Shared checklist it reads/owns |
+| ------ | ----------- | ------------------------------- |
+| kit-stamper | `loops/day3/kit-stamper/state.md` | `kit-state.md` (owns) |
+| audit-loop | `loops/day3/audit-loop/state.md` | `review-notes.md` (owns) |
+| patterns-page-loop | `loops/day3/patterns-page-loop/state.md` | `patterns-state.md` (owns) |
+| labs-and-advanced-loop | `loops/day3/labs-and-advanced-loop/state.md` | Day 3 section of this file (owns) |
+
 ## High Priority (waiting on human)
 
-- Kick off Day 3 (loop library + labs + advanced tier + certification): review
-  `days-plans/day3-plan.md` and set up/start the Day 3 loops.
+- **Run the Day 3 fleet.** Everything is scaffolded and tested: `loops/day3/{kit-stamper,audit-loop,patterns-page-loop,labs-and-advanced-loop}/loop.md`,
+  `kit-state.md` (20 loops, 7 kept + 13 sourced from Forward Future's Loop
+  Library), `patterns-state.md`, `review-notes.md`, and the three scripts under
+  `scripts/` (each dry-run tested against an empty `starters/`). Start
+  `kit-stamper` first (the other three either read its output or run in parallel);
+  `audit-loop` can run alongside it from beat one.
 
 ## Watch List
 

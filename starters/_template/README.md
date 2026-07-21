@@ -24,13 +24,17 @@ verifier, and a scheduler — and are a documented porting step, not a redesign.
 ## Scaffold a loop in six moves
 
 ```text
-1. cp -r starters/_template starters/<loop-name>        # clone the kit
-2. rename loop-state.md.example → <loop-name>-state.md  # your spine
+1. npx @loop-engineering/loop-kit new <loop-name>       # kits only — the course stays put
+2. read the spine it named for you: <loop-name>-state.md
 3. fill every <ANGLE-BRACKET> in LOOP.md                # the six parts + three stops
 4. write the procedure into the SKILL.md                # intent in the prompt, steps in the skill
 5. commit the spine BEFORE the first beat               # uncommitted state is pre-lost
 6. run at L1, watched, for one real cycle               # prove before overnight
 ```
+
+Move 1 needs Node 18+ and nothing else — no clone, no global install. Contributors
+working inside this repo copy the folder in place instead:
+`cp -r starters/_template starters/<loop-name>`.
 
 The full walkthrough — with a worked example and the cross-tool plumbing — is
 [Scaffold a Loop from the Template](../../docs/09-methods/scaffold-from-template.md).

@@ -1,0 +1,26 @@
+{
+  "name": "loop-engineering-crash-course",
+  "version": "0.1.0",
+  "private": true,
+  "description": "The Loop Engineering Crash Course. The installable CLI is packages/loop-kit — this root package is never published.",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "loop-kit": "packages/loop-kit/bin/loop-kit.mjs"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayeshakhalid192007-dev/LoopEngineering-CrashCourse.git"
+  },
+  "scripts": {
+    "validate:registry": "node scripts/validate-registry.mjs",
+    "audit:loops": "node scripts/loop-ready-audit.mjs",
+    "bundle:kit": "node packages/loop-kit/scripts/bundle-kits.mjs"
+  }
+}
