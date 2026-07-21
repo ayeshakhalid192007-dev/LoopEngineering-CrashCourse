@@ -11,30 +11,36 @@ Every loop is the same short list of small files — a definition, a spine, a bu
 constitution, a skill, and a read-only checker. Writing them from scratch each time is how
 loops get born missing an organ. So the repo ships a canonical kit,
 [`starters/_template/`](../../starters/_template/README.md), with every file pre-poured and
-every decision marked as an `<ANGLE-BRACKET>` blank. Copy it, fill the blanks, and the
-seven-item minimum is most of the way done for you.
-
-> [!NOTE]
-> This is the **manual** scaffold — you copy and fill by hand, which keeps you reading every
-> line you commit. The reference repo automates the same skeleton with a one-line
-> `loop-init` CLI; the eventual repo equivalent (`scripts/new-loop-scaffold.mjs`) stamps
-> this exact template. The files it emits are the ones you're filling here.
+every decision marked as an `<ANGLE-BRACKET>` blank. One `npx` command drops it into any
+project — no clone required — and once the blanks are filled the seven-item minimum is
+most of the way done for you.
 
 ## Scaffold in six moves
 
 ```text
-1. cp -r starters/_template starters/<loop-name>        # clone the kit
-2. mv .../loop-state.md.example  <loop-name>-state.md   # your spine, renamed
+1. npx @loop-engineering/loop-kit new <loop-name>       # install the kit, name substituted
+2. read what landed: loops/<loop-name>/ + .claude/      # definition, spine, skill, checker
 3. fill every <ANGLE-BRACKET> in LOOP.md                # the six parts + three stops
 4. write the procedure into the SKILL.md                # intent in the prompt, steps in the skill
 5. git add + commit the spine BEFORE the first beat     # uncommitted state is pre-lost
 6. run at L1, watched, for one real cycle               # prove before overnight
 ```
 
+Move 1 is the only one a machine can do for you. It writes the files into whatever
+project you run it from — no clone, no global install, Node 18+ and nothing else — and
+substitutes your loop's name through the spine, the skill, and the OpenCode permission
+block. Moves 3 and 4 are the design work, and no CLI can shortcut them.
+
+> [!NOTE]
+> Working *inside this repo*, adding a kit to the library rather than to a project of your
+> own? Then the copy is local: `cp -r starters/_template starters/<loop-name>`, or
+> `node scripts/new-loop-scaffold.mjs <loop-name>` to do the copy and the substitution in
+> one step. Same files either way — only the destination differs.
+
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
-    T[("starters/_template<br/>the blank kit")]:::file --> CP("cp → starters/<loop-name>"):::step
+    T[("starters/_template<br/>the blank kit")]:::file --> CP("npx loop-kit new <loop-name><br/>→ your project"):::step
     CP --> FILL("fill the <blanks><br/>LOOP.md · SKILL.md · budget"):::step
     FILL --> COMMIT("commit the spine<br/>before beat 1"):::gate
     COMMIT --> RUN(["run at L1, watched —<br/>one real cycle"]):::win
@@ -60,7 +66,7 @@ flowchart LR
 
 ## Worked in 60 seconds — a `link-sentinel` loop
 
-*Copy:* `cp -r starters/_template starters/link-sentinel`. *Fill `LOOP.md`:* heartbeat =
+*Install:* `npx @loop-engineering/loop-kit new link-sentinel`. *Fill `LOOP.md`:* heartbeat =
 schedule, every 30m; body = runs a link checker, **read-only on `docs/`**; spine =
 `link-sentinel-state.md`; stop = "a pass over `docs/` with zero broken links"; checker = a
 **script** (a link either resolves or it doesn't — the strongest checker there is); gate =

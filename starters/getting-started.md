@@ -1,62 +1,153 @@
 # Getting Started with a Starter Kit
 
-There are two ways to stand up a new loop from this folder: set it up by hand from
-the template, or scaffold it with a command. Both produce the same seven-file kit.
-Use whichever you prefer.
+A loop kit is a folder of small files — a definition, a spine, a budget, a constitution,
+a skill, and a read-only checker. You can put one into a project three ways, and which
+one you want depends on where the loop is going to live.
 
-## Manual setup
+| You want to | Use |
+| --- | --- |
+| Run one of these 20 loops **in your own project** | [`npx @loop-engineering/loop-kit`](#install-a-kit-with-npx) |
+| Design a **brand-new** loop, blanks and all | [`npx … new <loop-name>`](#start-a-brand-new-loop) |
+| Add a kit **to this library** as a contributor | [the manual copy](#contributor-route-copy-the-template) |
 
-Manual setup copies the canonical template and lets you fill in the blanks yourself.
-Choose this route when you want to read each file as you go, or when you are working
-without the command-line tooling installed.
+The first two need nothing but Node 18+. You do not clone this repo to use a kit.
 
-Copy the template into a new, named kit:
+## Install a kit with `npx`
+
+One command, run from the root of the project you want the loop to watch:
 
 ```text
+npx @loop-engineering/loop-kit ci-sweeper
+```
+
+`npx` downloads the package to its cache, writes the kit, and exits. Nothing is
+installed globally and no repository is cloned. To see what is on offer first:
+
+```text
+npx @loop-engineering/loop-kit list
+```
+
+That prints all 20 kits with their category and the autonomy level they ship at — every
+one of them L1, report-only, because [that is the rule](../docs/10-operating/safety.md).
+
+### Where the files land
+
+A kit is split across two places, because Claude Code only discovers skills and
+subagents under a project-root `.claude/` directory:
+
+```text
+your-project/
+├── loops/ci-sweeper/
+│   ├── LOOP.md                  the definition — six parts, prompt, limits, stops
+│   ├── ci-sweeper-state.md      the spine — commit this before beat 1
+│   ├── loop-budget.md           caps + the 80% tripwire
+│   ├── loop-constraints.md      the constitution
+│   ├── loop-run-log.md          append-only, one line per beat
+│   ├── README.md                quickstart + Loop Ready notes
+│   ├── opencode.json.example    OpenCode: write-narrow permissions
+│   └── skills/loop-task.md      OpenCode: the procedure
+└── .claude/
+    ├── skills/ci-sweeper/SKILL.md    Claude Code: the procedure
+    └── agents/loop-verifier.md       Claude Code: the read-only checker
+```
+
+Install a second kit and the checker does not collide — the CLI notices
+`loop-verifier.md` is taken and writes `docs-sweep-verifier.md` instead, with the
+frontmatter name adjusted to match. Existing files are never overwritten silently; the
+command refuses and lists what it would have clobbered.
+
+### Options
+
+```text
+--dir <path>     install into another project instead of the current directory
+--tool <name>    claude · opencode · both     (default: both)
+--force          overwrite existing files
+--dry-run        print every path it would write, write nothing
+```
+
+`--tool claude` skips the OpenCode files; `--tool opencode` skips the `.claude/` ones.
+When you are unsure what a kit will do to a directory, `--dry-run` answers it exactly.
+
+> [!TIP]
+> No npm registry access? The same CLI runs straight off GitHub:
+> `npx github:ayeshakhalid192007-dev/LoopEngineering-CrashCourse ci-sweeper`.
+> It downloads more and takes longer, but needs no published package.
+
+## Start a brand-new loop
+
+When none of the 20 kits fits, take the blank template instead. It is the same
+skeleton, with every decision left as an `<ANGLE-BRACKET>` for you to fill:
+
+```text
+npx @loop-engineering/loop-kit new link-sentinel
+```
+
+Your loop name gets substituted throughout — the spine is named for it, the skill is
+named for it, the OpenCode permission block scopes writes to it. What is left is the
+thinking: fill `LOOP.md` using [the A–F method](../docs/09-methods/make-your-own-loop.md),
+write the real procedure into the `SKILL.md`, and commit the spine before beat 1.
+
+The full walkthrough, with a worked example and the cross-tool plumbing, is
+[Scaffold a Loop from the Template](../docs/09-methods/scaffold-from-template.md).
+
+## Contributor route: copy the template
+
+This one is different in kind from the two above. It does not install a loop into your
+project — it adds a **new kit to this library**, which is something you do with the
+repo cloned and a pull request in mind:
+
+```text
+git clone https://github.com/ayeshakhalid192007-dev/LoopEngineering-CrashCourse.git
+cd LoopEngineering-CrashCourse
 cp -r starters/_template starters/<loop-name>
 ```
 
-Then open the copied files and replace every `<ANGLE-BRACKET>` placeholder — the
-definition, the spine, the budget, the constraints, the skill, and the checker. The
-full step-by-step walkthrough, with a worked example and the cross-tool plumbing, is
-in [Scaffold a Loop from the Template](../docs/09-methods/scaffold-from-template.md).
-
-## Starter commands
-
-The `cobusgreyling/loop-engineering` reference repo (S7) ships command-line tools that
-scaffold, cost, and audit a loop for you. Run them with `npx`; each one prints what it
-is about to do before it writes anything.
+Or let the repo's own script do the copy and the placeholder substitution:
 
 ```text
-# Scaffold a loop from a named pattern
-npx @cobusgreyling/loop-init . --pattern daily-triage --tool grok
-
-# Estimate the token cost of a pattern at a given autonomy level
-npx @cobusgreyling/loop-cost --pattern daily-triage --level L1
-
-# Audit an existing loop and print suggestions
-npx @cobusgreyling/loop-audit . --suggest
-
-# Generate a readiness badge for an audited loop
-npx @cobusgreyling/loop-audit . --badge
+node scripts/new-loop-scaffold.mjs <loop-name>
 ```
 
-The `--tool` flag selects the coding agent the kit is written for. S7's examples use
+Either way, rename `loop-state.md.example` to `<loop-name>-state.md`, fill every
+blank, add the kit to [`patterns/registry.yaml`](../patterns/registry.yaml), and run
+`node scripts/validate-registry.mjs` before you open the PR. See
+[CONTRIBUTING.md](../CONTRIBUTING.md).
+
+## Whichever route you took
+
+The kit is a starting shape, not a finished loop. Before the first real beat, walk it
+against the seven-item minimum:
+
+1. Provable success condition
+2. Run limit
+3. Spine written first, committed
+4. Report-only (L1) start
+5. Human gate placed
+6. One log line per beat
+7. Kill switch tested
+
+Then run one watched cycle at L1 before you let it near a schedule.
+
+## Related command-line tools
+
+The `cobusgreyling/loop-engineering` reference repo ships its own `npx` tools for
+costing and auditing a loop, which pair well with a kit installed here:
+
+```text
+npx @cobusgreyling/loop-cost --pattern daily-triage --level L1   # estimate token cost
+npx @cobusgreyling/loop-audit . --suggest                        # audit + suggestions
+npx @cobusgreyling/loop-audit . --badge                          # readiness badge
+```
+
+Its `--tool` flag selects the coding agent a kit is written for. S7's examples use
 `grok`; this course pairs Claude Code and OpenCode, so `--tool claude` or
-`--tool opencode` fits the same slot.
-
-**From source.** Contributors who have cloned the reference repo can run the demo and
-the tools directly instead of through `npx`:
-
-```text
-bash scripts/before-after-demo.sh
-cd tools/loop-init  && npm ci && npm test && node dist/cli.js /path/to/project --pattern daily-triage --tool grok
-cd tools/loop-audit && npm ci && npm test && node dist/cli.js /path/to/project --suggest
-cd tools/loop-cost  && npm ci && npm test && node dist/cli.js --pattern ci-sweeper --cadence 15m
-```
+`--tool opencode` fills the same slot.
 
 ---
 
-*The starter commands are from the `cobusgreyling/loop-engineering` reference repo
-([S7](https://github.com/cobusgreyling/loop-engineering), MIT). Full attribution:
-[resources/sources.md](../resources/sources.md).*
+*Attribution: the starter-kit model and the `loop-init` CLI shape are adapted from the
+`cobusgreyling/loop-engineering` reference repo
+([S7](https://github.com/cobusgreyling/loop-engineering), MIT); the loop anatomy the kit
+encodes is from Panaversity's *Loop Engineering: A Crash Course*
+([S1](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course)). Full
+attribution: [resources/sources.md](../resources/sources.md).*

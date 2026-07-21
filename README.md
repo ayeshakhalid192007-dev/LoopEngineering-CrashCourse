@@ -95,7 +95,7 @@ certification capstone.
 | `docs/` | the course — single source of truth for GitHub *and* the website |
 | `loops/` | [the loops that build this course](loops/README.md) — real prompts, real spines |
 | `patterns/` | the seven core loop patterns *(Day 2+)* |
-| `starters/` | [clone-and-fill loop kits](starters/README.md) — start with [`_template/`](starters/_template/README.md); full library *(Day 3)* |
+| `starters/` | [install-and-fill loop kits](starters/README.md) — `npx @loop-engineering/loop-kit <name>` into any project, or start from [`_template/`](starters/_template/README.md) |
 | `skills/`, `templates/`, `examples/`, `stories/` | reusable parts and case studies *(Day 2+)* |
 | `resources/` | [source attribution](resources/sources.md) for all nine primary sources |
 | `web/` | the Next.js course website *(Day 4)* |

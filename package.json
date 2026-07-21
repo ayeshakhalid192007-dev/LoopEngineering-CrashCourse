@@ -1,0 +1,37 @@
+{
+  "name": "@loop-engineering/loop-kit",
+  "version": "0.1.0",
+  "description": "Install a ready-to-run loop kit from the Loop Engineering Crash Course into any project — no clone required.",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "loop-kit": "./bin/loop-kit.mjs"
+  },
+  "files": [
+    "bin/",
+    "starters/",
+    "patterns/registry.yaml",
+    "LICENSE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "loop-engineering",
+    "claude-code",
+    "opencode",
+    "agent",
+    "scaffold",
+    "starter-kit"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayeshakhalid192007-dev/LoopEngineering-CrashCourse.git"
+  },
+  "homepage": "https://github.com/ayeshakhalid192007-dev/LoopEngineering-CrashCourse#readme",
+  "scripts": {
+    "validate:registry": "node scripts/validate-registry.mjs",
+    "audit:loops": "node scripts/loop-ready-audit.mjs"
+  }
+}
