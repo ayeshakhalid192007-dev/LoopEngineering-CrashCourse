@@ -24,7 +24,7 @@ verifier, and a scheduler — and are a documented porting step, not a redesign.
 ## Scaffold a loop in six moves
 
 ```text
-1. npx github:ayeshakhalid192007-dev/LoopEngineering-CrashCourse new <loop-name>
+1. npx @loop-engineering/loop-kit new <loop-name>       # kits only — the course stays put
 2. read the spine it named for you: <loop-name>-state.md
 3. fill every <ANGLE-BRACKET> in LOOP.md                # the six parts + three stops
 4. write the procedure into the SKILL.md                # intent in the prompt, steps in the skill

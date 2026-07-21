@@ -18,7 +18,7 @@ most of the way done for you.
 ## Scaffold in six moves
 
 ```text
-1. npx github:<this-repo> new <loop-name>              # install the kit, name substituted
+1. npx @loop-engineering/loop-kit new <loop-name>       # install the kit, name substituted
 2. read what landed: loops/<loop-name>/ + .claude/      # definition, spine, skill, checker
 3. fill every <ANGLE-BRACKET> in LOOP.md                # the six parts + three stops
 4. write the procedure into the SKILL.md                # intent in the prompt, steps in the skill
@@ -42,7 +42,7 @@ can shortcut them.
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui, sans-serif','fontSize':'15px','lineColor':'#475569','edgeLabelBackground':'#f8fafc'},'flowchart':{'curve':'basis','nodeSpacing':45,'rankSpacing':55,'padding':12}}}%%
 flowchart LR
-    T[("starters/_template<br/>the blank kit")]:::file --> CP("npx github:repo new <loop-name><br/>→ your project"):::step
+    T[("starters/_template<br/>the blank kit")]:::file --> CP("npx loop-kit new <loop-name><br/>→ your project"):::step
     CP --> FILL("fill the <blanks><br/>LOOP.md · SKILL.md · budget"):::step
     FILL --> COMMIT("commit the spine<br/>before beat 1"):::gate
     COMMIT --> RUN(["run at L1, watched —<br/>one real cycle"]):::win
@@ -68,7 +68,7 @@ flowchart LR
 
 ## Worked in 60 seconds — a `link-sentinel` loop
 
-*Install:* `npx github:<this-repo> new link-sentinel`. *Fill `LOOP.md`:* heartbeat =
+*Install:* `npx @loop-engineering/loop-kit new link-sentinel`. *Fill `LOOP.md`:* heartbeat =
 schedule, every 30m; body = runs a link checker, **read-only on `docs/`**; spine =
 `link-sentinel-state.md`; stop = "a pass over `docs/` with zero broken links"; checker = a
 **script** (a link either resolves or it doesn't — the strongest checker there is); gate =

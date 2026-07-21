@@ -10,23 +10,23 @@ You do not need this repository to use a kit. From the root of the project you w
 loop to watch:
 
 ```text
-NPX="npx github:ayeshakhalid192007-dev/LoopEngineering-CrashCourse"
-
-$NPX list         # browse all 20 kits
-$NPX ci-sweeper   # install one
-$NPX new my-loop  # start from the blank template
+npx @loop-engineering/loop-kit list         # browse all 20 kits
+npx @loop-engineering/loop-kit ci-sweeper   # install one
+npx @loop-engineering/loop-kit new my-loop  # start from the blank template
 ```
 
 The kit lands in `loops/<name>/`, with the Claude Code skill and checker placed under
 your project's `.claude/` where the tool can find them. Node 18+ is the only
-prerequisite; nothing is cloned and nothing is installed globally. Add `--dry-run` to
-see every path first, or `--tool claude` / `--tool opencode` to install one tool's files.
+prerequisite; nothing is cloned and nothing is installed globally. What downloads is the
+kits and the CLI — about 90 kB — not the course. Add `--dry-run` to see every path
+first, or `--tool claude` / `--tool opencode` to install one tool's files.
 
 ## The canonical kit: `_template/`
 
 [`_template/`](_template/README.md) is the skeleton every other kit is stamped from —
-the same files, with every decision left as an `<ANGLE-BRACKET>` blank. `npx … new
-<loop-name>` installs it with your loop's name substituted throughout. Contributors
+the same files, with every decision left as an `<ANGLE-BRACKET>` blank. `npx
+@loop-engineering/loop-kit new <loop-name>` installs it with your loop's name substituted
+throughout. Contributors
 adding a kit *to this library* copy it in place instead:
 
 ```text

@@ -6,7 +6,7 @@ one you want depends on where the loop is going to live.
 
 | You want to | Use |
 | --- | --- |
-| Run one of these 20 loops **in your own project** | [`npx github:…/LoopEngineering-CrashCourse`](#install-a-kit-with-npx) |
+| Run one of these 20 loops **in your own project** | [`npx @loop-engineering/loop-kit`](#install-a-kit-with-npx) |
 | Design a **brand-new** loop, blanks and all | [`npx … new <loop-name>`](#start-a-brand-new-loop) |
 | Add a kit **to this library** as a contributor | [the manual copy](#contributor-route-copy-the-template) |
 
@@ -17,21 +17,23 @@ The first two need nothing but Node 18+. You do not clone this repo to use a kit
 One command, run from the root of the project you want the loop to watch:
 
 ```text
-npx github:ayeshakhalid192007-dev/LoopEngineering-CrashCourse ci-sweeper
+npx @loop-engineering/loop-kit ci-sweeper
 ```
 
-`npx` fetches the CLI, writes the kit, and exits. Nothing is installed globally and no
-repository is cloned into your working directory. To see what is on offer first:
+`npx` fetches the CLI, writes the kit, and exits. Nothing is installed globally, no
+repository is cloned into your working directory, and the download is **the kits only** —
+the course itself, the labs, the website, and the loops that built them are not in the
+package. To see what is on offer first:
 
 ```text
-npx github:ayeshakhalid192007-dev/LoopEngineering-CrashCourse list
+npx @loop-engineering/loop-kit list
 ```
 
 That prints all 20 kits with their category and the autonomy level they ship at — every
 one of them L1, report-only, because [that is the rule](../docs/10-operating/safety.md).
 
 The rest of this page shortens that to `npx loop-kit …` for readability. Substitute the
-full form above, or alias it once: `alias loop-kit='npx github:ayeshakhalid192007-dev/LoopEngineering-CrashCourse'`.
+full form above, or alias it once: `alias loop-kit='npx @loop-engineering/loop-kit'`.
 
 ### Where the files land
 
@@ -72,11 +74,11 @@ command refuses and lists what it would have clobbered.
 When you are unsure what a kit will do to a directory, `--dry-run` answers it exactly.
 
 > [!NOTE]
-> **Why the `github:` prefix?** It tells `npx` to resolve the CLI from this repository
-> rather than the npm registry, which needs no published package and no npm account. The
-> download is larger and slower than a registry fetch — everything else is identical.
-> Once the CLI is published to npm the shorter `npx @loop-engineering/loop-kit …` will
-> work too; see [Publishing the CLI](#publishing-the-cli).
+> **Before the first publish**, the registry name does not resolve yet and `npx` answers
+> `E404`. The fallback runs the same CLI straight out of the repository:
+> `npx github:ayeshakhalid192007-dev/LoopEngineering-CrashCourse#day3/loop-library list`.
+> It behaves identically but downloads the entire course to get there, which is exactly
+> what the published package exists to avoid. See [Publishing the CLI](#publishing-the-cli).
 
 ## Start a brand-new loop
 
@@ -135,23 +137,36 @@ Then run one watched cycle at L1 before you let it near a schedule.
 
 ## Publishing the CLI
 
-The `github:` form works with no registry involved, so publishing is optional — it buys
-a shorter command and a faster download, nothing more. A maintainer with an npm account
-does it once:
+The published package is not this repository. It is
+[`packages/loop-kit/`](../packages/loop-kit/README.md) — a CLI plus the kits, and nothing
+else. The repository's own root `package.json` is marked `private`, so the course can
+never be pushed to the registry by accident.
+
+A maintainer with an npm account publishes it from that directory:
 
 ```text
-npm adduser                       # one-time, interactive
-npm org create loop-engineering   # the scope — free for public packages
-npm publish --access public       # scoped packages are private without this flag
+npm adduser                              # one-time, interactive
+npm org create loop-engineering          # the scope — free for public packages
+cd packages/loop-kit && npm publish      # access:public is set in package.json
 ```
 
-Check what would ship before you push it: `npm pack --dry-run` lists every file in the
-tarball. The `files` field in `package.json` is the whitelist — `bin/`, `starters/`, and
-`patterns/registry.yaml` only, which is why the package stays under half a megabyte
-while the repository is far larger.
+Publishing does **not** wait on any branch merge. `npm publish` uploads the working tree
+you run it from, so a maintainer sitting on a feature branch can publish today and
+`npx @loop-engineering/loop-kit` starts working for everyone immediately. Only the
+`github:` fallback is branch-sensitive, because that form resolves the repository's
+default branch — which is why it needs an explicit `#branch` ref until the CLI lands on
+`main`.
 
-After a successful publish, `npx @loop-engineering/loop-kit <kit-name>` becomes the
-shorter equivalent of every command on this page.
+The kits are copied into the package at pack time by `scripts/bundle-kits.mjs`, so they
+stay authored in one place (`starters/`) and are never duplicated in the repo. Check what
+would ship before you push it:
+
+```text
+cd packages/loop-kit && npm pack --dry-run
+```
+
+That lists every file in the tarball: `bin/`, `starters/`, `patterns/registry.yaml`, and
+the licence. Roughly 90 kB — the repository is many times that.
 
 ## Related command-line tools
 

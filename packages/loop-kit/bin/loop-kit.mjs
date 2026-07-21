@@ -1,19 +1,32 @@
 #!/usr/bin/env node
-// Installs a loop kit from this package's starters/ into the user's project.
+// Installs a loop kit into the user's project.
 // Replaces `cp -r starters/_template starters/<loop-name>`, which needed a clone.
 //
-//   npx github:ayeshakhalid192007-dev/LoopEngineering-CrashCourse list
-//   npx github:ayeshakhalid192007-dev/LoopEngineering-CrashCourse ci-sweeper
-//   npx github:ayeshakhalid192007-dev/LoopEngineering-CrashCourse new my-loop --tool claude
+//   npx @loop-engineering/loop-kit list
+//   npx @loop-engineering/loop-kit ci-sweeper
+//   npx @loop-engineering/loop-kit new my-loop --tool claude
 //
-// Kits ship inside the tarball, so nothing is fetched at run time.
+// The kits are bundled into the tarball at publish time, so nothing is fetched at run
+// time and nothing but the kits is downloaded.
 
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const pkgRoot = path.resolve(__dirname, "..");
+
+// Two layouts run this file: the published package (kits bundled beside bin/) and a
+// checkout of the course repo (kits at the repo root, four levels up from bin/). Probe
+// for the marker file rather than guessing, so both work unchanged.
+function findAssetRoot() {
+  const candidates = [path.resolve(__dirname, ".."), path.resolve(__dirname, "..", "..", "..")];
+  for (const dir of candidates) {
+    if (fs.existsSync(path.join(dir, "starters", "_template", "LOOP.md"))) return dir;
+  }
+  return candidates[0];
+}
+
+const pkgRoot = findAssetRoot();
 const startersDir = path.join(pkgRoot, "starters");
 const registryPath = path.join(pkgRoot, "patterns", "registry.yaml");
 
@@ -21,10 +34,10 @@ const REPO_SLUG = "ayeshakhalid192007-dev/LoopEngineering-CrashCourse";
 const REPO_BLOB = `https://github.com/${REPO_SLUG}/blob/main`;
 const KEBAB = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 
-// How a user reinvokes this CLI. `npx github:` needs no published package, so it is
-// what the messages quote; after an npm publish, `npx @loop-engineering/loop-kit` is
-// the shorter equivalent.
-const INVOKE = `npx github:${REPO_SLUG}`;
+// How a user reinvokes this CLI. The registry package carries the kits and nothing else;
+// `npx github:${REPO_SLUG}` is the pre-publish fallback and drags the whole course down
+// with it, so it is documented as a fallback only.
+const INVOKE = `npx @loop-engineering/loop-kit`;
 
 function die(msg) {
   console.error(msg);
@@ -225,7 +238,7 @@ const HELP = `
 loop-kit — install a loop kit from the Loop Engineering Crash Course
 
 Run it with:  ${INVOKE} <command>
-No clone, no global install. Node 18+ is the only prerequisite.
+Kits only — no course, no clone, no global install. Node 18+ is the only prerequisite.
 
 Commands
   list                 List every available kit
