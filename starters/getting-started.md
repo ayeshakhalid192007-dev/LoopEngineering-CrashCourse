@@ -6,7 +6,7 @@ one you want depends on where the loop is going to live.
 
 | You want to | Use |
 | --- | --- |
-| Run one of these 20 loops **in your own project** | [`npx @loop-engineering/loop-kit`](#install-a-kit-with-npx) |
+| Run one of these 20 loops **in your own project** | [`npx github:…/LoopEngineering-CrashCourse`](#install-a-kit-with-npx) |
 | Design a **brand-new** loop, blanks and all | [`npx … new <loop-name>`](#start-a-brand-new-loop) |
 | Add a kit **to this library** as a contributor | [the manual copy](#contributor-route-copy-the-template) |
 
@@ -17,18 +17,21 @@ The first two need nothing but Node 18+. You do not clone this repo to use a kit
 One command, run from the root of the project you want the loop to watch:
 
 ```text
-npx @loop-engineering/loop-kit ci-sweeper
+npx github:ayeshakhalid192007-dev/LoopEngineering-CrashCourse ci-sweeper
 ```
 
-`npx` downloads the package to its cache, writes the kit, and exits. Nothing is
-installed globally and no repository is cloned. To see what is on offer first:
+`npx` fetches the CLI, writes the kit, and exits. Nothing is installed globally and no
+repository is cloned into your working directory. To see what is on offer first:
 
 ```text
-npx @loop-engineering/loop-kit list
+npx github:ayeshakhalid192007-dev/LoopEngineering-CrashCourse list
 ```
 
 That prints all 20 kits with their category and the autonomy level they ship at — every
 one of them L1, report-only, because [that is the rule](../docs/10-operating/safety.md).
+
+The rest of this page shortens that to `npx loop-kit …` for readability. Substitute the
+full form above, or alias it once: `alias loop-kit='npx github:ayeshakhalid192007-dev/LoopEngineering-CrashCourse'`.
 
 ### Where the files land
 
@@ -68,10 +71,12 @@ command refuses and lists what it would have clobbered.
 `--tool claude` skips the OpenCode files; `--tool opencode` skips the `.claude/` ones.
 When you are unsure what a kit will do to a directory, `--dry-run` answers it exactly.
 
-> [!TIP]
-> No npm registry access? The same CLI runs straight off GitHub:
-> `npx github:ayeshakhalid192007-dev/LoopEngineering-CrashCourse ci-sweeper`.
-> It downloads more and takes longer, but needs no published package.
+> [!NOTE]
+> **Why the `github:` prefix?** It tells `npx` to resolve the CLI from this repository
+> rather than the npm registry, which needs no published package and no npm account. The
+> download is larger and slower than a registry fetch — everything else is identical.
+> Once the CLI is published to npm the shorter `npx @loop-engineering/loop-kit …` will
+> work too; see [Publishing the CLI](#publishing-the-cli).
 
 ## Start a brand-new loop
 
@@ -79,7 +84,7 @@ When none of the 20 kits fits, take the blank template instead. It is the same
 skeleton, with every decision left as an `<ANGLE-BRACKET>` for you to fill:
 
 ```text
-npx @loop-engineering/loop-kit new link-sentinel
+npx loop-kit new link-sentinel
 ```
 
 Your loop name gets substituted throughout — the spine is named for it, the skill is
@@ -127,6 +132,26 @@ against the seven-item minimum:
 7. Kill switch tested
 
 Then run one watched cycle at L1 before you let it near a schedule.
+
+## Publishing the CLI
+
+The `github:` form works with no registry involved, so publishing is optional — it buys
+a shorter command and a faster download, nothing more. A maintainer with an npm account
+does it once:
+
+```text
+npm adduser                       # one-time, interactive
+npm org create loop-engineering   # the scope — free for public packages
+npm publish --access public       # scoped packages are private without this flag
+```
+
+Check what would ship before you push it: `npm pack --dry-run` lists every file in the
+tarball. The `files` field in `package.json` is the whitelist — `bin/`, `starters/`, and
+`patterns/registry.yaml` only, which is why the package stays under half a megabyte
+while the repository is far larger.
+
+After a successful publish, `npx @loop-engineering/loop-kit <kit-name>` becomes the
+shorter equivalent of every command on this page.
 
 ## Related command-line tools
 

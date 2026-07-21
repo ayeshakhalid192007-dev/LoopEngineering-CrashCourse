@@ -10,9 +10,11 @@ You do not need this repository to use a kit. From the root of the project you w
 loop to watch:
 
 ```text
-npx @loop-engineering/loop-kit list         # browse all 20 kits
-npx @loop-engineering/loop-kit ci-sweeper   # install one
-npx @loop-engineering/loop-kit new my-loop  # start from the blank template
+NPX="npx github:ayeshakhalid192007-dev/LoopEngineering-CrashCourse"
+
+$NPX list         # browse all 20 kits
+$NPX ci-sweeper   # install one
+$NPX new my-loop  # start from the blank template
 ```
 
 The kit lands in `loops/<name>/`, with the Claude Code skill and checker placed under

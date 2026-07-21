@@ -2,11 +2,11 @@
 // Installs a loop kit from this package's starters/ into the user's project.
 // Replaces `cp -r starters/_template starters/<loop-name>`, which needed a clone.
 //
-//   npx @loop-engineering/loop-kit list
-//   npx @loop-engineering/loop-kit ci-sweeper
-//   npx @loop-engineering/loop-kit new my-loop --tool claude
+//   npx github:ayeshakhalid192007-dev/LoopEngineering-CrashCourse list
+//   npx github:ayeshakhalid192007-dev/LoopEngineering-CrashCourse ci-sweeper
+//   npx github:ayeshakhalid192007-dev/LoopEngineering-CrashCourse new my-loop --tool claude
 //
-// Kits ship inside the published tarball, so nothing is fetched at run time.
+// Kits ship inside the tarball, so nothing is fetched at run time.
 
 import fs from "node:fs";
 import path from "node:path";
@@ -17,8 +17,14 @@ const pkgRoot = path.resolve(__dirname, "..");
 const startersDir = path.join(pkgRoot, "starters");
 const registryPath = path.join(pkgRoot, "patterns", "registry.yaml");
 
-const REPO_BLOB = "https://github.com/ayeshakhalid192007-dev/LoopEngineering-CrashCourse/blob/main";
+const REPO_SLUG = "ayeshakhalid192007-dev/LoopEngineering-CrashCourse";
+const REPO_BLOB = `https://github.com/${REPO_SLUG}/blob/main`;
 const KEBAB = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+
+// How a user reinvokes this CLI. `npx github:` needs no published package, so it is
+// what the messages quote; after an npm publish, `npx @loop-engineering/loop-kit` is
+// the shorter equivalent.
+const INVOKE = `npx github:${REPO_SLUG}`;
 
 function die(msg) {
   console.error(msg);
@@ -84,7 +90,7 @@ function cmdList() {
     const summary = meta.category_name ? ` — ${meta.category_name}` : "";
     console.log(`  ${kit}${level}${summary}`);
   }
-  console.log(`\nInstall one:  npx @loop-engineering/loop-kit <name>`);
+  console.log(`\nInstall one:  ${INVOKE} <name>`);
 }
 
 // Kit prose links out to the course with repo-relative paths. Those resolve to
@@ -143,7 +149,7 @@ function cmdInstall(kitName, opts, { fromTemplate }) {
     const kits = listKits();
     die(
       `No kit named "${kitName}".\n\nAvailable: ${kits.join(", ")}\n` +
-        `Or start from the blank template:  npx @loop-engineering/loop-kit new ${kitName}`,
+        `Or start from the blank template:  ${INVOKE} new ${kitName}`,
     );
   }
   if (!fs.existsSync(opts.dir)) die(`Target directory does not exist: ${opts.dir}`);
@@ -209,10 +215,13 @@ function cmdInstall(kitName, opts, { fromTemplate }) {
 const HELP = `
 loop-kit — install a loop kit from the Loop Engineering Crash Course
 
-Usage
-  npx @loop-engineering/loop-kit list                 List every available kit
-  npx @loop-engineering/loop-kit <kit-name>           Install a named kit
-  npx @loop-engineering/loop-kit new <loop-name>      Stamp the blank template
+Run it with:  ${INVOKE} <command>
+No clone, no global install. Node 18+ is the only prerequisite.
+
+Commands
+  list                 List every available kit
+  <kit-name>           Install a named kit into the current project
+  new <loop-name>      Stamp the blank template as a new loop
 
 Options
   --dir <path>     Target project directory (default: current directory)
@@ -234,7 +243,7 @@ function main() {
   if (command === "list") return cmdList();
   if (command === "new") {
     const name = rest[0];
-    if (!name) die(`Usage: npx @loop-engineering/loop-kit new <loop-name>`);
+    if (!name) die(`Usage: ${INVOKE} new <loop-name>`);
     return cmdInstall(name, opts, { fromTemplate: true });
   }
   return cmdInstall(command, opts, { fromTemplate: false });
