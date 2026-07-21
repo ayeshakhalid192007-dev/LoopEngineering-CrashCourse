@@ -93,12 +93,21 @@ function cmdList() {
   console.log(`\nInstall one:  ${INVOKE} <name>`);
 }
 
-// Kit prose links out to the course with repo-relative paths. Those resolve to
-// nothing once the kit lives in someone else's project, so point them at GitHub.
-function rewriteLinks(content) {
-  return content.replace(/\]\((\.\.\/)+([^)]+)\)/g, (_m, _dots, target) => {
-    const clean = target.replace(/^_template\//, "starters/_template/");
-    return `](${REPO_BLOB}/${clean})`;
+// Kit prose links out to the course with paths relative to the kit's home in this
+// repo. Those resolve to nothing once the kit lives in someone else's project, so
+// point them at GitHub. Resolve against the source file rather than pattern-matching
+// the prefix — a kit links up to docs/ AND sideways to sibling kits, and only real
+// path resolution gets both right.
+function rewriteLinks(content, srcFile) {
+  const srcDir = path.dirname(srcFile);
+  return content.replace(/\]\((\.\.\/[^)]+)\)/g, (match, target) => {
+    const hash = target.indexOf("#");
+    const pathPart = hash === -1 ? target : target.slice(0, hash);
+    const fragment = hash === -1 ? "" : target.slice(hash);
+    const repoRel = path.relative(pkgRoot, path.resolve(srcDir, pathPart));
+    // Escaped the package root — not ours to rewrite; leave it alone.
+    if (repoRel.startsWith("..") || path.isAbsolute(repoRel)) return match;
+    return `](${REPO_BLOB}/${repoRel.split(path.sep).join("/")}${fragment})`;
   });
 }
 
@@ -180,7 +189,7 @@ function cmdInstall(kitName, opts, { fromTemplate }) {
 
   for (const write of writes) {
     let content = fs.readFileSync(write.src, "utf8");
-    content = rewriteLinks(content);
+    content = rewriteLinks(content, write.src);
     if (fromTemplate) content = content.replaceAll("<loop-name>", kitName);
     if (write.rename) content = content.replace(/^name:\s*loop-verifier\s*$/m, `name: ${write.rename}`);
     if (opts.dryRun) {
