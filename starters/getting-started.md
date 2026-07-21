@@ -74,11 +74,11 @@ command refuses and lists what it would have clobbered.
 When you are unsure what a kit will do to a directory, `--dry-run` answers it exactly.
 
 > [!NOTE]
-> **Before the first publish**, the registry name does not resolve yet and `npx` answers
-> `E404`. The fallback runs the same CLI straight out of the repository:
-> `npx github:ayeshakhalid192007-dev/LoopEngineering-CrashCourse#day3/loop-library list`.
-> It behaves identically but downloads the entire course to get there, which is exactly
-> what the published package exists to avoid. See [Publishing the CLI](#publishing-the-cli).
+> There is a second route — `npx github:ayeshakhalid192007-dev/LoopEngineering-CrashCourse`
+> runs the same CLI straight out of the repository, with no registry involved. It behaves
+> identically, but it downloads the entire course to install ten small files, and it
+> resolves whatever the repository's default branch happens to be. Reach for it only when
+> you need a change that has not been published yet.
 
 ## Start a brand-new loop
 
@@ -155,12 +155,21 @@ created from the CLI — there is no `npm org create`. Either register the free 
 rename the package to your own username scope (`@your-npm-name/loop-kit`), which every
 account owns by default.
 
+npm requires two-factor authentication to publish. With an authenticator app you pass the
+six-digit code as `--otp=<code>`; with a security key or passkey there is no code at all —
+`npm publish` prints an `npmjs.com/login/<uuid>` line, and you open **that exact URL**,
+authorize, and press Enter at the terminal's OTP prompt. Run it from a real terminal: the
+browser handshake needs a session that can wait for you.
+
 Publishing does **not** wait on any branch merge. `npm publish` uploads the working tree
 you run it from, so a maintainer sitting on a feature branch can publish today and
 `npx @loop-engineering/loop-kit` starts working for everyone immediately. Only the
 `github:` fallback is branch-sensitive, because that form resolves the repository's
-default branch — which is why it needs an explicit `#branch` ref until the CLI lands on
-`main`.
+default branch.
+
+A first publish under a brand-new scope can 404 for a minute while the registry's CDN
+catches up. That is propagation, not failure — `+ @loop-engineering/loop-kit@0.1.0` in the
+publish output is the authoritative answer.
 
 The kits are copied into the package at pack time by `scripts/bundle-kits.mjs`, so they
 stay authored in one place (`starters/`) and are never duplicated in the repo. Check what
