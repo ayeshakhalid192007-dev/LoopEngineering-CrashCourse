@@ -6,7 +6,7 @@
   "type": "module",
   "license": "MIT",
   "bin": {
-    "loop-kit": "./packages/loop-kit/bin/loop-kit.mjs"
+    "loop-kit": "packages/loop-kit/bin/loop-kit.mjs"
   },
   "workspaces": [
     "packages/*"
