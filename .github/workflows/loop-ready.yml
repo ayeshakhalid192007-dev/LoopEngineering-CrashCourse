@@ -1,0 +1,46 @@
+name: loop-ready
+
+# The README's terminal demo is rendered from a REAL audit run, never hand-edited.
+# This workflow is the live half of that promise: every push re-runs the audit
+# (the badge in the README goes red if any kit fails) and re-renders
+# assets/terminal-loop-ready.svg from the actual results, committing it only
+# when the score actually changed.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: write
+
+jobs:
+  audit-and-render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run the Loop Ready audit
+        run: npm run audit:loops
+
+      - name: Re-render the README terminal demo from the audit output
+        # Runs even when the audit fails, so the image shows the red run too.
+        if: always()
+        run: npm run render:terminal
+
+      - name: Commit the refreshed image (main only, when it changed)
+        if: always() && github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          if git diff --quiet assets/terminal-loop-ready.svg; then
+            echo "Terminal demo unchanged — nothing to commit."
+            exit 0
+          fi
+          git config user.name "loop-ready-bot"
+          git config user.email "actions@github.com"
+          git add assets/terminal-loop-ready.svg
+          git commit -m "chore(readme): re-render terminal demo from live audit"
+          git push

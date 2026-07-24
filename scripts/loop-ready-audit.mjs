@@ -82,20 +82,40 @@ function auditKit(name) {
 }
 
 const kits = listKits();
+// --json emits machine-readable results (used by render-loop-ready-terminal.mjs
+// to draw the README demo from real data); human output is unchanged without it.
+const jsonMode = process.argv.includes("--json");
 
 if (kits.length === 0) {
-  console.log("No kits found in starters/ yet (only _template/ exists). Nothing to audit.");
+  if (jsonMode) {
+    console.log(JSON.stringify({ total: 0, passed: 0, kits: [] }));
+  } else {
+    console.log("No kits found in starters/ yet (only _template/ exists). Nothing to audit.");
+  }
   process.exit(0);
 }
 
 let anyFail = false;
+const results = [];
 for (const name of kits) {
   const result = auditKit(name);
+  results.push(result);
   if (!result.pass) anyFail = true;
+  if (jsonMode) continue;
   console.log(`\n${result.pass ? "PASS" : "FAIL"} — ${name}`);
   for (const m of result.missing) console.log(`  missing: ${m}`);
   for (const p of result.placeholders) console.log(`  unfilled placeholder in ${p}`);
 }
 
-console.log(`\n${kits.length} kit(s) checked. ${anyFail ? "At least one FAIL." : "All PASS."}`);
+if (jsonMode) {
+  console.log(
+    JSON.stringify(
+      { total: kits.length, passed: results.filter((r) => r.pass).length, kits: results },
+      null,
+      2
+    )
+  );
+} else {
+  console.log(`\n${kits.length} kit(s) checked. ${anyFail ? "At least one FAIL." : "All PASS."}`);
+}
 process.exit(anyFail ? 1 : 0);
