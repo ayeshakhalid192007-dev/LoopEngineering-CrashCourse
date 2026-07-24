@@ -5,7 +5,26 @@
 # OS / editor noise
 .DS_Store
 *.swp
+.idea/
+.vscode/
 
-# Website (Day 4) build artifacts
-web/node_modules/
-web/.next/
+# Secrets — never commit real credentials (course FAKE placeholders are fine)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Node / build artifacts (root + packages/*, not just web/)
+node_modules/
+.next/
+dist/
+build/
+coverage/
+.turbo/
+*.tsbuildinfo
+npm-debug.log*
+yarn-error.log*
+
+# Editor extension binaries
+*.vsix
