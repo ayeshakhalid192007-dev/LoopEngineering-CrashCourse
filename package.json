@@ -21,6 +21,7 @@
   "scripts": {
     "validate:registry": "node scripts/validate-registry.mjs",
     "audit:loops": "node scripts/loop-ready-audit.mjs",
+    "render:terminal": "node scripts/render-loop-ready-terminal.mjs",
     "bundle:kit": "node packages/loop-kit/scripts/bundle-kits.mjs"
   }
 }

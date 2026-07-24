@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 400" role="img" aria-label="Loop Engineering Crash Course — design the system that prompts the agent, not the prompt. 14 steps, 4 tracks, 20 loop kits, Loop Ready certification.">
+  <style>
+    .orbit {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: spin 48s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .beat {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: beat 1.6s ease-in-out infinite;
+    }
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      35%      { transform: scale(1.35); }
+      55%      { transform: scale(1); }
+      70%      { transform: scale(1.18); }
+    }
+
+    .corePulse { animation: corePulse 4s ease-in-out infinite; }
+    @keyframes corePulse {
+      0%, 100% { stroke-opacity: 0.8; }
+      50%      { stroke-opacity: 0.35; }
+    }
+  </style>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d0721"/>
+      <stop offset="0.55" stop-color="#1a0f3c"/>
+      <stop offset="1" stop-color="#241353"/>
+    </linearGradient>
+    <radialGradient id="glowRight" cx="0.82" cy="0.42" r="0.55">
+      <stop offset="0" stop-color="#7c3aed" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowLeft" cx="0.12" cy="0.9" r="0.5">
+      <stop offset="0" stop-color="#4c1d95" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#4c1d95" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="titleGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f5f3ff"/>
+      <stop offset="0.6" stop-color="#c4b5fd"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="chipGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#a855f7"/>
+    </linearGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.5" fill="#8b5cf6" fill-opacity="0.10"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a78bfa"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="400" rx="16" fill="url(#bg)"/>
+  <rect width="1280" height="400" rx="16" fill="url(#dots)"/>
+  <rect width="1280" height="400" rx="16" fill="url(#glowRight)"/>
+  <rect width="1280" height="400" rx="16" fill="url(#glowLeft)"/>
+  <rect x="1" y="1" width="1278" height="398" rx="15" fill="none" stroke="#7c3aed" stroke-opacity="0.35" stroke-width="1.5"/>
+  <!-- top edge highlight -->
+  <line x1="24" y1="2" x2="1256" y2="2" stroke="#c4b5fd" stroke-opacity="0.35" stroke-width="1"/>
+
+  <!-- ══════════ Left: title block ══════════ -->
+  <g font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+    <!-- chip -->
+    <rect x="72" y="74" width="196" height="34" rx="17" fill="url(#chipGrad)" fill-opacity="0.18" stroke="#a78bfa" stroke-opacity="0.6" stroke-width="1"/>
+    <circle cx="93" cy="91" r="4.5" fill="#34d399"/>
+    <text x="106" y="97" font-size="15" font-weight="600" letter-spacing="3" fill="#ddd6fe">CRASH COURSE</text>
+
+    <!-- title -->
+    <text x="70" y="168" font-size="64" font-weight="800" letter-spacing="-1" fill="url(#titleGrad)">Loop Engineering</text>
+
+    <!-- tagline -->
+    <text x="72" y="212" font-size="23" font-weight="500" fill="#c4b5fd">Design the system that prompts the agent —</text>
+    <text x="72" y="242" font-size="23" font-weight="500" fill="#c4b5fd">not the prompt.</text>
+
+    <!-- sub line -->
+    <text x="72" y="286" font-size="16" fill="#8b87a8">A free, open-source course: build autonomous agent loops with a heartbeat,</text>
+    <text x="72" y="308" font-size="16" fill="#8b87a8">a body, a checker, a spine — and a stop you can prove.</text>
+
+    <!-- stats strip -->
+    <line x1="72" y1="334" x2="770" y2="334" stroke="#7c3aed" stroke-opacity="0.35" stroke-width="1"/>
+    <g font-size="15" font-weight="600" fill="#ede9fe">
+      <text x="72" y="364">14 Steps</text>
+      <text x="168" y="364" fill="#7c6f9f">·</text>
+      <text x="188" y="364">4 Tracks</text>
+      <text x="282" y="364" fill="#7c6f9f">·</text>
+      <text x="302" y="364">20 Loop Kits</text>
+      <text x="430" y="364" fill="#7c6f9f">·</text>
+      <text x="450" y="364">2 Tools, Side by Side</text>
+      <text x="662" y="364" fill="#7c6f9f">·</text>
+      <text x="682" y="364" fill="#34d399">Loop&#160;Ready&#160;Certified</text>
+    </g>
+  </g>
+
+  <!-- ══════════ Right: loop orbit motif ══════════ -->
+  <g transform="translate(1030, 196)">
+    <!-- glow behind ring -->
+    <circle r="118" fill="#7c3aed" fill-opacity="0.18" filter="url(#soft)"/>
+    <!-- outer dashed orbit (slow rotation) -->
+    <circle class="orbit" r="132" fill="none" stroke="#8b5cf6" stroke-opacity="0.3" stroke-width="1.5" stroke-dasharray="3 7"/>
+    <!-- main ring with arrowheads -->
+    <path d="M 0,-104 A 104,104 0 1 1 -73.5,-73.5" fill="none" stroke="url(#ringGrad)" stroke-width="6" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+    <!-- center core -->
+    <circle class="corePulse" r="44" fill="#180b38" stroke="#a78bfa" stroke-width="1.5" stroke-opacity="0.8"/>
+    <text y="-4" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#ede9fe">THE</text>
+    <text y="14" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#ede9fe">LOOP</text>
+
+    <!-- nodes on the ring -->
+    <g font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600">
+      <!-- Heartbeat: top (pulses) -->
+      <circle class="beat" cx="0" cy="-104" r="9" fill="#1a0f3c" stroke="#f472b6" stroke-width="2.5"/>
+      <text x="0" y="-124" text-anchor="middle" fill="#f9a8d4">Heartbeat</text>
+      <!-- Body: right -->
+      <circle cx="104" cy="0" r="9" fill="#1a0f3c" stroke="#a78bfa" stroke-width="2.5"/>
+      <text x="122" y="5" text-anchor="start" fill="#c4b5fd">Body</text>
+      <!-- Checker: bottom -->
+      <circle cx="0" cy="104" r="9" fill="#1a0f3c" stroke="#34d399" stroke-width="2.5"/>
+      <text x="0" y="132" text-anchor="middle" fill="#6ee7b7">Checker</text>
+      <!-- Spine: left -->
+      <circle cx="-104" cy="0" r="9" fill="#1a0f3c" stroke="#fbbf24" stroke-width="2.5"/>
+      <text x="-122" y="5" text-anchor="end" fill="#fcd34d">Spine</text>
+      <!-- Stop: upper-left, where the ring intentionally opens -->
+      <rect x="-84" y="-84" width="17" height="17" rx="4" fill="#1a0f3c" stroke="#f87171" stroke-width="2.5"/>
+      <text x="-92" y="-94" text-anchor="end" fill="#fca5a5">Provable stop</text>
+    </g>
+  </g>
+</svg>
