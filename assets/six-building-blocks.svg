@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" role="img" aria-label="The six building blocks of a loop: a heartbeat of schedules and automations, worktrees for safe parallel execution, skills for persistent project knowledge, connectors and MCP to reach real tools, sub-agents for the maker–checker split, and a durable spine of memory and state.">
+  <defs>
+    <linearGradient id="bbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d0721"/>
+      <stop offset="0.55" stop-color="#170d38"/>
+      <stop offset="1" stop-color="#221250"/>
+    </linearGradient>
+    <linearGradient id="cardBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a0f3c"/>
+      <stop offset="1" stop-color="#130a2c"/>
+    </linearGradient>
+    <linearGradient id="titleGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f5f3ff"/>
+      <stop offset="0.6" stop-color="#c4b5fd"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <radialGradient id="glowTL" cx="0.12" cy="0.1" r="0.55">
+      <stop offset="0" stop-color="#7c3aed" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBR" cx="0.9" cy="0.95" r="0.55">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="bdots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.3" fill="#8b5cf6" fill-opacity="0.08"/>
+    </pattern>
+    <filter id="cardShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <style>
+    .card { opacity: 0; animation: rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .c1 { animation-delay: 0.15s; } .c2 { animation-delay: 0.30s; } .c3 { animation-delay: 0.45s; }
+    .c4 { animation-delay: 0.60s; } .c5 { animation-delay: 0.75s; } .c6 { animation-delay: 0.90s; }
+
+    .ringPulse { animation: ringPulse 3.2s ease-in-out 1.6s infinite; }
+    @keyframes ringPulse {
+      0%, 100% { stroke-opacity: 1; }
+      50%      { stroke-opacity: 0.35; }
+    }
+    .hdr { opacity: 0; animation: rise 0.5s ease-out forwards; }
+  </style>
+
+  <!-- Background -->
+  <rect width="1200" height="460" rx="16" fill="url(#bbg)"/>
+  <rect width="1200" height="460" rx="16" fill="url(#bdots)"/>
+  <rect width="1200" height="460" rx="16" fill="url(#glowTL)"/>
+  <rect width="1200" height="460" rx="16" fill="url(#glowBR)"/>
+  <rect x="1" y="1" width="1198" height="458" rx="15" fill="none" stroke="#7c3aed" stroke-opacity="0.35" stroke-width="1.5"/>
+  <line x1="26" y1="2" x2="1174" y2="2" stroke="#c4b5fd" stroke-opacity="0.3" stroke-width="1"/>
+
+  <g font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+    <!-- Header -->
+    <g class="hdr">
+      <text x="600" y="54" text-anchor="middle" font-size="24" font-weight="800" letter-spacing="5" fill="url(#titleGrad)">THE SIX BUILDING BLOCKS</text>
+      <rect x="520" y="66" width="160" height="3" rx="1.5" fill="#7c3aed"/>
+      <text x="600" y="94" text-anchor="middle" font-size="14" fill="#8b87a8">every loop in this course is assembled from the same six parts</text>
+    </g>
+
+    <!-- ═══ Row 1 ═══ -->
+    <g class="card c1">
+      <rect x="40" y="118" width="356" height="146" rx="16" fill="url(#cardBody)" stroke="#f472b6" stroke-opacity="0.35" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <path d="M56,119.5 h120" stroke="#f472b6" stroke-width="3" stroke-linecap="round"/>
+      <text x="372" y="146" text-anchor="end" font-size="12" font-weight="700" letter-spacing="2" fill="#4c3d78">01</text>
+      <circle cx="84" cy="164" r="23" fill="#f472b6" fill-opacity="0.12" stroke="#f472b6" stroke-width="1.5"/>
+      <text x="84" y="171" text-anchor="middle" font-size="19">⏱</text>
+      <text x="122" y="159" font-size="18" font-weight="700" fill="#f9a8d4">Heartbeat</text>
+      <text x="122" y="180" font-size="12.5" letter-spacing="0.5" fill="#a99fd0">SCHEDULES &amp; AUTOMATIONS</text>
+      <text x="66" y="216" font-size="13.5" fill="#8b87a8">Decides when the loop runs — in-session,</text>
+      <text x="66" y="236" font-size="13.5" fill="#8b87a8">run-until-done, cron, or event-driven.</text>
+    </g>
+
+    <g class="card c2">
+      <rect x="422" y="118" width="356" height="146" rx="16" fill="url(#cardBody)" stroke="#34d399" stroke-opacity="0.35" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <path d="M438,119.5 h120" stroke="#34d399" stroke-width="3" stroke-linecap="round"/>
+      <text x="754" y="146" text-anchor="end" font-size="12" font-weight="700" letter-spacing="2" fill="#4c3d78">02</text>
+      <circle cx="466" cy="164" r="23" fill="#34d399" fill-opacity="0.12" stroke="#34d399" stroke-width="1.5"/>
+      <text x="466" y="171" text-anchor="middle" font-size="19">🌳</text>
+      <text x="504" y="159" font-size="18" font-weight="700" fill="#6ee7b7">Worktrees</text>
+      <text x="504" y="180" font-size="12.5" letter-spacing="0.5" fill="#a99fd0">SAFE PARALLEL EXECUTION</text>
+      <text x="448" y="216" font-size="13.5" fill="#8b87a8">Each run gets an isolated copy of the repo,</text>
+      <text x="448" y="236" font-size="13.5" fill="#8b87a8">so loops never trample your working tree.</text>
+    </g>
+
+    <g class="card c3">
+      <rect x="804" y="118" width="356" height="146" rx="16" fill="url(#cardBody)" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <path d="M820,119.5 h120" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+      <text x="1136" y="146" text-anchor="end" font-size="12" font-weight="700" letter-spacing="2" fill="#4c3d78">03</text>
+      <circle cx="848" cy="164" r="23" fill="#38bdf8" fill-opacity="0.12" stroke="#38bdf8" stroke-width="1.5"/>
+      <text x="848" y="171" text-anchor="middle" font-size="19">📘</text>
+      <text x="886" y="159" font-size="18" font-weight="700" fill="#7dd3fc">Skills</text>
+      <text x="886" y="180" font-size="12.5" letter-spacing="0.5" fill="#a99fd0">PERSISTENT PROJECT KNOWLEDGE</text>
+      <text x="830" y="216" font-size="13.5" fill="#8b87a8">Reusable instructions the agent loads every</text>
+      <text x="830" y="236" font-size="13.5" fill="#8b87a8">run — the loop's habits, written down once.</text>
+    </g>
+
+    <!-- ═══ Row 2 ═══ -->
+    <g class="card c4">
+      <rect x="40" y="284" width="356" height="146" rx="16" fill="url(#cardBody)" stroke="#fbbf24" stroke-opacity="0.35" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <path d="M56,285.5 h120" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+      <text x="372" y="312" text-anchor="end" font-size="12" font-weight="700" letter-spacing="2" fill="#4c3d78">04</text>
+      <circle cx="84" cy="330" r="23" fill="#fbbf24" fill-opacity="0.12" stroke="#fbbf24" stroke-width="1.5"/>
+      <text x="84" y="337" text-anchor="middle" font-size="19">🔌</text>
+      <text x="122" y="325" font-size="18" font-weight="700" fill="#fcd34d">Connectors / MCP</text>
+      <text x="122" y="346" font-size="12.5" letter-spacing="0.5" fill="#a99fd0">REACH INTO YOUR REAL TOOLS</text>
+      <text x="66" y="382" font-size="13.5" fill="#8b87a8">GitHub, CI, trackers, dashboards — the body</text>
+      <text x="66" y="402" font-size="13.5" fill="#8b87a8">acts on the systems you actually use.</text>
+    </g>
+
+    <g class="card c5">
+      <rect x="422" y="284" width="356" height="146" rx="16" fill="url(#cardBody)" stroke="#a78bfa" stroke-opacity="0.4" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <path d="M438,285.5 h120" stroke="#a78bfa" stroke-width="3" stroke-linecap="round"/>
+      <text x="754" y="312" text-anchor="end" font-size="12" font-weight="700" letter-spacing="2" fill="#4c3d78">05</text>
+      <circle cx="466" cy="330" r="23" fill="#a78bfa" fill-opacity="0.12" stroke="#a78bfa" stroke-width="1.5"/>
+      <text x="466" y="337" text-anchor="middle" font-size="19">🎭</text>
+      <text x="504" y="325" font-size="18" font-weight="700" fill="#c4b5fd">Sub-agents</text>
+      <text x="504" y="346" font-size="12.5" letter-spacing="0.5" fill="#a99fd0">THE MAKER / CHECKER SPLIT</text>
+      <text x="448" y="382" font-size="13.5" fill="#8b87a8">The maker never grades its own work — a</text>
+      <text x="448" y="402" font-size="13.5" fill="#8b87a8">separate read-only checker decides "done".</text>
+    </g>
+
+    <g class="card c6">
+      <rect x="804" y="284" width="356" height="146" rx="16" fill="url(#cardBody)" stroke="#34d399" stroke-opacity="0.65" stroke-width="2" filter="url(#cardShadow)"/>
+      <path d="M820,285.5 h120" stroke="#34d399" stroke-width="3" stroke-linecap="round"/>
+      <text x="1136" y="312" text-anchor="end" font-size="12" font-weight="700" letter-spacing="2" fill="#34d399" fill-opacity="0.7">06</text>
+      <circle class="ringPulse" cx="848" cy="330" r="23" fill="#34d399" fill-opacity="0.12" stroke="#34d399" stroke-width="1.5"/>
+      <text x="848" y="337" text-anchor="middle" font-size="19">🧠</text>
+      <text x="886" y="325" font-size="18" font-weight="700" fill="#6ee7b7">+ Spine</text>
+      <text x="886" y="346" font-size="12.5" letter-spacing="0.5" fill="#a99fd0">MEMORY / STATE</text>
+      <text x="830" y="382" font-size="13.5" fill="#8b87a8">Durable state outside any conversation, so an</text>
+      <text x="830" y="402" font-size="13.5" fill="#8b87a8">interrupted run resumes instead of restarting.</text>
+    </g>
+  </g>
+</svg>

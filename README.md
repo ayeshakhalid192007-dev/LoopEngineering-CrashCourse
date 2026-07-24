@@ -83,6 +83,51 @@ npx @loop-engineering/loop-kit ci-sweeper
 
 ![·](assets/section-divider.svg)
 
+## 💬 Why this matters
+
+The people building today's coding agents say it plainly:
+
+> "You shouldn't be prompting coding agents anymore. You should be designing loops
+> that prompt your agents."
+>
+> — **Peter Steinberger** ([source S8](resources/sources.md))
+
+> "I don't prompt Claude anymore. I have loops running that prompt Claude and figuring
+> out what to do. My job is to write loops."
+>
+> — **Boris Cherny**, Head of Claude Code at Anthropic ([source S8](resources/sources.md))
+
+The job is no longer writing the perfect prompt — it is architecting the control system
+that keeps agents working toward a goal over time. That is exactly the discipline this
+course teaches, and every voice above is one of its
+[nine credited primary sources](resources/sources.md).
+
+## 🧩 The six building blocks
+
+Every loop in this course — and every kit in the
+[pattern library](#-loop-pattern-library) — is assembled from the same six parts:
+
+| Building block | Job in the loop | Taught in |
+| --- | --- | --- |
+| **Heartbeat** — schedules & automations | discovery + triage on a cadence | [Part 2](docs/04-part-2-heartbeat/) |
+| **Worktrees** | safe parallel execution | [Part 3](docs/05-part-3-the-body/) |
+| **Skills** | persistent project knowledge | [Part 3](docs/05-part-3-the-body/) |
+| **Connectors / MCP** | reach into your real tools | [Part 3](docs/05-part-3-the-body/) |
+| **Sub-agents** | the maker / checker split | [Part 3](docs/05-part-3-the-body/) |
+| **+ Spine** — memory / state | durable state outside any conversation | [Part 4](docs/06-part-4-the-spine/) |
+
+<div align="center">
+
+![The six building blocks — heartbeat, worktrees, skills, connectors/MCP, sub-agents, and the spine](assets/six-building-blocks.svg)
+
+</div>
+
+Deep dive: [Primitives](docs/02-foundations/primitives.md) ·
+[Primitives Matrix](docs/02-foundations/primitives-matrix.md) — which block exists in
+which tool, side by side.
+
+![·](assets/section-divider.svg)
+
 ## 🎓 Choose your track
 
 **New here?** [**Open the 60-second router →**](docs/00-start-here/README.md)
@@ -236,6 +281,12 @@ first-class part of the course, not an appendix:
 
 The house rules this repo itself runs under — one owner per file, a sacred spine, stop
 conditions as specs, green ≠ done — live in [`LOOP.md`](LOOP.md).
+
+> "Build the loop. But build it like someone who intends to stay the engineer, not just
+> the person who presses go."
+>
+> — **Addy Osmani**, *[Loop Engineering](https://addyosmani.com/blog/loop-engineering/)*
+> ([source S5](resources/sources.md))
 
 ## 🏅 Certification: Loop Ready
 
