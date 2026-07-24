@@ -1,20 +1,20 @@
 <div align="center">
 
-[![GitHub stars](https://img.shields.io/github/stars/ayeshakhalid192007-dev/LoopEngineering-CrashCourse?style=for-the-badge&logo=github&color=7c3aed&labelColor=1a0f3c)](https://github.com/ayeshakhalid192007-dev/LoopEngineering-CrashCourse/stargazers)
-[![Last commit](https://img.shields.io/github/last-commit/ayeshakhalid192007-dev/LoopEngineering-CrashCourse?style=for-the-badge&logo=git&logoColor=white&color=7c3aed&labelColor=1a0f3c)](https://github.com/ayeshakhalid192007-dev/LoopEngineering-CrashCourse/commits)
-[![Repo size](https://img.shields.io/github/repo-size/ayeshakhalid192007-dev/LoopEngineering-CrashCourse?style=for-the-badge&color=7c3aed&labelColor=1a0f3c)](https://github.com/ayeshakhalid192007-dev/LoopEngineering-CrashCourse)
-[![Contributors](https://img.shields.io/github/contributors/ayeshakhalid192007-dev/LoopEngineering-CrashCourse?style=for-the-badge&color=7c3aed&labelColor=1a0f3c)](https://github.com/ayeshakhalid192007-dev/LoopEngineering-CrashCourse/graphs/contributors)
-[![Loop Ready audit](https://img.shields.io/github/actions/workflow/status/ayeshakhalid192007-dev/LoopEngineering-CrashCourse/loop-ready.yml?style=for-the-badge&label=Loop%20Ready%20audit&logo=githubactions&logoColor=white&labelColor=1a0f3c)](https://github.com/ayeshakhalid192007-dev/LoopEngineering-CrashCourse/actions/workflows/loop-ready.yml)
+[![GitHub stars](https://img.shields.io/github/stars/ayeshakhalid192007-dev/LoopEngineering-CrashCourse?style=flat&logo=github&color=7c3aed&labelColor=1a0f3c)](https://github.com/ayeshakhalid192007-dev/LoopEngineering-CrashCourse/stargazers)
+[![Last commit](https://img.shields.io/github/last-commit/ayeshakhalid192007-dev/LoopEngineering-CrashCourse?style=flat&logo=git&logoColor=white&color=7c3aed&labelColor=1a0f3c)](https://github.com/ayeshakhalid192007-dev/LoopEngineering-CrashCourse/commits)
+[![Repo size](https://img.shields.io/github/repo-size/ayeshakhalid192007-dev/LoopEngineering-CrashCourse?style=flat&color=7c3aed&labelColor=1a0f3c)](https://github.com/ayeshakhalid192007-dev/LoopEngineering-CrashCourse)
+[![Contributors](https://img.shields.io/github/contributors/ayeshakhalid192007-dev/LoopEngineering-CrashCourse?style=flat&color=7c3aed&labelColor=1a0f3c)](https://github.com/ayeshakhalid192007-dev/LoopEngineering-CrashCourse/graphs/contributors)
+[![Loop Ready audit](https://img.shields.io/github/actions/workflow/status/ayeshakhalid192007-dev/LoopEngineering-CrashCourse/loop-ready.yml?style=flat&label=Loop%20Ready%20audit&logo=githubactions&logoColor=white&labelColor=1a0f3c)](https://github.com/ayeshakhalid192007-dev/LoopEngineering-CrashCourse/actions/workflows/loop-ready.yml)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-fbbf24?style=for-the-badge&labelColor=1a0f3c)](LICENSE)
-[![Course](https://img.shields.io/badge/Course-14_steps_·_4_tracks-7c3aed?style=for-the-badge&labelColor=1a0f3c)](docs/00-start-here/README.md)
-[![Loop kits](https://img.shields.io/badge/Loop_kits-20_ready_to_install-a855f7?style=for-the-badge&labelColor=1a0f3c)](starters/getting-started.md)
-[![Node](https://img.shields.io/badge/Node-%E2%89%A518-339933?style=for-the-badge&logo=node.js&logoColor=white&labelColor=1a0f3c)](starters/getting-started.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-fbbf24?style=flat&labelColor=1a0f3c)](LICENSE)
+[![Course](https://img.shields.io/badge/Course-14_steps_·_4_tracks-7c3aed?style=flat&labelColor=1a0f3c)](docs/00-start-here/README.md)
+[![Loop kits](https://img.shields.io/badge/Loop_kits-20_ready_to_install-a855f7?style=flat&labelColor=1a0f3c)](starters/getting-started.md)
+[![Node](https://img.shields.io/badge/Node-%E2%89%A518-339933?style=flat&logo=node.js&logoColor=white&labelColor=1a0f3c)](starters/getting-started.md)
 
-[![Certification](https://img.shields.io/badge/Certification-Loop_Ready-34d399?style=for-the-badge&labelColor=1a0f3c)](docs/assessments/loop-ready-certification.md)
-[![100% free](https://img.shields.io/badge/100%25-Free_%26_Open_Source-38bdf8?style=for-the-badge&labelColor=1a0f3c)](LICENSE)
-[![Built with loops](https://img.shields.io/badge/Built_with-its_own_loops-8A2BE2?style=for-the-badge&labelColor=1a0f3c)](LOOP.md)
-[![PRs welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen?style=for-the-badge&labelColor=1a0f3c)](CONTRIBUTING.md)
+[![Certification](https://img.shields.io/badge/Certification-Loop_Ready-34d399?style=flat&labelColor=1a0f3c)](docs/assessments/loop-ready-certification.md)
+[![100% free](https://img.shields.io/badge/100%25-Free_%26_Open_Source-38bdf8?style=flat&labelColor=1a0f3c)](LICENSE)
+[![Built with loops](https://img.shields.io/badge/Built_with-its_own_loops-8A2BE2?style=flat&labelColor=1a0f3c)](LOOP.md)
+[![PRs welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen?style=flat&labelColor=1a0f3c)](CONTRIBUTING.md)
 
 </div>
 
