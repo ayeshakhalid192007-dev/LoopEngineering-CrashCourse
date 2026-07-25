@@ -35,6 +35,10 @@ checker, a spine, and a stop you can prove.**
 
 <!-- HERO-END -->
 
+**Loop engineering is the practice of designing the system that prompts an AI agent — its
+trigger, instructions, guardrails, verification, state, and logging — rather than prompting
+it by hand.**
+
 The leverage has moved: it no longer lives in the perfect prompt, but in the **control
 system that keeps an agent working toward a goal over time**. This free, open-source
 course teaches that discipline end to end — 14 steps, 20 ready-to-run loop kits, graded
@@ -81,7 +85,7 @@ npx @loop-engineering/loop-kit ci-sweeper
 | Operate loops safely (failure modes, recovery) | [**View →**](docs/10-operating/operating-loops.md) |
 | Get certified | [**View →**](docs/assessments/loop-ready-certification.md) |
 
-![·](assets/section-divider.svg)
+![](assets/section-divider.svg)
 
 ## 💬 Why this matters
 
@@ -104,17 +108,21 @@ course teaches, and every voice above is one of its
 
 ## 🧩 The six building blocks
 
+**A heartbeat is the trigger that starts one iteration of a loop — in-session, conditional,
+scheduled, or event-driven. A spine is a loop's durable state between runs: with one an
+interrupted loop resumes, without one it restarts.**
+
 Every loop in this course — and every kit in the
 [pattern library](#-loop-pattern-library) — is assembled from the same six parts:
 
 | Building block | Job in the loop | Taught in |
 | --- | --- | --- |
-| **Heartbeat** — schedules & automations | discovery + triage on a cadence | [Part 2](docs/04-part-2-heartbeat/) |
-| **Worktrees** | safe parallel execution | [Part 3](docs/05-part-3-the-body/) |
-| **Skills** | persistent project knowledge | [Part 3](docs/05-part-3-the-body/) |
-| **Connectors / MCP** | reach into your real tools | [Part 3](docs/05-part-3-the-body/) |
-| **Sub-agents** | the maker / checker split | [Part 3](docs/05-part-3-the-body/) |
-| **+ Spine** — memory / state | durable state outside any conversation | [Part 4](docs/06-part-4-the-spine/) |
+| **Heartbeat** — schedules & automations | discovery + triage on a cadence | [Part 2](docs/04-part-2-heartbeat/README.md) |
+| **Worktrees** | safe parallel execution | [Part 3](docs/05-part-3-the-body/README.md) |
+| **Skills** | persistent project knowledge | [Part 3](docs/05-part-3-the-body/README.md) |
+| **Connectors / MCP** | reach into your real tools | [Part 3](docs/05-part-3-the-body/README.md) |
+| **Sub-agents** | the maker / checker split | [Part 3](docs/05-part-3-the-body/README.md) |
+| **+ Spine** — memory / state | durable state outside any conversation | [Part 4](docs/06-part-4-the-spine/README.md) |
 
 <div align="center">
 
@@ -126,7 +134,7 @@ Deep dive: [Primitives](docs/02-foundations/primitives.md) ·
 [Primitives Matrix](docs/02-foundations/primitives-matrix.md) — which block exists in
 which tool, side by side.
 
-![·](assets/section-divider.svg)
+![](assets/section-divider.svg)
 
 ## 🎓 Choose your track
 
@@ -145,7 +153,7 @@ a veteran never yawns:
 
 [**View the full track map with entry checks and exit assessments →**](docs/00-start-here/learning-tracks.md)
 
-![·](assets/section-divider.svg)
+![](assets/section-divider.svg)
 
 ## 📚 Curriculum
 
@@ -164,12 +172,12 @@ a veteran never yawns:
 
 | Part | Steps | What you learn | |
 | --- | --- | --- | --- |
-| **1 · The Shift** | 01–03 | prompting → looping, the four layers, anatomy of a loop | [**Start →**](docs/03-part-1-the-shift/) |
-| **2 · The Heartbeat** | 04–07 | in-session, run-until-done, schedules, event-driven | [**Start →**](docs/04-part-2-heartbeat/) |
-| **3 · The Body** | 08–11 | worktrees, skills, connectors/MCP, maker ≠ checker | [**Start →**](docs/05-part-3-the-body/) |
-| **4 · The Spine** | 12 | durable state between runs | [**Start →**](docs/06-part-4-the-spine/) |
-| **5 · A Complete Loop** | 13 | build the same loop twice (Claude Code & OpenCode) | [**Start →**](docs/07-part-5-complete-loop/) |
-| **6 · Human Control** | 14 | staying the engineer: cost, verification, nested loops | [**Start →**](docs/08-part-6-human-control/) |
+| **1 · The Shift** | 01–03 | prompting → looping, the four layers, anatomy of a loop | [**Start →**](docs/03-part-1-the-shift/README.md) |
+| **2 · The Heartbeat** | 04–07 | in-session, run-until-done, schedules, event-driven | [**Start →**](docs/04-part-2-heartbeat/README.md) |
+| **3 · The Body** | 08–11 | worktrees, skills, connectors/MCP, maker ≠ checker | [**Start →**](docs/05-part-3-the-body/README.md) |
+| **4 · The Spine** | 12 | durable state between runs | [**Start →**](docs/06-part-4-the-spine/README.md) |
+| **5 · A Complete Loop** | 13 | build the same loop twice (Claude Code & OpenCode) | [**Start →**](docs/07-part-5-complete-loop/README.md) |
+| **6 · Human Control** | 14 | staying the engineer: cost, verification, nested loops | [**Start →**](docs/08-part-6-human-control/README.md) |
 
 **Then keep climbing:**
 
@@ -177,16 +185,20 @@ a veteran never yawns:
 | --- | --- | --- |
 | **Methods** | design your own loop: [Decision Framework](docs/09-methods/decision-framework.md), [Design Checklist](docs/09-methods/loop-design-checklist.md), [Pattern Picker](docs/09-methods/pattern-picker.md), [Worked Example](docs/09-methods/worked-example-dependency-sweeper.md) | [**View →**](docs/09-methods/make-your-own-loop.md) |
 | **Operating handbook** | safety, failure modes, infinite loops, observability, recovery | [**View →**](docs/10-operating/operating-loops.md) |
-| **Graded labs** | 11 hands-on projects, from a watch loop to a two-routine gate — with [solutions](docs/projects/solutions/) | [**View →**](docs/projects/) |
-| **Advanced** | hill-climbing, multi-loop coordination, evals & traces, governance, enterprise scale | [**View →**](docs/advanced/) |
+| **Graded labs** | 11 hands-on projects, from a watch loop to a two-routine gate — with [solutions](docs/projects/solutions/README.md) | [**View →**](docs/projects/README.md) |
+| **Advanced** | hill-climbing, multi-loop coordination, evals & traces, governance, enterprise scale | [**View →**](docs/advanced/README.md) |
 | **Certification** | the **Loop Ready** capstone: [Final Exam](docs/assessments/final-exam.md) · [Capstone Rubric](docs/assessments/capstone-rubric.md) | [**View →**](docs/assessments/loop-ready-certification.md) |
 
 Every lesson shows the same build in at least two tools, side by side
 (Claude Code ↔ OpenCode), so you learn the discipline — not one vendor's syntax.
 
-![·](assets/section-divider.svg)
+![](assets/section-divider.svg)
 
 ## 🔁 Anatomy of a loop
+
+**An agent loop is a system that repeatedly runs an AI agent toward a specified outcome
+without a human driving each run.** Every production loop declares six parts; a loop missing
+one of them is the loop that surprises you at 3am.
 
 Six parts, one discipline. A **heartbeat** decides when the agent runs, a **body** does
 the work, a **checker** grades it (the maker never grades its own work), a **spine**
@@ -206,7 +218,7 @@ Start with [Mental Models](docs/02-foundations/mental-models.md) and
 [The Four Layers](docs/02-foundations/the-four-layers.md); keep the
 [Glossary](docs/02-foundations/glossary.md) open in a tab.
 
-![·](assets/section-divider.svg)
+![](assets/section-divider.svg)
 
 ## 🧰 Loop pattern library
 
@@ -245,7 +257,7 @@ Prefer to design your own from a blank? `npx @loop-engineering/loop-kit new <loo
 scaffolds one from [the blank template](starters/_template/README.md).
 [**View the full install guide →**](starters/getting-started.md)
 
-![·](assets/section-divider.svg)
+![](assets/section-divider.svg)
 
 ## 🚀 Getting started (5 minutes)
 
@@ -259,11 +271,11 @@ scaffolds one from [the blank template](starters/_template/README.md).
    [Spec-Driven Primer](docs/01-prerequisites/spec-driven-primer.md).
 4. **Ground yourself in the foundations** — start with
    [Mental Models](docs/02-foundations/mental-models.md).
-5. **Begin the 14 steps** — [Part 1 · The Shift](docs/03-part-1-the-shift/), then follow
+5. **Begin the 14 steps** — [Part 1 · The Shift](docs/03-part-1-the-shift/README.md), then follow
    the [curriculum](#-curriculum) through to the
    [Loop Ready certification](docs/assessments/loop-ready-certification.md).
 
-![·](assets/section-divider.svg)
+![](assets/section-divider.svg)
 
 ## 🛡️ Operating & safety
 
@@ -290,13 +302,17 @@ conditions as specs, green ≠ done — live in [`LOOP.md`](LOOP.md).
 
 ## 🏅 Certification: Loop Ready
 
+**Loop Ready is an auditable score, not a badge.** It certifies that you can design a loop
+declaring all six parts, and that the loop you built is verified by something other than
+itself.
+
 The course ends with a graded capstone, not a participation badge. You design, build,
 and operate a loop of your own, then defend it against the
 [Capstone Rubric](docs/assessments/capstone-rubric.md) and pass the
 [Final Exam](docs/assessments/final-exam.md).
 [**View the full certification path →**](docs/assessments/loop-ready-certification.md)
 
-![·](assets/section-divider.svg)
+![](assets/section-divider.svg)
 
 ## 📂 Repository map
 
@@ -311,6 +327,21 @@ and operate a loop of your own, then defend it against the
 | `resources/` | [source attribution](resources/sources.md) for all nine primary sources |
 | `web/` | the Next.js course website *(in progress)* |
 
+## ✍️ About the author
+
+Written and maintained by **Ayesha Khalid** —
+[@ayeshakhalid192007-dev](https://github.com/ayeshakhalid192007-dev).
+
+I built this course the way it teaches you to work: every lesson, kit, and check in this
+repository was produced by loops running against a written spec, logged one beat at a time
+in [`shared/loop-run-log.md`](shared/loop-run-log.md). The 20 kits ship with a
+[deterministic audit](scripts/loop-ready-audit.mjs) because I needed to know they still
+worked after each change — not believe it. Where this course is opinionated (maker ≠
+checker, a stop you can prove, a human gate that stays), those opinions came from watching
+loops fail in the specific ways the labs now make you reproduce on purpose.
+
+Corrections and disagreement are welcome — open an issue.
+
 ## 🤝 Contributing & credits
 
 Pull requests are genuinely welcome — start with the
@@ -319,6 +350,19 @@ primary sources: it synthesizes and adapts MIT-licensed material and public writ
 and it credits every one of them, page by page, on the
 [Sources & Attribution page](resources/sources.md). Academic or written citation?
 Use [`CITATION.cff`](CITATION.cff).
+
+**Primary sources, linked directly:**
+
+- Addy Osmani — [Loop Engineering](https://addyosmani.com/blog/loop-engineering/)
+- LangChain — [The Art of Loop Engineering](https://www.langchain.com/blog/the-art-of-loop-engineering)
+- Cobus Greyling — [loop-engineering](https://github.com/cobusgreyling/loop-engineering)
+- Panaversity Agent Factory — [Loop Engineering Crash Course](https://agentfactory.panaversity.org/docs/loop-engineering-crash-course) · [Agentic Coding](https://agentfactory.panaversity.org/docs/agentic-coding-crash-course) · [Spec-Driven Development](https://agentfactory.panaversity.org/docs/spec-driven-development-crash-course)
+- Anthropic — [Claude Code documentation](https://docs.claude.com/en/docs/claude-code/overview)
+- [Model Context Protocol specification](https://modelcontextprotocol.io/)
+- GitHub — [scheduled workflow events](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule)
+- Peter Steinberger ([@steipete](https://x.com/steipete)) · Andrej Karpathy ([@karpathy](https://x.com/karpathy)) · Andrew Ng ([@AndrewYNg](https://x.com/AndrewYNg))
+
+Full page-by-page attribution: [Sources & Attribution](resources/sources.md).
 
 Licensed [MIT](LICENSE) — free to learn from, fork, and teach with.
 
