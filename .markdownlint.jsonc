@@ -6,5 +6,10 @@
   "MD033": false, // inline HTML — <details>/<summary> power the check-yourself reveals
   "MD041": false, // first line need not be a top-level heading (HERO comment in README)
   "MD028": false, // blank line between a quote and a > [!NOTE] callout is required by GFM
-  "MD029": false  // exam/assessment pages use continuous question numbering across section headings
+  "MD029": false, // exam/assessment pages use continuous question numbering across section headings
+  // Decorative images (the section dividers) carry an EMPTY alt on purpose — WCAG
+  // requires it so screen readers skip them instead of announcing "middle dot" eight
+  // times. MD045 cannot express the decorative case, so it argues for the inaccessible
+  // answer. Content images still get real alt text; that is enforced by review.
+  "MD045": false
 }
