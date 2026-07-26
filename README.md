@@ -327,21 +327,6 @@ and operate a loop of your own, then defend it against the
 | `resources/` | [source attribution](resources/sources.md) for all nine primary sources |
 | `web/` | the Next.js course website *(in progress)* |
 
-## ✍️ About the author
-
-Written and maintained by **Ayesha Khalid** —
-[@ayeshakhalid192007-dev](https://github.com/ayeshakhalid192007-dev).
-
-I built this course the way it teaches you to work: every lesson, kit, and check in this
-repository was produced by loops running against a written spec, logged one beat at a time
-in [`shared/loop-run-log.md`](shared/loop-run-log.md). The 20 kits ship with a
-[deterministic audit](scripts/loop-ready-audit.mjs) because I needed to know they still
-worked after each change — not believe it. Where this course is opinionated (maker ≠
-checker, a stop you can prove, a human gate that stays), those opinions came from watching
-loops fail in the specific ways the labs now make you reproduce on purpose.
-
-Corrections and disagreement are welcome — open an issue.
-
 ## 🤝 Contributing & credits
 
 Pull requests are genuinely welcome — start with the
@@ -365,6 +350,8 @@ Use [`CITATION.cff`](CITATION.cff).
 Full page-by-page attribution: [Sources & Attribution](resources/sources.md).
 
 Licensed [MIT](LICENSE) — free to learn from, fork, and teach with.
+
+**Maintainers:** Saram Ali, Ayesha Khalid
 
 <div align="center">
 
