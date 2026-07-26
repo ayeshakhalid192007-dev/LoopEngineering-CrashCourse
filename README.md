@@ -16,7 +16,7 @@
 [![Built with loops](https://img.shields.io/badge/Built_with-its_own_loops-8A2BE2?style=flat&labelColor=1a0f3c)](LOOP.md)
 [![PRs welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen?style=flat&labelColor=1a0f3c)](CONTRIBUTING.md)
 
-<a href="https://github.com/ayeshakhalid192007-dev/LoopEngineering-CrashCourse/graphs/contributors"><img src="https://img.shields.io/badge/Ayesha_Khalid_·_Saram_Ali-1a0f3c?style=flat" alt="Maintainers" height="16"></a>
+<a href="https://github.com/ayeshakhalid192007-dev/LoopEngineering-CrashCourse/graphs/contributors"><img src="https://img.shields.io/badge/Maintainers-Ayesha_Khalid_·_Saram_Ali-7c3aed?style=flat&labelColor=1a0f3c" alt="Maintainers" height="16"></a>
 
 </div>
 
