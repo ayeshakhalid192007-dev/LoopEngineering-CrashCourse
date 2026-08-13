@@ -1,3 +1,5 @@
+
+
 <div align="center">
 
 [![GitHub stars](https://img.shields.io/github/stars/ayeshakhalid192007-dev/LoopEngineering-CrashCourse?style=flat&logo=github&color=7c3aed&labelColor=1a0f3c)](https://github.com/ayeshakhalid192007-dev/LoopEngineering-CrashCourse/stargazers)
@@ -324,7 +326,7 @@ and operate a loop of your own, then defend it against the
 | `loops/` | [the loops that build this course](loops/README.md) — real prompts, real spines |
 | `patterns/` | the 20 loop patterns ([table above](#-loop-pattern-library)) |
 | `starters/` | [install-and-fill loop kits](https://ayeshakhalid192007-dev.github.io/loop-lab/starters/) — [one `npx` command](https://ayeshakhalid192007-dev.github.io/loop-lab/starters/getting-started/) into any project, or start from [`_template/`](https://ayeshakhalid192007-dev.github.io/loop-lab/starters/_template/) |
-| `packages/loop-kit/` | the published CLI behind `npx @loop-engineering/loop-kit` |
+| `packages/loop-kit/` | the published CLI behind `npx @loop-engineering/loop-kit` (run locally via `npx loop-kit` after `npm install`) |
 | `skills/`, `templates/`, `examples/`, `stories/` | reusable parts and case studies |
 | `resources/` | [source attribution](resources/sources.md) for all nine primary sources |
 | `web/` | the Next.js course website *(in progress)* |
